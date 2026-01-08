@@ -320,39 +320,83 @@ footer { padding: 50px 0; background: #000; border-top: 1px solid var(--border);
     align-items: center;
 }
 
-.proyecto-card:hover {
-    border-color: #ff0000; /* El rojo de Power Gym al pasar el mouse */
-    transform: translateY(-5px);
+/* Contenedor principal del proyecto */
+.proyecto-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.proyecto-card h3 {
-    font-family: 'Oswald', sans-serif; /* La letra fuerte que usamos antes */
-    font-size: 1.8rem;
+/* Estilo de la ventana de navegador */
+.browser-card {
+    background: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #333;
+    width: 100%;
+    max-width: 350px;
+}
+
+.browser-header {
+    background: #222;
+    padding: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+/* Contenido de la ventana (Fondo Power Gym) */
+.browser-content.powergym-bg {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Degradado similar al de abogados pero estilo Power Gym */
+    background: linear-gradient(135deg, #0f171e 0%, #1c1c1c 100%); 
+    text-align: center;
+    padding: 20px;
+}
+
+.powergym-bg h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
     color: #fff;
-    margin-bottom: 10px;
-    letter-spacing: 2px;
+    margin: 0;
 }
 
-.proyecto-card p {
+.powergym-bg p {
     font-size: 0.9rem;
-    color: #888;
-    margin-bottom: 25px;
-    text-transform: uppercase;
+    color: #ccc;
+    margin-top: 5px;
 }
 
-.btn-ver-proyecto {
-    display: inline-block;
-    padding: 12px 30px;
-    border: 1px solid #fff;
+/* Detalle debajo de la tarjeta */
+.proyecto-detalle h4 {
+    font-size: 1.1rem;
     color: #fff;
+    margin-bottom: 5px;
+}
+
+.ver-sitio {
+    color: #00d2ff; /* Color celeste de Novatec */
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    transition: 0.3s;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-.btn-ver-proyecto:hover {
-    background: #fff;
-    color: #000;
+.ver-sitio:hover {
+    text-decoration: underline;
 }
