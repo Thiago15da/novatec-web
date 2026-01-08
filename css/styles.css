@@ -383,4 +383,83 @@ footer { padding: 50px 0; background: #000; border-top: 1px solid var(--border);
 .ver-sitio:hover {
     text-decoration: underline;
 }
+/* Contenedor principal estilo navegador */
+.browser-card {
+    background: #0d1117; /* Fondo negro del pie */
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #30363d;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Cabecera gris oscuro */
+.browser-header {
+    background: #21262d;
+    padding: 12px;
+    display: flex;
+    gap: 8px;
+}
+
+/* Degradado radial idéntico al ejemplo de abogados */
+.powergym-preview {
+    height: 200px; /* Ajusta según tus otras tarjetas */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Este degradado crea el efecto de 'luz' en el centro */
+    background: radial-gradient(circle at center, #1c2d3d 0%, #0d1117 100%);
+    border-bottom: 1px solid #30363d;
+    text-align: center;
+}
+
+.powergym-preview h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin: 0;
+    font-family: 'Oswald', sans-serif; /* Usando la fuente de Power Gym */
+}
+
+.powergym-preview p {
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+/* Pie de tarjeta integrado */
+.browser-footer {
+    padding: 15px 20px;
+    background: #0d1117;
+    text-align: left;
+}
+
+.browser-footer h4 {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.link-azul {
+    color: #00d2ff; /* Azul cian de Novatec */
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.link-azul:hover {
+    text-decoration: underline;
+}
+
+/* Puntos de la cabecera */
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
 
