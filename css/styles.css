@@ -306,4 +306,53 @@ footer { padding: 50px 0; background: #000; border-top: 1px solid var(--border);
 /* Responsive */
 @media (max-width: 768px) {
     .contacto-grid { grid-template-columns: 1fr; }
+
+}
+/* Reemplaza o añade estos estilos en tu archivo .css */
+.proyecto-card {
+    background: #1a1a1a; /* Fondo oscuro elegante */
+    border: 1px solid #333;
+    padding: 40px;
+    text-align: center;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.proyecto-card:hover {
+    border-color: #ff0000; /* El rojo de Power Gym al pasar el mouse */
+    transform: translateY(-5px);
+}
+
+.proyecto-card h3 {
+    font-family: 'Oswald', sans-serif; /* La letra fuerte que usamos antes */
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.proyecto-card p {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.btn-ver-proyecto {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 1px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.btn-ver-proyecto:hover {
+    background: #fff;
+    color: #000;
 }
