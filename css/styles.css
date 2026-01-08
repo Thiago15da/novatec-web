@@ -308,95 +308,79 @@ footer { padding: 50px 0; background: #000; border-top: 1px solid var(--border);
     .contacto-grid { grid-template-columns: 1fr; }
 
 }
-/* Reemplaza o añade estos estilos en tu archivo .css */
-.proyecto-card {
-    background: #1a1a1a; /* Fondo oscuro elegante */
-    border: 1px solid #333;
-    padding: 40px;
-    text-align: center;
-    transition: all 0.4s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Contenedor principal del proyecto */
-.proyecto-item {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-/* Estilo de la ventana de navegador */
+/* Contenedor de la tarjeta estilo navegador */
 .browser-card {
-    background: #111;
-    border-radius: 10px;
+    background: #0d1117; /* Fondo oscuro del pie */
+    border-radius: 12px;
     overflow: hidden;
-    border: 1px solid #333;
-    width: 100%;
-    max-width: 350px;
+    border: 1px solid #30363d;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Cabecera gris oscuro */
 .browser-header {
-    background: #222;
-    padding: 10px;
+    background: #21262d;
+    padding: 12px;
     display: flex;
     gap: 8px;
 }
 
-.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-}
-
-.red { background: #ff5f56; }
-.yellow { background: #ffbd2e; }
-.green { background: #27c93f; }
-
-/* Contenido de la ventana (Fondo Power Gym) */
-.browser-content.powergym-bg {
-    height: 200px;
+/* El "corazón" de la tarjeta: El degradado */
+.powergym-preview {
+    height: 220px; /* Ajusta según tus otras tarjetas */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* Degradado similar al de abogados pero estilo Power Gym */
-    background: linear-gradient(135deg, #0f171e 0%, #1c1c1c 100%); 
-    text-align: center;
-    padding: 20px;
+    /* Degradado idéntico al del estudio jurídico */
+    background: radial-gradient(circle at center, #1c2d3d 0%, #0d1117 100%);
+    border-bottom: 1px solid #30363d;
 }
 
-.powergym-bg h3 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.5rem;
-    color: #fff;
+.powergym-preview h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
     margin: 0;
+    font-weight: 700;
 }
 
-.powergym-bg p {
+.powergym-preview p {
+    color: #8b949e;
     font-size: 0.9rem;
-    color: #ccc;
     margin-top: 5px;
 }
 
-/* Detalle debajo de la tarjeta */
-.proyecto-detalle h4 {
-    font-size: 1.1rem;
-    color: #fff;
-    margin-bottom: 5px;
+/* Parte inferior negra */
+.browser-footer {
+    padding: 20px;
+    background: #0d1117;
+    text-align: left;
 }
 
-.ver-sitio {
-    color: #00d2ff; /* Color celeste de Novatec */
+.browser-footer h4 {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.link-azul {
+    color: #58a6ff; /* El azul cian de Novatec */
     text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    font-size: 0.85rem;
+    font-weight: 600;
 }
 
+.link-azul:hover {
+    text-decoration: underline;
+}
+
+/* Puntos de colores (si no los tienes) */
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
 .ver-sitio:hover {
     text-decoration: underline;
 }
+
