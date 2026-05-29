@@ -1,6 +1,6 @@
-// Pricing reference data (USD)
+// Pricing reference data (USD) — Software only
 const PRICING = {
-  software: {
+  types: {
     landing:   { label: 'Landing Page',        base: [300,  600] },
     corporate: { label: 'Sitio Corporativo',   base: [700,  1400] },
     ecommerce: { label: 'E-commerce',           base: [1200, 2800] },
@@ -18,26 +18,14 @@ const PRICING = {
     ecommerce: '4–7 semanas', webapp: '8–14 semanas',
     mobile: '10–18 semanas', custom: '10–24 semanas',
   },
-  hardware: {
-    laptops:     { label: 'Laptops',                unit: [400, 1800] },
-    desktops:    { label: 'PCs de Escritorio',      unit: [300, 1500] },
-    servers:     { label: 'Servidores',             unit: [1200, 15000] },
-    networking:  { label: 'Equipos de Networking',  unit: [150, 5000] },
-    storage:     { label: 'Almacenamiento NAS/SAN', unit: [400, 8000] },
-    monitors:    { label: 'Monitores',              unit: [150, 900] },
-    peripherals: { label: 'Periféricos',            unit: [50, 400] },
-  },
 };
 
 // State
 let state = {
   step: 1,
-  service: null,
   type: null,
   complexity: 'standard',
   features: [],
-  categories: [],
-  quantity: 5,
 };
 
 // Helpers
@@ -45,75 +33,33 @@ const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
 const el = id => document.getElementById(id);
 
 function calcEstimate() {
-  if (state.service === 'software' && state.type) {
-    const base = PRICING.software[state.type].base;
-    const mult = PRICING.complexity[state.complexity];
-    const feat = state.features.reduce((s, f) => s + (PRICING.features[f] || 0), 0);
-    return [
-      Math.round(base[0] * mult * (1 + feat)),
-      Math.round(base[1] * mult * (1 + feat)),
-    ];
-  }
-  if (state.service === 'hardware' && state.categories.length > 0) {
-    let lo = 0, hi = 0;
-    state.categories.forEach(c => {
-      lo += PRICING.hardware[c].unit[0] * state.quantity;
-      hi += PRICING.hardware[c].unit[1] * state.quantity;
-    });
-    return [lo, hi];
-  }
-  return null;
+  if (!state.type) return null;
+  const base = PRICING.types[state.type].base;
+  const mult = PRICING.complexity[state.complexity];
+  const feat = state.features.reduce((s, f) => s + (PRICING.features[f] || 0), 0);
+  return [
+    Math.round(base[0] * mult * (1 + feat)),
+    Math.round(base[1] * mult * (1 + feat)),
+  ];
 }
 
 // Step rendering
 function renderStep1() {
+  const types = Object.entries(PRICING.types);
   el('quoter-body').innerHTML = `
-    <p class="text-[12px] text-[#444] mb-5">¿Qué tipo de solución necesitás?</p>
-    <div class="grid md:grid-cols-2 gap-3">
-      <button onclick="selectService('software')"
-        class="border border-white/[0.08] bg-[#111] rounded-xl p-5 text-left hover:border-white/[0.2] transition-all cursor-pointer group">
-        <div class="w-7 h-7 border border-white/[0.08] rounded-lg flex items-center justify-center mb-4">
-          <i class="fas fa-terminal text-[#555] text-[11px]"></i>
-        </div>
-        <p class="text-[14px] font-semibold mb-1.5">Software & Desarrollo</p>
-        <p class="text-[#555] text-[12px] leading-[1.5]">Sitios web, apps, sistemas a medida.</p>
-        <span class="mt-4 inline-flex items-center gap-1 text-[12px] text-[#555] group-hover:text-white transition-colors">Seleccionar →</span>
-      </button>
-      <button onclick="selectService('hardware')"
-        class="border border-white/[0.08] bg-[#111] rounded-xl p-5 text-left hover:border-white/[0.2] transition-all cursor-pointer group">
-        <div class="w-7 h-7 border border-white/[0.08] rounded-lg flex items-center justify-center mb-4">
-          <i class="fas fa-server text-[#555] text-[11px]"></i>
-        </div>
-        <p class="text-[14px] font-semibold mb-1.5">Provisión de Hardware</p>
-        <p class="text-[#555] text-[12px] leading-[1.5]">Laptops, servidores, networking a precio mayorista.</p>
-        <span class="mt-4 inline-flex items-center gap-1 text-[12px] text-[#555] group-hover:text-white transition-colors">Seleccionar →</span>
-      </button>
+    <p class="text-[12px] text-[#444] mb-5">¿Qué tipo de proyecto de software necesitás?</p>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+      ${types.map(([key, val]) => `
+        <label class="opt">
+          <input type="radio" name="sw-type" value="${key}" ${state.type === key ? 'checked' : ''} onchange="setSWType('${key}')">
+          <span class="opt-label text-[12px] font-medium text-center">${val.label}</span>
+        </label>`).join('')}
     </div>`;
 }
 
 function renderStep2() {
-  if (state.service === 'software') {
-    renderStep2Software();
-  } else {
-    renderStep2Hardware();
-  }
-}
-
-function renderStep2Software() {
-  const types = Object.entries(PRICING.software);
   el('quoter-body').innerHTML = `
-    <p class="text-[12px] text-[#444] mb-5">Configurá tu proyecto de software</p>
-
-    <div class="mb-6">
-      <p class="text-[12px] font-medium text-[#888] mb-3">Tipo de proyecto</p>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
-        ${types.map(([key, val]) => `
-          <label class="opt">
-            <input type="radio" name="sw-type" value="${key}" ${state.type === key ? 'checked' : ''} onchange="setSWType('${key}')">
-            <span class="opt-label text-[12px] font-medium text-center">${val.label}</span>
-          </label>`).join('')}
-      </div>
-    </div>
+    <p class="text-[12px] text-[#444] mb-5">Definí la complejidad y los extras</p>
 
     <div class="mb-6">
       <p class="text-[12px] font-medium text-[#888] mb-3">Complejidad</p>
@@ -138,43 +84,17 @@ function renderStep2Software() {
     </div>`;
 }
 
-function renderStep2Hardware() {
-  el('quoter-body').innerHTML = `
-    <p class="text-[12px] text-[#444] mb-5">Configurá tu pedido de hardware</p>
-
-    <div class="mb-6">
-      <p class="text-[12px] font-medium text-[#888] mb-3">Categorías</p>
-      <div class="grid grid-cols-2 gap-2">
-        ${Object.entries(PRICING.hardware).map(([k, v]) => `
-          <label class="opt">
-            <input type="checkbox" value="${k}" ${state.categories.includes(k) ? 'checked' : ''} onchange="toggleCategory('${k}')">
-            <span class="opt-label text-[12px]">${v.label}</span>
-          </label>`).join('')}
-      </div>
-    </div>
-
-    <div class="mb-2">
-      <p class="text-[12px] font-medium text-[#888] mb-3">
-        Cantidad aproximada — <span id="qty-display" class="text-white">${state.quantity} unidades</span>
-      </p>
-      <input type="range" min="1" max="100" value="${state.quantity}" step="1"
-        class="w-full cursor-pointer mb-1"
-        oninput="setQuantity(this.value)">
-      <div class="flex justify-between text-[10px] text-[#333]"><span>1</span><span>25</span><span>50</span><span>100</span></div>
-    </div>`;
-}
-
 function renderStep3() {
   const estimate = calcEstimate();
-  const timeline = state.service === 'software' ? PRICING.timelines[state.type] : (state.quantity > 20 ? '5–10 días hábiles' : '2–5 días hábiles');
-  const hasEstimate = estimate !== null;
+  const timeline = PRICING.timelines[state.type];
+  const typeLabel = state.type ? PRICING.types[state.type].label : '';
 
   el('quoter-body').innerHTML = `
-    ${hasEstimate ? `
+    ${estimate ? `
     <div class="estimate-box mb-5">
       <p class="text-[10px] font-medium uppercase tracking-[0.15em] text-[#444] mb-2">Estimado orientativo</p>
       <p class="text-[28px] font-black tracking-tight leading-none mb-1">${fmt(estimate[0])} – ${fmt(estimate[1])} <span class="text-[14px] font-normal text-[#555]">USD</span></p>
-      <p class="text-[12px] text-[#444]">Plazo: ${timeline}</p>
+      <p class="text-[12px] text-[#444]">Plazo estimado: ${timeline}</p>
       <p class="text-[11px] text-[#333] mt-3">Estimado orientativo. El precio final depende del alcance detallado.</p>
     </div>` : `
     <div class="estimate-box mb-5 text-center py-5">
@@ -182,8 +102,10 @@ function renderStep3() {
     </div>`}
 
     <form id="quoter-form" action="https://formspree.io/f/xeeqrdlp" method="POST" class="space-y-3">
-      <input type="hidden" name="cotizador_servicio" value="${state.service === 'software' ? 'Software: ' + (PRICING.software[state.type]?.label || '') : 'Hardware: ' + state.categories.join(', ')}">
-      <input type="hidden" name="cotizador_estimado" value="${hasEstimate ? fmt(estimate[0]) + ' – ' + fmt(estimate[1]) + ' USD' : 'A confirmar'}">
+      <input type="hidden" name="cotizador_tipo" value="${typeLabel}">
+      <input type="hidden" name="cotizador_complejidad" value="${state.complexity}">
+      <input type="hidden" name="cotizador_extras" value="${state.features.join(', ') || 'Ninguno'}">
+      <input type="hidden" name="cotizador_estimado" value="${estimate ? fmt(estimate[0]) + ' – ' + fmt(estimate[1]) + ' USD' : 'A confirmar'}">
       <div class="grid md:grid-cols-2 gap-3">
         <input type="text" name="nombre" required placeholder="Nombre *" class="field">
         <input type="tel" name="whatsapp" required placeholder="WhatsApp *" class="field">
@@ -197,7 +119,6 @@ function renderStep3() {
       <p id="quoter-status" class="text-[12px] text-center hidden"></p>
     </form>`;
 
-  // Bind form submit
   document.getElementById('quoter-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = document.getElementById('quoter-submit');
@@ -225,35 +146,16 @@ function renderStep3() {
 }
 
 // State mutators
-function selectService(service) {
-  state.service = service;
-  state.step = 2;
-  updateUI();
-}
 function setSWType(type) { state.type = type; }
 function toggleFeature(f) {
   const i = state.features.indexOf(f);
   if (i > -1) state.features.splice(i, 1); else state.features.push(f);
 }
-function toggleCategory(c) {
-  const i = state.categories.indexOf(c);
-  if (i > -1) state.categories.splice(i, 1); else state.categories.push(c);
-}
-function setQuantity(v) {
-  state.quantity = parseInt(v);
-  const d = document.getElementById('qty-display');
-  if (d) d.textContent = state.quantity + ' unidades';
-}
 
 // Navigation
 function nextStep() {
-  if (state.step === 1 && !state.service) return;
-  if (state.step === 2 && state.service === 'software' && !state.type) {
+  if (state.step === 1 && !state.type) {
     alert('Por favor, seleccioná el tipo de proyecto.');
-    return;
-  }
-  if (state.step === 2 && state.service === 'hardware' && state.categories.length === 0) {
-    alert('Por favor, seleccioná al menos una categoría de producto.');
     return;
   }
   state.step++;
@@ -263,12 +165,11 @@ function prevStep() {
   if (state.step > 1) { state.step--; updateUI(); }
 }
 function resetQuoter() {
-  state = { step: 1, service: null, type: null, complexity: 'standard', features: [], categories: [], quantity: 5 };
+  state = { step: 1, type: null, complexity: 'standard', features: [] };
   updateUI();
 }
 
 function updateUI() {
-  // Steps
   [1, 2, 3].forEach(n => {
     const dot = document.getElementById('step-' + n);
     if (!dot) return;
@@ -279,12 +180,10 @@ function updateUI() {
     if (line) line.className = 'step-line' + (n < state.step ? ' done' : '');
   });
 
-  // Body
   if (state.step === 1) renderStep1();
   else if (state.step === 2) renderStep2();
   else if (state.step === 3) renderStep3();
 
-  // Nav buttons
   const prevBtn = document.getElementById('btn-prev');
   const nextBtn = document.getElementById('btn-next');
   if (prevBtn) prevBtn.classList.toggle('invisible', state.step === 1);

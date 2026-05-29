@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto & Cotización — NovaTec Engineering</title>
-  <meta name="description" content="Cotizá tu proyecto de software o hardware. Respondemos en menos de 24 horas hábiles.">
+  <meta name="description" content="Cotizá tu proyecto de software o consultanos por servicio técnico y hardware. Respondemos en menos de 24 horas hábiles.">
   <link rel="icon" href="img/logonovatec.jfif">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
@@ -79,18 +79,29 @@
         <!-- QUOTER (3/5) -->
         <div class="lg:col-span-3">
           <div class="border border-white/[0.06] bg-[#0a0a0a] rounded-2xl p-7">
-            <div class="flex items-center justify-between mb-7">
-              <h2 class="text-[15px] font-semibold">Cotizador</h2>
+            <div class="flex items-center justify-between mb-2">
+              <div>
+                <h2 class="text-[15px] font-semibold">Cotizador de Software</h2>
+                <p class="text-[11px] text-[#444] mt-0.5">Proyectos de desarrollo web y aplicaciones</p>
+              </div>
               <button onclick="resetQuoter()" class="text-[11px] text-[#444] hover:text-white transition-colors flex items-center gap-1.5">
                 <i class="fas fa-redo text-[10px]"></i> Reiniciar
               </button>
+            </div>
+
+            <!-- Scope notice -->
+            <div class="border border-white/[0.05] bg-white/[0.02] rounded-xl px-4 py-3 mb-7">
+              <p class="text-[11px] text-[#555] leading-[1.6]">
+                Este cotizador es exclusivo para proyectos de <span class="text-white/60 font-medium">Software y Desarrollo Web</span>.
+                Para servicio técnico de dispositivos o consultas de hardware, usá los canales directos de la columna derecha.
+              </p>
             </div>
 
             <!-- Step indicator -->
             <div class="flex items-center gap-2 mb-8">
               <div class="flex flex-col items-center gap-1">
                 <div id="step-1" class="s-dot active">1</div>
-                <span class="text-[10px] text-[#333]">Tipo</span>
+                <span class="text-[10px] text-[#333]">Proyecto</span>
               </div>
               <div id="line-1" class="s-line mb-4"></div>
               <div class="flex flex-col items-center gap-1">
@@ -132,7 +143,8 @@
               <select name="servicio" class="field">
                 <option value="">Tipo de consulta...</option>
                 <option value="software">Desarrollo de Software</option>
-                <option value="hardware">Provisión de Hardware</option>
+                <option value="tecnico">Servicio Técnico</option>
+                <option value="hardware">Hardware Corporativo</option>
                 <option value="consulta">Consulta general</option>
               </select>
               <textarea name="mensaje" required rows="3" placeholder="Mensaje *" class="field resize-none"></textarea>
@@ -142,6 +154,25 @@
               </button>
               <p id="form-status" class="text-[12px] text-center mt-2"></p>
             </form>
+          </div>
+
+          <!-- Servicio técnico — WhatsApp only -->
+          <div class="border border-white/[0.06] bg-[#0a0a0a] rounded-2xl p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-6 h-6 border border-white/[0.08] rounded-md flex items-center justify-center">
+                <i class="fas fa-wrench text-[#555] text-[10px]"></i>
+              </div>
+              <p class="text-[13px] font-semibold">Servicio Técnico</p>
+            </div>
+            <p class="text-[#555] text-[12px] leading-[1.6] mb-4">
+              Reparación y diagnóstico de equipos. Requiere evaluación previa en laboratorio — no disponible para cotización online.
+            </p>
+            <a href="https://wa.me/595992056945?text=Hola%2C%20quiero%20solicitar%20un%20turno%20t%C3%A9cnico%20para%20mi%20dispositivo"
+               target="_blank" rel="noopener"
+               class="flex items-center justify-center gap-2 w-full border border-white/[0.08] text-[#888] text-[12px] font-medium py-2.5 rounded-full hover:border-white/[0.2] hover:text-white transition-all">
+              <i class="fab fa-whatsapp text-[#25D366]"></i>
+              Solicitar turno técnico
+            </a>
           </div>
 
           <!-- Contact channels -->
