@@ -68,28 +68,25 @@ function calcEstimate() {
 // Step rendering
 function renderStep1() {
   el('quoter-body').innerHTML = `
-    <div class="text-center mb-8">
-      <h3 class="text-2xl font-bold mb-2">¿Qué tipo de solución necesitás?</h3>
-      <p class="text-gray-400 text-sm">Seleccioná el área para personalizar tu cotización</p>
-    </div>
-    <div class="grid md:grid-cols-2 gap-5">
+    <p class="text-[12px] text-[#444] mb-5">¿Qué tipo de solución necesitás?</p>
+    <div class="grid md:grid-cols-2 gap-3">
       <button onclick="selectService('software')"
-        class="bg-card border border-white/10 rounded-2xl p-7 text-left hover:border-primary/50 transition-all group cursor-pointer">
-        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-          <i class="fas fa-code text-primary text-xl"></i>
+        class="border border-white/[0.08] bg-[#111] rounded-xl p-5 text-left hover:border-white/[0.2] transition-all cursor-pointer group">
+        <div class="w-7 h-7 border border-white/[0.08] rounded-lg flex items-center justify-center mb-4">
+          <i class="fas fa-terminal text-[#555] text-[11px]"></i>
         </div>
-        <h4 class="text-lg font-bold mb-2">Software & Desarrollo</h4>
-        <p class="text-gray-400 text-sm">Sitios web, apps, sistemas a medida y consultoría digital.</p>
-        <span class="mt-4 inline-flex items-center gap-1 text-primary text-sm font-semibold">Seleccionar <i class="fas fa-arrow-right text-xs"></i></span>
+        <p class="text-[14px] font-semibold mb-1.5">Software & Desarrollo</p>
+        <p class="text-[#555] text-[12px] leading-[1.5]">Sitios web, apps, sistemas a medida.</p>
+        <span class="mt-4 inline-flex items-center gap-1 text-[12px] text-[#555] group-hover:text-white transition-colors">Seleccionar →</span>
       </button>
       <button onclick="selectService('hardware')"
-        class="bg-card border border-white/10 rounded-2xl p-7 text-left hover:border-secondary/50 transition-all group cursor-pointer">
-        <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mb-4">
-          <i class="fas fa-server text-secondary text-xl"></i>
+        class="border border-white/[0.08] bg-[#111] rounded-xl p-5 text-left hover:border-white/[0.2] transition-all cursor-pointer group">
+        <div class="w-7 h-7 border border-white/[0.08] rounded-lg flex items-center justify-center mb-4">
+          <i class="fas fa-server text-[#555] text-[11px]"></i>
         </div>
-        <h4 class="text-lg font-bold mb-2">Provisión de Hardware</h4>
-        <p class="text-gray-400 text-sm">Laptops, servidores, networking y más a precio mayorista.</p>
-        <span class="mt-4 inline-flex items-center gap-1 text-secondary text-sm font-semibold">Seleccionar <i class="fas fa-arrow-right text-xs"></i></span>
+        <p class="text-[14px] font-semibold mb-1.5">Provisión de Hardware</p>
+        <p class="text-[#555] text-[12px] leading-[1.5]">Laptops, servidores, networking a precio mayorista.</p>
+        <span class="mt-4 inline-flex items-center gap-1 text-[12px] text-[#555] group-hover:text-white transition-colors">Seleccionar →</span>
       </button>
     </div>`;
 }
@@ -105,45 +102,37 @@ function renderStep2() {
 function renderStep2Software() {
   const types = Object.entries(PRICING.software);
   el('quoter-body').innerHTML = `
-    <div class="mb-8">
-      <h3 class="text-2xl font-bold mb-2">Configurá tu proyecto</h3>
-      <p class="text-gray-400 text-sm">Completá los detalles para obtener un estimado preciso</p>
-    </div>
+    <p class="text-[12px] text-[#444] mb-5">Configurá tu proyecto de software</p>
 
-    <div class="mb-7">
-      <label class="block text-sm font-semibold text-gray-300 mb-3">Tipo de proyecto</label>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+    <div class="mb-6">
+      <p class="text-[12px] font-medium text-[#888] mb-3">Tipo de proyecto</p>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
         ${types.map(([key, val]) => `
-          <label class="option-card">
+          <label class="opt">
             <input type="radio" name="sw-type" value="${key}" ${state.type === key ? 'checked' : ''} onchange="setSWType('${key}')">
-            <span class="option-label text-sm font-medium text-center block py-3 px-2">${val.label}</span>
+            <span class="opt-label text-[12px] font-medium text-center">${val.label}</span>
           </label>`).join('')}
       </div>
     </div>
 
-    <div class="mb-7">
-      <label class="block text-sm font-semibold text-gray-300 mb-3">Nivel de complejidad</label>
-      <div class="grid grid-cols-3 gap-3">
-        ${[['basic','Básico','Funcional y directo'],['standard','Estándar','Balanceado y profesional'],['premium','Premium','Completo y personalizado']].map(([k,t,d]) => `
-          <label class="option-card">
+    <div class="mb-6">
+      <p class="text-[12px] font-medium text-[#888] mb-3">Complejidad</p>
+      <div class="grid grid-cols-3 gap-2">
+        ${[['basic','Básico'],['standard','Estándar'],['premium','Premium']].map(([k,t]) => `
+          <label class="opt">
             <input type="radio" name="complexity" value="${k}" ${state.complexity === k ? 'checked' : ''} onchange="state.complexity='${k}'">
-            <span class="option-label text-center">
-              <span class="block font-bold text-sm mb-1">${t}</span>
-              <span class="block text-xs text-gray-400">${d}</span>
-            </span>
+            <span class="opt-label text-[12px] font-medium text-center">${t}</span>
           </label>`).join('')}
       </div>
     </div>
 
-    <div class="mb-7">
-      <label class="block text-sm font-semibold text-gray-300 mb-3">Funcionalidades adicionales <span class="text-gray-500 font-normal">(opcional)</span></label>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+    <div class="mb-2">
+      <p class="text-[12px] font-medium text-[#888] mb-3">Extras <span class="text-[#333] font-normal">(opcional)</span></p>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
         ${[['cms','Panel CMS'],['blog','Blog'],['payments','Pagos online'],['auth','Login / Usuarios'],['analytics','Analíticas'],['multilang','Multiidioma']].map(([k,t]) => `
-          <label class="option-card">
+          <label class="opt">
             <input type="checkbox" value="${k}" ${state.features.includes(k) ? 'checked' : ''} onchange="toggleFeature('${k}')">
-            <span class="option-label flex items-center gap-2 text-sm">
-              <i class="fas fa-check text-primary text-xs opacity-0 check-icon"></i>${t}
-            </span>
+            <span class="opt-label text-[12px]">${t}</span>
           </label>`).join('')}
       </div>
     </div>`;
@@ -151,30 +140,27 @@ function renderStep2Software() {
 
 function renderStep2Hardware() {
   el('quoter-body').innerHTML = `
-    <div class="mb-8">
-      <h3 class="text-2xl font-bold mb-2">Configurá tu pedido</h3>
-      <p class="text-gray-400 text-sm">Seleccioná los productos que necesitás</p>
-    </div>
+    <p class="text-[12px] text-[#444] mb-5">Configurá tu pedido de hardware</p>
 
-    <div class="mb-7">
-      <label class="block text-sm font-semibold text-gray-300 mb-3">Categorías de productos</label>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+    <div class="mb-6">
+      <p class="text-[12px] font-medium text-[#888] mb-3">Categorías</p>
+      <div class="grid grid-cols-2 gap-2">
         ${Object.entries(PRICING.hardware).map(([k, v]) => `
-          <label class="option-card">
+          <label class="opt">
             <input type="checkbox" value="${k}" ${state.categories.includes(k) ? 'checked' : ''} onchange="toggleCategory('${k}')">
-            <span class="option-label text-sm font-medium">${v.label}</span>
+            <span class="opt-label text-[12px]">${v.label}</span>
           </label>`).join('')}
       </div>
     </div>
 
-    <div class="mb-7">
-      <label class="block text-sm font-semibold text-gray-300 mb-3">
-        Cantidad aproximada <span class="text-primary font-bold" id="qty-display">${state.quantity} unidades</span>
-      </label>
+    <div class="mb-2">
+      <p class="text-[12px] font-medium text-[#888] mb-3">
+        Cantidad aproximada — <span id="qty-display" class="text-white">${state.quantity} unidades</span>
+      </p>
       <input type="range" min="1" max="100" value="${state.quantity}" step="1"
-        class="w-full accent-primary cursor-pointer"
+        class="w-full cursor-pointer mb-1"
         oninput="setQuantity(this.value)">
-      <div class="flex justify-between text-xs text-gray-500 mt-1"><span>1</span><span>25</span><span>50</span><span>100</span></div>
+      <div class="flex justify-between text-[10px] text-[#333]"><span>1</span><span>25</span><span>50</span><span>100</span></div>
     </div>`;
 }
 
@@ -184,55 +170,31 @@ function renderStep3() {
   const hasEstimate = estimate !== null;
 
   el('quoter-body').innerHTML = `
-    <div class="mb-6">
-      <h3 class="text-2xl font-bold mb-2">Tu estimado</h3>
-      <p class="text-gray-400 text-sm">Completá tus datos y enviamos la cotización formal</p>
-    </div>
-
     ${hasEstimate ? `
-    <div class="bg-primary/5 border border-primary/20 rounded-2xl p-6 mb-7">
-      <div class="flex items-center justify-between flex-wrap gap-4">
-        <div>
-          <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Rango estimado</p>
-          <p class="text-3xl font-black text-primary">${fmt(estimate[0])} – ${fmt(estimate[1])} <span class="text-base font-normal text-gray-400">USD</span></p>
-        </div>
-        <div class="text-right">
-          <p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Plazo estimado</p>
-          <p class="text-lg font-bold">${timeline}</p>
-        </div>
-      </div>
-      <p class="text-xs text-gray-500 mt-4">* Estimado orientativo. La cotización final puede variar según requerimientos específicos.</p>
+    <div class="estimate-box mb-5">
+      <p class="text-[10px] font-medium uppercase tracking-[0.15em] text-[#444] mb-2">Estimado orientativo</p>
+      <p class="text-[28px] font-black tracking-tight leading-none mb-1">${fmt(estimate[0])} – ${fmt(estimate[1])} <span class="text-[14px] font-normal text-[#555]">USD</span></p>
+      <p class="text-[12px] text-[#444]">Plazo: ${timeline}</p>
+      <p class="text-[11px] text-[#333] mt-3">Estimado orientativo. El precio final depende del alcance detallado.</p>
     </div>` : `
-    <div class="bg-white/5 border border-white/10 rounded-2xl p-6 mb-7 text-center">
-      <p class="text-gray-400 text-sm">Completá tus datos y te enviamos una cotización personalizada.</p>
+    <div class="estimate-box mb-5 text-center py-5">
+      <p class="text-[13px] text-[#444]">Completá tus datos y te enviamos una cotización personalizada.</p>
     </div>`}
 
-    <form id="quoter-form" action="https://formspree.io/f/xeeqrdlp" method="POST" class="space-y-4">
+    <form id="quoter-form" action="https://formspree.io/f/xeeqrdlp" method="POST" class="space-y-3">
       <input type="hidden" name="cotizador_servicio" value="${state.service === 'software' ? 'Software: ' + (PRICING.software[state.type]?.label || '') : 'Hardware: ' + state.categories.join(', ')}">
       <input type="hidden" name="cotizador_estimado" value="${hasEstimate ? fmt(estimate[0]) + ' – ' + fmt(estimate[1]) + ' USD' : 'A confirmar'}">
-      <div class="grid md:grid-cols-2 gap-4">
-        <div>
-          <label class="block text-xs font-semibold text-gray-400 mb-1.5 uppercase tracking-wider">Nombre *</label>
-          <input type="text" name="nombre" required placeholder="Tu nombre" class="form-input">
-        </div>
-        <div>
-          <label class="block text-xs font-semibold text-gray-400 mb-1.5 uppercase tracking-wider">WhatsApp *</label>
-          <input type="tel" name="whatsapp" required placeholder="Ej: 0992 000 000" class="form-input">
-        </div>
+      <div class="grid md:grid-cols-2 gap-3">
+        <input type="text" name="nombre" required placeholder="Nombre *" class="field">
+        <input type="tel" name="whatsapp" required placeholder="WhatsApp *" class="field">
       </div>
-      <div>
-        <label class="block text-xs font-semibold text-gray-400 mb-1.5 uppercase tracking-wider">Empresa <span class="text-gray-600 normal-case">(opcional)</span></label>
-        <input type="text" name="empresa" placeholder="Nombre de tu empresa" class="form-input">
-      </div>
-      <div>
-        <label class="block text-xs font-semibold text-gray-400 mb-1.5 uppercase tracking-wider">Detalles adicionales</label>
-        <textarea name="mensaje" rows="3" placeholder="Contanos más sobre tu proyecto..." class="form-input resize-none"></textarea>
-      </div>
+      <input type="text" name="empresa" placeholder="Empresa (opcional)" class="field">
+      <textarea name="mensaje" rows="3" placeholder="Detalles adicionales..." class="field resize-none"></textarea>
       <button type="submit" id="quoter-submit"
-        class="w-full bg-primary text-dark font-bold py-3.5 rounded-xl hover:opacity-90 transition-opacity glow-btn text-base">
-        Solicitar Cotización Formal
+        class="w-full bg-white text-black text-[13px] font-semibold py-3 rounded-full hover:bg-white/90 transition-colors">
+        Solicitar cotización formal
       </button>
-      <p id="quoter-status" class="text-center text-sm hidden"></p>
+      <p id="quoter-status" class="text-[12px] text-center hidden"></p>
     </form>`;
 
   // Bind form submit
@@ -247,17 +209,17 @@ function renderStep3() {
         method: 'POST', body: new FormData(e.target), headers: { Accept: 'application/json' },
       });
       if (res.ok) {
-        status.textContent = '¡Cotización enviada! Te contactamos a la brevedad.';
-        status.className = 'text-center text-sm text-primary font-semibold mt-2';
+        status.textContent = 'Cotización enviada. Te contactamos a la brevedad.';
+        status.className = 'text-center text-[12px] text-white/60 mt-1';
         status.classList.remove('hidden');
         e.target.reset();
       } else throw new Error();
     } catch {
-      status.textContent = 'Error. Escribinos por WhatsApp.';
-      status.className = 'text-center text-sm text-red-400 mt-2';
+      status.textContent = 'Error al enviar. Escribinos por WhatsApp.';
+      status.className = 'text-center text-[12px] text-red-400 mt-1';
       status.classList.remove('hidden');
       btn.disabled = false;
-      btn.textContent = 'Solicitar Cotización Formal';
+      btn.textContent = 'Solicitar cotización formal';
     }
   });
 }
@@ -328,7 +290,7 @@ function updateUI() {
   if (prevBtn) prevBtn.classList.toggle('invisible', state.step === 1);
   if (nextBtn) {
     nextBtn.classList.toggle('hidden', state.step === 3);
-    nextBtn.textContent = state.step === 2 ? 'Ver Estimado →' : 'Siguiente →';
+    nextBtn.textContent = state.step === 2 ? 'Ver estimado →' : 'Siguiente →';
   }
 }
 

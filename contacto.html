@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cotización y Contacto | NovaTec Engineering</title>
-  <meta name="description" content="Solicitá una cotización de software o hardware corporativo con NovaTec Engineering. Cotizador interactivo y respuesta en 24hs.">
+  <title>Contacto & Cotización — NovaTec Engineering</title>
+  <meta name="description" content="Cotizá tu proyecto de software o hardware. Respondemos en menos de 24 horas hábiles.">
   <link rel="icon" href="img/logonovatec.jfif">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: { primary: '#00f2ff', secondary: '#7000ff', dark: '#050505', card: '#111111' },
-          fontFamily: { sans: ['Outfit', 'sans-serif'] }
+          colors: { brand: '#00f2ff', card: '#111111', surface: '#0a0a0a' },
+          fontFamily: { sans: ['Inter', 'sans-serif'] }
         }
       }
     }
@@ -22,183 +22,164 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-dark text-white font-sans">
+<body class="bg-black text-white font-sans antialiased">
 
   <!-- NAV -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-dark/90 backdrop-blur-md border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <a href="index.html" class="flex items-center gap-2.5 font-black text-xl tracking-tight">
-          <img src="img/logonovatec.jfif" alt="NovaTec" class="w-8 h-8 rounded-full object-cover">
-          NOVA<span class="text-primary">TEC</span>
-        </a>
-        <div class="hidden md:flex items-center gap-7">
-          <a href="index.html" data-page="index.html" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Inicio</a>
-          <a href="software.html" data-page="software.html" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Software</a>
-          <a href="hardware.html" data-page="hardware.html" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Hardware</a>
-          <a href="portafolio.html" data-page="portafolio.html" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Portafolio</a>
-          <a href="contacto.html" class="bg-primary text-dark text-sm font-bold px-5 py-2 rounded-lg hover:opacity-90 transition-opacity">Cotizar</a>
-        </div>
-        <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menú">
-          <span id="bar1" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
-          <span id="bar2" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
-          <span id="bar3" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
-        </button>
+  <nav class="fixed top-0 inset-x-0 z-50 h-12 flex items-center border-b border-white/[0.06] bg-black/85 backdrop-blur-xl">
+    <div class="w-full max-w-[1200px] mx-auto px-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 font-semibold text-[15px] tracking-tight">
+        <img src="img/logonovatec.jfif" alt="NT" class="w-5 h-5 rounded-full object-cover">
+        Nova<span style="color:#00f2ff">Tec</span>
+      </a>
+      <div class="hidden md:flex items-center gap-6">
+        <a href="software.html" data-page="software.html" class="text-[13px] text-[#666] hover:text-white transition-colors">Software</a>
+        <a href="hardware.html" data-page="hardware.html" class="text-[13px] text-[#666] hover:text-white transition-colors">Hardware</a>
+        <a href="portafolio.html" data-page="portafolio.html" class="text-[13px] text-[#666] hover:text-white transition-colors">Portafolio</a>
+        <a href="contacto.html" class="text-[13px] text-white">Contacto</a>
+        <a href="contacto.html" class="text-[13px] font-medium bg-white text-black px-4 py-1.5 rounded-full hover:bg-white/90 transition-colors">Empezar proyecto</a>
       </div>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-card border-b border-white/10 px-4 pb-5">
-      <div class="flex flex-col gap-1 pt-4">
-        <a href="index.html" class="text-gray-300 hover:text-primary py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors">Inicio</a>
-        <a href="software.html" class="text-gray-300 hover:text-primary py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors">Software</a>
-        <a href="hardware.html" class="text-gray-300 hover:text-primary py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors">Hardware</a>
-        <a href="portafolio.html" class="text-gray-300 hover:text-primary py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors">Portafolio</a>
-        <a href="contacto.html" class="bg-primary text-dark font-bold text-center py-2.5 px-3 rounded-lg mt-2">Cotizar</a>
-      </div>
+      <button id="menu-btn" class="md:hidden p-1.5" aria-label="Menú">
+        <span id="bar1" class="block w-5 h-px bg-white mb-1.5 transition-all duration-200"></span>
+        <span id="bar2" class="block w-5 h-px bg-white mb-1.5 transition-all duration-200"></span>
+        <span id="bar3" class="block w-5 h-px bg-white transition-all duration-200"></span>
+      </button>
     </div>
   </nav>
+  <div id="mobile-menu" class="hidden fixed top-12 inset-x-0 z-40 bg-black border-b border-white/[0.06] px-6 pb-5 pt-4">
+    <div class="flex flex-col gap-1">
+      <a href="software.html" class="text-[#888] hover:text-white py-2.5 text-[14px] border-b border-white/[0.05]">Software</a>
+      <a href="hardware.html" class="text-[#888] hover:text-white py-2.5 text-[14px] border-b border-white/[0.05]">Hardware</a>
+      <a href="portafolio.html" class="text-[#888] hover:text-white py-2.5 text-[14px] border-b border-white/[0.05]">Portafolio</a>
+      <a href="contacto.html" class="text-white py-2.5 text-[14px] border-b border-white/[0.05]">Contacto</a>
+      <a href="contacto.html" class="mt-3 text-center text-[13px] font-medium bg-white text-black px-4 py-2.5 rounded-full">Empezar proyecto</a>
+    </div>
+  </div>
 
-  <!-- PAGE HERO -->
-  <section class="pt-32 pb-12 relative overflow-hidden">
-    <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <nav class="flex items-center gap-2 text-sm text-gray-500 mb-7" aria-label="Breadcrumb">
-        <a href="index.html" class="hover:text-primary transition-colors">Inicio</a>
-        <span>/</span>
-        <span class="text-gray-300">Cotización & Contacto</span>
+  <!-- PAGE HEADER -->
+  <section class="pt-32 pb-16 border-b border-white/[0.06]">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <nav class="text-[12px] text-[#444] mb-8 flex items-center gap-2">
+        <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+        <span>/</span><span>Contacto</span>
       </nav>
-      <div class="max-w-3xl">
-        <span class="inline-flex items-center gap-2 bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-primary/20 mb-6">
-          <span class="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
-          Respuesta en 24hs
-        </span>
-        <h1 class="text-5xl md:text-6xl font-black leading-tight mb-5 gradient-text">Hablemos de<br>tu proyecto.</h1>
-        <p class="text-gray-400 text-lg leading-relaxed max-w-xl">Usá el cotizador interactivo para obtener un estimado inmediato, o completá el formulario y te contactamos a la brevedad.</p>
-      </div>
+      <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-[#444] mb-6">Cotización & Contacto</p>
+      <h1 class="font-black tracking-[-0.03em] leading-[0.95] headline-gradient mb-5 will-fade"
+          style="font-size: clamp(40px, 5.5vw, 64px);">
+        Contanos sobre<br>tu proyecto.
+      </h1>
+      <p class="text-[#666] text-[14px] will-fade">Respondemos en menos de 24 horas hábiles.</p>
     </div>
   </section>
 
-  <!-- MAIN CONTENT -->
-  <section class="py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-3 gap-10">
+  <!-- MAIN -->
+  <section class="py-16">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <div class="grid lg:grid-cols-5 gap-8">
 
-        <!-- QUOTER (2/3 width) -->
-        <div class="lg:col-span-2">
-          <div class="bg-card border border-white/10 rounded-2xl p-8">
-            <div class="flex items-center justify-between mb-8">
-              <h2 class="text-xl font-bold">Cotizador Interactivo</h2>
-              <button onclick="resetQuoter()" class="text-xs text-gray-500 hover:text-primary transition-colors flex items-center gap-1.5">
-                <i class="fas fa-redo text-xs"></i> Reiniciar
+        <!-- QUOTER (3/5) -->
+        <div class="lg:col-span-3">
+          <div class="border border-white/[0.06] bg-[#0a0a0a] rounded-2xl p-7">
+            <div class="flex items-center justify-between mb-7">
+              <h2 class="text-[15px] font-semibold">Cotizador</h2>
+              <button onclick="resetQuoter()" class="text-[11px] text-[#444] hover:text-white transition-colors flex items-center gap-1.5">
+                <i class="fas fa-redo text-[10px]"></i> Reiniciar
               </button>
             </div>
 
             <!-- Step indicator -->
             <div class="flex items-center gap-2 mb-8">
               <div class="flex flex-col items-center gap-1">
-                <div id="step-1" class="step-dot active">1</div>
-                <span class="text-xs text-gray-600">Tipo</span>
+                <div id="step-1" class="s-dot active">1</div>
+                <span class="text-[10px] text-[#333]">Tipo</span>
               </div>
-              <div id="line-1" class="step-line flex-1 mb-4"></div>
+              <div id="line-1" class="s-line mb-4"></div>
               <div class="flex flex-col items-center gap-1">
-                <div id="step-2" class="step-dot">2</div>
-                <span class="text-xs text-gray-600">Detalles</span>
+                <div id="step-2" class="s-dot">2</div>
+                <span class="text-[10px] text-[#333]">Detalles</span>
               </div>
-              <div id="line-2" class="step-line flex-1 mb-4"></div>
+              <div id="line-2" class="s-line mb-4"></div>
               <div class="flex flex-col items-center gap-1">
-                <div id="step-3" class="step-dot">3</div>
-                <span class="text-xs text-gray-600">Estimado</span>
+                <div id="step-3" class="s-dot">3</div>
+                <span class="text-[10px] text-[#333]">Estimado</span>
               </div>
             </div>
 
-            <!-- Quoter body -->
             <div id="quoter-body"></div>
 
-            <!-- Navigation buttons -->
-            <div class="flex justify-between items-center mt-8 pt-6 border-t border-white/10">
-              <button id="btn-prev" onclick="prevStep()" class="invisible flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm font-semibold">
-                <i class="fas fa-arrow-left text-xs"></i> Atrás
+            <div class="flex justify-between items-center mt-7 pt-6 border-t border-white/[0.05]">
+              <button id="btn-prev" onclick="prevStep()"
+                class="invisible text-[12px] text-[#444] hover:text-white transition-colors flex items-center gap-1.5">
+                ← Atrás
               </button>
               <button id="btn-next" onclick="nextStep()"
-                class="bg-primary text-dark font-bold px-7 py-2.5 rounded-xl hover:opacity-90 transition-opacity text-sm">
+                class="bg-white text-black text-[13px] font-semibold px-5 py-2 rounded-full hover:bg-white/90 transition-colors">
                 Siguiente →
               </button>
             </div>
           </div>
         </div>
 
-        <!-- SIDEBAR (1/3 width) -->
-        <div class="flex flex-col gap-6">
+        <!-- SIDEBAR (2/5) -->
+        <div class="lg:col-span-2 flex flex-col gap-4">
 
-          <!-- Contact Form -->
-          <div class="bg-card border border-white/10 rounded-2xl p-6">
-            <h3 class="font-bold mb-1">Mensaje directo</h3>
-            <p class="text-gray-500 text-sm mb-5">Para consultas generales o sin usar el cotizador.</p>
-            <form id="contact-form" action="https://formspree.io/f/xeeqrdlp" method="POST" class="space-y-4">
-              <div>
-                <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Nombre *</label>
-                <input type="text" name="nombre" required placeholder="Tu nombre completo" class="form-input">
-              </div>
-              <div>
-                <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">WhatsApp *</label>
-                <input type="tel" name="telefono" required placeholder="0992 000 000" class="form-input">
-              </div>
-              <div>
-                <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Servicio</label>
-                <select name="servicio" class="form-input">
-                  <option value="">Seleccioná...</option>
-                  <option value="software">Desarrollo de Software</option>
-                  <option value="hardware">Provisión de Hardware</option>
-                  <option value="consulta">Consulta General</option>
-                </select>
-              </div>
-              <div>
-                <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">Mensaje *</label>
-                <textarea name="mensaje" required rows="4" placeholder="Contanos sobre tu proyecto..." class="form-input resize-none"></textarea>
-              </div>
-              <button type="submit" class="w-full bg-white/10 border border-white/20 text-white font-bold py-3 rounded-xl hover:bg-white/15 transition-colors text-sm">
-                Enviar Mensaje
+          <!-- Quick form -->
+          <div class="border border-white/[0.06] bg-[#0a0a0a] rounded-2xl p-6">
+            <h3 class="text-[14px] font-semibold mb-1">Mensaje directo</h3>
+            <p class="text-[#444] text-[12px] mb-5">Para consultas sin usar el cotizador.</p>
+            <form id="contact-form" action="https://formspree.io/f/xeeqrdlp" method="POST" class="space-y-3">
+              <input type="text" name="nombre" required placeholder="Nombre *" class="field">
+              <input type="tel" name="telefono" required placeholder="WhatsApp *" class="field">
+              <select name="servicio" class="field">
+                <option value="">Tipo de consulta...</option>
+                <option value="software">Desarrollo de Software</option>
+                <option value="hardware">Provisión de Hardware</option>
+                <option value="consulta">Consulta general</option>
+              </select>
+              <textarea name="mensaje" required rows="3" placeholder="Mensaje *" class="field resize-none"></textarea>
+              <button type="submit"
+                class="w-full border border-white/[0.1] text-[#888] text-[13px] font-medium py-2.5 rounded-full hover:bg-white/[0.04] hover:text-white transition-colors">
+                Enviar mensaje
               </button>
-              <p id="form-status" class="text-xs text-center"></p>
+              <p id="form-status" class="text-[12px] text-center mt-2"></p>
             </form>
           </div>
 
-          <!-- Contact Info -->
-          <div class="bg-card border border-white/10 rounded-2xl p-6">
-            <h3 class="font-bold mb-5">Contacto directo</h3>
-            <div class="space-y-4">
-              <a href="https://wa.me/595992056945?text=Hola%20NovaTec,%20quiero%20consultar%20sobre" target="_blank" rel="noopener"
-                class="flex items-center gap-4 p-4 bg-green-500/5 border border-green-500/20 rounded-xl hover:bg-green-500/10 transition-colors group">
-                <div class="w-10 h-10 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <i class="fab fa-whatsapp text-green-400 text-lg"></i>
+          <!-- Contact channels -->
+          <div class="border border-white/[0.06] bg-[#0a0a0a] rounded-2xl p-6">
+            <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-[#333] mb-4">Canales directos</p>
+            <div class="space-y-3">
+              <a href="https://wa.me/595992056945" target="_blank" rel="noopener"
+                 class="flex items-center gap-3 p-3 border border-white/[0.06] rounded-xl hover:border-white/[0.12] transition-all group">
+                <div class="w-7 h-7 flex items-center justify-center">
+                  <i class="fab fa-whatsapp text-[#25D366] text-[16px]"></i>
                 </div>
                 <div>
-                  <p class="text-xs text-gray-500 mb-0.5">WhatsApp</p>
-                  <p class="font-semibold text-sm">+595 992 056 945</p>
+                  <p class="text-[12px] font-medium">WhatsApp</p>
+                  <p class="text-[11px] text-[#444]">+595 992 056 945</p>
                 </div>
-                <i class="fas fa-external-link-alt text-gray-600 text-xs ml-auto group-hover:text-green-400 transition-colors"></i>
+                <i class="fas fa-arrow-right text-[#333] text-[11px] ml-auto group-hover:text-white transition-colors"></i>
               </a>
               <a href="https://www.tiktok.com/@novatec.py" target="_blank" rel="noopener"
-                class="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-colors group">
-                <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <i class="fab fa-tiktok text-gray-300 text-lg"></i>
+                 class="flex items-center gap-3 p-3 border border-white/[0.06] rounded-xl hover:border-white/[0.12] transition-all group">
+                <div class="w-7 h-7 flex items-center justify-center">
+                  <i class="fab fa-tiktok text-white/60 text-[14px]"></i>
                 </div>
                 <div>
-                  <p class="text-xs text-gray-500 mb-0.5">TikTok</p>
-                  <p class="font-semibold text-sm">@novatec.py</p>
+                  <p class="text-[12px] font-medium">TikTok</p>
+                  <p class="text-[11px] text-[#444]">@novatec.py</p>
                 </div>
-                <i class="fas fa-external-link-alt text-gray-600 text-xs ml-auto group-hover:text-primary transition-colors"></i>
+                <i class="fas fa-arrow-right text-[#333] text-[11px] ml-auto group-hover:text-white transition-colors"></i>
               </a>
             </div>
           </div>
 
-          <!-- Commitment card -->
-          <div class="bg-primary/5 border border-primary/20 rounded-2xl p-6">
-            <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-              <i class="fas fa-bolt text-primary"></i>
+          <!-- SLA -->
+          <div class="border border-white/[0.06] rounded-2xl p-5 bg-[#0a0a0a]">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+              <p class="text-[12px] font-medium">Disponibles ahora</p>
             </div>
-            <h4 class="font-bold mb-2">Respuesta garantizada</h4>
-            <p class="text-gray-400 text-sm leading-relaxed">Respondemos todas las consultas en menos de <span class="text-primary font-semibold">24 horas hábiles</span>.</p>
+            <p class="text-[#444] text-[12px] leading-[1.6]">Respondemos toda consulta en menos de <span class="text-white">24 horas hábiles</span>.</p>
           </div>
 
         </div>
@@ -207,41 +188,44 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-black border-t border-white/10 pt-16 pb-8 mt-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-10 border-b border-white/10">
-        <div class="md:col-span-2">
-          <a href="index.html" class="flex items-center gap-2.5 font-black text-xl tracking-tight mb-4">
-            <img src="img/logonovatec.jfif" alt="NovaTec" class="w-8 h-8 rounded-full object-cover">
-            NOVA<span class="text-primary">TEC</span>
+  <footer class="border-t border-white/[0.06] py-12 bg-black mt-8">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-start justify-between gap-10 mb-10">
+        <div>
+          <a href="index.html" class="flex items-center gap-2 font-semibold text-[14px] tracking-tight mb-3">
+            <img src="img/logonovatec.jfif" alt="NT" class="w-5 h-5 rounded-full object-cover">
+            Nova<span style="color:#00f2ff">Tec</span>
           </a>
-          <p class="text-gray-500 text-sm leading-relaxed max-w-xs mb-6">Soluciones tecnológicas integrales para empresas que buscan crecer en la era digital.</p>
-          <div class="flex gap-3">
-            <a href="https://wa.me/595992056945" target="_blank" rel="noopener" class="w-9 h-9 bg-white/5 rounded-lg flex items-center justify-center text-gray-400 hover:text-primary hover:bg-primary/10 transition-all"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.tiktok.com/@novatec.py" target="_blank" rel="noopener" class="w-9 h-9 bg-white/5 rounded-lg flex items-center justify-center text-gray-400 hover:text-primary hover:bg-primary/10 transition-all"><i class="fab fa-tiktok"></i></a>
+          <p class="text-[#444] text-[12px] max-w-[220px] leading-relaxed">Desarrollo de software y sitios web. Asunción, Paraguay.</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-10 text-[13px]">
+          <div>
+            <p class="text-[#333] font-medium mb-4 text-[11px] uppercase tracking-widest">Servicios</p>
+            <div class="space-y-2.5">
+              <a href="software.html" class="block text-[#555] hover:text-white transition-colors">Software</a>
+              <a href="hardware.html" class="block text-[#555] hover:text-white transition-colors">Hardware</a>
+              <a href="portafolio.html" class="block text-[#555] hover:text-white transition-colors">Portafolio</a>
+            </div>
+          </div>
+          <div>
+            <p class="text-[#333] font-medium mb-4 text-[11px] uppercase tracking-widest">Empresa</p>
+            <div class="space-y-2.5">
+              <a href="contacto.html" class="block text-white">Contacto</a>
+              <a href="https://www.tiktok.com/@novatec.py" target="_blank" rel="noopener" class="block text-[#555] hover:text-white transition-colors">TikTok</a>
+            </div>
+          </div>
+          <div>
+            <p class="text-[#333] font-medium mb-4 text-[11px] uppercase tracking-widest">Contacto</p>
+            <div class="space-y-2.5">
+              <p class="text-[#555]">+595 992 056 945</p>
+              <p class="text-[#555]">novatec.com.py</p>
+            </div>
           </div>
         </div>
-        <div>
-          <h5 class="text-xs font-bold uppercase tracking-widest text-gray-600 mb-4">Servicios</h5>
-          <ul class="space-y-3">
-            <li><a href="software.html" class="text-sm text-gray-400 hover:text-primary transition-colors">Desarrollo de Software</a></li>
-            <li><a href="hardware.html" class="text-sm text-gray-400 hover:text-primary transition-colors">Provisión de Hardware</a></li>
-            <li><a href="portafolio.html" class="text-sm text-gray-400 hover:text-primary transition-colors">Portafolio</a></li>
-            <li><a href="contacto.html" class="text-sm text-gray-400 hover:text-primary transition-colors">Cotizar</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="text-xs font-bold uppercase tracking-widest text-gray-600 mb-4">Contacto</h5>
-          <ul class="space-y-3">
-            <li class="text-sm text-gray-400">+595 992 056 945</li>
-            <li class="text-sm text-gray-400">@novatec.py</li>
-            <li class="text-sm text-gray-400">Asunción, Paraguay</li>
-          </ul>
-        </div>
       </div>
-      <div class="flex flex-col md:flex-row justify-between items-center pt-8 gap-3">
-        <p class="text-xs text-gray-600">© 2024 NovaTec Engineering. Todos los derechos reservados.</p>
-        <p class="text-xs text-gray-600">novatec.com.py</p>
+      <div class="border-t border-white/[0.05] pt-6 flex justify-between items-center">
+        <p class="text-[11px] text-[#333]">© 2024 NovaTec Engineering</p>
+        <p class="text-[11px] text-[#333]">Asunción, Paraguay</p>
       </div>
     </div>
   </footer>
