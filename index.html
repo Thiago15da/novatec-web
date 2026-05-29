@@ -1,268 +1,352 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nova Tec | Reparación de Celulares y Diseño Web en Paraguay</title>
-    <meta name="description" content="Expertos en reparación técnica de celulares, laptops y creación de páginas web profesionales en Asunción y Central. Potenciamos tu negocio en 7 días.">
-    <meta name="keywords" content="reparación de celulares paraguay, diseño web asunción, servicio técnico notebooks luque, crear página web paraguay, novatec">
-    <meta name="google-site-verification" content="OSgHoHdo01-KzYPgR-IHtyJBJacFvOIVgksFE3Ezykw" />
-    <meta property="og:title" content="Nova Tec | Tecnología y Diseño Web">
-    <meta property="og:description" content="Soluciones técnicas y digitales para tu negocio en Paraguay.">
-    <meta property="og:image" content="https://novatec.com.py/logo.png"> <meta property="og:url" content="https://novatec.com.py">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaTec Engineering | Software & Hardware Corporativo</title>
+  <meta name="description" content="Soluciones tecnológicas integrales: desarrollo de software a medida y provisión de hardware corporativo mayorista en Paraguay.">
+  <meta name="keywords" content="desarrollo software paraguay, hardware corporativo mayorista, novatec engineering, páginas web asunción">
+  <meta name="google-site-verification" content="OSgHoHdo01-KzYPgR-IHtyJBJacFvOIVgksFE3Ezykw">
+  <meta property="og:title" content="NovaTec Engineering | Software & Hardware Corporativo">
+  <meta property="og:description" content="Software a medida y hardware mayorista. Una empresa, todas las soluciones.">
+  <meta property="og:image" content="https://novatec.com.py/img/logonovatec.jfif">
+  <meta property="og:url" content="https://novatec.com.py">
+  <link rel="icon" href="img/logonovatec.jfif">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#00f2ff', secondary: '#7000ff', dark: '#050505', card: '#111111' },
+          fontFamily: { sans: ['Outfit', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <nav class="navbar">
-        <div class="container nav-content">
-            <div class="logo">
-    <img src="img/logonovatec.jfif" alt="NovaTec Logo" style="height: 40px; vertical-align: middle;">
-    NOVA<span class="color-text">TEC</span>
-</div>
-            <ul class="nav-menu">
-                <li><a href="#inicio">Inicio</a></li>   
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#proceso">¿Cómo funciona?</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="https://wa.me/595992056945" class="btn-nav">WhatsApp</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+<body class="bg-dark text-white font-sans">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-dark/90 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2.5 font-black text-xl tracking-tight">
+          <img src="img/logonovatec.jfif" alt="NovaTec" class="w-8 h-8 rounded-full object-cover">
+          NOVA<span class="text-primary">TEC</span>
+        </a>
+        <div class="hidden md:flex items-center gap-7">
+          <a href="index.html" data-page="index.html" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Inicio</a>
+          <a href="software.html" data-page="software.html" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Software</a>
+          <a href="hardware.html" data-page="hardware.html" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Hardware</a>
+          <a href="portafolio.html" data-page="portafolio.html" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Portafolio</a>
+          <a href="contacto.html" class="bg-primary text-dark text-sm font-bold px-5 py-2 rounded-lg hover:opacity-90 transition-opacity">Cotizar</a>
         </div>
-    </nav>
+        <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menú">
+          <span id="bar1" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span id="bar2" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span id="bar3" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-card border-b border-white/10 px-4 pb-5">
+      <div class="flex flex-col gap-1 pt-4">
+        <a href="index.html" class="text-gray-300 hover:text-primary py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors">Inicio</a>
+        <a href="software.html" class="text-gray-300 hover:text-primary py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors">Software</a>
+        <a href="hardware.html" class="text-gray-300 hover:text-primary py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors">Hardware</a>
+        <a href="portafolio.html" class="text-gray-300 hover:text-primary py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors">Portafolio</a>
+        <a href="contacto.html" class="bg-primary text-dark font-bold text-center py-2.5 px-3 rounded-lg mt-2">Cotizar</a>
+      </div>
+    </div>
+  </nav>
 
-    <header id="inicio" class="hero">
-        <div class="container hero-container">
-            <div class="hero-text">
-                <span class="badge">Soluciones Reales</span>
-                <h1>Tecnología que funciona. <br> Negocios que crecen.</h1>
-                <p>Deja de perder tiempo con celulares rotos o negocios invisibles. Nosotros nos encargamos de la parte técnica para que vos te encargues de vender.</p>
-                <div class="hero-btns">
-                    <a href="#servicios" class="btn-primary">Ver Soluciones</a>
-                    <a href="https://wa.me/595992056945" class="btn-secondary"><i class="fab fa-whatsapp"></i> Consulta Rápida</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="glowing-circle">
-                    <i class="fas fa-bolt big-icon"></i>
-                </div>
-            </div>
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center pt-16 relative overflow-hidden">
+    <div class="absolute top-1/3 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-flex items-center gap-2 bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-primary/20 mb-8">
+          <span class="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
+          Nueva Etapa · Software + Hardware Corporativo
+        </span>
+        <h1 class="text-5xl md:text-7xl font-black leading-[1.05] mb-7 gradient-text">
+          Tecnología integral<br>para empresas<br>que crecen.
+        </h1>
+        <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
+          Desarrollamos software a medida y proveemos hardware corporativo mayorista.<br>
+          <span class="text-white font-semibold">Una empresa. Todas las soluciones.</span>
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#pilares" class="bg-primary text-dark font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity glow-btn text-base">
+            Explorar Servicios
+          </a>
+          <a href="contacto.html" class="border border-white/20 font-semibold px-8 py-4 rounded-xl hover:bg-white/5 transition-colors text-base">
+            Solicitar Cotización →
+          </a>
         </div>
-    </header>
+      </div>
 
-    <section id="servicios" class="servicios-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>¿Qué necesitas hoy?</h2>
-                <p>Dos servicios, una misma calidad.</p>
-            </div>
-            
-            <div class="grid-servicios">
-                <div class="card-servicio">
-                    <div class="icon-wrapper blue">
-                        <i class="fas fa-screwdriver-wrench"></i>
-                    </div>
-                    <h3>Arreglar mi equipo</h3>
-                    <p class="service-desc">Tu herramienta de trabajo tiene que volar. Reparamos celulares y laptops con garantía.</p>
-                    <ul class="lista-check">
-                        <li><i class="fas fa-check"></i> Cambio de pantallas y baterías</li>
-                        <li><i class="fas fa-check"></i> Recuperación de equipos mojados</li>
-                        <li><i class="fas fa-check"></i> Mantenimiento preventivo</li>
-                    </ul>
-                    <a href="https://wa.me/595992056945?text=Hola,%20necesito%20reparar%20mi%20celular" class="btn-card">Pedir Presupuesto</a>
-                </div>
-
-                <div class="card-servicio">
-                    <div class="icon-wrapper purple">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Crear mi Página Web</h3>
-                    <p class="service-desc">Que te encuentren en Google. Diseñamos la web de tu negocio en tiempo récord.</p>
-                    <ul class="lista-check">
-                        <li><i class="fas fa-check"></i> Tu negocio abierto 24/7</li>
-                        <li><i class="fas fa-check"></i> Diseño profesional y rápido</li>
-                        <li><i class="fas fa-check"></i> Ideal para mostrar tus productos</li>
-                    </ul>
-                    <a href="https://wa.me/595992056945?text=Hola,%20quiero%20info%20sobre%20paginas%20web" class="btn-card">Quiero mi Web</a>
-                </div>
-            </div>
+      <!-- Visual indicators -->
+      <div class="flex justify-center gap-8 mt-20 flex-wrap" data-animate>
+        <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-5 py-3">
+          <i class="fas fa-code text-primary text-lg"></i>
+          <span class="text-sm font-semibold">Desarrollo de Software</span>
         </div>
-    </section>
-
-    <section id="proceso" class="proceso-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Así de fácil trabajamos</h2>
-            </div>
-            <div class="pasos-grid">
-                <div class="paso">
-                    <div class="numero">01</div>
-                    <h4>Nos escribís</h4>
-                    <p>Mandanos un WhatsApp contándonos tu problema o idea.</p>
-                </div>
-                <div class="paso">
-                    <div class="numero">02</div>
-                    <h4>Presupuesto</h4>
-                    <p>Te damos un precio justo y sin vueltas al instante.</p>
-                </div>
-                <div class="paso">
-                    <div class="numero">03</div>
-                    <h4>Solución</h4>
-                    <p>Reparamos tu equipo o lanzamos tu web. ¡Listo!</p>
-                </div>
-            </div>
+        <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-5 py-3">
+          <i class="fas fa-server text-secondary text-lg"></i>
+          <span class="text-sm font-semibold">Provisión de Hardware</span>
         </div>
-    </section>
-
-    <section class="stats-section">
-        <div class="container stats-grid">
-            <div class="stat-item">
-                <h3>+100</h3>
-                <p>Equipos Reparados</p>
-            </div>
-            <div class="stat-item">
-                <h3>100%</h3>
-                <p>Clientes Felices</p>
-            </div>
-            <div class="stat-item">
-                <h3>24/7</h3>
-                <p>Soporte Online</p>
-            </div>
+        <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-5 py-3">
+          <i class="fas fa-headset text-primary text-lg"></i>
+          <span class="text-sm font-semibold">Soporte 24/7</span>
         </div>
-    </section>
-<section id="proyectos" class="proyectos-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Proyectos Recientes</h2>
-                <p>Calidad que se ve y se navega.</p>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="browser-frame">
-                        <div class="browser-header">
-                            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                        </div>
-                        <div class="browser-content real-client">
-                            <h3>Cáceres Álvarez Abogados</h3>
-                            <p>Sitio web corporativo</p>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h4>Estudio Jurídico</h4>
-                        <a href="https://caceresalvarezabogados.com.py/" target="_blank">Ver sitio real <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-                </div>
+      </div>
+    </div>
+  </section>
 
-                <div class="project-card">
-                    <div class="browser-frame">
-                        <div class="browser-header">
-                            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                        </div>
-                        <div class="browser-content real-client">
-                            <h3>POWER GYM</h3>
-                            <p>Sitio web corporativo</p>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h4>Fitness & Salud</h4>
-                        <a href="https://www.powergym.com.py/" target="_blank">Ver sitio real <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-                </div>
+  <!-- PILLARS -->
+  <section id="pilares" class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14" data-animate>
+        <h2 class="text-4xl md:text-5xl font-black mb-4">Dos pilares, una sola empresa.</h2>
+        <p class="text-gray-400 text-lg">Elegí la solución que necesita tu negocio.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
 
-                <div class="project-card">
-                    <div class="browser-frame">
-                        <div class="browser-header">
-                            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                        </div>
-                        <div class="browser-content concept-client">
-                            <h3>Tu Negocio Aquí</h3>
-                            <p>Espacio disponible</p>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h4>¿Listo para el tuyo?</h4>
-                        <a href="#contacto">Empezar ahora <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
+        <!-- Software -->
+        <div class="bg-card border border-white/10 rounded-2xl p-8 hover:border-primary/40 transition-all duration-300 flex flex-col" data-animate>
+          <div class="flex items-start justify-between mb-6">
+            <div class="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center">
+              <i class="fas fa-code text-primary text-2xl"></i>
             </div>
+            <span class="text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-full">Desarrollo</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Software & Desarrollo</h3>
+          <p class="text-gray-400 mb-6 leading-relaxed">Transformamos tus ideas en soluciones digitales. Desde sitios web profesionales hasta sistemas empresariales complejos.</p>
+          <ul class="space-y-3 mb-8 flex-1">
+            <li class="flex items-center gap-3 text-sm text-gray-300"><i class="fas fa-check text-primary text-xs w-4"></i>Desarrollo web y e-commerce</li>
+            <li class="flex items-center gap-3 text-sm text-gray-300"><i class="fas fa-check text-primary text-xs w-4"></i>Aplicaciones web y móviles</li>
+            <li class="flex items-center gap-3 text-sm text-gray-300"><i class="fas fa-check text-primary text-xs w-4"></i>Sistemas empresariales a medida</li>
+            <li class="flex items-center gap-3 text-sm text-gray-300"><i class="fas fa-check text-primary text-xs w-4"></i>UI/UX Design & Consultoría</li>
+          </ul>
+          <a href="software.html" class="flex items-center justify-between bg-primary/10 border border-primary/20 text-primary font-bold px-6 py-3 rounded-xl hover:bg-primary/15 transition-colors group">
+            Ver servicios de software
+            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+          </a>
         </div>
-    </section>
 
-    <footer id="contacto">
-       <section id="contacto" class="contacto-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>¿Tenés un problema técnico o necesitás una web?</h2>
-                <p>Completá el formulario y te respondemos en menos de 24hs.</p>
+        <!-- Hardware -->
+        <div class="bg-card border border-white/10 rounded-2xl p-8 hover:border-secondary/40 transition-all duration-300 flex flex-col" data-animate>
+          <div class="flex items-start justify-between mb-6">
+            <div class="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center">
+              <i class="fas fa-server text-secondary text-2xl"></i>
             </div>
-            
-            <div class="contacto-grid">
-                <form action="https://formspree.io/f/xeeqrdlp" method="POST" class="contacto-form">
-                    <div class="input-group">
-                        <label>Nombre</label>
-                        <input type="text" name="nombre" placeholder="Ej: Juan Pérez" required>
-                    </div>
-                    <div class="input-group">
-                        <label>WhatsApp</label>
-                        <input type="tel" name="telefono" placeholder="Ej: 0992 000 000" required>
-                    </div>
-                    <div class="input-group">
-                        <label>¿Qué servicio buscás?</label>
-                        <select name="servicio">
-                            <option value="reparacion">Reparación de Celular/PC</option>
-                            <option value="web">Creación de Página Web</option>
-                            <option value="otro">Otro / Consulta general</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label>Mensaje</label>
-                        <textarea name="mensaje" rows="4" placeholder="Contanos brevemente qué necesitás..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary full-width">Enviar Mensaje</button>
-                </form>
+            <span class="text-xs font-bold uppercase tracking-widest text-secondary bg-secondary/10 px-3 py-1 rounded-full">Mayorista</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-3">Provisión Tecnológica</h3>
+          <p class="text-gray-400 mb-6 leading-relaxed">Hardware corporativo a precio de distribución directa. Equipamos empresas con tecnología de primer nivel.</p>
+          <ul class="space-y-3 mb-8 flex-1">
+            <li class="flex items-center gap-3 text-sm text-gray-300"><i class="fas fa-check text-secondary text-xs w-4"></i>Laptops y PCs corporativos</li>
+            <li class="flex items-center gap-3 text-sm text-gray-300"><i class="fas fa-check text-secondary text-xs w-4"></i>Servidores y almacenamiento</li>
+            <li class="flex items-center gap-3 text-sm text-gray-300"><i class="fas fa-check text-secondary text-xs w-4"></i>Equipos de networking</li>
+            <li class="flex items-center gap-3 text-sm text-gray-300"><i class="fas fa-check text-secondary text-xs w-4"></i>Garantía y soporte corporativo</li>
+          </ul>
+          <a href="hardware.html" class="flex items-center justify-between bg-secondary/10 border border-secondary/20 text-secondary font-bold px-6 py-3 rounded-xl hover:bg-secondary/15 transition-colors group">
+            Ver provisión de hardware
+            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                <div class="contacto-info">
-                    <div class="info-card">
-                        <i class="fab fa-whatsapp"></i>
-                        <h4>WhatsApp Directo</h4>
-                        <p>0992 056 945</p>
-                        <a href="https://wa.me/595992056945" target="_blank">Escribir ahora</a>
-                    </div>
-                    <div class="info-card">
-                        <i class="fab fa-tiktok"></i>
-                        <h4>TikTok</h4>
-                        <p>@novatec.py</p>
-                        <a href="https://www.tiktok.com/@novatec.py" target="_blank">Ver videos</a>
-                    </div>
-                </div>
+  <!-- STATS -->
+  <section class="border-y border-white/10 bg-black/30 py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div data-animate>
+          <div class="text-4xl md:text-5xl font-black text-primary mb-2">+50</div>
+          <div class="text-xs font-bold uppercase tracking-widest text-gray-500">Proyectos</div>
+        </div>
+        <div data-animate>
+          <div class="text-4xl md:text-5xl font-black text-primary mb-2">100%</div>
+          <div class="text-xs font-bold uppercase tracking-widest text-gray-500">Satisfacción</div>
+        </div>
+        <div data-animate>
+          <div class="text-4xl md:text-5xl font-black text-primary mb-2">24/7</div>
+          <div class="text-xs font-bold uppercase tracking-widest text-gray-500">Soporte</div>
+        </div>
+        <div data-animate>
+          <div class="text-4xl md:text-5xl font-black text-primary mb-2">5+</div>
+          <div class="text-xs font-bold uppercase tracking-widest text-gray-500">Años de Exp.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="py-24 bg-[#080808]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14" data-animate>
+        <h2 class="text-4xl font-black mb-4">Así de simple es trabajar con nosotros.</h2>
+        <p class="text-gray-400">En tres pasos tenés tu solución en marcha.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center p-6" data-animate>
+          <div class="text-7xl font-black text-white/5 mb-0">01</div>
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto -mt-4 mb-5 relative">
+            <i class="fas fa-comments text-primary"></i>
+          </div>
+          <h4 class="text-lg font-bold mb-3 text-primary">Nos contactás</h4>
+          <p class="text-gray-400 text-sm leading-relaxed">Describís tu proyecto o necesidad. Por WhatsApp, formulario o cotizador interactivo.</p>
+        </div>
+        <div class="text-center p-6" data-animate>
+          <div class="text-7xl font-black text-white/5 mb-0">02</div>
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto -mt-4 mb-5">
+            <i class="fas fa-file-invoice-dollar text-primary"></i>
+          </div>
+          <h4 class="text-lg font-bold mb-3 text-primary">Recibís la propuesta</h4>
+          <p class="text-gray-400 text-sm leading-relaxed">Te enviamos una cotización detallada con alcance, tiempos y precio transparente.</p>
+        </div>
+        <div class="text-center p-6" data-animate>
+          <div class="text-7xl font-black text-white/5 mb-0">03</div>
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto -mt-4 mb-5">
+            <i class="fas fa-rocket text-primary"></i>
+          </div>
+          <h4 class="text-lg font-bold mb-3 text-primary">Ejecutamos juntos</h4>
+          <p class="text-gray-400 text-sm leading-relaxed">Desarrollamos o entregamos con seguimiento constante hasta que estés 100% satisfecho.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO PREVIEW -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-12" data-animate>
+        <div>
+          <h2 class="text-4xl font-black mb-3">Proyectos Recientes</h2>
+          <p class="text-gray-400">Calidad que se ve y se navega.</p>
+        </div>
+        <a href="portafolio.html" class="text-primary font-semibold hover:underline mt-4 md:mt-0 flex items-center gap-2">
+          Ver todo el portafolio <i class="fas fa-arrow-right text-sm"></i>
+        </a>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <!-- Project 1 -->
+        <div class="bg-card border border-white/10 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-300 group" data-animate>
+          <div class="browser-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+          <div class="h-44 flex flex-col items-center justify-center" style="background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);">
+            <p class="text-sm text-gray-400 uppercase tracking-wider mb-2">Estudio Jurídico</p>
+            <h4 class="text-xl font-bold text-white text-center px-4">Cáceres Álvarez<br>Abogados</h4>
+          </div>
+          <div class="p-5">
+            <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">Sitio Web Corporativo</p>
+            <a href="https://caceresalvarezabogados.com.py/" target="_blank" rel="noopener" class="text-primary text-sm font-semibold hover:underline flex items-center gap-1.5">
+              Ver sitio <i class="fas fa-external-link-alt text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="bg-card border border-white/10 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-300" data-animate>
+          <div class="browser-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+          <div class="h-44 flex flex-col items-center justify-center" style="background: radial-gradient(circle at center, #1c2d1c 0%, #0d1117 100%);">
+            <p class="text-sm text-gray-400 uppercase tracking-wider mb-2">Fitness & Salud</p>
+            <h4 class="text-xl font-bold text-white">POWER GYM</h4>
+          </div>
+          <div class="p-5">
+            <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">Sitio Web Corporativo</p>
+            <a href="https://www.powergym.com.py/" target="_blank" rel="noopener" class="text-primary text-sm font-semibold hover:underline flex items-center gap-1.5">
+              Ver sitio <i class="fas fa-external-link-alt text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- CTA Card -->
+        <div class="bg-card border border-dashed border-white/20 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-300 flex flex-col" data-animate>
+          <div class="flex-1 flex flex-col items-center justify-center p-8 text-center">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-5 animate-pulse-glow">
+              <i class="fas fa-plus text-primary text-xl"></i>
             </div>
+            <h4 class="text-lg font-bold mb-2">Tu proyecto aquí</h4>
+            <p class="text-gray-500 text-sm mb-6">Sumá tu empresa al portafolio de NovaTec.</p>
+            <a href="contacto.html" class="bg-primary text-dark font-bold text-sm px-6 py-2.5 rounded-lg hover:opacity-90 transition-opacity">
+              Empezar ahora
+            </a>
+          </div>
         </div>
-    </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Nova Tec Paraguay. Soluciones de tecnología y servicios.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="py-20 bg-gradient-to-b from-transparent to-black/40" data-animate>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl md:text-5xl font-black mb-5">¿Listo para escalar tu empresa?</h2>
+      <p class="text-gray-400 text-lg mb-10 max-w-xl mx-auto">Cotizá tu proyecto hoy y recibí una propuesta personalizada en menos de 24 horas.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="contacto.html" class="bg-primary text-dark font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity glow-btn text-base">
+          Solicitar Cotización
+        </a>
+        <a href="https://wa.me/595992056945?text=Hola%20NovaTec,%20quiero%20más%20información%20sobre%20sus%20servicios" target="_blank" rel="noopener"
+          class="border border-white/20 font-semibold px-8 py-4 rounded-xl hover:bg-white/5 transition-colors text-base flex items-center justify-center gap-2">
+          <i class="fab fa-whatsapp text-green-400"></i> WhatsApp Directo
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black border-t border-white/10 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-10 border-b border-white/10">
+        <div class="md:col-span-2">
+          <a href="index.html" class="flex items-center gap-2.5 font-black text-xl tracking-tight mb-4">
+            <img src="img/logonovatec.jfif" alt="NovaTec" class="w-8 h-8 rounded-full object-cover">
+            NOVA<span class="text-primary">TEC</span>
+          </a>
+          <p class="text-gray-500 text-sm leading-relaxed max-w-xs mb-6">Soluciones tecnológicas integrales para empresas que buscan crecer en la era digital.</p>
+          <div class="flex gap-3">
+            <a href="https://wa.me/595992056945" target="_blank" rel="noopener" class="w-9 h-9 bg-white/5 rounded-lg flex items-center justify-center text-gray-400 hover:text-primary hover:bg-primary/10 transition-all">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.tiktok.com/@novatec.py" target="_blank" rel="noopener" class="w-9 h-9 bg-white/5 rounded-lg flex items-center justify-center text-gray-400 hover:text-primary hover:bg-primary/10 transition-all">
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </div>
         </div>
-    </footer>
+        <div>
+          <h5 class="text-xs font-bold uppercase tracking-widest text-gray-600 mb-4">Servicios</h5>
+          <ul class="space-y-3">
+            <li><a href="software.html" class="text-sm text-gray-400 hover:text-primary transition-colors">Desarrollo de Software</a></li>
+            <li><a href="hardware.html" class="text-sm text-gray-400 hover:text-primary transition-colors">Provisión de Hardware</a></li>
+            <li><a href="portafolio.html" class="text-sm text-gray-400 hover:text-primary transition-colors">Portafolio</a></li>
+            <li><a href="contacto.html" class="text-sm text-gray-400 hover:text-primary transition-colors">Cotizar</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-xs font-bold uppercase tracking-widest text-gray-600 mb-4">Contacto</h5>
+          <ul class="space-y-3">
+            <li class="text-sm text-gray-400">+595 992 056 945</li>
+            <li class="text-sm text-gray-400">@novatec.py</li>
+            <li class="text-sm text-gray-400">Asunción, Paraguay</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row justify-between items-center pt-8 gap-3">
+        <p class="text-xs text-gray-600">© 2024 NovaTec Engineering. Todos los derechos reservados.</p>
+        <p class="text-xs text-gray-600">novatec.com.py</p>
+      </div>
+    </div>
+  </footer>
 
-
-    <script src="js/script.js"></script>
+  <script src="js/main.js"></script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-

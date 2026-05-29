@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio de Proyectos | NovaTec Engineering</title>
+  <meta name="description" content="Proyectos de desarrollo web, software y soluciones digitales entregados por NovaTec Engineering en Paraguay.">
+  <link rel="icon" href="img/logonovatec.jfif">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#00f2ff', secondary: '#7000ff', dark: '#050505', card: '#111111' },
+          fontFamily: { sans: ['Outfit', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-dark text-white font-sans">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-dark/90 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2.5 font-black text-xl tracking-tight">
+          <img src="img/logonovatec.jfif" alt="NovaTec" class="w-8 h-8 rounded-full object-cover">
+          NOVA<span class="text-primary">TEC</span>
+        </a>
+        <div class="hidden md:flex items-center gap-7">
+          <a href="index.html" data-page="index.html" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Inicio</a>
+          <a href="software.html" data-page="software.html" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Software</a>
+          <a href="hardware.html" data-page="hardware.html" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Hardware</a>
+          <a href="portafolio.html" data-page="portafolio.html" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Portafolio</a>
+          <a href="contacto.html" class="bg-primary text-dark text-sm font-bold px-5 py-2 rounded-lg hover:opacity-90 transition-opacity">Cotizar</a>
+        </div>
+        <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menú">
+          <span id="bar1" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span id="bar2" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span id="bar3" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-card border-b border-white/10 px-4 pb-5">
+      <div class="flex flex-col gap-1 pt-4">
+        <a href="index.html" class="text-gray-300 hover:text-primary py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors">Inicio</a>
+        <a href="software.html" class="text-gray-300 hover:text-primary py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors">Software</a>
+        <a href="hardware.html" class="text-gray-300 hover:text-primary py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors">Hardware</a>
+        <a href="portafolio.html" class="text-gray-300 hover:text-primary py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors">Portafolio</a>
+        <a href="contacto.html" class="bg-primary text-dark font-bold text-center py-2.5 px-3 rounded-lg mt-2">Cotizar</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="pt-32 pb-16 relative overflow-hidden">
+    <div class="absolute top-0 left-1/4 w-[400px] h-[400px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="flex items-center gap-2 text-sm text-gray-500 mb-7" aria-label="Breadcrumb">
+        <a href="index.html" class="hover:text-primary transition-colors">Inicio</a>
+        <span>/</span>
+        <span class="text-gray-300">Portafolio</span>
+      </nav>
+      <div class="max-w-3xl">
+        <span class="inline-flex items-center gap-2 bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-primary/20 mb-6">
+          <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+          Proyectos Reales
+        </span>
+        <h1 class="text-5xl md:text-6xl font-black leading-tight mb-5 gradient-text">Calidad que<br>se ve y se navega.</h1>
+        <p class="text-gray-400 text-lg leading-relaxed max-w-2xl">Cada proyecto es una solución real entregada a clientes que confiaron en NovaTec. Diseño, desarrollo y resultados.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER TABS -->
+  <section class="pb-4 sticky top-16 z-40 bg-dark/95 backdrop-blur-sm border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex gap-2 overflow-x-auto pb-1 scrollbar-none">
+        <button class="filter-tab active whitespace-nowrap px-5 py-2 rounded-full text-sm font-semibold transition-all hover:bg-white/5 border border-white/10" data-filter="all">
+          Todos
+        </button>
+        <button class="filter-tab whitespace-nowrap px-5 py-2 rounded-full text-sm font-semibold transition-all hover:bg-white/5 border border-white/10 text-gray-400" data-filter="web">
+          <i class="fas fa-globe mr-1.5"></i>Web
+        </button>
+        <button class="filter-tab whitespace-nowrap px-5 py-2 rounded-full text-sm font-semibold transition-all hover:bg-white/5 border border-white/10 text-gray-400" data-filter="software">
+          <i class="fas fa-code mr-1.5"></i>Software
+        </button>
+        <button class="filter-tab whitespace-nowrap px-5 py-2 rounded-full text-sm font-semibold transition-all hover:bg-white/5 border border-white/10 text-gray-400" data-filter="hardware">
+          <i class="fas fa-server mr-1.5"></i>Hardware
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS GRID -->
+  <section class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Project: Cáceres Álvarez -->
+        <div class="project-item bg-card border border-white/10 rounded-2xl overflow-hidden hover:border-primary/40 transition-all duration-300 group" data-category="web" data-animate>
+          <div class="browser-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+          <div class="h-48 flex flex-col items-center justify-center relative overflow-hidden" style="background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 50%, #0d2137 100%);">
+            <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255,255,255,0.3) 60px, rgba(255,255,255,0.3) 61px);"></div>
+            <p class="text-xs text-gray-400 uppercase tracking-widest mb-2 relative">Estudio Jurídico</p>
+            <h4 class="text-xl font-bold text-white text-center px-4 relative">Cáceres Álvarez<br>Abogados</h4>
+          </div>
+          <div class="p-5 flex items-center justify-between">
+            <div>
+              <div class="flex gap-2 mb-2">
+                <span class="text-xs bg-primary/10 text-primary border border-primary/20 px-2.5 py-0.5 rounded-full">Web</span>
+                <span class="text-xs bg-white/5 text-gray-400 border border-white/10 px-2.5 py-0.5 rounded-full">Corporativo</span>
+              </div>
+              <h5 class="font-semibold text-sm">Sitio Web Corporativo</h5>
+              <p class="text-xs text-gray-500 mt-0.5">Sector Legal</p>
+            </div>
+            <a href="https://caceresalvarezabogados.com.py/" target="_blank" rel="noopener"
+              class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary hover:bg-primary/20 transition-colors flex-shrink-0">
+              <i class="fas fa-external-link-alt text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project: Power Gym -->
+        <div class="project-item bg-card border border-white/10 rounded-2xl overflow-hidden hover:border-primary/40 transition-all duration-300" data-category="web" data-animate>
+          <div class="browser-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+          <div class="h-48 flex flex-col items-center justify-center relative overflow-hidden" style="background: radial-gradient(ellipse at center, #1a2e1a 0%, #0a150a 70%, #050505 100%);">
+            <div class="w-14 h-14 bg-green-500/20 rounded-full flex items-center justify-center mb-3">
+              <i class="fas fa-dumbbell text-green-400 text-2xl"></i>
+            </div>
+            <h4 class="text-xl font-bold text-white">POWER GYM</h4>
+            <p class="text-xs text-gray-400 mt-1">Fitness & Wellness</p>
+          </div>
+          <div class="p-5 flex items-center justify-between">
+            <div>
+              <div class="flex gap-2 mb-2">
+                <span class="text-xs bg-primary/10 text-primary border border-primary/20 px-2.5 py-0.5 rounded-full">Web</span>
+                <span class="text-xs bg-white/5 text-gray-400 border border-white/10 px-2.5 py-0.5 rounded-full">Fitness</span>
+              </div>
+              <h5 class="font-semibold text-sm">Sitio Web Corporativo</h5>
+              <p class="text-xs text-gray-500 mt-0.5">Sector Salud & Deporte</p>
+            </div>
+            <a href="https://www.powergym.com.py/" target="_blank" rel="noopener"
+              class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary hover:bg-primary/20 transition-colors flex-shrink-0">
+              <i class="fas fa-external-link-alt text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Placeholder: E-commerce -->
+        <div class="project-item bg-card border border-white/10 rounded-2xl overflow-hidden hover:border-primary/40 transition-all duration-300" data-category="web" data-animate>
+          <div class="browser-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+          <div class="h-48 flex flex-col items-center justify-center relative overflow-hidden" style="background: linear-gradient(135deg, #1a0a2e 0%, #2d1154 50%, #1a0a2e 100%);">
+            <div class="w-14 h-14 bg-purple-500/20 rounded-full flex items-center justify-center mb-3">
+              <i class="fas fa-shopping-bag text-purple-400 text-2xl"></i>
+            </div>
+            <h4 class="text-xl font-bold text-white">Tienda Online</h4>
+            <p class="text-xs text-gray-400 mt-1">E-commerce con panel admin</p>
+          </div>
+          <div class="p-5 flex items-center justify-between">
+            <div>
+              <div class="flex gap-2 mb-2">
+                <span class="text-xs bg-primary/10 text-primary border border-primary/20 px-2.5 py-0.5 rounded-full">Web</span>
+                <span class="text-xs bg-white/5 text-gray-400 border border-white/10 px-2.5 py-0.5 rounded-full">E-commerce</span>
+              </div>
+              <h5 class="font-semibold text-sm">Plataforma de Ventas Online</h5>
+              <p class="text-xs text-gray-500 mt-0.5">Retail & Comercio</p>
+            </div>
+            <div class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-gray-600 flex-shrink-0">
+              <i class="fas fa-lock text-sm"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Placeholder: System -->
+        <div class="project-item bg-card border border-white/10 rounded-2xl overflow-hidden hover:border-primary/40 transition-all duration-300" data-category="software" data-animate>
+          <div class="browser-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+          <div class="h-48 flex flex-col items-center justify-center relative overflow-hidden bg-[#090909]" style="background-image: repeating-linear-gradient(45deg, #111 0, #111 1px, transparent 0, transparent 50%); background-size: 15px 15px;">
+            <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+              <i class="fas fa-chart-bar text-primary text-2xl"></i>
+            </div>
+            <h4 class="text-xl font-bold text-white">Dashboard ERP</h4>
+            <p class="text-xs text-gray-400 mt-1">Sistema de gestión empresarial</p>
+          </div>
+          <div class="p-5 flex items-center justify-between">
+            <div>
+              <div class="flex gap-2 mb-2">
+                <span class="text-xs bg-secondary/10 text-secondary border border-secondary/20 px-2.5 py-0.5 rounded-full">Software</span>
+                <span class="text-xs bg-white/5 text-gray-400 border border-white/10 px-2.5 py-0.5 rounded-full">ERP</span>
+              </div>
+              <h5 class="font-semibold text-sm">Sistema de Gestión Empresarial</h5>
+              <p class="text-xs text-gray-500 mt-0.5">Industria & Servicios</p>
+            </div>
+            <div class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-gray-600 flex-shrink-0">
+              <i class="fas fa-lock text-sm"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Placeholder: Hardware -->
+        <div class="project-item bg-card border border-white/10 rounded-2xl overflow-hidden hover:border-secondary/40 transition-all duration-300" data-category="hardware" data-animate>
+          <div class="browser-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+          <div class="h-48 flex flex-col items-center justify-center relative overflow-hidden" style="background: linear-gradient(135deg, #0a0a1a 0%, #12122e 50%, #0a0a1a 100%);">
+            <div class="w-14 h-14 bg-secondary/10 rounded-full flex items-center justify-center mb-3">
+              <i class="fas fa-server text-secondary text-2xl"></i>
+            </div>
+            <h4 class="text-xl font-bold text-white">Infraestructura IT</h4>
+            <p class="text-xs text-gray-400 mt-1">50 workstations corporativas</p>
+          </div>
+          <div class="p-5 flex items-center justify-between">
+            <div>
+              <div class="flex gap-2 mb-2">
+                <span class="text-xs bg-secondary/10 text-secondary border border-secondary/20 px-2.5 py-0.5 rounded-full">Hardware</span>
+                <span class="text-xs bg-white/5 text-gray-400 border border-white/10 px-2.5 py-0.5 rounded-full">Corporativo</span>
+              </div>
+              <h5 class="font-semibold text-sm">Provisión Corporativa Masiva</h5>
+              <p class="text-xs text-gray-500 mt-0.5">Sector Financiero</p>
+            </div>
+            <div class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-gray-600 flex-shrink-0">
+              <i class="fas fa-lock text-sm"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Card -->
+        <div class="project-item bg-card border border-dashed border-white/20 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-300" data-category="all" data-animate>
+          <div class="h-full flex flex-col items-center justify-center text-center p-10 min-h-[280px]">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-5 animate-pulse-glow">
+              <i class="fas fa-plus text-primary text-xl"></i>
+            </div>
+            <h4 class="text-lg font-bold mb-2">Tu proyecto aquí</h4>
+            <p class="text-gray-500 text-sm mb-6 max-w-[200px]">Sumá tu empresa al portafolio de NovaTec.</p>
+            <a href="contacto.html" class="bg-primary text-dark font-bold text-sm px-6 py-2.5 rounded-lg hover:opacity-90 transition-opacity">
+              Empezar ahora
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="py-16 border-y border-white/10 bg-black/20" data-animate>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-3xl font-black text-primary mb-2">2</div>
+          <div class="text-xs text-gray-500 uppercase tracking-wider">Sitios en producción</div>
+        </div>
+        <div>
+          <div class="text-3xl font-black text-primary mb-2">+50</div>
+          <div class="text-xs text-gray-500 uppercase tracking-wider">Proyectos totales</div>
+        </div>
+        <div>
+          <div class="text-3xl font-black text-primary mb-2">5+</div>
+          <div class="text-xs text-gray-500 uppercase tracking-wider">Industrias</div>
+        </div>
+        <div>
+          <div class="text-3xl font-black text-primary mb-2">100%</div>
+          <div class="text-xs text-gray-500 uppercase tracking-wider">Satisfacción</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20" data-animate>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-black mb-5">¿Querés ser parte del portafolio?</h2>
+      <p class="text-gray-400 text-lg mb-10 max-w-xl mx-auto">Cotizá tu proyecto y recibí una propuesta en menos de 24 horas.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="contacto.html" class="bg-primary text-dark font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity glow-btn text-base">
+          Cotizar Proyecto
+        </a>
+        <a href="software.html" class="border border-white/20 font-semibold px-8 py-4 rounded-xl hover:bg-white/5 transition-colors text-base">
+          Ver Servicios
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black border-t border-white/10 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-10 border-b border-white/10">
+        <div class="md:col-span-2">
+          <a href="index.html" class="flex items-center gap-2.5 font-black text-xl tracking-tight mb-4">
+            <img src="img/logonovatec.jfif" alt="NovaTec" class="w-8 h-8 rounded-full object-cover">
+            NOVA<span class="text-primary">TEC</span>
+          </a>
+          <p class="text-gray-500 text-sm leading-relaxed max-w-xs mb-6">Soluciones tecnológicas integrales para empresas que buscan crecer en la era digital.</p>
+          <div class="flex gap-3">
+            <a href="https://wa.me/595992056945" target="_blank" rel="noopener" class="w-9 h-9 bg-white/5 rounded-lg flex items-center justify-center text-gray-400 hover:text-primary hover:bg-primary/10 transition-all"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.tiktok.com/@novatec.py" target="_blank" rel="noopener" class="w-9 h-9 bg-white/5 rounded-lg flex items-center justify-center text-gray-400 hover:text-primary hover:bg-primary/10 transition-all"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+        <div>
+          <h5 class="text-xs font-bold uppercase tracking-widest text-gray-600 mb-4">Servicios</h5>
+          <ul class="space-y-3">
+            <li><a href="software.html" class="text-sm text-gray-400 hover:text-primary transition-colors">Desarrollo de Software</a></li>
+            <li><a href="hardware.html" class="text-sm text-gray-400 hover:text-primary transition-colors">Provisión de Hardware</a></li>
+            <li><a href="portafolio.html" class="text-sm text-gray-400 hover:text-primary transition-colors">Portafolio</a></li>
+            <li><a href="contacto.html" class="text-sm text-gray-400 hover:text-primary transition-colors">Cotizar</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-xs font-bold uppercase tracking-widest text-gray-600 mb-4">Contacto</h5>
+          <ul class="space-y-3">
+            <li class="text-sm text-gray-400">+595 992 056 945</li>
+            <li class="text-sm text-gray-400">@novatec.py</li>
+            <li class="text-sm text-gray-400">Asunción, Paraguay</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row justify-between items-center pt-8 gap-3">
+        <p class="text-xs text-gray-600">© 2024 NovaTec Engineering. Todos los derechos reservados.</p>
+        <p class="text-xs text-gray-600">novatec.com.py</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Portfolio filter logic
+    const filterBtns = document.querySelectorAll('.filter-tab');
+    const projectItems = document.querySelectorAll('.project-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+
+        filterBtns.forEach(b => {
+          b.classList.remove('active');
+          b.classList.add('text-gray-400');
+          b.classList.remove('text-dark');
+        });
+        btn.classList.add('active');
+        btn.classList.remove('text-gray-400');
+
+        projectItems.forEach(item => {
+          const cat = item.dataset.category;
+          if (filter === 'all' || cat === filter || cat === 'all') {
+            item.style.display = '';
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(16px)';
+            requestAnimationFrame(() => {
+              item.style.transition = 'opacity 0.3s, transform 0.3s';
+              item.style.opacity = '1';
+              item.style.transform = 'translateY(0)';
+            });
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
