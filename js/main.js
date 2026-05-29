@@ -83,20 +83,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Intersection Observer for fade-in animations
+  // Scroll fade-in for .will-fade elements
   const observer = new IntersectionObserver(
     (entries) => entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('animate-fade-up');
-        entry.target.style.opacity = '1';
+        entry.target.classList.add('did-fade');
         observer.unobserve(entry.target);
       }
     }),
-    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    { threshold: 0.08, rootMargin: '0px 0px -32px 0px' }
   );
-
-  document.querySelectorAll('[data-animate]').forEach(el => {
-    el.style.opacity = '0';
-    observer.observe(el);
-  });
+  document.querySelectorAll('.will-fade').forEach(el => observer.observe(el));
 });

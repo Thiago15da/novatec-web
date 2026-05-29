@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Provisión de Hardware Corporativo | NovaTec Engineering</title>
-  <meta name="description" content="Provisión tecnológica mayorista: laptops, servidores, networking y hardware corporativo a precio de distribución directa en Paraguay.">
+  <title>Hardware Corporativo — NovaTec Engineering</title>
+  <meta name="description" content="Suministro de hardware corporativo mayorista: laptops, servidores, networking. Paraguay.">
   <link rel="icon" href="img/logonovatec.jfif">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          colors: { primary: '#00f2ff', secondary: '#7000ff', dark: '#050505', card: '#111111' },
-          fontFamily: { sans: ['Outfit', 'sans-serif'] }
+          colors: { brand: '#00f2ff', card: '#111111', surface: '#0a0a0a' },
+          fontFamily: { sans: ['Inter', 'sans-serif'] }
         }
       }
     }
@@ -22,233 +22,215 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-dark text-white font-sans">
+<body class="bg-black text-white font-sans antialiased">
 
   <!-- NAV -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-dark/90 backdrop-blur-md border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <a href="index.html" class="flex items-center gap-2.5 font-black text-xl tracking-tight">
-          <img src="img/logonovatec.jfif" alt="NovaTec" class="w-8 h-8 rounded-full object-cover">
-          NOVA<span class="text-primary">TEC</span>
-        </a>
-        <div class="hidden md:flex items-center gap-7">
-          <a href="index.html" data-page="index.html" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Inicio</a>
-          <a href="software.html" data-page="software.html" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Software</a>
-          <a href="hardware.html" data-page="hardware.html" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Hardware</a>
-          <a href="portafolio.html" data-page="portafolio.html" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors">Portafolio</a>
-          <a href="contacto.html" class="bg-primary text-dark text-sm font-bold px-5 py-2 rounded-lg hover:opacity-90 transition-opacity">Cotizar</a>
-        </div>
-        <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menú">
-          <span id="bar1" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
-          <span id="bar2" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
-          <span id="bar3" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
-        </button>
+  <nav class="fixed top-0 inset-x-0 z-50 h-12 flex items-center border-b border-white/[0.06] bg-black/85 backdrop-blur-xl">
+    <div class="w-full max-w-[1200px] mx-auto px-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 font-semibold text-[15px] tracking-tight">
+        <img src="img/logonovatec.jfif" alt="NT" class="w-5 h-5 rounded-full object-cover">
+        Nova<span style="color:#00f2ff">Tec</span>
+      </a>
+      <div class="hidden md:flex items-center gap-6">
+        <a href="software.html" data-page="software.html" class="text-[13px] text-[#666] hover:text-white transition-colors">Software</a>
+        <a href="hardware.html" data-page="hardware.html" class="text-[13px] text-white">Hardware</a>
+        <a href="portafolio.html" data-page="portafolio.html" class="text-[13px] text-[#666] hover:text-white transition-colors">Portafolio</a>
+        <a href="contacto.html" class="text-[13px] text-[#666] hover:text-white transition-colors">Contacto</a>
+        <a href="contacto.html" class="text-[13px] font-medium bg-white text-black px-4 py-1.5 rounded-full hover:bg-white/90 transition-colors">Empezar proyecto</a>
       </div>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-card border-b border-white/10 px-4 pb-5">
-      <div class="flex flex-col gap-1 pt-4">
-        <a href="index.html" class="text-gray-300 hover:text-primary py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors">Inicio</a>
-        <a href="software.html" class="text-gray-300 hover:text-primary py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors">Software</a>
-        <a href="hardware.html" class="text-gray-300 hover:text-primary py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors">Hardware</a>
-        <a href="portafolio.html" class="text-gray-300 hover:text-primary py-2.5 px-3 rounded-lg hover:bg-white/5 transition-colors">Portafolio</a>
-        <a href="contacto.html" class="bg-primary text-dark font-bold text-center py-2.5 px-3 rounded-lg mt-2">Cotizar</a>
-      </div>
+      <button id="menu-btn" class="md:hidden p-1.5" aria-label="Menú">
+        <span id="bar1" class="block w-5 h-px bg-white mb-1.5 transition-all duration-200"></span>
+        <span id="bar2" class="block w-5 h-px bg-white mb-1.5 transition-all duration-200"></span>
+        <span id="bar3" class="block w-5 h-px bg-white transition-all duration-200"></span>
+      </button>
     </div>
   </nav>
+  <div id="mobile-menu" class="hidden fixed top-12 inset-x-0 z-40 bg-black border-b border-white/[0.06] px-6 pb-5 pt-4">
+    <div class="flex flex-col gap-1">
+      <a href="software.html" class="text-[#888] hover:text-white py-2.5 text-[14px] border-b border-white/[0.05]">Software</a>
+      <a href="hardware.html" class="text-white py-2.5 text-[14px] border-b border-white/[0.05]">Hardware</a>
+      <a href="portafolio.html" class="text-[#888] hover:text-white py-2.5 text-[14px] border-b border-white/[0.05]">Portafolio</a>
+      <a href="contacto.html" class="text-[#888] hover:text-white py-2.5 text-[14px] border-b border-white/[0.05]">Contacto</a>
+      <a href="contacto.html" class="mt-3 text-center text-[13px] font-medium bg-white text-black px-4 py-2.5 rounded-full">Empezar proyecto</a>
+    </div>
+  </div>
 
-  <!-- PAGE HERO -->
-  <section class="pt-32 pb-16 relative overflow-hidden">
-    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <nav class="flex items-center gap-2 text-sm text-gray-500 mb-7" aria-label="Breadcrumb">
-        <a href="index.html" class="hover:text-primary transition-colors">Inicio</a>
-        <span>/</span>
-        <span class="text-gray-300">Provisión de Hardware</span>
+  <!-- PAGE HEADER -->
+  <section class="pt-32 pb-20 border-b border-white/[0.06]">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <nav class="text-[12px] text-[#444] mb-8 flex items-center gap-2">
+        <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
+        <span>/</span><span>Hardware</span>
       </nav>
-      <div class="max-w-3xl">
-        <span class="inline-flex items-center gap-2 bg-secondary/10 text-secondary text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-secondary/20 mb-6">
-          <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>
-          Provisión Mayorista
-        </span>
-        <h1 class="text-5xl md:text-6xl font-black leading-tight mb-5 gradient-text">Hardware corporativo<br>a precio mayorista.</h1>
-        <p class="text-gray-400 text-lg leading-relaxed max-w-2xl">Equipamos empresas con tecnología de primer nivel: laptops, servidores, networking y más, con precios de distribución directa y garantía corporativa.</p>
-      </div>
+      <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-[#444] mb-6">Provisión Tecnológica</p>
+      <h1 class="font-black tracking-[-0.03em] leading-[0.95] headline-gradient mb-6 will-fade"
+          style="font-size: clamp(44px, 6vw, 72px);">
+        Hardware corporativo<br>a precio mayorista.
+      </h1>
+      <p class="text-[#666] text-[15px] max-w-[520px] leading-[1.65] will-fade">
+        Provisión de equipos para empresas: laptops, servidores, networking y más. Canal de distribución directa, garantía oficial y logística coordinada.
+      </p>
     </div>
   </section>
 
-  <!-- PRODUCT CATEGORIES -->
-  <section class="py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12" data-animate>
-        <h2 class="text-3xl font-black mb-3">Categorías de productos</h2>
-        <p class="text-gray-400">Desde un solo equipo hasta flotas corporativas completas.</p>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+  <!-- CATEGORIES -->
+  <section class="py-24">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-[#444] mb-12 will-fade">Categorías</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
 
-        <div class="bg-card border border-white/10 rounded-2xl p-6 hover:border-secondary/40 transition-all duration-300 group" data-animate>
-          <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-secondary/20 transition-colors">
-            <i class="fas fa-laptop text-secondary text-xl"></i>
+        <div class="border border-white/[0.06] bg-[#111] rounded-2xl p-6 hover:border-white/[0.12] transition-all duration-200 will-fade">
+          <div class="w-8 h-8 rounded-lg border border-white/[0.08] flex items-center justify-center mb-5">
+            <i class="fas fa-laptop text-[#555] text-[12px]"></i>
           </div>
-          <h3 class="font-bold mb-2">Laptops Corporativas</h3>
-          <p class="text-gray-400 text-sm mb-4">HP, Dell, Lenovo, Apple. Para trabajo en oficina, campo y alto rendimiento.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-gray-400">Business</span>
-            <span class="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-gray-400">Gaming</span>
-            <span class="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-gray-400">Ultrabook</span>
+          <h3 class="text-[15px] font-semibold mb-2 tracking-tight">Laptops corporativas</h3>
+          <p class="text-[#555] text-[12px] leading-[1.6] mb-4">HP, Dell, Lenovo, Apple. Business, ultrabook y alto rendimiento.</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10px] text-[#444] border border-white/[0.06] px-2 py-0.5 rounded-full">Business</span>
+            <span class="text-[10px] text-[#444] border border-white/[0.06] px-2 py-0.5 rounded-full">Ultrabook</span>
           </div>
         </div>
 
-        <div class="bg-card border border-white/10 rounded-2xl p-6 hover:border-secondary/40 transition-all duration-300 group" data-animate>
-          <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-secondary/20 transition-colors">
-            <i class="fas fa-desktop text-secondary text-xl"></i>
+        <div class="border border-white/[0.06] bg-[#111] rounded-2xl p-6 hover:border-white/[0.12] transition-all duration-200 will-fade">
+          <div class="w-8 h-8 rounded-lg border border-white/[0.08] flex items-center justify-center mb-5">
+            <i class="fas fa-desktop text-[#555] text-[12px]"></i>
           </div>
-          <h3 class="font-bold mb-2">PCs de Escritorio</h3>
-          <p class="text-gray-400 text-sm mb-4">Workstations y PCs para oficina con especificaciones corporativas.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-gray-400">Office</span>
-            <span class="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-gray-400">Workstation</span>
-            <span class="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-gray-400">All-in-One</span>
-          </div>
-        </div>
-
-        <div class="bg-card border border-white/10 rounded-2xl p-6 hover:border-secondary/40 transition-all duration-300 group" data-animate>
-          <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-secondary/20 transition-colors">
-            <i class="fas fa-server text-secondary text-xl"></i>
-          </div>
-          <h3 class="font-bold mb-2">Servidores</h3>
-          <p class="text-gray-400 text-sm mb-4">Infraestructura on-premise y de rack para data centers corporativos.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-gray-400">Tower</span>
-            <span class="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-gray-400">Rack</span>
-            <span class="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-gray-400">Blade</span>
+          <h3 class="text-[15px] font-semibold mb-2 tracking-tight">PCs de escritorio</h3>
+          <p class="text-[#555] text-[12px] leading-[1.6] mb-4">Workstations y all-in-ones para oficina con specs corporativas.</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10px] text-[#444] border border-white/[0.06] px-2 py-0.5 rounded-full">Office</span>
+            <span class="text-[10px] text-[#444] border border-white/[0.06] px-2 py-0.5 rounded-full">Workstation</span>
           </div>
         </div>
 
-        <div class="bg-card border border-white/10 rounded-2xl p-6 hover:border-secondary/40 transition-all duration-300 group" data-animate>
-          <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-secondary/20 transition-colors">
-            <i class="fas fa-network-wired text-secondary text-xl"></i>
+        <div class="border border-white/[0.06] bg-[#111] rounded-2xl p-6 hover:border-white/[0.12] transition-all duration-200 will-fade">
+          <div class="w-8 h-8 rounded-lg border border-white/[0.08] flex items-center justify-center mb-5">
+            <i class="fas fa-server text-[#555] text-[12px]"></i>
           </div>
-          <h3 class="font-bold mb-2">Networking</h3>
-          <p class="text-gray-400 text-sm mb-4">Switches, routers, firewalls y puntos de acceso WiFi corporativo.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-gray-400">Cisco</span>
-            <span class="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-gray-400">Fortinet</span>
-            <span class="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-gray-400">TP-Link</span>
-          </div>
-        </div>
-
-        <div class="bg-card border border-white/10 rounded-2xl p-6 hover:border-secondary/40 transition-all duration-300 group" data-animate>
-          <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-secondary/20 transition-colors">
-            <i class="fas fa-hdd text-secondary text-xl"></i>
-          </div>
-          <h3 class="font-bold mb-2">Almacenamiento</h3>
-          <p class="text-gray-400 text-sm mb-4">NAS, SAN y soluciones de backup para proteger datos empresariales.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-gray-400">Synology</span>
-            <span class="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-gray-400">WD</span>
-            <span class="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-gray-400">Seagate</span>
+          <h3 class="text-[15px] font-semibold mb-2 tracking-tight">Servidores</h3>
+          <p class="text-[#555] text-[12px] leading-[1.6] mb-4">Infraestructura on-premise y de rack para data centers corporativos.</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10px] text-[#444] border border-white/[0.06] px-2 py-0.5 rounded-full">Tower</span>
+            <span class="text-[10px] text-[#444] border border-white/[0.06] px-2 py-0.5 rounded-full">Rack</span>
           </div>
         </div>
 
-        <div class="bg-card border border-white/10 rounded-2xl p-6 hover:border-secondary/40 transition-all duration-300 group" data-animate>
-          <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-secondary/20 transition-colors">
-            <i class="fas fa-tv text-secondary text-xl"></i>
+        <div class="border border-white/[0.06] bg-[#111] rounded-2xl p-6 hover:border-white/[0.12] transition-all duration-200 will-fade">
+          <div class="w-8 h-8 rounded-lg border border-white/[0.08] flex items-center justify-center mb-5">
+            <i class="fas fa-network-wired text-[#555] text-[12px]"></i>
           </div>
-          <h3 class="font-bold mb-2">Monitores</h3>
-          <p class="text-gray-400 text-sm mb-4">Monitores HD y 4K para workstations, salas de reunión y diseño.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-gray-400">Full HD</span>
-            <span class="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-gray-400">4K</span>
-            <span class="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-gray-400">Curved</span>
-          </div>
-        </div>
-
-        <div class="bg-card border border-white/10 rounded-2xl p-6 hover:border-secondary/40 transition-all duration-300 group" data-animate>
-          <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-secondary/20 transition-colors">
-            <i class="fas fa-keyboard text-secondary text-xl"></i>
-          </div>
-          <h3 class="font-bold mb-2">Periféricos</h3>
-          <p class="text-gray-400 text-sm mb-4">Teclados, mouse, headsets, cámaras web y accesorios corporativos.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-gray-400">Logitech</span>
-            <span class="text-xs bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-gray-400">Microsoft</span>
+          <h3 class="text-[15px] font-semibold mb-2 tracking-tight">Networking</h3>
+          <p class="text-[#555] text-[12px] leading-[1.6] mb-4">Switches, routers, firewalls y APs WiFi para redes corporativas.</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10px] text-[#444] border border-white/[0.06] px-2 py-0.5 rounded-full">Cisco</span>
+            <span class="text-[10px] text-[#444] border border-white/[0.06] px-2 py-0.5 rounded-full">Fortinet</span>
           </div>
         </div>
 
-        <!-- CTA Card -->
-        <div class="bg-card border border-dashed border-white/20 rounded-2xl p-6 flex flex-col items-center justify-center text-center hover:border-secondary/30 transition-all" data-animate>
-          <i class="fas fa-question-circle text-secondary text-3xl mb-4"></i>
-          <h3 class="font-bold mb-2">¿No encontrás<br>lo que buscás?</h3>
-          <p class="text-gray-400 text-sm mb-4">Consultanos. Gestionamos pedidos especiales.</p>
-          <a href="contacto.html" class="text-secondary font-semibold text-sm hover:underline">Consultar →</a>
+        <div class="border border-white/[0.06] bg-[#111] rounded-2xl p-6 hover:border-white/[0.12] transition-all duration-200 will-fade">
+          <div class="w-8 h-8 rounded-lg border border-white/[0.08] flex items-center justify-center mb-5">
+            <i class="fas fa-hdd text-[#555] text-[12px]"></i>
+          </div>
+          <h3 class="text-[15px] font-semibold mb-2 tracking-tight">Almacenamiento</h3>
+          <p class="text-[#555] text-[12px] leading-[1.6] mb-4">NAS, SAN y soluciones de backup para datos empresariales.</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10px] text-[#444] border border-white/[0.06] px-2 py-0.5 rounded-full">Synology</span>
+            <span class="text-[10px] text-[#444] border border-white/[0.06] px-2 py-0.5 rounded-full">Seagate</span>
+          </div>
+        </div>
+
+        <div class="border border-white/[0.06] bg-[#111] rounded-2xl p-6 hover:border-white/[0.12] transition-all duration-200 will-fade">
+          <div class="w-8 h-8 rounded-lg border border-white/[0.08] flex items-center justify-center mb-5">
+            <i class="fas fa-tv text-[#555] text-[12px]"></i>
+          </div>
+          <h3 class="text-[15px] font-semibold mb-2 tracking-tight">Monitores</h3>
+          <p class="text-[#555] text-[12px] leading-[1.6] mb-4">HD y 4K para workstations, salas de reunión y diseño.</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10px] text-[#444] border border-white/[0.06] px-2 py-0.5 rounded-full">Full HD</span>
+            <span class="text-[10px] text-[#444] border border-white/[0.06] px-2 py-0.5 rounded-full">4K</span>
+          </div>
+        </div>
+
+        <div class="border border-white/[0.06] bg-[#111] rounded-2xl p-6 hover:border-white/[0.12] transition-all duration-200 will-fade">
+          <div class="w-8 h-8 rounded-lg border border-white/[0.08] flex items-center justify-center mb-5">
+            <i class="fas fa-keyboard text-[#555] text-[12px]"></i>
+          </div>
+          <h3 class="text-[15px] font-semibold mb-2 tracking-tight">Periféricos</h3>
+          <p class="text-[#555] text-[12px] leading-[1.6] mb-4">Teclados, mouse, headsets, cámaras web corporativas.</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-[10px] text-[#444] border border-white/[0.06] px-2 py-0.5 rounded-full">Logitech</span>
+            <span class="text-[10px] text-[#444] border border-white/[0.06] px-2 py-0.5 rounded-full">Microsoft</span>
+          </div>
+        </div>
+
+        <div class="border border-dashed border-white/[0.06] bg-[#111] rounded-2xl p-6 flex flex-col items-center justify-center text-center will-fade">
+          <p class="text-[#444] text-[12px] mb-3">¿No encontrás lo que buscás?</p>
+          <a href="contacto.html" class="text-[12px] text-[#666] hover:text-white transition-colors">Consultar →</a>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- BENEFITS -->
-  <section class="py-20 bg-[#080808]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-16 items-center">
-        <div data-animate>
-          <h2 class="text-3xl font-black mb-6">¿Por qué proveerse<br>con NovaTec?</h2>
-          <div class="space-y-6">
-            <div class="flex gap-4">
-              <div class="w-10 h-10 bg-secondary/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
-                <i class="fas fa-tags text-secondary text-sm"></i>
-              </div>
-              <div>
-                <h4 class="font-bold mb-1">Precios de distribución directa</h4>
-                <p class="text-gray-400 text-sm leading-relaxed">Eliminamos intermediarios. Los precios que obtenés son los de canal mayorista, no de retail.</p>
-              </div>
+  <!-- WHY -->
+  <section class="py-24 border-t border-white/[0.06] bg-[#070707]">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-[#444] mb-12 will-fade">Por qué proveerse con NovaTec</p>
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="space-y-8 will-fade">
+          <div class="flex gap-5">
+            <div class="w-7 h-7 rounded-lg border border-white/[0.08] flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fas fa-tags text-[#555] text-[11px]"></i>
             </div>
-            <div class="flex gap-4">
-              <div class="w-10 h-10 bg-secondary/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
-                <i class="fas fa-shield-alt text-secondary text-sm"></i>
-              </div>
-              <div>
-                <h4 class="font-bold mb-1">Garantía corporativa incluida</h4>
-                <p class="text-gray-400 text-sm leading-relaxed">Garantía oficial de fábrica en todos los equipos, con gestión de RMA y soporte técnico.</p>
-              </div>
+            <div>
+              <h4 class="text-[14px] font-semibold mb-1.5">Precios de canal directo</h4>
+              <p class="text-[#555] text-[13px] leading-[1.65]">Sin intermediarios de retail. Los precios son de distribución mayorista.</p>
             </div>
-            <div class="flex gap-4">
-              <div class="w-10 h-10 bg-secondary/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
-                <i class="fas fa-truck text-secondary text-sm"></i>
-              </div>
-              <div>
-                <h4 class="font-bold mb-1">Logística y entrega coordinada</h4>
-                <p class="text-gray-400 text-sm leading-relaxed">Gestionamos la importación, internación y entrega en tu empresa. Vos solo aprobás la cotización.</p>
-              </div>
+          </div>
+          <div class="flex gap-5">
+            <div class="w-7 h-7 rounded-lg border border-white/[0.08] flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fas fa-shield-alt text-[#555] text-[11px]"></i>
             </div>
-            <div class="flex gap-4">
-              <div class="w-10 h-10 bg-secondary/10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
-                <i class="fas fa-file-invoice text-secondary text-sm"></i>
-              </div>
-              <div>
-                <h4 class="font-bold mb-1">Facturación y crédito comercial</h4>
-                <p class="text-gray-400 text-sm leading-relaxed">Emitimos factura legal, aceptamos órdenes de compra y ofrecemos plazos para clientes frecuentes.</p>
-              </div>
+            <div>
+              <h4 class="text-[14px] font-semibold mb-1.5">Garantía oficial de fábrica</h4>
+              <p class="text-[#555] text-[13px] leading-[1.65]">Todos los equipos con garantía real. Gestión de RMA incluida.</p>
+            </div>
+          </div>
+          <div class="flex gap-5">
+            <div class="w-7 h-7 rounded-lg border border-white/[0.08] flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fas fa-truck text-[#555] text-[11px]"></i>
+            </div>
+            <div>
+              <h4 class="text-[14px] font-semibold mb-1.5">Logística coordinada</h4>
+              <p class="text-[#555] text-[13px] leading-[1.65]">Importación, internación y entrega en tu empresa. Vos solo aprobás.</p>
+            </div>
+          </div>
+          <div class="flex gap-5">
+            <div class="w-7 h-7 rounded-lg border border-white/[0.08] flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i class="fas fa-file-invoice text-[#555] text-[11px]"></i>
+            </div>
+            <div>
+              <h4 class="text-[14px] font-semibold mb-1.5">Factura legal, OC y crédito</h4>
+              <p class="text-[#555] text-[13px] leading-[1.65]">Documentación completa y condiciones comerciales para clientes recurrentes.</p>
             </div>
           </div>
         </div>
-        <div class="grid grid-cols-2 gap-4" data-animate>
-          <div class="bg-card border border-white/10 rounded-2xl p-6 text-center">
-            <div class="text-4xl font-black text-secondary mb-2">10+</div>
-            <div class="text-sm text-gray-400">Marcas en catálogo</div>
+        <div class="grid grid-cols-2 gap-3 content-start will-fade">
+          <div class="border border-white/[0.06] bg-[#111] rounded-2xl p-6 text-center">
+            <p class="text-[30px] font-black tracking-tight mb-1">10+</p>
+            <p class="text-[11px] text-[#444]">Marcas en catálogo</p>
           </div>
-          <div class="bg-card border border-white/10 rounded-2xl p-6 text-center">
-            <div class="text-4xl font-black text-secondary mb-2">48hs</div>
-            <div class="text-sm text-gray-400">Respuesta de cotización</div>
+          <div class="border border-white/[0.06] bg-[#111] rounded-2xl p-6 text-center">
+            <p class="text-[30px] font-black tracking-tight mb-1">48hs</p>
+            <p class="text-[11px] text-[#444]">Resp. de cotización</p>
           </div>
-          <div class="bg-card border border-white/10 rounded-2xl p-6 text-center">
-            <div class="text-4xl font-black text-secondary mb-2">1+</div>
-            <div class="text-sm text-gray-400">Unidad mínima</div>
+          <div class="border border-white/[0.06] bg-[#111] rounded-2xl p-6 text-center">
+            <p class="text-[30px] font-black tracking-tight mb-1">1+</p>
+            <p class="text-[11px] text-[#444]">Unidad mínima</p>
           </div>
-          <div class="bg-card border border-white/10 rounded-2xl p-6 text-center">
-            <div class="text-4xl font-black text-secondary mb-2">100%</div>
-            <div class="text-sm text-gray-400">Equipos con garantía</div>
+          <div class="border border-white/[0.06] bg-[#111] rounded-2xl p-6 text-center">
+            <p class="text-[30px] font-black tracking-tight mb-1">100%</p>
+            <p class="text-[11px] text-[#444]">Con garantía</p>
           </div>
         </div>
       </div>
@@ -256,162 +238,143 @@
   </section>
 
   <!-- PROCESS -->
-  <section class="py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12" data-animate>
-        <h2 class="text-3xl font-black mb-3">Proceso de compra</h2>
-        <p class="text-gray-400">Cuatro pasos para tener los equipos en tu empresa.</p>
-      </div>
-      <div class="grid md:grid-cols-4 gap-6">
-        <div class="bg-card border border-white/10 rounded-2xl p-6 text-center relative" data-animate>
-          <div class="text-5xl font-black text-white/5 mb-1">01</div>
-          <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mx-auto -mt-3 mb-4">
-            <i class="fas fa-clipboard-list text-secondary"></i>
-          </div>
-          <h4 class="font-bold mb-2 text-secondary">Solicitar</h4>
-          <p class="text-gray-400 text-sm">Usá el cotizador o contactanos con la lista de equipos que necesitás.</p>
+  <section class="py-24 border-t border-white/[0.06]">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-[#444] mb-12 will-fade">Proceso de compra</p>
+      <div class="grid md:grid-cols-4 gap-6 will-fade">
+        <div>
+          <p class="text-[11px] font-mono text-[#333] mb-4">01</p>
+          <h4 class="text-[14px] font-semibold mb-2">Solicitar</h4>
+          <p class="text-[#555] text-[12px] leading-[1.6]">Cotizador o listado de equipos por WhatsApp o formulario.</p>
         </div>
-        <div class="bg-card border border-white/10 rounded-2xl p-6 text-center" data-animate>
-          <div class="text-5xl font-black text-white/5 mb-1">02</div>
-          <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mx-auto -mt-3 mb-4">
-            <i class="fas fa-file-invoice-dollar text-secondary"></i>
-          </div>
-          <h4 class="font-bold mb-2 text-secondary">Cotizar</h4>
-          <p class="text-gray-400 text-sm">Recibís una propuesta detallada con precios, disponibilidad y tiempos de entrega.</p>
+        <div>
+          <p class="text-[11px] font-mono text-[#333] mb-4">02</p>
+          <h4 class="text-[14px] font-semibold mb-2">Cotización</h4>
+          <p class="text-[#555] text-[12px] leading-[1.6]">Propuesta con precios, disponibilidad y tiempos en 48hs.</p>
         </div>
-        <div class="bg-card border border-white/10 rounded-2xl p-6 text-center" data-animate>
-          <div class="text-5xl font-black text-white/5 mb-1">03</div>
-          <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mx-auto -mt-3 mb-4">
-            <i class="fas fa-check-circle text-secondary"></i>
-          </div>
-          <h4 class="font-bold mb-2 text-secondary">Aprobar</h4>
-          <p class="text-gray-400 text-sm">Confirmás la orden, realizás el pago o firma de contrato y activamos el pedido.</p>
+        <div>
+          <p class="text-[11px] font-mono text-[#333] mb-4">03</p>
+          <h4 class="text-[14px] font-semibold mb-2">Aprobación</h4>
+          <p class="text-[#555] text-[12px] leading-[1.6]">Confirmás la orden y activamos el pedido o importación.</p>
         </div>
-        <div class="bg-card border border-white/10 rounded-2xl p-6 text-center" data-animate>
-          <div class="text-5xl font-black text-white/5 mb-1">04</div>
-          <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mx-auto -mt-3 mb-4">
-            <i class="fas fa-box-open text-secondary"></i>
-          </div>
-          <h4 class="font-bold mb-2 text-secondary">Recibir</h4>
-          <p class="text-gray-400 text-sm">Los equipos llegan a tu empresa con documentación, configuración básica y soporte.</p>
+        <div>
+          <p class="text-[11px] font-mono text-[#333] mb-4">04</p>
+          <h4 class="text-[14px] font-semibold mb-2">Entrega</h4>
+          <p class="text-[#555] text-[12px] leading-[1.6]">Equipos en tu empresa con documentación y configuración base.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BRANDS -->
-  <section class="py-16 bg-[#080808]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="text-xs font-bold uppercase tracking-widest text-gray-600 mb-8" data-animate>Marcas disponibles en catálogo</p>
-      <div class="flex flex-wrap justify-center gap-4" data-animate>
-        <span class="bg-card border border-white/10 px-5 py-2.5 rounded-xl text-sm font-semibold text-gray-300">HP</span>
-        <span class="bg-card border border-white/10 px-5 py-2.5 rounded-xl text-sm font-semibold text-gray-300">Dell</span>
-        <span class="bg-card border border-white/10 px-5 py-2.5 rounded-xl text-sm font-semibold text-gray-300">Lenovo</span>
-        <span class="bg-card border border-white/10 px-5 py-2.5 rounded-xl text-sm font-semibold text-gray-300">Apple</span>
-        <span class="bg-card border border-white/10 px-5 py-2.5 rounded-xl text-sm font-semibold text-gray-300">Samsung</span>
-        <span class="bg-card border border-white/10 px-5 py-2.5 rounded-xl text-sm font-semibold text-gray-300">ASUS</span>
-        <span class="bg-card border border-white/10 px-5 py-2.5 rounded-xl text-sm font-semibold text-gray-300">Acer</span>
-        <span class="bg-card border border-white/10 px-5 py-2.5 rounded-xl text-sm font-semibold text-gray-300">Cisco</span>
-        <span class="bg-card border border-white/10 px-5 py-2.5 rounded-xl text-sm font-semibold text-gray-300">Fortinet</span>
-        <span class="bg-card border border-white/10 px-5 py-2.5 rounded-xl text-sm font-semibold text-gray-300">TP-Link</span>
-        <span class="bg-card border border-white/10 px-5 py-2.5 rounded-xl text-sm font-semibold text-gray-300">Synology</span>
-        <span class="bg-card border border-white/10 px-5 py-2.5 rounded-xl text-sm font-semibold text-gray-300">Seagate</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="py-20">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12" data-animate>
-        <h2 class="text-3xl font-black mb-3">Preguntas frecuentes</h2>
-      </div>
-      <div class="space-y-4" data-animate>
-        <details class="bg-card border border-white/10 rounded-2xl p-6 group">
-          <summary class="font-semibold cursor-pointer flex justify-between items-center">
-            ¿Hay cantidad mínima de pedido?
-            <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform ml-4 flex-shrink-0"></i>
-          </summary>
-          <p class="text-gray-400 text-sm mt-4 leading-relaxed">No existe una cantidad mínima obligatoria. Podés solicitar desde un solo equipo. Para pedidos mayores a 5 unidades ofrecemos precios especiales de volumen.</p>
-        </details>
-        <details class="bg-card border border-white/10 rounded-2xl p-6 group">
-          <summary class="font-semibold cursor-pointer flex justify-between items-center">
-            ¿Cuánto tiempo tarda la entrega?
-            <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform ml-4 flex-shrink-0"></i>
-          </summary>
-          <p class="text-gray-400 text-sm mt-4 leading-relaxed">Para equipos en stock local: 2–5 días hábiles. Para pedidos bajo importación: 10–20 días hábiles según volumen y disponibilidad del fabricante.</p>
-        </details>
-        <details class="bg-card border border-white/10 rounded-2xl p-6 group">
-          <summary class="font-semibold cursor-pointer flex justify-between items-center">
-            ¿Los equipos tienen garantía oficial?
-            <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform ml-4 flex-shrink-0"></i>
-          </summary>
-          <p class="text-gray-400 text-sm mt-4 leading-relaxed">Sí. Todos los equipos incluyen garantía oficial del fabricante. También gestionamos el proceso de RMA si algún equipo presenta fallas durante el período de garantía.</p>
-        </details>
-        <details class="bg-card border border-white/10 rounded-2xl p-6 group">
-          <summary class="font-semibold cursor-pointer flex justify-between items-center">
-            ¿Emiten factura legal?
-            <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform ml-4 flex-shrink-0"></i>
-          </summary>
-          <p class="text-gray-400 text-sm mt-4 leading-relaxed">Sí. Emitimos factura legal con IVA para todas las transacciones. Aceptamos órdenes de compra corporativas y coordinamos condiciones de pago para clientes recurrentes.</p>
-        </details>
+  <!-- BRANDS + FAQ -->
+  <section class="py-24 border-t border-white/[0.06] bg-[#070707]">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16">
+        <div class="will-fade">
+          <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-[#444] mb-8">Marcas disponibles</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[12px] text-[#555] border border-white/[0.06] px-3 py-1.5 rounded-full">HP</span>
+            <span class="text-[12px] text-[#555] border border-white/[0.06] px-3 py-1.5 rounded-full">Dell</span>
+            <span class="text-[12px] text-[#555] border border-white/[0.06] px-3 py-1.5 rounded-full">Lenovo</span>
+            <span class="text-[12px] text-[#555] border border-white/[0.06] px-3 py-1.5 rounded-full">Apple</span>
+            <span class="text-[12px] text-[#555] border border-white/[0.06] px-3 py-1.5 rounded-full">Samsung</span>
+            <span class="text-[12px] text-[#555] border border-white/[0.06] px-3 py-1.5 rounded-full">ASUS</span>
+            <span class="text-[12px] text-[#555] border border-white/[0.06] px-3 py-1.5 rounded-full">Acer</span>
+            <span class="text-[12px] text-[#555] border border-white/[0.06] px-3 py-1.5 rounded-full">Cisco</span>
+            <span class="text-[12px] text-[#555] border border-white/[0.06] px-3 py-1.5 rounded-full">Fortinet</span>
+            <span class="text-[12px] text-[#555] border border-white/[0.06] px-3 py-1.5 rounded-full">TP-Link</span>
+            <span class="text-[12px] text-[#555] border border-white/[0.06] px-3 py-1.5 rounded-full">Synology</span>
+            <span class="text-[12px] text-[#555] border border-white/[0.06] px-3 py-1.5 rounded-full">Seagate</span>
+          </div>
+        </div>
+        <div class="will-fade">
+          <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-[#444] mb-8">Preguntas frecuentes</p>
+          <div class="space-y-3">
+            <details class="border border-white/[0.06] bg-[#111] rounded-xl overflow-hidden">
+              <summary class="flex items-center justify-between px-5 py-4 cursor-pointer text-[13px] font-medium">
+                ¿Hay cantidad mínima?
+                <i class="fas fa-chevron-down text-[#444] text-[11px] chevron transition-transform"></i>
+              </summary>
+              <p class="px-5 pb-4 text-[#555] text-[13px] leading-[1.65]">No. Podés pedir desde una unidad. Para 5+ hay precios de volumen.</p>
+            </details>
+            <details class="border border-white/[0.06] bg-[#111] rounded-xl overflow-hidden">
+              <summary class="flex items-center justify-between px-5 py-4 cursor-pointer text-[13px] font-medium">
+                ¿Cuánto tarda la entrega?
+                <i class="fas fa-chevron-down text-[#444] text-[11px] chevron transition-transform"></i>
+              </summary>
+              <p class="px-5 pb-4 text-[#555] text-[13px] leading-[1.65]">Stock local: 2–5 días hábiles. Importación: 10–20 días según volumen.</p>
+            </details>
+            <details class="border border-white/[0.06] bg-[#111] rounded-xl overflow-hidden">
+              <summary class="flex items-center justify-between px-5 py-4 cursor-pointer text-[13px] font-medium">
+                ¿Emiten factura legal?
+                <i class="fas fa-chevron-down text-[#444] text-[11px] chevron transition-transform"></i>
+              </summary>
+              <p class="px-5 pb-4 text-[#555] text-[13px] leading-[1.65]">Sí. Factura con IVA, aceptamos órdenes de compra corporativas.</p>
+            </details>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="py-20 bg-gradient-to-b from-transparent to-black/40" data-animate>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-4xl font-black mb-5">¿Necesitás equipar tu empresa?</h2>
-      <p class="text-gray-400 text-lg mb-10 max-w-xl mx-auto">Completá el cotizador y recibí precios de distribución en menos de 48 horas.</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="contacto.html" class="bg-secondary text-white font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-opacity glow-secondary text-base">
-          Cotizar Hardware
-        </a>
-        <a href="https://wa.me/595992056945?text=Hola%20NovaTec,%20necesito%20cotizar%20hardware%20corporativo" target="_blank" rel="noopener"
-          class="border border-white/20 font-semibold px-8 py-4 rounded-xl hover:bg-white/5 transition-colors text-base flex items-center justify-center gap-2">
-          <i class="fab fa-whatsapp text-green-400"></i> WhatsApp Directo
-        </a>
+  <section class="py-24 border-t border-white/[0.06]">
+    <div class="max-w-[1200px] mx-auto px-6 will-fade">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-8">
+        <div>
+          <h2 class="text-[28px] font-black tracking-tight mb-2">¿Necesitás equipar tu empresa?</h2>
+          <p class="text-[#555] text-[13px]">Cotización de hardware en menos de 48 horas.</p>
+        </div>
+        <div class="flex flex-wrap gap-3 flex-shrink-0">
+          <a href="contacto.html" class="bg-white text-black text-[13px] font-semibold px-5 py-2.5 rounded-full hover:bg-white/90 transition-colors">Cotizar hardware</a>
+          <a href="https://wa.me/595992056945?text=Hola,%20necesito%20cotizar%20hardware%20corporativo" target="_blank" rel="noopener"
+             class="border border-white/[0.1] text-[#888] text-[13px] font-medium px-5 py-2.5 rounded-full hover:bg-white/[0.04] hover:text-white transition-colors flex items-center gap-2">
+            <i class="fab fa-whatsapp text-[#25D366]"></i> WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-black border-t border-white/10 pt-16 pb-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-10 border-b border-white/10">
-        <div class="md:col-span-2">
-          <a href="index.html" class="flex items-center gap-2.5 font-black text-xl tracking-tight mb-4">
-            <img src="img/logonovatec.jfif" alt="NovaTec" class="w-8 h-8 rounded-full object-cover">
-            NOVA<span class="text-primary">TEC</span>
+  <footer class="border-t border-white/[0.06] py-12 bg-black">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-start justify-between gap-10 mb-10">
+        <div>
+          <a href="index.html" class="flex items-center gap-2 font-semibold text-[14px] tracking-tight mb-3">
+            <img src="img/logonovatec.jfif" alt="NT" class="w-5 h-5 rounded-full object-cover">
+            Nova<span style="color:#00f2ff">Tec</span>
           </a>
-          <p class="text-gray-500 text-sm leading-relaxed max-w-xs mb-6">Soluciones tecnológicas integrales para empresas que buscan crecer en la era digital.</p>
-          <div class="flex gap-3">
-            <a href="https://wa.me/595992056945" target="_blank" rel="noopener" class="w-9 h-9 bg-white/5 rounded-lg flex items-center justify-center text-gray-400 hover:text-primary hover:bg-primary/10 transition-all"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.tiktok.com/@novatec.py" target="_blank" rel="noopener" class="w-9 h-9 bg-white/5 rounded-lg flex items-center justify-center text-gray-400 hover:text-primary hover:bg-primary/10 transition-all"><i class="fab fa-tiktok"></i></a>
+          <p class="text-[#444] text-[12px] max-w-[220px] leading-relaxed">Desarrollo de software y sitios web. Asunción, Paraguay.</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-10 text-[13px]">
+          <div>
+            <p class="text-[#333] font-medium mb-4 text-[11px] uppercase tracking-widest">Servicios</p>
+            <div class="space-y-2.5">
+              <a href="software.html" class="block text-[#555] hover:text-white transition-colors">Software</a>
+              <a href="hardware.html" class="block text-white">Hardware</a>
+              <a href="portafolio.html" class="block text-[#555] hover:text-white transition-colors">Portafolio</a>
+            </div>
+          </div>
+          <div>
+            <p class="text-[#333] font-medium mb-4 text-[11px] uppercase tracking-widest">Empresa</p>
+            <div class="space-y-2.5">
+              <a href="contacto.html" class="block text-[#555] hover:text-white transition-colors">Contacto</a>
+              <a href="https://www.tiktok.com/@novatec.py" target="_blank" rel="noopener" class="block text-[#555] hover:text-white transition-colors">TikTok</a>
+            </div>
+          </div>
+          <div>
+            <p class="text-[#333] font-medium mb-4 text-[11px] uppercase tracking-widest">Contacto</p>
+            <div class="space-y-2.5">
+              <p class="text-[#555]">+595 992 056 945</p>
+              <p class="text-[#555]">novatec.com.py</p>
+            </div>
           </div>
         </div>
-        <div>
-          <h5 class="text-xs font-bold uppercase tracking-widest text-gray-600 mb-4">Servicios</h5>
-          <ul class="space-y-3">
-            <li><a href="software.html" class="text-sm text-gray-400 hover:text-primary transition-colors">Desarrollo de Software</a></li>
-            <li><a href="hardware.html" class="text-sm text-gray-400 hover:text-primary transition-colors">Provisión de Hardware</a></li>
-            <li><a href="portafolio.html" class="text-sm text-gray-400 hover:text-primary transition-colors">Portafolio</a></li>
-            <li><a href="contacto.html" class="text-sm text-gray-400 hover:text-primary transition-colors">Cotizar</a></li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="text-xs font-bold uppercase tracking-widest text-gray-600 mb-4">Contacto</h5>
-          <ul class="space-y-3">
-            <li class="text-sm text-gray-400">+595 992 056 945</li>
-            <li class="text-sm text-gray-400">@novatec.py</li>
-            <li class="text-sm text-gray-400">Asunción, Paraguay</li>
-          </ul>
-        </div>
       </div>
-      <div class="flex flex-col md:flex-row justify-between items-center pt-8 gap-3">
-        <p class="text-xs text-gray-600">© 2024 NovaTec Engineering. Todos los derechos reservados.</p>
-        <p class="text-xs text-gray-600">novatec.com.py</p>
+      <div class="border-t border-white/[0.05] pt-6 flex justify-between items-center">
+        <p class="text-[11px] text-[#333]">© 2024 NovaTec Engineering</p>
+        <p class="text-[11px] text-[#333]">Asunción, Paraguay</p>
       </div>
     </div>
   </footer>
