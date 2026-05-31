@@ -3,11 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto & Cotización — NovaTec Engineering</title>
-  <meta name="description" content="Cotizá tu proyecto de software o consultanos por servicio técnico y hardware. Respondemos en menos de 24 horas hábiles.">
+
+  <!-- Primary SEO -->
+  <title>Cotizá tu Proyecto de Software — Contacto NovaTec Engineering Paraguay</title>
+  <meta name="description" content="Contactá a NovaTec Engineering en Asunción, Paraguay. Cotizá tu proyecto de software online o consultanos sobre servicio técnico de celulares. Respondemos en menos de 24 horas hábiles.">
+  <meta name="keywords" content="contacto novatec paraguay, cotizar software asuncion, cotizacion pagina web paraguay, contactar servicio tecnico celulares asuncion, presupuesto desarrollo software paraguay, cotizar app movil paraguay">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="NovaTec Engineering">
+  <meta name="geo.region" content="PY-ASU">
+  <meta name="geo.placename" content="Asunción, Paraguay">
+  <link rel="canonical" href="https://novatec.com.py/contacto.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="NovaTec Engineering">
+  <meta property="og:title" content="Cotizá tu Proyecto — Contacto NovaTec Engineering Paraguay">
+  <meta property="og:description" content="Cotizá tu proyecto de software o consultanos sobre servicio técnico. Respondemos en menos de 24 horas. Asunción, Paraguay.">
+  <meta property="og:url" content="https://novatec.com.py/contacto.html">
+  <meta property="og:image" content="https://novatec.com.py/img/logonovatec.jfif">
+  <meta property="og:locale" content="es_PY">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cotizá tu Proyecto — NovaTec Engineering Paraguay">
+  <meta name="twitter:description" content="Cotizá tu proyecto de software o consultanos. Respondemos en 24 horas. Paraguay.">
+  <meta name="twitter:image" content="https://novatec.com.py/img/logonovatec.jfif">
+
+  <!-- Favicon -->
   <link rel="icon" href="img/logonovatec.jfif">
+
+  <!-- Fonts: preconnect to googleapis + gstatic for fastest delivery -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Schema.org JSON-LD: ContactPage + BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://novatec.com.py/"},
+          {"@type": "ListItem", "position": 2, "name": "Contacto", "item": "https://novatec.com.py/contacto.html"}
+        ]
+      },
+      {
+        "@type": "ContactPage",
+        "name": "Contacto y Cotización — NovaTec Engineering",
+        "description": "Cotizá proyectos de software o consultá sobre servicio técnico de celulares. NovaTec Engineering responde en menos de 24 horas hábiles.",
+        "url": "https://novatec.com.py/contacto.html",
+        "publisher": {
+          "@type": "Organization",
+          "name": "NovaTec Engineering",
+          "url": "https://novatec.com.py",
+          "@id": "https://novatec.com.py/#organization"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CSS CDN (synchronous — processes DOM classes at load time) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -28,7 +86,7 @@
   <nav class="fixed top-0 inset-x-0 z-50 h-12 flex items-center border-b border-white/[0.06] bg-black/85 backdrop-blur-xl">
     <div class="w-full max-w-[1200px] mx-auto px-6 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-2 font-semibold text-[15px] tracking-tight">
-        <img src="img/logonovatec.jfif" alt="NT" class="w-5 h-5 rounded-full object-cover">
+        <img src="img/logonovatec.jfif" alt="NovaTec Engineering" class="w-5 h-5 rounded-full object-cover">
         Nova<span style="color:#00f2ff">Tec</span>
       </a>
       <div class="hidden md:flex items-center gap-6">
@@ -55,10 +113,12 @@
     </div>
   </div>
 
+  <main id="main-content">
+
   <!-- PAGE HEADER -->
   <section class="pt-32 pb-16 border-b border-white/[0.06]">
     <div class="max-w-[1200px] mx-auto px-6">
-      <nav class="text-[12px] text-[#444] mb-8 flex items-center gap-2">
+      <nav aria-label="Breadcrumb" class="text-[12px] text-[#444] mb-8 flex items-center gap-2">
         <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
         <span>/</span><span>Contacto</span>
       </nav>
@@ -218,13 +278,15 @@
     </div>
   </section>
 
+  </main>
+
   <!-- FOOTER -->
   <footer class="border-t border-white/[0.06] py-12 bg-black mt-8">
     <div class="max-w-[1200px] mx-auto px-6">
       <div class="flex flex-col md:flex-row md:items-start justify-between gap-10 mb-10">
         <div>
           <a href="index.html" class="flex items-center gap-2 font-semibold text-[14px] tracking-tight mb-3">
-            <img src="img/logonovatec.jfif" alt="NT" class="w-5 h-5 rounded-full object-cover">
+            <img src="img/logonovatec.jfif" alt="NovaTec Engineering" class="w-5 h-5 rounded-full object-cover">
             Nova<span style="color:#00f2ff">Tec</span>
           </a>
           <p class="text-[#444] text-[12px] max-w-[220px] leading-relaxed">Desarrollo de software y sitios web. Asunción, Paraguay.</p>
@@ -261,7 +323,7 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
-  <script src="js/cotizador.js"></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/cotizador.js" defer></script>
 </body>
 </html>
