@@ -35,12 +35,12 @@
   <!-- Google Search Console -->
   <meta name="google-site-verification" content="OSgHoHdo01-KzYPgR-IHtyJBJacFvOIVgksFE3Ezykw">
 
-  <!-- Fonts: preconnect to googleapis + gstatic for fastest delivery -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 
-  <!-- Schema.org JSON-LD: LocalBusiness + Organization + WebSite -->
+  <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -50,17 +50,9 @@
         "@id": "https://novatec.com.py/#organization",
         "name": "NovaTec Engineering",
         "url": "https://novatec.com.py",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://novatec.com.py/img/logonovatec.jfif"
-        },
+        "logo": { "@type": "ImageObject", "url": "https://novatec.com.py/img/logonovatec.jfif" },
         "sameAs": ["https://www.tiktok.com/@novatec.py"],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+595-992-056-945",
-          "contactType": "customer service",
-          "availableLanguage": "Spanish"
-        }
+        "contactPoint": { "@type": "ContactPoint", "telephone": "+595-992-056-945", "contactType": "customer service", "availableLanguage": "Spanish" }
       },
       {
         "@type": "LocalBusiness",
@@ -69,57 +61,18 @@
         "description": "Empresa de desarrollo de software a medida, creación de páginas web profesionales y servicio técnico especializado en celulares y laptops de alta gama en Asunción, Paraguay.",
         "url": "https://novatec.com.py",
         "telephone": "+595992056945",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Asunción",
-          "addressCountry": "PY"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": -25.2867,
-          "longitude": -57.6470
-        },
-        "areaServed": {
-          "@type": "Country",
-          "name": "Paraguay"
-        },
+        "address": { "@type": "PostalAddress", "addressLocality": "Asunción", "addressCountry": "PY" },
+        "geo": { "@type": "GeoCoordinates", "latitude": -25.2867, "longitude": -57.6470 },
+        "areaServed": { "@type": "Country", "name": "Paraguay" },
         "priceRange": "$$",
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-            "opens": "08:00",
-            "closes": "18:00"
-          }
-        ],
+        "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" }],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Servicios NovaTec Engineering",
           "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Desarrollo de Software a Medida",
-                "description": "Sistemas web, apps móviles, automatizaciones y sistemas empresariales para empresas en Paraguay"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Creación de Páginas Web Profesionales",
-                "description": "Sitios corporativos, landing pages y e-commerce con diseño premium y SEO optimizado en Asunción"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Servicio Técnico de Celulares y Laptops",
-                "description": "Diagnóstico y reparación profesional de smartphones iPhone, Samsung, Pixel y laptops corporativas en Asunción, Paraguay"
-              }
-            }
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desarrollo de Software a Medida", "description": "Sistemas web, apps móviles, automatizaciones y sistemas empresariales para empresas en Paraguay" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Creación de Páginas Web Profesionales", "description": "Sitios corporativos, landing pages y e-commerce con diseño premium y SEO optimizado en Asunción" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Servicio Técnico de Celulares y Laptops", "description": "Diagnóstico y reparación profesional de smartphones iPhone, Samsung, Pixel y laptops corporativas en Asunción, Paraguay" } }
           ]
         }
       },
@@ -129,533 +82,759 @@
         "url": "https://novatec.com.py",
         "name": "NovaTec Engineering",
         "description": "Software, páginas web y servicio técnico especializado en Paraguay",
-        "publisher": {"@id": "https://novatec.com.py/#organization"},
+        "publisher": { "@id": "https://novatec.com.py/#organization" },
         "inLanguage": "es"
       }
     ]
   }
   </script>
 
-  <!-- Tailwind CSS CDN (synchronous — processes DOM classes at load time) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { brand: '#00f2ff', card: '#111111', surface: '#0a0a0a' },
-          fontFamily: { sans: ['Inter', 'sans-serif'] }
-        }
-      }
-    }
-  </script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body class="bg-black text-white font-sans antialiased">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <!-- NAV -->
-  <nav aria-label="Navegación principal" class="fixed top-0 inset-x-0 z-50 h-12 flex items-center border-b border-white/[0.06] bg-black/90 backdrop-blur-xl">
-    <div class="w-full max-w-[1200px] mx-auto px-6 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2 font-semibold text-[15px] tracking-tight">
-        <img src="img/logonovatec.jfif" alt="NovaTec Engineering" class="w-5 h-5 rounded-full object-cover">
+    :root {
+      --bg:      #050505;
+      --c1:      #0c0c0c;
+      --c2:      #111111;
+      --c3:      #161616;
+      --border:  rgba(255,255,255,0.065);
+      --border-h:rgba(255,255,255,0.14);
+      --text:    #ffffff;
+      --t2:      rgba(255,255,255,0.55);
+      --t3:      rgba(255,255,255,0.28);
+      --accent:  #00f2ff;
+      --green:   #22c55e;
+      --r-sm:    14px;
+      --r-md:    20px;
+      --r-lg:    28px;
+      --gap:     10px;
+    }
+
+    html { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
+    body { overflow-x: hidden; cursor: none; }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 2px; }
+
+    /* ── Custom cursor ── */
+    #cur-dot  { position: fixed; width: 6px; height: 6px; background: #fff; border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); transition: transform .08s; }
+    #cur-ring { position: fixed; width: 32px; height: 32px; border: 1px solid rgba(255,255,255,0.3); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: width .2s, height .2s, border-color .2s; }
+    body:has(a:hover) #cur-ring, body:has(button:hover) #cur-ring { width: 44px; height: 44px; border-color: rgba(255,255,255,0.55); }
+
+    /* ── Nav ── */
+    nav { position: fixed; top: 0; inset-inline: 0; z-index: 50; height: 52px; display: flex; align-items: center; transition: background .3s, border-color .3s; }
+    nav.scrolled { background: rgba(5,5,5,0.88); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .nav-inner { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 700; letter-spacing: -.03em; text-decoration: none; color: #fff; }
+    .nav-logo img { width: 22px; height: 22px; border-radius: 50%; object-fit: cover; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none; transition: color .2s; letter-spacing: -.01em; }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta { font-size: 13px; font-weight: 600; background: #fff; color: #000; padding: 7px 18px; border-radius: 100px; text-decoration: none; transition: opacity .2s; }
+    .nav-cta:hover { opacity: .88; color: #000 !important; }
+    .menu-btn { display: none; background: none; border: none; cursor: none; flex-direction: column; gap: 5px; padding: 4px; }
+    .menu-btn span { display: block; width: 20px; height: 1px; background: #fff; transition: all .2s; }
+
+    /* ── Mobile menu ── */
+    #mob-menu { display: none; position: fixed; top: 52px; inset-inline: 0; z-index: 40; background: rgba(5,5,5,0.98); border-bottom: 1px solid var(--border); padding: 16px 24px 24px; flex-direction: column; gap: 2px; }
+    #mob-menu.open { display: flex; }
+    #mob-menu a { font-size: 14px; color: rgba(255,255,255,0.5); text-decoration: none; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.04); transition: color .2s; }
+    #mob-menu a:hover { color: #fff; }
+    #mob-menu .mob-cta { margin-top: 12px; text-align: center; background: #fff; color: #000; font-weight: 600; border-radius: 100px; padding: 12px; border: none; }
+
+    /* ── Bento Grid ── */
+    .bento { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: 80px; gap: var(--gap); max-width: 1280px; margin: 0 auto; padding: 80px 24px 0; }
+
+    .b-card { border-radius: var(--r-lg); border: 1px solid var(--border); background: var(--c1); overflow: hidden; position: relative; transition: border-color .3s, transform .3s; }
+    .b-card:hover { border-color: var(--border-h); }
+
+    /* Grid positions */
+    .b-brand     { grid-column: 1 / 8;  grid-row: 1 / 8; }
+    .b-stats     { grid-column: 8 / 13; grid-row: 1 / 4; }
+    .b-tagline   { grid-column: 8 / 13; grid-row: 4 / 8; }
+    .b-software  { grid-column: 1 / 6;  grid-row: 8 / 14; }
+    .b-tech      { grid-column: 6 / 10; grid-row: 8 / 14; }
+    .b-stack     { grid-column: 10/ 13; grid-row: 8 / 11; }
+    .b-hardware  { grid-column: 10/ 13; grid-row: 11/ 14; }
+    .b-portfolio { grid-column: 1 / 13; grid-row: 14/ 18; }
+
+    /* ── Scroll-reveal ── */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s cubic-bezier(.22,1,.36,1), transform .65s cubic-bezier(.22,1,.36,1); }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── Brand card ── */
+    .b-brand { background: var(--bg); overflow: visible; }
+    .brand-inner { height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 44px 48px; position: relative; z-index: 1; }
+    .brand-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--t3); margin-bottom: 32px; }
+
+    .brand-title { font-size: clamp(52px, 6.5vw, 96px); font-weight: 900; line-height: .91; letter-spacing: -.05em; }
+    .brand-title .line { display: block; overflow: hidden; }
+    .brand-title .line span { display: block; animation: lineReveal .9s cubic-bezier(.22,1,.36,1) both; }
+    .brand-title .line:nth-child(2) span { animation-delay: .12s; }
+    .brand-title .line:nth-child(3) span { animation-delay: .24s; }
+    .brand-title .grad { background: linear-gradient(90deg, #fff 0%, rgba(255,255,255,.4) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    @keyframes lineReveal {
+      from { transform: translateY(108%); }
+      to   { transform: translateY(0); }
+    }
+
+    .brand-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; color: var(--t3); border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.02); padding: 7px 14px; border-radius: 100px; letter-spacing: .01em; }
+    .pill .dot { width: 5px; height: 5px; border-radius: 50%; }
+    .pill .dot.on  { background: var(--green); box-shadow: 0 0 6px var(--green); }
+    .pill .dot.off { background: #333; }
+
+    .brand-ctas { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 28px; }
+    .btn-primary { font-size: 13px; font-weight: 600; background: #fff; color: #000; padding: 11px 24px; border-radius: 100px; text-decoration: none; transition: opacity .2s; display: inline-flex; align-items: center; gap: 6px; cursor: none; }
+    .btn-primary:hover { opacity: .88; }
+    .btn-secondary { font-size: 13px; font-weight: 500; color: var(--t2); border: 1px solid rgba(255,255,255,0.12); padding: 11px 24px; border-radius: 100px; text-decoration: none; transition: color .2s, border-color .2s; display: inline-flex; align-items: center; gap: 6px; cursor: none; }
+    .btn-secondary:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+
+    /* Gradient mesh orbs */
+    .orb { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; animation: orbFloat 14s ease-in-out infinite alternate; }
+    .orb1 { width: 420px; height: 420px; background: radial-gradient(circle, rgba(0,242,255,.06) 0%, transparent 70%); top: -60px; left: -80px; animation-duration: 16s; }
+    .orb2 { width: 320px; height: 320px; background: radial-gradient(circle, rgba(139,92,246,.05) 0%, transparent 70%); bottom: 40px; right: 40px; animation-duration: 12s; animation-delay: -5s; }
+
+    @keyframes orbFloat {
+      from { transform: translate(0,0) scale(1); }
+      to   { transform: translate(30px,20px) scale(1.06); }
+    }
+
+    /* Grid overlay on brand */
+    .brand-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; border-radius: var(--r-lg); }
+
+    /* ── Stats card ── */
+    .b-stats { background: var(--c1); }
+    .stats-inner { height: 100%; display: grid; grid-template-columns: repeat(3, 1fr); }
+    .stat-cell { display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 16px 8px; border-right: 1px solid var(--border); }
+    .stat-cell:last-child { border-right: none; }
+    .stat-num { font-size: 36px; font-weight: 900; letter-spacing: -.04em; line-height: 1; }
+    .stat-label { font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--t3); margin-top: 8px; text-align: center; }
+
+    /* ── Tagline card ── */
+    .b-tagline { background: var(--c2); display: flex; flex-direction: column; justify-content: center; padding: 32px 36px; }
+    .tagline-quote { font-size: clamp(17px, 2vw, 22px); font-weight: 700; letter-spacing: -.03em; line-height: 1.25; color: #fff; margin-bottom: 20px; }
+    .tagline-quote em { font-style: normal; color: var(--t3); }
+    .tagline-attr { font-size: 11px; color: var(--t3); letter-spacing: .01em; }
+
+    /* ── Software card ── */
+    .b-software { padding: 36px 36px 32px; display: flex; flex-direction: column; }
+    .card-icon { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 28px; }
+    .card-badge { font-size: 9px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--t3); border: 1px solid rgba(255,255,255,.07); padding: 4px 10px; border-radius: 100px; margin-bottom: 28px; align-self: flex-start; }
+    .card-title { font-size: 20px; font-weight: 700; letter-spacing: -.03em; margin-bottom: 12px; }
+    .card-desc  { font-size: 12.5px; color: var(--t3); line-height: 1.7; margin-bottom: 20px; }
+    .card-list  { list-style: none; display: flex; flex-direction: column; gap: 10px; flex: 1; margin-bottom: 22px; }
+    .card-list li { font-size: 12px; color: var(--t3); display: flex; align-items: center; gap: 10px; }
+    .card-list li::before { content: ''; width: 1px; height: 12px; background: rgba(255,255,255,.2); flex-shrink: 0; }
+    .stack-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; }
+    .chip { font-size: 10px; color: var(--t3); border: 1px solid rgba(255,255,255,.07); padding: 4px 10px; border-radius: 100px; }
+    .card-link { font-size: 12px; color: var(--t3); text-decoration: none; display: flex; align-items: center; justify-content: space-between; transition: color .2s; margin-top: auto; }
+    .card-link:hover { color: #fff; }
+    .card-link .arr { transition: transform .2s; }
+    .card-link:hover .arr { transform: translateX(3px); }
+
+    /* ── Tech card ── */
+    .b-tech { padding: 36px 32px 32px; display: flex; flex-direction: column; background: var(--c2); }
+    .tech-notice { border: 1px solid rgba(255,255,255,.06); background: rgba(255,255,255,.02); border-radius: 12px; padding: 12px 14px; margin-bottom: 20px; }
+    .tech-notice p { font-size: 11px; color: var(--t3); line-height: 1.6; }
+    .tech-notice strong { color: rgba(255,255,255,.5); }
+    .btn-wa { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; color: #fff; background: rgba(37,211,102,0.12); border: 1px solid rgba(37,211,102,0.25); padding: 10px 18px; border-radius: 100px; text-decoration: none; transition: background .2s, border-color .2s; cursor: none; margin-top: auto; }
+    .btn-wa:hover { background: rgba(37,211,102,0.22); border-color: rgba(37,211,102,0.45); }
+    .btn-wa svg { flex-shrink: 0; }
+
+    /* ── Stack card ── */
+    .b-stack { padding: 24px; display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 1fr); gap: 8px; align-content: center; background: var(--c3); }
+    .stack-item { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 10px 4px; border-radius: 12px; border: 1px solid var(--border); background: rgba(255,255,255,.02); transition: border-color .2s, background .2s; }
+    .stack-item:hover { border-color: rgba(255,255,255,.12); background: rgba(255,255,255,.04); }
+    .stack-item span { font-size: 9px; color: var(--t3); letter-spacing: .03em; }
+    .stack-icon { font-size: 16px; line-height: 1; }
+
+    /* ── Hardware card ── */
+    .b-hardware { background: var(--c1); position: relative; overflow: hidden; }
+    .hw-blur { position: absolute; inset: 0; padding: 24px; filter: blur(3px); opacity: .18; pointer-events: none; select: none; }
+    .hw-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; background: linear-gradient(160deg, rgba(5,5,5,.3), rgba(5,5,5,.75)); }
+    .hw-tag { font-size: 9px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.3); border: 1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.03); padding: 5px 12px; border-radius: 100px; }
+    .hw-title { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.4); }
+
+    /* ── Portfolio card ── */
+    .b-portfolio { padding: 32px 36px; display: grid; grid-template-columns: 1fr 1fr auto; gap: var(--gap); align-items: stretch; background: var(--bg); }
+    .port-project { border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; transition: border-color .3s; display: flex; flex-direction: column; }
+    .port-project:hover { border-color: var(--border-h); }
+    .port-thumb { height: 140px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; position: relative; overflow: hidden; }
+    .port-label { font-size: 9px; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.3); }
+    .port-name  { font-size: 15px; font-weight: 600; color: #fff; text-align: center; padding: 0 12px; }
+    .port-meta  { padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); flex: 1; }
+    .port-meta-text p:first-child { font-size: 12px; font-weight: 500; }
+    .port-meta-text p:last-child  { font-size: 10px; color: var(--t3); margin-top: 2px; }
+    .port-visit { font-size: 11px; color: var(--t3); text-decoration: none; transition: color .2s; white-space: nowrap; }
+    .port-visit:hover { color: #fff; }
+    .port-cta { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 12px; padding: 24px; border: 1px solid var(--border); border-radius: var(--r-md); background: var(--c1); }
+    .port-cta p { font-size: 13px; color: var(--t3); text-align: center; line-height: 1.5; }
+    .port-cta a { font-size: 12px; font-weight: 600; color: #fff; border: 1px solid rgba(255,255,255,.15); padding: 8px 18px; border-radius: 100px; text-decoration: none; transition: border-color .2s; }
+    .port-cta a:hover { border-color: rgba(255,255,255,.35); }
+
+    /* mock bar */
+    .mock-bar { display: flex; gap: 5px; padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,.04); }
+    .dot-r { width: 8px; height: 8px; border-radius: 50%; background: #ff5f57; }
+    .dot-y { width: 8px; height: 8px; border-radius: 50%; background: #febc2e; }
+    .dot-g { width: 8px; height: 8px; border-radius: 50%; background: #28c840; }
+
+    /* ── Marquee ── */
+    .marquee-wrap { overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 14px 0; margin-top: var(--gap); }
+    .marquee-track { display: flex; gap: 40px; white-space: nowrap; animation: marquee 22s linear infinite; }
+    .marquee-track span { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--t3); }
+    .marquee-track span.accent { color: var(--accent); }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ── Process strip (below bento) ── */
+    .process { max-width: 1280px; margin: 0 auto; padding: var(--gap) 24px 0; }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border-radius: var(--r-lg); overflow: hidden; }
+    .process-cell { background: var(--c1); padding: 32px 28px; }
+    .process-num  { font-size: 10px; font-family: monospace; color: var(--t3); margin-bottom: 20px; }
+    .process-title { font-size: 14px; font-weight: 600; margin-bottom: 10px; }
+    .process-desc  { font-size: 12px; color: var(--t3); line-height: 1.7; }
+
+    /* ── Why section ── */
+    .why { max-width: 1280px; margin: 0 auto; padding: 80px 24px; }
+    .why-header { margin-bottom: 48px; }
+    .section-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--t3); margin-bottom: 14px; }
+    .section-title { font-size: clamp(28px, 3.5vw, 44px); font-weight: 900; letter-spacing: -.04em; line-height: 1.05; }
+    .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; border-radius: var(--r-lg); overflow: hidden; background: var(--border); }
+    .why-cell { background: var(--c1); padding: 32px 28px; display: flex; gap: 18px; }
+    .why-icon-wrap { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .why-cell-title { font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+    .why-cell-desc  { font-size: 12px; color: var(--t3); line-height: 1.7; }
+
+    /* ── CTA Banner ── */
+    .cta-banner { max-width: 1280px; margin: 0 auto; padding: 0 24px 80px; }
+    .cta-inner { background: var(--c1); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 56px 64px; display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; }
+    .cta-label { font-size: 10px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--t3); margin-bottom: 16px; }
+    .cta-title { font-size: clamp(28px, 3.5vw, 44px); font-weight: 900; letter-spacing: -.04em; line-height: 1.05; }
+    .cta-sub { font-size: 13px; color: var(--t3); margin-top: 14px; max-width: 360px; line-height: 1.7; }
+    .cta-btns { display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; }
+
+    /* ── Footer ── */
+    footer { border-top: 1px solid var(--border); padding: 56px 0 32px; }
+    .foot-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+    .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,.04); }
+    .foot-logo { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; letter-spacing: -.03em; text-decoration: none; color: #fff; margin-bottom: 14px; }
+    .foot-logo img { width: 20px; height: 20px; border-radius: 50%; object-fit: cover; }
+    .foot-tagline { font-size: 12px; color: var(--t3); max-width: 240px; line-height: 1.8; margin-bottom: 20px; }
+    .foot-socials { display: flex; gap: 8px; }
+    .foot-social { width: 32px; height: 32px; border: 1px solid rgba(255,255,255,.08); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--t3); font-size: 12px; text-decoration: none; transition: color .2s, border-color .2s; }
+    .foot-social:hover { color: #fff; border-color: rgba(255,255,255,.22); }
+    .foot-col-title { font-size: 9px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: #333; margin-bottom: 20px; }
+    .foot-links { display: flex; flex-direction: column; gap: 12px; }
+    .foot-links a { font-size: 13px; color: var(--t3); text-decoration: none; transition: color .2s; }
+    .foot-links a:hover { color: #fff; }
+    .foot-links .muted { color: #333; font-size: 12px; }
+    .foot-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 28px; }
+    .foot-copy { font-size: 11px; color: #2a2a2a; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .bento { grid-template-columns: 1fr 1fr; grid-auto-rows: auto; gap: 8px; padding: 72px 16px 0; }
+      .b-brand    { grid-column: 1 / 3; grid-row: auto; min-height: 420px; }
+      .b-stats    { grid-column: 1 / 3; grid-row: auto; }
+      .b-tagline  { grid-column: 1 / 3; grid-row: auto; min-height: 160px; }
+      .b-software { grid-column: 1 / 3; grid-row: auto; }
+      .b-tech     { grid-column: 1 / 3; grid-row: auto; }
+      .b-stack    { grid-column: 1 / 2; grid-row: auto; min-height: 120px; }
+      .b-hardware { grid-column: 2 / 3; grid-row: auto; min-height: 120px; }
+      .b-portfolio{ grid-column: 1 / 3; grid-row: auto; grid-template-columns: 1fr; }
+      .b-portfolio { display: flex; flex-direction: column; }
+      .port-cta { min-height: 100px; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .cta-inner { flex-direction: column; align-items: flex-start; padding: 36px 28px; }
+      .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .foot-grid > div:first-child { grid-column: 1 / 3; }
+      .nav-links { display: none; }
+      .menu-btn { display: flex; }
+    }
+
+    @media (max-width: 560px) {
+      .brand-inner { padding: 32px 24px; }
+      .b-software, .b-tech { padding: 28px 24px 24px; }
+      .process-grid { grid-template-columns: 1fr; }
+      .foot-grid { grid-template-columns: 1fr; }
+      .foot-grid > div:first-child { grid-column: 1; }
+      .foot-bottom { flex-direction: column; gap: 8px; }
+      .b-stack { grid-template-columns: repeat(4, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Custom cursor -->
+  <div id="cur-dot"></div>
+  <div id="cur-ring"></div>
+
+  <!-- ── NAV ── -->
+  <nav id="nav" aria-label="Navegación principal">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="img/logonovatec.jfif" alt="NovaTec Engineering">
         Nova<span style="color:#00f2ff">Tec</span>
       </a>
-      <div class="hidden md:flex items-center gap-6">
-        <a href="software.html" data-page="software.html" class="text-[13px] text-[#666] hover:text-white transition-colors">Software</a>
-        <a href="#servicio-tecnico" class="text-[13px] text-[#666] hover:text-white transition-colors">Servicio Técnico</a>
-        <a href="hardware.html" data-page="hardware.html" class="text-[13px] text-[#666] hover:text-white transition-colors">Hardware</a>
-        <a href="portafolio.html" data-page="portafolio.html" class="text-[13px] text-[#666] hover:text-white transition-colors">Portafolio</a>
-        <a href="contacto.html" class="text-[13px] font-medium bg-white text-black px-4 py-1.5 rounded-full hover:bg-white/90 transition-colors">
-          Cotizar proyecto
-        </a>
+      <div class="nav-links">
+        <a href="software.html">Software</a>
+        <a href="#servicio-tecnico">Servicio Técnico</a>
+        <a href="hardware.html">Hardware</a>
+        <a href="portafolio.html">Portafolio</a>
+        <a href="contacto.html" class="nav-cta">Cotizar proyecto</a>
       </div>
-      <button id="menu-btn" class="md:hidden p-1.5" aria-label="Menú">
-        <span id="bar1" class="block w-5 h-px bg-white mb-1.5 transition-all duration-200"></span>
-        <span id="bar2" class="block w-5 h-px bg-white mb-1.5 transition-all duration-200"></span>
-        <span id="bar3" class="block w-5 h-px bg-white transition-all duration-200"></span>
+      <button class="menu-btn" id="menu-btn" aria-label="Menú">
+        <span id="bar1"></span><span id="bar2"></span><span id="bar3"></span>
       </button>
     </div>
   </nav>
-  <div id="mobile-menu" class="hidden fixed top-12 inset-x-0 z-40 bg-black border-b border-white/[0.06] px-6 pb-5 pt-4">
-    <div class="flex flex-col gap-1">
-      <a href="software.html" class="text-[#888] hover:text-white py-2.5 text-[14px] border-b border-white/[0.05]">Software</a>
-      <a href="#servicio-tecnico" class="text-[#888] hover:text-white py-2.5 text-[14px] border-b border-white/[0.05]">Servicio Técnico</a>
-      <a href="hardware.html" class="text-[#888] hover:text-white py-2.5 text-[14px] border-b border-white/[0.05]">Hardware</a>
-      <a href="portafolio.html" class="text-[#888] hover:text-white py-2.5 text-[14px] border-b border-white/[0.05]">Portafolio</a>
-      <a href="contacto.html" class="text-[#888] hover:text-white py-2.5 text-[14px] border-b border-white/[0.05]">Contacto</a>
-      <a href="contacto.html" class="mt-3 text-center text-[13px] font-medium bg-white text-black px-4 py-2.5 rounded-full">Cotizar proyecto</a>
-    </div>
+
+  <!-- Mobile menu -->
+  <div id="mob-menu" role="navigation" aria-label="Menú móvil">
+    <a href="software.html">Software</a>
+    <a href="#servicio-tecnico">Servicio Técnico</a>
+    <a href="hardware.html">Hardware</a>
+    <a href="portafolio.html">Portafolio</a>
+    <a href="contacto.html" class="mob-cta">Cotizar proyecto</a>
   </div>
 
   <main id="main-content">
 
-  <!-- ─── HERO ──────────────────────────────────────────────────────── -->
-  <section class="min-h-screen flex flex-col justify-center pt-12 border-b border-white/[0.04]">
-    <div class="max-w-[1200px] mx-auto px-6 py-28">
-      <p class="text-[11px] font-medium uppercase tracking-[0.2em] text-[#444] mb-8">NovaTec Engineering · Paraguay</p>
-      <h1 class="font-black leading-[0.92] tracking-[-0.04em] mb-8 headline-gradient"
-          style="font-size: clamp(56px, 8.5vw, 104px);">
-        Software.<br>Diseño.<br>Servicio.
-      </h1>
-      <p class="text-[#555] text-[16px] max-w-[480px] leading-[1.65] mb-10">
-        Desarrollamos software a medida y sitios web de alta fidelidad.
-        Brindamos servicio técnico especializado en dispositivos de alta gama.<br>
-        <span class="text-[#777]">Código de producción. Diagnóstico real. Sin intermediarios.</span>
-      </p>
-      <div class="flex flex-wrap gap-3 mb-10">
-        <a href="#servicios" class="bg-white text-black text-[13px] font-semibold px-5 py-2.5 rounded-full hover:bg-white/90 transition-colors">
-          Ver servicios
-        </a>
-        <a href="contacto.html" class="border border-white/[0.15] text-[#888] text-[13px] font-medium px-5 py-2.5 rounded-full hover:bg-white/[0.04] hover:text-white transition-colors">
-          Empezar un proyecto →
-        </a>
-      </div>
-      <!-- Service status pills -->
-      <div class="flex flex-wrap gap-2">
-        <span class="inline-flex items-center gap-1.5 text-[11px] text-[#555] border border-white/[0.07] bg-white/[0.02] px-3 py-1.5 rounded-full">
-          <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span> Software a medida
-        </span>
-        <span class="inline-flex items-center gap-1.5 text-[11px] text-[#555] border border-white/[0.07] bg-white/[0.02] px-3 py-1.5 rounded-full">
-          <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span> Sitios Web
-        </span>
-        <span class="inline-flex items-center gap-1.5 text-[11px] text-[#555] border border-white/[0.07] bg-white/[0.02] px-3 py-1.5 rounded-full">
-          <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span> Servicio Técnico
-        </span>
-        <span class="inline-flex items-center gap-1.5 text-[11px] text-[#333] border border-white/[0.04] px-3 py-1.5 rounded-full opacity-60">
-          <span class="w-1.5 h-1.5 bg-[#333] rounded-full"></span> Hardware (próximamente)
-        </span>
-      </div>
-    </div>
-  </section>
+  <!-- ── BENTO GRID ── -->
+  <section class="bento" aria-label="Presentación de servicios">
 
-  <!-- ─── SERVICIOS ─────────────────────────────────────────────────── -->
-  <section id="servicios" class="py-28 border-b border-white/[0.06]">
-    <div class="max-w-[1200px] mx-auto px-6">
-      <div class="flex items-end justify-between mb-14">
-        <div class="will-fade">
-          <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-[#444] mb-3">Servicios</p>
-          <h2 class="text-[32px] md:text-[40px] font-black tracking-tight leading-tight">
-            Lo que construimos<br>y reparamos.
-          </h2>
-        </div>
-        <a href="contacto.html" class="hidden md:inline-flex text-[13px] text-[#555] hover:text-white transition-colors will-fade">
-          Cotizar →
-        </a>
-      </div>
-
-      <!-- 2x2 service grid -->
-      <div class="grid md:grid-cols-2 gap-3">
-
-        <!-- ── Software a medida ── -->
-        <div class="border border-white/[0.06] bg-[#111] rounded-2xl p-8 hover:border-white/[0.14] transition-all duration-200 flex flex-col will-fade">
-          <div class="flex items-start justify-between mb-7">
-            <div class="w-9 h-9 border border-white/[0.08] rounded-xl flex items-center justify-center">
-              <i class="fas fa-terminal text-[#555] text-[13px]"></i>
-            </div>
-            <span class="text-[10px] font-bold uppercase tracking-[0.15em] text-[#444] border border-white/[0.06] px-2.5 py-1 rounded-full">Cotizable</span>
-          </div>
-          <h3 class="text-[19px] font-semibold mb-3 tracking-tight">Software a medida</h3>
-          <p class="text-[#666] text-[13px] leading-[1.65] mb-5">
-            Sistemas web, apps móviles y automatizaciones. Arquitectura limpia, código revisado y documentado listo para producción desde el primer sprint.
-          </p>
-          <ul class="space-y-2.5 mb-7 flex-1">
-            <li class="flex items-center gap-2.5 text-[12px] text-[#666]">
-              <span class="w-px h-3 bg-white/20 flex-shrink-0"></span>Aplicaciones web y sistemas empresariales
-            </li>
-            <li class="flex items-center gap-2.5 text-[12px] text-[#666]">
-              <span class="w-px h-3 bg-white/20 flex-shrink-0"></span>Apps móviles iOS y Android
-            </li>
-            <li class="flex items-center gap-2.5 text-[12px] text-[#666]">
-              <span class="w-px h-3 bg-white/20 flex-shrink-0"></span>APIs, integraciones y automatizaciones
-            </li>
-            <li class="flex items-center gap-2.5 text-[12px] text-[#666]">
-              <span class="w-px h-3 bg-white/20 flex-shrink-0"></span>ERP, CRM y sistemas de gestión
-            </li>
-          </ul>
-          <div class="flex flex-wrap gap-1.5 mb-7">
-            <span class="text-[10px] text-[#444] border border-white/[0.06] px-2.5 py-1 rounded-full">React</span>
-            <span class="text-[10px] text-[#444] border border-white/[0.06] px-2.5 py-1 rounded-full">Node.js</span>
-            <span class="text-[10px] text-[#444] border border-white/[0.06] px-2.5 py-1 rounded-full">Python</span>
-            <span class="text-[10px] text-[#444] border border-white/[0.06] px-2.5 py-1 rounded-full">React Native</span>
-          </div>
-          <a href="software.html" class="flex items-center justify-between text-[12px] text-[#555] hover:text-white transition-colors group">
-            Ver servicios de software
-            <span class="group-hover:translate-x-0.5 transition-transform">→</span>
-          </a>
-        </div>
-
-        <!-- ── Sitios Web de Alta Fidelidad ── -->
-        <div class="border border-white/[0.06] bg-[#111] rounded-2xl p-8 hover:border-white/[0.14] transition-all duration-200 flex flex-col will-fade">
-          <div class="flex items-start justify-between mb-7">
-            <div class="w-9 h-9 border border-white/[0.08] rounded-xl flex items-center justify-center">
-              <i class="fas fa-layer-group text-[#555] text-[13px]"></i>
-            </div>
-            <span class="text-[10px] font-bold uppercase tracking-[0.15em] text-[#444] border border-white/[0.06] px-2.5 py-1 rounded-full">Cotizable</span>
-          </div>
-          <h3 class="text-[19px] font-semibold mb-3 tracking-tight">Sitios Web de Alta Fidelidad</h3>
-          <p class="text-[#666] text-[13px] leading-[1.65] mb-5">
-            Diseño de precisión, carga optimizada y código limpio. No usamos templates ni page builders. Cada sitio es construido desde cero para cumplir objetivos reales.
-          </p>
-          <ul class="space-y-2.5 mb-7 flex-1">
-            <li class="flex items-center gap-2.5 text-[12px] text-[#666]">
-              <span class="w-px h-3 bg-white/20 flex-shrink-0"></span>Sitios corporativos y landing pages
-            </li>
-            <li class="flex items-center gap-2.5 text-[12px] text-[#666]">
-              <span class="w-px h-3 bg-white/20 flex-shrink-0"></span>Tiendas e-commerce con panel propio
-            </li>
-            <li class="flex items-center gap-2.5 text-[12px] text-[#666]">
-              <span class="w-px h-3 bg-white/20 flex-shrink-0"></span>SEO técnico y performance optimizada
-            </li>
-            <li class="flex items-center gap-2.5 text-[12px] text-[#666]">
-              <span class="w-px h-3 bg-white/20 flex-shrink-0"></span>Diseño responsivo y accesibilidad
-            </li>
-          </ul>
-          <div class="flex flex-wrap gap-1.5 mb-7">
-            <span class="text-[10px] text-[#444] border border-white/[0.06] px-2.5 py-1 rounded-full">HTML/CSS</span>
-            <span class="text-[10px] text-[#444] border border-white/[0.06] px-2.5 py-1 rounded-full">Vue / React</span>
-            <span class="text-[10px] text-[#444] border border-white/[0.06] px-2.5 py-1 rounded-full">WordPress</span>
-            <span class="text-[10px] text-[#444] border border-white/[0.06] px-2.5 py-1 rounded-full">Tailwind</span>
-          </div>
-          <a href="portafolio.html" class="flex items-center justify-between text-[12px] text-[#555] hover:text-white transition-colors group">
-            Ver portafolio de sitios web
-            <span class="group-hover:translate-x-0.5 transition-transform">→</span>
-          </a>
-        </div>
-
-        <!-- ── Servicio Técnico Avanzado ── -->
-        <div id="servicio-tecnico" class="border border-white/[0.06] bg-[#111] rounded-2xl p-8 hover:border-white/[0.14] transition-all duration-200 flex flex-col will-fade">
-          <div class="flex items-start justify-between mb-7">
-            <div class="w-9 h-9 border border-white/[0.08] rounded-xl flex items-center justify-center">
-              <i class="fas fa-microchip text-[#555] text-[13px]"></i>
-            </div>
-            <span class="text-[10px] font-bold uppercase tracking-[0.15em] text-[#444] border border-white/[0.06] px-2.5 py-1 rounded-full">Diagnóstico previo</span>
-          </div>
-          <h3 class="text-[19px] font-semibold mb-3 tracking-tight">Soporte y Servicio Técnico</h3>
-          <p class="text-[#666] text-[13px] leading-[1.65] mb-5">
-            Diagnóstico, reparación y recuperación de datos en dispositivos de alta gama. Laboratorio equipado con herramientas de precisión profesional y protocolos de intervención técnica.
-          </p>
-          <ul class="space-y-2.5 mb-5 flex-1">
-            <li class="flex items-center gap-2.5 text-[12px] text-[#666]">
-              <span class="w-px h-3 bg-white/20 flex-shrink-0"></span>Smartphones premium (iPhone, Samsung Galaxy, Pixel)
-            </li>
-            <li class="flex items-center gap-2.5 text-[12px] text-[#666]">
-              <span class="w-px h-3 bg-white/20 flex-shrink-0"></span>Laptops y MacBooks corporativos
-            </li>
-            <li class="flex items-center gap-2.5 text-[12px] text-[#666]">
-              <span class="w-px h-3 bg-white/20 flex-shrink-0"></span>Recuperación de datos y almacenamiento
-            </li>
-            <li class="flex items-center gap-2.5 text-[12px] text-[#666]">
-              <span class="w-px h-3 bg-white/20 flex-shrink-0"></span>Optimización de rendimiento y mantenimiento
-            </li>
-          </ul>
-
-          <!-- Aviso de diagnóstico -->
-          <div class="border border-white/[0.06] bg-white/[0.02] rounded-xl px-4 py-3 mb-6">
-            <p class="text-[11px] text-[#555] leading-[1.6]">
-              <span class="text-white/60 font-semibold">Requiere diagnóstico previo en laboratorio.</span>
-              La complejidad técnica de cada caso determina el alcance del servicio. No disponible para cotización automática online.
-            </p>
-          </div>
-
-          <a href="https://wa.me/595992056945?text=Hola%2C%20quiero%20solicitar%20un%20turno%20t%C3%A9cnico%20para%20mi%20dispositivo"
-             target="_blank" rel="noopener"
-             class="flex items-center justify-between text-[12px] text-[#555] hover:text-white transition-colors group">
-            <span class="flex items-center gap-2">
-              <i class="fab fa-whatsapp text-[#25D366]"></i>
-              Solicitar turno técnico
-            </span>
-            <span class="group-hover:translate-x-0.5 transition-transform">→</span>
-          </a>
-        </div>
-
-        <!-- ── Hardware Corporativo — BLOQUEADO ── -->
-        <div class="relative border border-white/[0.04] rounded-2xl overflow-hidden will-fade" style="min-height: 360px;" aria-hidden="true">
-          <!-- Decorative blurred content (not interactive) -->
-          <div class="p-8 coming-soon-blur select-none pointer-events-none">
-            <div class="w-9 h-9 border border-white/[0.08] rounded-xl flex items-center justify-center mb-7">
-              <i class="fas fa-server text-[#444] text-[13px]"></i>
-            </div>
-            <p class="text-[#999] text-[19px] font-semibold mb-3">Provisión de Hardware</p>
-            <p class="text-[#555] text-[13px] leading-[1.65] mb-5">Equipamiento corporativo mayorista. Distribución directa sin intermediarios.</p>
-            <div class="space-y-2.5 mb-6">
-              <div class="h-2.5 bg-white/[0.07] rounded-full w-full"></div>
-              <div class="h-2.5 bg-white/[0.05] rounded-full w-4/5"></div>
-              <div class="h-2.5 bg-white/[0.07] rounded-full w-3/5"></div>
-              <div class="h-2.5 bg-white/[0.05] rounded-full w-4/5"></div>
-            </div>
-            <div class="flex gap-2 mb-7">
-              <div class="h-6 w-14 bg-white/[0.05] rounded-full"></div>
-              <div class="h-6 w-16 bg-white/[0.05] rounded-full"></div>
-              <div class="h-6 w-12 bg-white/[0.05] rounded-full"></div>
-            </div>
-            <div class="h-8 bg-white/[0.04] rounded-xl w-full"></div>
-          </div>
-          <!-- Overlay (no pointer-events on any child means nothing is clickable) -->
-          <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 pointer-events-none"
-               style="background: linear-gradient(160deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.65) 100%); backdrop-filter: blur(1.5px);">
-            <span class="inline-flex items-center gap-2 bg-white/[0.05] border border-white/[0.08] text-[10px] font-bold uppercase tracking-[0.22em] text-white/40 px-4 py-1.5 rounded-full">
-              <span class="w-1 h-1 rounded-full bg-white/30"></span>
-              Próxima fase
-            </span>
-            <p class="text-[15px] font-medium text-white/50 tracking-tight">Hardware Corporativo</p>
-            <p class="text-[12px] text-white/25 text-center max-w-[180px] leading-relaxed">
-              Provisión tecnológica mayorista. En desarrollo.
-            </p>
-          </div>
-        </div>
-
-      </div><!-- /grid -->
-    </div>
-  </section>
-
-  <!-- ─── ESTADÍSTICAS ──────────────────────────────────────────────── -->
-  <section class="py-14 border-b border-white/[0.06] bg-[#070707]">
-    <div class="max-w-[1200px] mx-auto px-6">
-      <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/[0.05]">
-        <div class="text-center px-6 will-fade">
-          <p class="text-[36px] md:text-[44px] font-black tracking-tight text-white mb-1">50+</p>
-          <p class="text-[11px] text-[#444] uppercase tracking-[0.15em]">Proyectos entregados</p>
-        </div>
-        <div class="text-center px-6 will-fade">
-          <p class="text-[36px] md:text-[44px] font-black tracking-tight text-white mb-1">100+</p>
-          <p class="text-[11px] text-[#444] uppercase tracking-[0.15em]">Dispositivos reparados</p>
-        </div>
-        <div class="text-center px-6 will-fade">
-          <p class="text-[36px] md:text-[44px] font-black tracking-tight text-white mb-1">5+</p>
-          <p class="text-[11px] text-[#444] uppercase tracking-[0.15em]">Años en operación</p>
-        </div>
-        <div class="text-center px-6 will-fade">
-          <p class="text-[36px] md:text-[44px] font-black tracking-tight text-white mb-1">100%</p>
-          <p class="text-[11px] text-[#444] uppercase tracking-[0.15em]">Satisfacción del cliente</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── PORTAFOLIO PREVIEW ────────────────────────────────────────── -->
-  <section class="py-28 border-b border-white/[0.06]">
-    <div class="max-w-[1200px] mx-auto px-6">
-      <div class="flex items-end justify-between mb-14">
-        <div class="will-fade">
-          <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-[#444] mb-3">Trabajo reciente</p>
-          <h2 class="text-[30px] md:text-[36px] font-black tracking-tight leading-tight">Proyectos en producción.</h2>
-        </div>
-        <a href="portafolio.html" class="hidden md:inline text-[13px] text-[#555] hover:text-white transition-colors will-fade">Ver portafolio completo →</a>
-      </div>
-      <div class="grid md:grid-cols-2 gap-3">
-
-        <div class="border border-white/[0.06] bg-[#111] rounded-2xl overflow-hidden hover:border-white/[0.13] transition-all duration-200 will-fade">
-          <div class="mock-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
-          <div class="h-48 flex flex-col items-center justify-center relative overflow-hidden"
-               style="background: linear-gradient(135deg, #091521 0%, #163352 55%, #0c1e2f 100%);">
-            <div class="absolute inset-0 opacity-[0.06]" style="background-image: repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255,255,255,1) 60px, rgba(255,255,255,1) 61px);"></div>
-            <p class="text-[10px] text-[#555] uppercase tracking-[0.15em] mb-2 relative">Estudio Jurídico</p>
-            <p class="text-[18px] font-semibold text-white relative text-center px-4">Cáceres Álvarez Abogados</p>
-          </div>
-          <div class="px-6 py-5 flex items-center justify-between">
-            <div>
-              <p class="text-[13px] font-medium">Sitio corporativo</p>
-              <p class="text-[11px] text-[#444] mt-0.5">Sector legal · Paraguay</p>
-            </div>
-            <a href="https://caceresalvarezabogados.com.py/" target="_blank" rel="noopener"
-               class="text-[12px] text-[#555] hover:text-white transition-colors flex items-center gap-1.5">
-              Visitar <i class="fas fa-external-link-alt text-[10px]"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="border border-white/[0.06] bg-[#111] rounded-2xl overflow-hidden hover:border-white/[0.13] transition-all duration-200 will-fade">
-          <div class="mock-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
-          <div class="h-48 flex flex-col items-center justify-center"
-               style="background: radial-gradient(ellipse at center, #1a2e1a 0%, #0c1a0c 65%, #060a06 100%);">
-            <p class="text-[10px] text-[#555] uppercase tracking-[0.15em] mb-2">Fitness & Wellness</p>
-            <p class="text-[18px] font-semibold text-white">Power Gym</p>
-          </div>
-          <div class="px-6 py-5 flex items-center justify-between">
-            <div>
-              <p class="text-[13px] font-medium">Sitio corporativo</p>
-              <p class="text-[11px] text-[#444] mt-0.5">Salud & deporte · Paraguay</p>
-            </div>
-            <a href="https://www.powergym.com.py/" target="_blank" rel="noopener"
-               class="text-[12px] text-[#555] hover:text-white transition-colors flex items-center gap-1.5">
-              Visitar <i class="fas fa-external-link-alt text-[10px]"></i>
-            </a>
-          </div>
-        </div>
-
-      </div>
-      <div class="mt-3 md:hidden text-center">
-        <a href="portafolio.html" class="text-[13px] text-[#555] hover:text-white transition-colors">Ver portafolio completo →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── PROCESO ───────────────────────────────────────────────────── -->
-  <section class="py-28 border-b border-white/[0.06] bg-[#070707]">
-    <div class="max-w-[1200px] mx-auto px-6">
-      <div class="mb-14 will-fade">
-        <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-[#444] mb-3">Cómo trabajamos</p>
-        <h2 class="text-[30px] md:text-[36px] font-black tracking-tight">Sin burocracia. Sin sorpresas.</h2>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.05] rounded-2xl overflow-hidden">
-        <div class="bg-black p-8 will-fade">
-          <p class="text-[11px] font-mono text-[#333] mb-5">01</p>
-          <h4 class="text-[15px] font-semibold mb-3">Brief</h4>
-          <p class="text-[#555] text-[13px] leading-[1.65]">Entendemos el problema, el contexto del negocio y el usuario final. Sin formularios de 30 campos.</p>
-        </div>
-        <div class="bg-black p-8 will-fade">
-          <p class="text-[11px] font-mono text-[#333] mb-5">02</p>
-          <h4 class="text-[15px] font-semibold mb-3">Propuesta técnica</h4>
-          <p class="text-[#555] text-[13px] leading-[1.65]">Alcance detallado, tiempo estimado y precio cerrado. Todo documentado antes de empezar.</p>
-        </div>
-        <div class="bg-black p-8 will-fade">
-          <p class="text-[11px] font-mono text-[#333] mb-5">03</p>
-          <h4 class="text-[15px] font-semibold mb-3">Desarrollo</h4>
-          <p class="text-[#555] text-[13px] leading-[1.65]">Iteraciones cortas, demos frecuentes y comunicación directa. Nunca desaparecemos semanas.</p>
-        </div>
-        <div class="bg-black p-8 will-fade">
-          <p class="text-[11px] font-mono text-[#333] mb-5">04</p>
-          <h4 class="text-[15px] font-semibold mb-3">Entrega y soporte</h4>
-          <p class="text-[#555] text-[13px] leading-[1.65]">Deploy, documentación técnica y soporte continuo. Los proyectos evolucionan; estamos disponibles.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── POR QUÉ NOVATEC ───────────────────────────────────────────── -->
-  <section class="py-28 border-b border-white/[0.06]">
-    <div class="max-w-[1200px] mx-auto px-6">
-      <div class="grid md:grid-cols-2 gap-16 items-start">
-        <div class="will-fade">
-          <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-[#444] mb-3">Diferenciadores</p>
-          <h2 class="text-[30px] md:text-[36px] font-black tracking-tight leading-tight">
-            Por qué trabajar<br>con NovaTec.
-          </h2>
-        </div>
-        <div class="grid grid-cols-1 gap-6">
-          <div class="flex gap-5 will-fade">
-            <div class="w-8 h-8 border border-white/[0.08] rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
-              <i class="fas fa-code text-[#444] text-[11px]"></i>
-            </div>
-            <div>
-              <h4 class="text-[14px] font-semibold mb-1.5">Código de producción desde el primer sprint</h4>
-              <p class="text-[#555] text-[13px] leading-[1.65]">No entregamos prototipos que luego hay que reescribir. Cada línea es revisada, documentada y desplegable.</p>
-            </div>
-          </div>
-          <div class="flex gap-5 will-fade">
-            <div class="w-8 h-8 border border-white/[0.08] rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
-              <i class="fas fa-microscope text-[#444] text-[11px]"></i>
-            </div>
-            <div>
-              <h4 class="text-[14px] font-semibold mb-1.5">Diagnóstico técnico real, no estimaciones vagas</h4>
-              <p class="text-[#555] text-[13px] leading-[1.65]">El servicio técnico opera con herramientas de precisión y protocolos de intervención. Cada diagnóstico es documentado.</p>
-            </div>
-          </div>
-          <div class="flex gap-5 will-fade">
-            <div class="w-8 h-8 border border-white/[0.08] rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
-              <i class="fas fa-handshake text-[#444] text-[11px]"></i>
-            </div>
-            <div>
-              <h4 class="text-[14px] font-semibold mb-1.5">Precios directos sin intermediarios</h4>
-              <p class="text-[#555] text-[13px] leading-[1.65]">Sin agencias ni distribuidores en el medio. Cotizamos y ejecutamos nosotros. Más rápido, más claro.</p>
-            </div>
-          </div>
-          <div class="flex gap-5 will-fade">
-            <div class="w-8 h-8 border border-white/[0.08] rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
-              <i class="fas fa-map-marker-alt text-[#444] text-[11px]"></i>
-            </div>
-            <div>
-              <h4 class="text-[14px] font-semibold mb-1.5">Equipo local, soporte continuo</h4>
-              <p class="text-[#555] text-[13px] leading-[1.65]">Basados en Asunción, Paraguay. Comunicación directa, respuesta real y presencia para los proyectos que lo requieran.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── CTA FINAL ─────────────────────────────────────────────────── -->
-  <section class="py-28 border-b border-white/[0.06] bg-[#070707]">
-    <div class="max-w-[1200px] mx-auto px-6">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-10 will-fade">
+    <!-- BRAND -->
+    <div class="b-card b-brand reveal">
+      <div class="brand-grid"></div>
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+      <div class="brand-inner">
         <div>
-          <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-[#444] mb-4">Siguiente paso</p>
-          <h2 class="text-[32px] md:text-[44px] font-black tracking-tight leading-tight mb-4">
-            ¿Tenés un proyecto<br>o un dispositivo<br>que necesita atención?
-          </h2>
-          <p class="text-[#555] text-[14px] max-w-[380px] leading-[1.65]">
-            Para proyectos de software y sitios web usá el cotizador.
-            Para servicio técnico, contactanos directamente por WhatsApp.
-          </p>
+          <p class="brand-eyebrow">NovaTec Engineering · Asunción, Paraguay</p>
+          <h1 class="brand-title">
+            <span class="line"><span>Software.</span></span>
+            <span class="line"><span>Diseño.</span></span>
+            <span class="line"><span class="grad">Servicio.</span></span>
+          </h1>
+          <div class="brand-pills">
+            <span class="pill"><span class="dot on"></span>Software a medida</span>
+            <span class="pill"><span class="dot on"></span>Sitios Web</span>
+            <span class="pill"><span class="dot on"></span>Servicio Técnico</span>
+            <span class="pill"><span class="dot off"></span>Hardware (próximamente)</span>
+          </div>
         </div>
-        <div class="flex flex-col gap-3 flex-shrink-0">
-          <a href="contacto.html"
-             class="bg-white text-black text-[13px] font-semibold px-7 py-3 rounded-full hover:bg-white/90 transition-colors text-center">
-            Cotizar proyecto de software →
-          </a>
-          <a href="https://wa.me/595992056945?text=Hola%2C%20quiero%20solicitar%20un%20turno%20t%C3%A9cnico%20para%20mi%20dispositivo"
-             target="_blank" rel="noopener"
-             class="border border-white/[0.12] text-[#888] text-[13px] font-medium px-7 py-3 rounded-full hover:bg-white/[0.04] hover:text-white transition-colors text-center flex items-center justify-center gap-2">
-            <i class="fab fa-whatsapp text-[#25D366]"></i> Turno técnico por WhatsApp
-          </a>
+        <div>
+          <p style="font-size:13px;color:var(--t3);line-height:1.7;max-width:440px;margin-bottom:24px;">
+            Desarrollamos software a medida y sitios web de alta fidelidad. Brindamos servicio técnico especializado en dispositivos de alta gama. Código de producción real.
+          </p>
+          <div class="brand-ctas">
+            <a href="#servicios" class="btn-primary btn-magnetic">Ver servicios</a>
+            <a href="contacto.html" class="btn-secondary btn-magnetic">Empezar un proyecto →</a>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+
+    <!-- STATS -->
+    <div class="b-card b-stats reveal" style="transition-delay:.07s">
+      <div class="stats-inner">
+        <div class="stat-cell">
+          <span class="stat-num" data-count="50">0</span><span style="font-size:24px;font-weight:900;letter-spacing:-.04em;line-height:1;margin-top:-4px;">+</span>
+          <span class="stat-label">Proyectos<br>entregados</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num" data-count="100">0</span><span style="font-size:24px;font-weight:900;letter-spacing:-.04em;line-height:1;margin-top:-4px;">+</span>
+          <span class="stat-label">Dispositivos<br>reparados</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num" data-count="5">0</span><span style="font-size:24px;font-weight:900;letter-spacing:-.04em;line-height:1;margin-top:-4px;">+</span>
+          <span class="stat-label">Años en<br>operación</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAGLINE -->
+    <div class="b-card b-tagline reveal" style="transition-delay:.14s">
+      <p class="tagline-quote">
+        Código de producción desde el primer sprint. <em>Sin burocracia, sin sorpresas, sin intermediarios.</em>
+      </p>
+      <p class="tagline-attr">NovaTec Engineering — Asunción, PY</p>
+    </div>
+
+    <!-- SOFTWARE -->
+    <div class="b-card b-software reveal" id="servicios" style="transition-delay:.21s">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px;">
+        <div class="card-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <span class="card-badge">Cotizable online</span>
+      </div>
+      <h2 class="card-title">Software &amp; Sitios Web</h2>
+      <p class="card-desc">Sistemas web, apps móviles, automatizaciones y sitios de alta fidelidad. Arquitectura limpia, código revisado y listo para producción desde el primer sprint.</p>
+      <ul class="card-list">
+        <li>Aplicaciones web y sistemas empresariales</li>
+        <li>Apps móviles iOS y Android</li>
+        <li>Sitios corporativos, landing pages y e-commerce</li>
+        <li>APIs, integraciones y automatizaciones</li>
+        <li>ERP, CRM y sistemas de gestión</li>
+      </ul>
+      <div class="stack-chips">
+        <span class="chip">React</span>
+        <span class="chip">Node.js</span>
+        <span class="chip">Python</span>
+        <span class="chip">React Native</span>
+        <span class="chip">Vue</span>
+        <span class="chip">Tailwind</span>
+      </div>
+      <a href="contacto.html" class="card-link">
+        Cotizar mi proyecto
+        <span class="arr">→</span>
+      </a>
+    </div>
+
+    <!-- TECH SERVICE -->
+    <div class="b-card b-tech reveal" id="servicio-tecnico" style="transition-delay:.28s">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:24px;">
+        <div class="card-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <span class="card-badge">Diagnóstico previo</span>
+      </div>
+      <h2 class="card-title">Servicio Técnico</h2>
+      <p class="card-desc">Diagnóstico, reparación y recuperación de datos en dispositivos de alta gama. Laboratorio con herramientas de precisión profesional.</p>
+      <ul class="card-list" style="margin-bottom:18px;">
+        <li>Smartphones premium (iPhone, Samsung, Pixel)</li>
+        <li>Laptops y MacBooks corporativos</li>
+        <li>Recuperación de datos y almacenamiento</li>
+        <li>Optimización y mantenimiento de rendimiento</li>
+      </ul>
+      <div class="tech-notice">
+        <p><strong>Requiere diagnóstico previo en laboratorio.</strong> La complejidad de cada caso determina el alcance. No disponible para cotización online.</p>
+      </div>
+      <a href="https://wa.me/595992056945?text=Hola%2C%20quiero%20solicitar%20un%20turno%20t%C3%A9cnico%20para%20mi%20dispositivo"
+         target="_blank" rel="noopener" class="btn-wa">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="rgba(37,211,102,.9)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Solicitar turno técnico
+      </a>
+    </div>
+
+    <!-- STACK -->
+    <div class="b-card b-stack reveal" style="transition-delay:.35s" aria-label="Tecnologías">
+      <div class="stack-item"><span class="stack-icon">⚛️</span><span>React</span></div>
+      <div class="stack-item"><span class="stack-icon">🟩</span><span>Node</span></div>
+      <div class="stack-item"><span class="stack-icon">🐍</span><span>Python</span></div>
+      <div class="stack-item"><span class="stack-icon">📱</span><span>Native</span></div>
+      <div class="stack-item"><span class="stack-icon">🎨</span><span>Figma</span></div>
+      <div class="stack-item"><span class="stack-icon">☁️</span><span>Cloud</span></div>
+      <div class="stack-item"><span class="stack-icon">🗄️</span><span>SQL</span></div>
+      <div class="stack-item"><span class="stack-icon">🔷</span><span>Vue</span></div>
+    </div>
+
+    <!-- HARDWARE -->
+    <div class="b-card b-hardware reveal" aria-hidden="true" style="transition-delay:.42s">
+      <div class="hw-blur" aria-hidden="true">
+        <div style="width:32px;height:32px;border:1px solid rgba(255,255,255,.08);border-radius:10px;margin-bottom:16px;"></div>
+        <div style="height:14px;background:rgba(255,255,255,.06);border-radius:4px;margin-bottom:8px;width:80%;"></div>
+        <div style="height:10px;background:rgba(255,255,255,.04);border-radius:4px;width:60%;"></div>
+      </div>
+      <div class="hw-overlay">
+        <span class="hw-tag">Próxima fase</span>
+        <span class="hw-title">Hardware Corporativo</span>
+        <p style="font-size:10px;color:rgba(255,255,255,.2);text-align:center;max-width:120px;line-height:1.5;">Provisión tecnológica mayorista</p>
+      </div>
+    </div>
+
+    <!-- PORTFOLIO -->
+    <div class="b-card b-portfolio reveal" style="transition-delay:.49s">
+      <div class="port-project">
+        <div class="mock-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+        <div class="port-thumb" style="background:linear-gradient(135deg,#091521 0%,#163352 55%,#0c1e2f 100%);">
+          <div style="position:absolute;inset:0;opacity:.05;background-image:repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,255,255,1) 60px,rgba(255,255,255,1) 61px);"></div>
+          <p class="port-label">Estudio Jurídico</p>
+          <p class="port-name">Cáceres Álvarez Abogados</p>
+        </div>
+        <div class="port-meta">
+          <div class="port-meta-text">
+            <p>Sitio corporativo</p>
+            <p>Sector legal · Paraguay</p>
+          </div>
+          <a href="https://caceresalvarezabogados.com.py/" target="_blank" rel="noopener" class="port-visit">Visitar →</a>
+        </div>
+      </div>
+      <div class="port-project">
+        <div class="mock-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+        <div class="port-thumb" style="background:radial-gradient(ellipse at center,#1a2e1a 0%,#0c1a0c 65%,#060a06 100%);">
+          <p class="port-label">Fitness &amp; Wellness</p>
+          <p class="port-name">Power Gym</p>
+        </div>
+        <div class="port-meta">
+          <div class="port-meta-text">
+            <p>Sitio corporativo</p>
+            <p>Salud &amp; deporte · Paraguay</p>
+          </div>
+          <a href="https://www.powergym.com.py/" target="_blank" rel="noopener" class="port-visit">Visitar →</a>
+        </div>
+      </div>
+      <div class="port-cta">
+        <p>Proyectos reales<br>en producción</p>
+        <a href="portafolio.html">Ver portafolio →</a>
+      </div>
+    </div>
+
+  </section><!-- /bento -->
+
+  <!-- ── MARQUEE ── -->
+  <div class="marquee-wrap" style="max-width:1280px;margin:var(--gap) auto 0;overflow:hidden;" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Desarrollo de Software</span><span class="accent">·</span>
+      <span>Páginas Web Premium</span><span class="accent">·</span>
+      <span>Servicio Técnico</span><span class="accent">·</span>
+      <span>Apps Móviles</span><span class="accent">·</span>
+      <span>E-commerce</span><span class="accent">·</span>
+      <span>Sistemas a Medida</span><span class="accent">·</span>
+      <span>Diagnóstico Técnico</span><span class="accent">·</span>
+      <span>SEO &amp; Performance</span><span class="accent">·</span>
+      <span>Desarrollo de Software</span><span class="accent">·</span>
+      <span>Páginas Web Premium</span><span class="accent">·</span>
+      <span>Servicio Técnico</span><span class="accent">·</span>
+      <span>Apps Móviles</span><span class="accent">·</span>
+      <span>E-commerce</span><span class="accent">·</span>
+      <span>Sistemas a Medida</span><span class="accent">·</span>
+      <span>Diagnóstico Técnico</span><span class="accent">·</span>
+      <span>SEO &amp; Performance</span><span class="accent">·</span>
+    </div>
+  </div>
+
+  <!-- ── PROCESS ── -->
+  <div class="process">
+    <div style="padding:0 0 24px;">
+      <p class="section-eyebrow" style="margin-bottom:10px;">Cómo trabajamos</p>
+      <h2 class="section-title reveal">Sin burocracia.<br>Sin sorpresas.</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-cell reveal">
+        <p class="process-num">01</p>
+        <h3 class="process-title">Brief</h3>
+        <p class="process-desc">Entendemos el problema, el contexto del negocio y el usuario final. Sin formularios de 30 campos.</p>
+      </div>
+      <div class="process-cell reveal" style="transition-delay:.07s">
+        <p class="process-num">02</p>
+        <h3 class="process-title">Propuesta técnica</h3>
+        <p class="process-desc">Alcance detallado, tiempo estimado y precio cerrado. Todo documentado antes de empezar.</p>
+      </div>
+      <div class="process-cell reveal" style="transition-delay:.14s">
+        <p class="process-num">03</p>
+        <h3 class="process-title">Desarrollo</h3>
+        <p class="process-desc">Iteraciones cortas, demos frecuentes y comunicación directa. Nunca desaparecemos semanas.</p>
+      </div>
+      <div class="process-cell reveal" style="transition-delay:.21s">
+        <p class="process-num">04</p>
+        <h3 class="process-title">Entrega y soporte</h3>
+        <p class="process-desc">Deploy, documentación técnica y soporte continuo. Los proyectos evolucionan; estamos disponibles.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── WHY NOVATEC ── -->
+  <div class="why">
+    <div class="why-header reveal">
+      <p class="section-eyebrow">Diferenciadores</p>
+      <h2 class="section-title">Por qué trabajar<br>con NovaTec.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-cell reveal">
+        <div class="why-icon-wrap">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <div>
+          <p class="why-cell-title">Código de producción desde el primer sprint</p>
+          <p class="why-cell-desc">No entregamos prototipos que luego hay que reescribir. Cada línea es revisada, documentada y desplegable.</p>
+        </div>
+      </div>
+      <div class="why-cell reveal" style="transition-delay:.07s">
+        <div class="why-icon-wrap">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div>
+          <p class="why-cell-title">Diagnóstico técnico real, no estimaciones vagas</p>
+          <p class="why-cell-desc">El servicio técnico opera con herramientas de precisión y protocolos de intervención. Cada diagnóstico es documentado.</p>
+        </div>
+      </div>
+      <div class="why-cell reveal" style="transition-delay:.14s">
+        <div class="why-icon-wrap">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div>
+          <p class="why-cell-title">Precios directos sin intermediarios</p>
+          <p class="why-cell-desc">Sin agencias ni distribuidores en el medio. Cotizamos y ejecutamos nosotros. Más rápido, más claro.</p>
+        </div>
+      </div>
+      <div class="why-cell reveal" style="transition-delay:.21s">
+        <div class="why-icon-wrap">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <p class="why-cell-title">Equipo local, soporte continuo</p>
+          <p class="why-cell-desc">Basados en Asunción, Paraguay. Comunicación directa, respuesta real y presencia para los proyectos que lo requieran.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CTA BANNER ── -->
+  <div class="cta-banner">
+    <div class="cta-inner reveal">
+      <div>
+        <p class="cta-label">Siguiente paso</p>
+        <h2 class="cta-title">¿Tenés un proyecto<br>o un dispositivo<br>que necesita atención?</h2>
+        <p class="cta-sub">Para proyectos de software y sitios web usá el cotizador. Para servicio técnico, contactanos directamente por WhatsApp.</p>
+      </div>
+      <div class="cta-btns">
+        <a href="contacto.html" class="btn-primary btn-magnetic">Cotizar proyecto de software →</a>
+        <a href="https://wa.me/595992056945?text=Hola%2C%20quiero%20solicitar%20un%20turno%20t%C3%A9cnico%20para%20mi%20dispositivo"
+           target="_blank" rel="noopener" class="btn-wa btn-magnetic" style="justify-content:center;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="rgba(37,211,102,.9)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Turno técnico por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
 
   </main>
 
-  <!-- ─── FOOTER ────────────────────────────────────────────────────── -->
-  <footer class="py-14 bg-black">
-    <div class="max-w-[1200px] mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/[0.05]">
-        <div class="md:col-span-2">
-          <a href="index.html" class="flex items-center gap-2 font-semibold text-[14px] tracking-tight mb-4">
-            <img src="img/logonovatec.jfif" alt="NovaTec Engineering" class="w-5 h-5 rounded-full object-cover">
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="foot-inner">
+      <div class="foot-grid">
+        <div>
+          <a href="index.html" class="foot-logo">
+            <img src="img/logonovatec.jfif" alt="NovaTec Engineering">
             Nova<span style="color:#00f2ff">Tec</span>
           </a>
-          <p class="text-[#444] text-[12px] max-w-[260px] leading-[1.8] mb-6">
-            Desarrollo de software, sitios web de alta fidelidad y servicio técnico especializado. Asunción, Paraguay.
-          </p>
-          <div class="flex gap-3">
-            <a href="https://wa.me/595992056945" target="_blank" rel="noopener"
-               class="w-8 h-8 border border-white/[0.08] rounded-lg flex items-center justify-center text-[#444] hover:text-white hover:border-white/[0.2] transition-all text-[13px]">
-              <i class="fab fa-whatsapp"></i>
+          <p class="foot-tagline">Desarrollo de software, sitios web de alta fidelidad y servicio técnico especializado. Asunción, Paraguay.</p>
+          <div class="foot-socials">
+            <a href="https://wa.me/595992056945" target="_blank" rel="noopener" class="foot-social" aria-label="WhatsApp">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
             </a>
-            <a href="https://www.tiktok.com/@novatec.py" target="_blank" rel="noopener"
-               class="w-8 h-8 border border-white/[0.08] rounded-lg flex items-center justify-center text-[#444] hover:text-white hover:border-white/[0.2] transition-all text-[12px]">
-              <i class="fab fa-tiktok"></i>
+            <a href="https://www.tiktok.com/@novatec.py" target="_blank" rel="noopener" class="foot-social" aria-label="TikTok">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.19a8.16 8.16 0 004.77 1.52V6.27a4.85 4.85 0 01-1-.58z"/></svg>
             </a>
           </div>
         </div>
         <div>
-          <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-[#333] mb-5">Servicios</p>
-          <div class="space-y-3 text-[13px]">
-            <a href="software.html" class="block text-[#555] hover:text-white transition-colors">Software a medida</a>
-            <a href="portafolio.html" class="block text-[#555] hover:text-white transition-colors">Sitios Web</a>
-            <a href="#servicio-tecnico" class="block text-[#555] hover:text-white transition-colors">Servicio Técnico</a>
-            <a href="hardware.html" class="block text-[#333] flex items-center gap-1.5">
-              Hardware <span class="text-[10px]">(próximamente)</span>
-            </a>
+          <p class="foot-col-title">Servicios</p>
+          <div class="foot-links">
+            <a href="software.html">Software a medida</a>
+            <a href="portafolio.html">Sitios Web</a>
+            <a href="#servicio-tecnico">Servicio Técnico</a>
+            <a href="hardware.html" class="muted">Hardware (próximamente)</a>
           </div>
         </div>
         <div>
-          <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-[#333] mb-5">Empresa</p>
-          <div class="space-y-3 text-[13px]">
-            <a href="portafolio.html" class="block text-[#555] hover:text-white transition-colors">Portafolio</a>
-            <a href="contacto.html" class="block text-[#555] hover:text-white transition-colors">Contacto</a>
-            <p class="text-[#444]">+595 992 056 945</p>
-            <p class="text-[#444]">Asunción, Paraguay</p>
+          <p class="foot-col-title">Empresa</p>
+          <div class="foot-links">
+            <a href="portafolio.html">Portafolio</a>
+            <a href="contacto.html">Contacto</a>
+            <span class="muted">+595 992 056 945</span>
+            <span class="muted">Asunción, Paraguay</span>
           </div>
         </div>
       </div>
-      <div class="flex flex-col md:flex-row justify-between items-center pt-8 gap-3">
-        <p class="text-[11px] text-[#2a2a2a]">© 2024 NovaTec Engineering. Todos los derechos reservados.</p>
-        <p class="text-[11px] text-[#2a2a2a]">novatec.com.py</p>
+      <div class="foot-bottom">
+        <p class="foot-copy">© 2024 NovaTec Engineering. Todos los derechos reservados.</p>
+        <p class="foot-copy">novatec.com.py</p>
       </div>
     </div>
   </footer>
 
+  <script>
+    // ── Custom cursor
+    const dot  = document.getElementById('cur-dot');
+    const ring = document.getElementById('cur-ring');
+    let rx = 0, ry = 0, mx = 0, my = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.left = mx+'px'; dot.style.top = my+'px'; });
+    (function animRing() {
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      ring.style.left = rx+'px';
+      ring.style.top  = ry+'px';
+      requestAnimationFrame(animRing);
+    })();
+
+    // ── Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 30), { passive: true });
+
+    // ── Mobile menu
+    const menuBtn = document.getElementById('menu-btn');
+    const mobMenu = document.getElementById('mob-menu');
+    const bar1 = document.getElementById('bar1');
+    const bar2 = document.getElementById('bar2');
+    const bar3 = document.getElementById('bar3');
+    let menuOpen = false;
+    menuBtn.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobMenu.classList.toggle('open', menuOpen);
+      bar1.style.transform = menuOpen ? 'translateY(6px) rotate(45deg)' : '';
+      bar2.style.opacity   = menuOpen ? '0' : '1';
+      bar3.style.transform = menuOpen ? 'translateY(-6px) rotate(-45deg)' : '';
+    });
+    mobMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      menuOpen = false; mobMenu.classList.remove('open');
+      bar1.style.transform = bar3.style.transform = '';
+      bar2.style.opacity = '1';
+    }));
+
+    // ── Scroll reveal + counter trigger
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Counter animation
+    const counterIO = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const target = parseInt(el.dataset.count, 10);
+        const start = performance.now();
+        const dur = 1800;
+        (function tick(now) {
+          const p = Math.min((now - start) / dur, 1);
+          const ease = 1 - Math.pow(1 - p, 4);
+          el.textContent = Math.round(ease * target);
+          if (p < 1) requestAnimationFrame(tick);
+        })(start);
+        counterIO.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+
+    // ── Magnetic buttons
+    document.querySelectorAll('.btn-magnetic').forEach(btn => {
+      btn.addEventListener('mousemove', e => {
+        const r = btn.getBoundingClientRect();
+        const x = e.clientX - r.left - r.width  / 2;
+        const y = e.clientY - r.top  - r.height / 2;
+        btn.style.transform = `translate(${x * 0.18}px, ${y * 0.18}px)`;
+      });
+      btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+    });
+
+    // ── Stagger bento cards
+    document.querySelectorAll('.b-card').forEach((card, i) => {
+      if (card.classList.contains('reveal')) return;
+      card.style.transitionDelay = (i * 0.07) + 's';
+    });
+  </script>
   <script src="js/main.js" defer></script>
 </body>
 </html>
