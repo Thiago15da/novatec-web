@@ -359,6 +359,7 @@
 
     @media (max-width: 560px) {
       .brand-inner { padding: 32px 24px; }
+      .brand-title { font-size: clamp(34px, 9.4vw, 48px); }
       .b-software, .b-tech { padding: 28px 24px 24px; }
       .process-grid { grid-template-columns: 1fr; }
       .foot-grid { grid-template-columns: 1fr; }
@@ -376,6 +377,16 @@
     .business-item p { font-size: 12px; line-height: 1.75; color: var(--t2); }
     @media (max-width: 768px) { .business-solutions { margin: 10px; padding: 30px 24px; } .business-grid { grid-template-columns: 1fr; } }
 
+    @media (pointer: coarse) {
+      body { cursor: auto; }
+      #cur-dot, #cur-ring { display: none; }
+      a, button { cursor: pointer; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .brand-title .line span { animation: none; }
+      .orb { animation: none; }
+    }
   </style>
 </head>
 <body>
