@@ -1,199 +1,171 @@
-// Pricing reference data (USD) — Software only
-const PRICING = {
-  types: {
-    landing:   { label: 'Landing Page',        base: [300,  600] },
-    corporate: { label: 'Sitio Corporativo',   base: [700,  1400] },
-    ecommerce: { label: 'E-commerce',           base: [1200, 2800] },
-    webapp:    { label: 'Aplicación Web',       base: [2500, 6000] },
-    mobile:    { label: 'App Móvil',            base: [3500, 8000] },
-    custom:    { label: 'Sistema a Medida',     base: [4000, 12000] },
-  },
-  complexity: { basic: 1.0, standard: 1.5, premium: 2.2 },
-  features: {
-    cms: 0.10, blog: 0.08, payments: 0.20,
-    auth: 0.15, analytics: 0.05, multilang: 0.12,
-  },
-  timelines: {
-    landing: '1–2 semanas', corporate: '3–5 semanas',
-    ecommerce: '4–7 semanas', webapp: '8–14 semanas',
-    mobile: '10–18 semanas', custom: '10–24 semanas',
-  },
+// Solicitud de propuestas B2B — sin cotizaciones automáticas engañosas.
+const PROJECT_TYPES = {
+  landing:   { label: 'Landing / presentación', web: true },
+  corporate: { label: 'Sitio web corporativo', web: true },
+  ecommerce: { label: 'Tienda online', web: false },
+  webapp:    { label: 'Plataforma web', web: false },
+  mobile:    { label: 'Aplicación móvil', web: false },
+  custom:    { label: 'Sistema de gestión / CRM / ERP', web: false }
 };
+const FEATURES = [
+  ['portfolio', 'Portafolio de trabajos'], ['contact', 'Contacto y WhatsApp'],
+  ['admin', 'Panel de administración'], ['payments', 'Pagos online'],
+  ['integrations', 'Integraciones'], ['seo', 'Posicionamiento en Google']
+];
+const TIMELINES = [
+  ['pronto', 'Quiero comenzar pronto'],
+  ['uno-tres-meses', 'En 1 a 3 meses'],
+  ['explorando', 'Estoy evaluando opciones']
+];
+let quoteState = { step: 1, type: null, timeline: 'explorando', features: [] };
+const byId = id => document.getElementById(id);
 
-// State
-let state = {
-  step: 1,
-  type: null,
-  complexity: 'standard',
-  features: [],
-};
-
-// Helpers
-const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
-const el = id => document.getElementById(id);
-
-function calcEstimate() {
-  if (!state.type) return null;
-  const base = PRICING.types[state.type].base;
-  const mult = PRICING.complexity[state.complexity];
-  const feat = state.features.reduce((s, f) => s + (PRICING.features[f] || 0), 0);
-  return [
-    Math.round(base[0] * mult * (1 + feat)),
-    Math.round(base[1] * mult * (1 + feat)),
-  ];
-}
-
-// Step rendering
 function renderStep1() {
-  const types = Object.entries(PRICING.types);
-  el('quoter-body').innerHTML = `
-    <p class="text-[12px] text-[#444] mb-5">¿Qué tipo de proyecto de software necesitás?</p>
+  byId('quoter-body').innerHTML = `
+    <p class="text-[12px] text-[#888] mb-5">¿Qué necesita tu empresa?</p>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
-      ${types.map(([key, val]) => `
+      ${Object.entries(PROJECT_TYPES).map(([key, value]) => `
         <label class="opt">
-          <input type="radio" name="sw-type" value="${key}" ${state.type === key ? 'checked' : ''} onchange="setSWType('${key}')">
-          <span class="opt-label text-[12px] font-medium text-center">${val.label}</span>
+          <input type="radio" name="sw-type" value="${key}" ${quoteState.type === key ? 'checked' : ''} onchange="setSWType('${key}')">
+          <span class="opt-label text-[12px] font-medium text-center">${value.label}</span>
+        </label>`).join('')}
+    </div>
+    <p class="text-[11px] text-[#555] leading-relaxed mt-5">Si todavía no definiste todos los detalles, te ayudamos a delimitar el alcance.</p>`;
+}
+function renderStep2() {
+  byId('quoter-body').innerHTML = `
+    <p class="text-[12px] text-[#888] mb-4">¿Cuándo te gustaría comenzar?</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-2 mb-6">
+      ${TIMELINES.map(([key, value]) => `
+        <label class="opt">
+          <input type="radio" name="timeline" value="${key}" ${quoteState.timeline === key ? 'checked' : ''} onchange="setTimeline('${key}')">
+          <span class="opt-label text-[12px] text-center">${value}</span>
+        </label>`).join('')}
+    </div>
+    <p class="text-[12px] text-[#888] mb-3">¿Qué funciones te interesan? <span class="text-[#555]">(opcional)</span></p>
+    <div class="grid grid-cols-2 gap-2">
+      ${FEATURES.map(([key, value]) => `
+        <label class="opt">
+          <input type="checkbox" value="${key}" ${quoteState.features.includes(key) ? 'checked' : ''} onchange="toggleFeature('${key}')">
+          <span class="opt-label text-[12px]">${value}</span>
         </label>`).join('')}
     </div>`;
 }
-
-function renderStep2() {
-  el('quoter-body').innerHTML = `
-    <p class="text-[12px] text-[#444] mb-5">Definí la complejidad y los extras</p>
-
-    <div class="mb-6">
-      <p class="text-[12px] font-medium text-[#888] mb-3">Complejidad</p>
-      <div class="grid grid-cols-3 gap-2">
-        ${[['basic','Básico'],['standard','Estándar'],['premium','Premium']].map(([k,t]) => `
-          <label class="opt">
-            <input type="radio" name="complexity" value="${k}" ${state.complexity === k ? 'checked' : ''} onchange="state.complexity='${k}'">
-            <span class="opt-label text-[12px] font-medium text-center">${t}</span>
-          </label>`).join('')}
-      </div>
-    </div>
-
-    <div class="mb-2">
-      <p class="text-[12px] font-medium text-[#888] mb-3">Extras <span class="text-[#333] font-normal">(opcional)</span></p>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
-        ${[['cms','Panel CMS'],['blog','Blog'],['payments','Pagos online'],['auth','Login / Usuarios'],['analytics','Analíticas'],['multilang','Multiidioma']].map(([k,t]) => `
-          <label class="opt">
-            <input type="checkbox" value="${k}" ${state.features.includes(k) ? 'checked' : ''} onchange="toggleFeature('${k}')">
-            <span class="opt-label text-[12px]">${t}</span>
-          </label>`).join('')}
-      </div>
-    </div>`;
-}
-
 function renderStep3() {
-  const estimate = calcEstimate();
-  const timeline = PRICING.timelines[state.type];
-  const typeLabel = state.type ? PRICING.types[state.type].label : '';
-
-  el('quoter-body').innerHTML = `
-    ${estimate ? `
+  const project = PROJECT_TYPES[quoteState.type];
+  const timeline = TIMELINES.find(([key]) => key === quoteState.timeline)?.[1] || 'A definir';
+  const note = project.web
+    ? 'Proyectos web de entrada desde G. 1.250.000, según alcance. La propuesta final se confirma luego de conocer tus necesidades.'
+    : 'Los sistemas, plataformas y proyectos especiales se presupuestan según sus funciones y alcance.';
+  byId('quoter-body').innerHTML = `
     <div class="estimate-box mb-5">
-      <p class="text-[10px] font-medium uppercase tracking-[0.15em] text-[#444] mb-2">Estimado orientativo</p>
-      <p class="text-[28px] font-black tracking-tight leading-none mb-1">${fmt(estimate[0])} – ${fmt(estimate[1])} <span class="text-[14px] font-normal text-[#555]">USD</span></p>
-      <p class="text-[12px] text-[#444]">Plazo estimado: ${timeline}</p>
-      <p class="text-[11px] text-[#333] mt-3">Estimado orientativo. El precio final depende del alcance detallado.</p>
-    </div>` : `
-    <div class="estimate-box mb-5 text-center py-5">
-      <p class="text-[13px] text-[#444]">Completá tus datos y te enviamos una cotización personalizada.</p>
-    </div>`}
-
+      <p class="text-[10px] uppercase tracking-[0.15em] text-[#666] mb-2">Tu solicitud</p>
+      <p class="text-[19px] font-semibold tracking-tight">${project.label}</p>
+      <p class="text-[12px] text-[#888] mt-2">${timeline}</p>
+      <p class="text-[12px] text-[#bbb] leading-relaxed mt-4">${note}</p>
+    </div>
     <form id="quoter-form" action="https://formspree.io/f/xeeqrdlp" method="POST" class="space-y-3">
-      <input type="hidden" name="cotizador_tipo" value="${typeLabel}">
-      <input type="hidden" name="cotizador_complejidad" value="${state.complexity}">
-      <input type="hidden" name="cotizador_extras" value="${state.features.join(', ') || 'Ninguno'}">
-      <input type="hidden" name="cotizador_estimado" value="${estimate ? fmt(estimate[0]) + ' – ' + fmt(estimate[1]) + ' USD' : 'A confirmar'}">
+      <input type="hidden" name="proyecto_tipo" value="${project.label}">
+      <input type="hidden" name="proyecto_plazo" value="${timeline}">
+      <input type="hidden" name="proyecto_funciones" value="${quoteState.features.map(f => FEATURES.find(([key]) => key === f)?.[1]).filter(Boolean).join(', ') || 'Por definir'}">
       <div class="grid md:grid-cols-2 gap-3">
-        <input type="text" name="nombre" required placeholder="Nombre *" class="field">
-        <input type="tel" name="whatsapp" required placeholder="WhatsApp *" class="field">
+        <div><label class="sr-only" for="lead-name">Nombre y apellido</label><input id="lead-name" type="text" name="nombre" required autocomplete="name" placeholder="Nombre y apellido *" class="field"></div>
+        <div><label class="sr-only" for="lead-phone">WhatsApp</label><input id="lead-phone" type="tel" name="whatsapp" required autocomplete="tel" placeholder="WhatsApp *" class="field"></div>
       </div>
-      <input type="text" name="empresa" placeholder="Empresa (opcional)" class="field">
-      <textarea name="mensaje" rows="3" placeholder="Detalles adicionales..." class="field resize-none"></textarea>
-      <button type="submit" id="quoter-submit"
-        class="w-full bg-white text-black text-[13px] font-semibold py-3 rounded-full hover:bg-white/90 transition-colors">
-        Solicitar cotización formal
-      </button>
-      <p id="quoter-status" class="text-[12px] text-center hidden"></p>
+      <label class="sr-only" for="lead-company">Empresa o emprendimiento</label>
+      <input id="lead-company" type="text" name="empresa" required autocomplete="organization" placeholder="Empresa o emprendimiento *" class="field">
+      <label class="sr-only" for="lead-budget">Presupuesto estimado</label>
+      <select id="lead-budget" name="presupuesto_previsto" class="field">
+        <option value="">Presupuesto estimado (opcional)</option>
+        <option value="Hasta G. 2.350.000">Hasta G. 2.350.000</option>
+        <option value="G. 2.350.001 a G. 5.000.000">G. 2.350.001 a G. 5.000.000</option>
+        <option value="Más de G. 5.000.000">Más de G. 5.000.000</option>
+        <option value="Necesito orientación">Necesito orientación</option>
+      </select>
+      <label class="sr-only" for="lead-description">Qué necesitás resolver</label>
+      <textarea id="lead-description" name="necesidad" rows="3" required placeholder="Contanos qué necesitás resolver *" class="field resize-none"></textarea>
+      <label class="sr-only" for="lead-discovery">Cómo nos conociste</label>
+      <select id="lead-discovery" name="origen_declarado" class="field">
+        <option value="">¿Cómo conociste NovaTec? (opcional)</option>
+        <option>Google</option><option>Instagram</option><option>TikTok</option>
+        <option>Recomendación</option><option>Contacto directo de NovaTec</option><option>Otro</option>
+      </select>
+      <p class="text-[11px] text-[#666] leading-relaxed">Usaremos estos datos para responder a tu solicitud. El envío se procesa mediante Formspree.</p>
+      <button type="submit" id="quoter-submit" class="w-full bg-white text-black text-[13px] font-semibold py-3 rounded-full hover:bg-white/90 transition-colors">Solicitar propuesta personalizada →</button>
+      <p id="quoter-status" role="status" aria-live="polite" class="text-[12px] text-center hidden"></p>
     </form>`;
-
-  document.getElementById('quoter-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const btn = document.getElementById('quoter-submit');
-    const status = document.getElementById('quoter-status');
-    btn.disabled = true;
-    btn.textContent = 'Enviando...';
+  const form = byId('quoter-form');
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const button = byId('quoter-submit');
+    const status = byId('quoter-status');
+    button.disabled = true;
+    button.textContent = 'Enviando solicitud…';
+    if (typeof window.NovaTecLeadAttribution === 'function') window.NovaTecLeadAttribution(form);
     try {
-      const res = await fetch(e.target.action, {
-        method: 'POST', body: new FormData(e.target), headers: { Accept: 'application/json' },
-      });
-      if (res.ok) {
-        status.textContent = 'Cotización enviada. Te contactamos a la brevedad.';
-        status.className = 'text-center text-[12px] text-white/60 mt-1';
-        status.classList.remove('hidden');
-        e.target.reset();
-      } else throw new Error();
+      const response = await fetch(form.action, {method: 'POST', body: new FormData(form), headers: {Accept: 'application/json'}});
+      if (!response.ok) throw new Error('Formspree submission failed');
+      status.textContent = 'Recibimos tu solicitud. Nos comunicaremos por WhatsApp.';
+      status.className = 'text-center text-[12px] text-green-300 mt-2';
+      form.reset();
+      button.textContent = 'Solicitud enviada';
     } catch {
-      status.textContent = 'Error al enviar. Escribinos por WhatsApp.';
-      status.className = 'text-center text-[12px] text-red-400 mt-1';
-      status.classList.remove('hidden');
-      btn.disabled = false;
-      btn.textContent = 'Solicitar cotización formal';
+      status.textContent = 'No pudimos enviar la solicitud. Escribinos por WhatsApp al +595 992 056 945.';
+      status.className = 'text-center text-[12px] text-red-400 mt-2';
+      button.disabled = false;
+      button.textContent = 'Reintentar envío';
     }
   });
 }
-
-// State mutators
-function setSWType(type) { state.type = type; }
-function toggleFeature(f) {
-  const i = state.features.indexOf(f);
-  if (i > -1) state.features.splice(i, 1); else state.features.push(f);
+function setSWType(type) {
+  if (Object.prototype.hasOwnProperty.call(PROJECT_TYPES, type)) quoteState.type = type;
 }
-
-// Navigation
+function setTimeline(timeline) {
+  if (TIMELINES.some(([key]) => key === timeline)) quoteState.timeline = timeline;
+}
+function toggleFeature(feature) {
+  const index = quoteState.features.indexOf(feature);
+  if (index === -1) quoteState.features.push(feature);
+  else quoteState.features.splice(index, 1);
+}
 function nextStep() {
-  if (state.step === 1 && !state.type) {
-    alert('Por favor, seleccioná el tipo de proyecto.');
+  if (quoteState.step === 1 && !quoteState.type) {
+    alert('Elegí un tipo de proyecto para continuar.');
     return;
   }
-  state.step++;
+  if (quoteState.step >= 3) return;
+  quoteState.step++;
   updateUI();
 }
 function prevStep() {
-  if (state.step > 1) { state.step--; updateUI(); }
+  if (quoteState.step > 1) {quoteState.step--; updateUI();}
 }
 function resetQuoter() {
-  state = { step: 1, type: null, complexity: 'standard', features: [] };
+  quoteState = {step: 1, type: null, timeline: 'explorando', features: []};
   updateUI();
 }
-
 function updateUI() {
   [1, 2, 3].forEach(n => {
-    const dot = document.getElementById('step-' + n);
-    if (!dot) return;
-    dot.className = 'step-dot';
-    if (n < state.step) dot.classList.add('done');
-    else if (n === state.step) dot.classList.add('active');
-    const line = document.getElementById('line-' + n);
-    if (line) line.className = 'step-line' + (n < state.step ? ' done' : '');
+    const dot = byId('step-' + n);
+    const line = byId('line-' + n);
+    if (dot) {
+      dot.className = 's-dot';
+      if (n < quoteState.step) dot.classList.add('done');
+      if (n === quoteState.step) dot.classList.add('active');
+    }
+    if (line) line.className = 's-line' + (n < quoteState.step ? ' done' : '');
   });
-
-  if (state.step === 1) renderStep1();
-  else if (state.step === 2) renderStep2();
-  else if (state.step === 3) renderStep3();
-
-  const prevBtn = document.getElementById('btn-prev');
-  const nextBtn = document.getElementById('btn-next');
-  if (prevBtn) prevBtn.classList.toggle('invisible', state.step === 1);
-  if (nextBtn) {
-    nextBtn.classList.toggle('hidden', state.step === 3);
-    nextBtn.textContent = state.step === 2 ? 'Ver estimado →' : 'Siguiente →';
+  if (quoteState.step === 1) renderStep1();
+  else if (quoteState.step === 2) renderStep2();
+  else if (quoteState.step === 3) renderStep3();
+  const previous = byId('btn-prev');
+  const next = byId('btn-next');
+  if (previous) previous.classList.toggle('invisible', quoteState.step === 1);
+  if (next) {
+    next.classList.toggle('hidden', quoteState.step === 3);
+    next.textContent = quoteState.step === 2 ? 'Completar solicitud →' : 'Siguiente →';
   }
 }
-
-// Init
 document.addEventListener('DOMContentLoaded', () => {
-  if (document.getElementById('quoter-body')) updateUI();
+  if (byId('quoter-body')) updateUI();
 });
