@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Primary SEO -->
-  <title>Cotizá tu Proyecto de Software — Contacto NovaTec Engineering Paraguay</title>
-  <meta name="description" content="Contactá a NovaTec Engineering en Asunción, Paraguay. Cotizá tu proyecto de software online o consultanos sobre servicio técnico de celulares. Respondemos en menos de 24 horas hábiles.">
+  <title>Solicitá una Propuesta Web o Software | NovaTec Paraguay</title>
+  <meta name="description" content="Contactá a NovaTec Engineering en Asunción, Paraguay. Solicitá una propuesta personalizada de página web o software para tu empresa.">
   <meta name="keywords" content="contacto novatec paraguay, cotizar software asuncion, cotizacion pagina web paraguay, contactar servicio tecnico celulares asuncion, presupuesto desarrollo software paraguay, cotizar app movil paraguay">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="author" content="NovaTec Engineering">
@@ -127,7 +127,7 @@
           style="font-size: clamp(40px, 5.5vw, 64px);">
         Contanos sobre<br>tu proyecto.
       </h1>
-      <p class="text-[#666] text-[14px] will-fade">Respondemos en menos de 24 horas hábiles.</p>
+      <p class="text-[#666] text-[14px] will-fade">Contanos qué necesitás para tu empresa. Te responderemos por WhatsApp.</p>
     </div>
   </section>
 
@@ -141,8 +141,8 @@
           <div class="border border-white/[0.06] bg-[#0a0a0a] rounded-2xl p-7">
             <div class="flex items-center justify-between mb-2">
               <div>
-                <h2 class="text-[15px] font-semibold">Cotizador de Software</h2>
-                <p class="text-[11px] text-[#444] mt-0.5">Proyectos de desarrollo web y aplicaciones</p>
+                <h2 class="text-[15px] font-semibold">Solicitud de propuesta</h2>
+                <p class="text-[11px] text-[#666] mt-0.5">Tres pasos para entender qué necesita tu empresa</p>
               </div>
               <button onclick="resetQuoter()" class="text-[11px] text-[#444] hover:text-white transition-colors flex items-center gap-1.5">
                 <i class="fas fa-redo text-[10px]"></i> Reiniciar
@@ -152,7 +152,7 @@
             <!-- Scope notice -->
             <div class="border border-white/[0.05] bg-white/[0.02] rounded-xl px-4 py-3 mb-7">
               <p class="text-[11px] text-[#555] leading-[1.6]">
-                Este cotizador es exclusivo para proyectos de <span class="text-white/60 font-medium">Software y Desarrollo Web</span>.
+                Este formulario está pensado para proyectos de <span class="text-white/60 font-medium">Desarrollo Web y Software</span>. No genera precios automáticos: cada propuesta se ajusta al alcance.
                 Para servicio técnico de dispositivos o consultas de hardware, usá los canales directos de la columna derecha.
               </p>
             </div>
@@ -171,7 +171,7 @@
               <div id="line-2" class="s-line mb-4"></div>
               <div class="flex flex-col items-center gap-1">
                 <div id="step-3" class="s-dot">3</div>
-                <span class="text-[10px] text-[#333]">Estimado</span>
+                <span class="text-[10px] text-[#333]">Contacto</span>
               </div>
             </div>
 
@@ -196,23 +196,26 @@
           <!-- Quick form -->
           <div class="border border-white/[0.06] bg-[#0a0a0a] rounded-2xl p-6">
             <h3 class="text-[14px] font-semibold mb-1">Mensaje directo</h3>
-            <p class="text-[#444] text-[12px] mb-5">Para consultas sin usar el cotizador.</p>
+            <p class="text-[#666] text-[12px] mb-5">Si preferís explicar tu consulta directamente.</p>
             <form id="contact-form" action="https://formspree.io/f/xeeqrdlp" method="POST" class="space-y-3">
               <input type="text" name="nombre" required placeholder="Nombre *" class="field">
-              <input type="tel" name="telefono" required placeholder="WhatsApp *" class="field">
-              <select name="servicio" class="field">
+              <input type="tel" name="telefono" required autocomplete="tel" placeholder="WhatsApp *" class="field">
+              <input type="text" name="empresa" placeholder="Empresa (opcional)" autocomplete="organization" class="field">
+              <select name="servicio" required aria-label="Tipo de consulta" class="field">
                 <option value="">Tipo de consulta...</option>
+                <option value="web">Página web empresarial</option>
                 <option value="software">Desarrollo de Software</option>
                 <option value="tecnico">Servicio Técnico</option>
                 <option value="hardware">Hardware Corporativo</option>
                 <option value="consulta">Consulta general</option>
               </select>
-              <textarea name="mensaje" required rows="3" placeholder="Mensaje *" class="field resize-none"></textarea>
+              <textarea name="mensaje" required rows="3" placeholder="¿Qué necesitás resolver? *" class="field resize-none"></textarea>
+              <select name="origen_declarado" aria-label="Cómo conociste NovaTec" class="field"><option value="">¿Cómo conociste NovaTec? (opcional)</option><option>Google</option><option>Instagram</option><option>TikTok</option><option>Recomendación</option><option>Otro</option></select>
               <button type="submit"
                 class="w-full border border-white/[0.1] text-[#888] text-[13px] font-medium py-2.5 rounded-full hover:bg-white/[0.04] hover:text-white transition-colors">
                 Enviar mensaje
               </button>
-              <p id="form-status" class="text-[12px] text-center mt-2"></p>
+              <p id="form-status" role="status" aria-live="polite" class="text-[12px] text-center mt-2"></p>
             </form>
           </div>
 
@@ -250,6 +253,11 @@
                 </div>
                 <i class="fas fa-arrow-right text-[#333] text-[11px] ml-auto group-hover:text-white transition-colors"></i>
               </a>
+              <a href="https://www.instagram.com/novatecpy/" target="_blank" rel="noopener" class="flex items-center gap-3 p-3 border border-white/[0.06] rounded-xl hover:border-white/[0.12] transition-all group">
+                <div class="w-7 h-7 flex items-center justify-center"><i class="fab fa-instagram text-white/60 text-[14px]"></i></div>
+                <div><p class="text-[12px] font-medium">Instagram</p><p class="text-[11px] text-[#444]">@novatecpy</p></div>
+                <i class="fas fa-arrow-right text-[#333] text-[11px] ml-auto group-hover:text-white transition-colors"></i>
+              </a>
               <a href="https://www.tiktok.com/@novatec.py" target="_blank" rel="noopener"
                  class="flex items-center gap-3 p-3 border border-white/[0.06] rounded-xl hover:border-white/[0.12] transition-all group">
                 <div class="w-7 h-7 flex items-center justify-center">
@@ -268,9 +276,9 @@
           <div class="border border-white/[0.06] rounded-2xl p-5 bg-[#0a0a0a]">
             <div class="flex items-center gap-2 mb-2">
               <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
-              <p class="text-[12px] font-medium">Disponibles ahora</p>
+              <p class="text-[12px] font-medium">Atención personalizada</p>
             </div>
-            <p class="text-[#444] text-[12px] leading-[1.6]">Respondemos toda consulta en menos de <span class="text-white">24 horas hábiles</span>.</p>
+            <p class="text-[#777] text-[12px] leading-[1.6]">Revisamos cada consulta y te contactamos para conocer el proyecto y acordar los siguientes pasos.</p>
           </div>
 
         </div>
@@ -317,7 +325,7 @@
         </div>
       </div>
       <div class="border-t border-white/[0.05] pt-6 flex justify-between items-center">
-        <p class="text-[11px] text-[#333]">© 2024 NovaTec Engineering</p>
+        <p class="text-[11px] text-[#333]">© 2026 NovaTec Engineering</p>
         <p class="text-[11px] text-[#333]">Asunción, Paraguay</p>
       </div>
     </div>
