@@ -45,6 +45,12 @@ Priorizar videos cortos con demostraciones reales y casos que se puedan verifica
 
 Cada contenido debe incluir una llamada a la acción específica: **"Conocé nuestros trabajos y solicitá una propuesta en novatec.com.py"**. No usar testimonios, métricas o resultados inventados.
 
+## Página sectorial para constructoras
+
+https://novatec.com.py/web-para-constructoras.html
+
+Usar este enlace en mensajes personalizados a constructoras, arquitectura e ingeniería y medir las consultas calificadas que produce. Es una oferta sectorial, no una afirmación de que NovaTec ya haya desarrollado proyectos para clientes de construcción.
+
 ## Enlaces rastreables para las biografías
 
 Instagram:

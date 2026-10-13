@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import { Script } from 'node:vm';
 
-const files = ['index.html', 'contacto.html', 'portafolio.html', 'software.html', 'hardware.html'];
+const files = ['index.html', 'contacto.html', 'portafolio.html', 'software.html', 'hardware.html', 'web-para-constructoras.html'];
 const scriptFiles = ['js/main.js', 'js/cotizador.js', 'js/script.js'];
 const read = (path) => readFileSync(path, 'utf8');
 
