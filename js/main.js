@@ -1,3 +1,46 @@
+// Attribution is carried between site pages and included only when a visitor submits a form.
+// No external analytics scripts or third-party cookies are loaded here.
+(function initializeLeadAttribution() {
+  const params = new URLSearchParams(window.location.search);
+  const keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  let details = {};
+  try {
+    details = JSON.parse(sessionStorage.getItem('novatec_lead_origin') || '{}') || {};
+  } catch { details = {}; }
+
+  const incoming = {};
+  for (const key of keys) {
+    const value = params.get(key);
+    if (value) incoming[key] = value.slice(0, 140);
+  }
+  if (Object.keys(incoming).length > 0) details = {...details, ...incoming};
+  if (!details.referrer_host && document.referrer) {
+    try {
+      const host = new URL(document.referrer).hostname;
+      if (host !== window.location.hostname) details.referrer_host = host;
+    } catch { /* invalid referrer is ignored */ }
+  }
+  if (!details.entry_path) details.entry_path = window.location.pathname;
+  try { sessionStorage.setItem('novatec_lead_origin', JSON.stringify(details)); }
+  catch { /* private browsing may block storage */ }
+
+  window.NovaTecLeadAttribution = function attachAttribution(form) {
+    if (!form) return;
+    const fields = {origen_pagina: details.entry_path, ...details};
+    for (const [key, value] of Object.entries(fields)) {
+      const inputName = 'atribucion_' + key;
+      let field = Array.from(form.elements).find(el => el.name === inputName);
+      if (!field) {
+        field = document.createElement('input');
+        field.type = 'hidden';
+        field.name = inputName;
+        form.appendChild(field);
+      }
+      field.value = String(value).slice(0, 180);
+    }
+  };
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
   // Mobile menu toggle
   const menuBtn = document.getElementById('menu-btn');
@@ -56,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const btn = contactForm.querySelector('[type="submit"]');
       const statusEl = document.getElementById('form-status');
       const originalText = btn.textContent;
+      if (typeof window.NovaTecLeadAttribution === 'function') window.NovaTecLeadAttribution(contactForm);
 
       btn.disabled = true;
       btn.textContent = 'Enviando...';
