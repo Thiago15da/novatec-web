@@ -212,6 +212,7 @@
     .stat-cell { display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 16px 8px; border-right: 1px solid var(--border); }
     .stat-cell:last-child { border-right: none; }
     .stat-num { font-size: 36px; font-weight: 900; letter-spacing: -.04em; line-height: 1; }
+    .stat-word { font-size: clamp(13px, 1.8vw, 23px); font-weight: 800; letter-spacing: -.03em; }
     .stat-label { font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--t3); margin-top: 8px; text-align: center; }
 
     /* ── Tagline card ── */
@@ -365,6 +366,16 @@
       .foot-bottom { flex-direction: column; gap: 8px; }
       .b-stack { grid-template-columns: repeat(4, 1fr); }
     }
+    /* Business sectors */
+    .business-solutions { max-width: 1280px; margin: 10px auto 0; padding: 44px 48px; background: var(--c1); border: 1px solid var(--border); border-radius: var(--r-lg); }
+    .business-intro { max-width: 660px; font-size: 14px; line-height: 1.8; color: var(--t2); margin: 18px 0 30px; }
+    .business-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .business-item { padding: 24px; background: var(--c2); border: 1px solid var(--border); border-radius: var(--r-sm); }
+    .business-number { display: block; color: var(--t3); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 22px; }
+    .business-item h3 { font-size: 19px; font-weight: 650; letter-spacing: -.02em; margin-bottom: 10px; }
+    .business-item p { font-size: 12px; line-height: 1.75; color: var(--t2); }
+    @media (max-width: 768px) { .business-solutions { margin: 10px; padding: 30px 24px; } .business-grid { grid-template-columns: 1fr; } }
+
   </style>
 </head>
 <body>
@@ -381,7 +392,7 @@
         Nova<span style="color:#00f2ff">Tec</span>
       </a>
       <div class="nav-links">
-        <a href="software.html">Software</a>
+        <a href="software.html">Desarrollo web y software</a>
         <a href="#servicio-tecnico">Servicio Técnico</a>
         <a href="hardware.html">Hardware</a>
         <a href="portafolio.html">Portafolio</a>
@@ -395,7 +406,7 @@
 
   <!-- Mobile menu -->
   <div id="mob-menu" role="navigation" aria-label="Menú móvil">
-    <a href="software.html">Software</a>
+    <a href="software.html">Desarrollo web y software</a>
     <a href="#servicio-tecnico">Servicio Técnico</a>
     <a href="hardware.html">Hardware</a>
     <a href="portafolio.html">Portafolio</a>
@@ -416,15 +427,14 @@
         <div>
           <p class="brand-eyebrow">NovaTec Engineering · Asunción, Paraguay</p>
           <h1 class="brand-title">
+            <span class="line"><span>Sitios web.</span></span>
             <span class="line"><span>Software.</span></span>
-            <span class="line"><span>Diseño.</span></span>
-            <span class="line"><span class="grad">Servicio.</span></span>
+            <span class="line"><span class="grad">A medida.</span></span>
           </h1>
           <div class="brand-pills">
-            <span class="pill"><span class="dot on"></span>Software a medida</span>
-            <span class="pill"><span class="dot on"></span>Sitios Web</span>
-            <span class="pill"><span class="dot on"></span>Servicio Técnico</span>
-            <span class="pill"><span class="dot off"></span>Hardware (próximamente)</span>
+            <span class="pill"><span class="dot on"></span>Web corporativa</span>
+            <span class="pill"><span class="dot on"></span>Sistemas de gestión</span>
+            <span class="pill"><span class="dot on"></span>Mantenimiento y soporte</span>
           </div>
         </div>
         <div>
@@ -443,16 +453,16 @@
     <div class="b-card b-stats reveal" style="transition-delay:.07s">
       <div class="stats-inner">
         <div class="stat-cell">
-          <span class="stat-num" data-count="50">0</span><span style="font-size:24px;font-weight:900;letter-spacing:-.04em;line-height:1;margin-top:-4px;">+</span>
-          <span class="stat-label">Proyectos<br>entregados</span>
+          <span class="stat-word">Web</span>
+          <span class="stat-label">Presencia<br>corporativa</span>
         </div>
         <div class="stat-cell">
-          <span class="stat-num" data-count="100">0</span><span style="font-size:24px;font-weight:900;letter-spacing:-.04em;line-height:1;margin-top:-4px;">+</span>
-          <span class="stat-label">Dispositivos<br>reparados</span>
+          <span class="stat-word">Software</span>
+          <span class="stat-label">Sistemas<br>a medida</span>
         </div>
         <div class="stat-cell">
-          <span class="stat-num" data-count="5">0</span><span style="font-size:24px;font-weight:900;letter-spacing:-.04em;line-height:1;margin-top:-4px;">+</span>
-          <span class="stat-label">Años en<br>operación</span>
+          <span class="stat-word">PY</span>
+          <span class="stat-label">Atención<br>en Paraguay</span>
         </div>
       </div>
     </div>
@@ -460,7 +470,7 @@
     <!-- TAGLINE -->
     <div class="b-card b-tagline reveal" style="transition-delay:.14s">
       <p class="tagline-quote">
-        Código de producción desde el primer sprint. <em>Sin burocracia, sin sorpresas, sin intermediarios.</em>
+        Tecnología útil para negocios reales. <em>Presencia profesional, herramientas a medida y acompañamiento cercano.</em>
       </p>
       <p class="tagline-attr">NovaTec Engineering — Asunción, PY</p>
     </div>
@@ -637,6 +647,31 @@
     </div>
   </div>
 
+  <!-- Sector-specific B2B use cases -->
+  <section class="business-solutions" aria-labelledby="sector-heading">
+    <p class="section-eyebrow">Para empresas paraguayas</p>
+    <h2 id="sector-heading" class="section-title">Tu negocio merece<br>una presencia profesional.</h2>
+    <p class="business-intro">Desde presentar obras y servicios hasta ordenar consultas y operaciones, desarrollamos herramientas adaptadas a cada actividad.</p>
+    <div class="business-grid">
+      <article class="business-item">
+        <span class="business-number">01 / Obras y proyectos</span>
+        <h3>Constructoras y arquitectura</h3>
+        <p>Mostrá proyectos, especialidades y canales de contacto en una web que transmita profesionalismo.</p>
+      </article>
+      <article class="business-item">
+        <span class="business-number">02 / Servicios</span>
+        <h3>Estudios y consultoras</h3>
+        <p>Presentá tus áreas de trabajo, equipo y experiencia con una estructura clara para potenciales clientes.</p>
+      </article>
+      <article class="business-item">
+        <span class="business-number">03 / Gestión</span>
+        <h3>PYMEs en crecimiento</h3>
+        <p>Centralizá datos y procesos con sistemas pensados para las tareas diarias de tu empresa.</p>
+      </article>
+    </div>
+    <a href="contacto.html" class="btn-primary" style="margin-top:28px;">Conversemos sobre tu empresa →</a>
+  </section>
+
   <!-- ── PROCESS ── -->
   <div class="process">
     <div style="padding:0 0 24px;">
@@ -679,8 +714,8 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
         </div>
         <div>
-          <p class="why-cell-title">Código de producción desde el primer sprint</p>
-          <p class="why-cell-desc">No entregamos prototipos que luego hay que reescribir. Cada línea es revisada, documentada y desplegable.</p>
+          <p class="why-cell-title">Desarrollo profesional y adaptable</p>
+          <p class="why-cell-desc">Priorizamos soluciones rápidas de usar, fáciles de mantener y preparadas para evolucionar con tu empresa.</p>
         </div>
       </div>
       <div class="why-cell reveal" style="transition-delay:.07s">
@@ -688,8 +723,8 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </div>
         <div>
-          <p class="why-cell-title">Diagnóstico técnico real, no estimaciones vagas</p>
-          <p class="why-cell-desc">El servicio técnico opera con herramientas de precisión y protocolos de intervención. Cada diagnóstico es documentado.</p>
+          <p class="why-cell-title">Soluciones pensadas para tu negocio</p>
+          <p class="why-cell-desc">Diseñamos el recorrido del cliente, los formularios y las funciones según las necesidades reales de cada empresa.</p>
         </div>
       </div>
       <div class="why-cell reveal" style="transition-delay:.14s">
@@ -718,11 +753,11 @@
     <div class="cta-inner reveal">
       <div>
         <p class="cta-label">Siguiente paso</p>
-        <h2 class="cta-title">¿Tenés un proyecto<br>o un dispositivo<br>que necesita atención?</h2>
-        <p class="cta-sub">Para proyectos de software y sitios web usá el cotizador. Para servicio técnico, contactanos directamente por WhatsApp.</p>
+        <h2 class="cta-title">¿Tu empresa necesita<br>una web o un sistema<br>a medida?</h2>
+        <p class="cta-sub">Contanos qué necesitás: analizamos tu proyecto y preparamos una propuesta acorde al alcance.</p>
       </div>
       <div class="cta-btns">
-        <a href="contacto.html" class="btn-primary btn-magnetic">Cotizar proyecto de software →</a>
+        <a href="contacto.html" class="btn-primary btn-magnetic">Solicitar una propuesta →</a>
         <a href="https://wa.me/595992056945?text=Hola%2C%20quiero%20solicitar%20un%20turno%20t%C3%A9cnico%20para%20mi%20dispositivo"
            target="_blank" rel="noopener" class="btn-wa btn-magnetic" style="justify-content:center;">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="rgba(37,211,102,.9)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
@@ -743,7 +778,7 @@
             <img src="img/logonovatec.jfif" alt="NovaTec Engineering">
             Nova<span style="color:#00f2ff">Tec</span>
           </a>
-          <p class="foot-tagline">Desarrollo de software, sitios web de alta fidelidad y servicio técnico especializado. Asunción, Paraguay.</p>
+          <p class="foot-tagline">Sitios web profesionales, sistemas a medida y soluciones digitales para empresas paraguayas.</p>
           <div class="foot-socials">
             <a href="https://www.instagram.com/novatecpy/" target="_blank" rel="noopener" class="foot-social" aria-label="Instagram">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"/></svg>
@@ -830,24 +865,7 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    // Counter animation
-    const counterIO = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (!e.isIntersecting) return;
-        const el = e.target;
-        const target = parseInt(el.dataset.count, 10);
-        const start = performance.now();
-        const dur = 1800;
-        (function tick(now) {
-          const p = Math.min((now - start) / dur, 1);
-          const ease = 1 - Math.pow(1 - p, 4);
-          el.textContent = Math.round(ease * target);
-          if (p < 1) requestAnimationFrame(tick);
-        })(start);
-        counterIO.unobserve(el);
-      });
-    }, { threshold: 0.5 });
-    document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+    // Operational metrics are displayed only when verified.
 
     // ── Magnetic buttons
     document.querySelectorAll('.btn-magnetic').forEach(btn => {
