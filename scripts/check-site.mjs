@@ -43,4 +43,19 @@ assert.match(contact, /id="quoter-body"/, 'B2B lead form placeholder missing');
 assert.match(quote, /'s-dot'/, 'Quiz must use the existing CSS step classes');
 assert.match(quote, /name="empresa" required/, 'Company qualification field is required');
 assert.match(read('js/main.js'), /NovaTecLeadAttribution/, 'Lead attribution helper missing');
+// Commercial SEO smoke tests: metadata, service schema and sector conversion paths.
+for (const file of ['index.html','software.html','portafolio.html','contacto.html','web-para-constructoras.html']) {
+  const html = read(file);
+  const title = html.match(/<title>([^<]+)<\/title>/)?.[1] || '';
+  const description = html.match(/<meta name="description" content="([^"]+)"/)?.[1] || '';
+  assert.ok(title.length > 20 && title.length <= 60, file + ': title should be descriptive and under 61 characters');
+  assert.ok(description.length >= 90 && description.length <= 160, file + ': meta description should be useful and under 161 characters');
+  assert.ok(!/recibí un estimado en minutos/i.test(html), file + ': obsolete instant quote claim');
+}
+for (const file of ['software.html','portafolio.html','contacto.html','web-para-constructoras.html']) {
+  assert.match(read(file), /"logo"\s*:\s*\{/, file + ': organization logo schema missing');
+}
+assert.match(read('software.html'), /href="web-para-constructoras.html"/, 'Software page must link to contractor service');
+assert.match(read('portafolio.html'), /href="web-para-constructoras.html"/, 'Portfolio must link to contractor service');
+assert.match(read('web-para-constructoras.html'), /Hablar por WhatsApp/, 'Construction landing must offer a direct contact option');
 console.log('All NovaTec static checks passed.');
