@@ -18,6 +18,10 @@ const TIMELINES = [
   ['explorando', 'Estoy evaluando opciones']
 ];
 let quoteState = { step: 1, type: null, timeline: 'explorando', features: [] };
+// Una landing sectorial puede iniciar una solicitud web sin hacer elegir de nuevo el servicio.
+const requestParams = new URLSearchParams(window.location.search);
+if (requestParams.get('servicio') === 'web') quoteState.type = 'corporate';
+const requestSector = requestParams.get('sector') === 'construccion' ? 'Construcción y arquitectura' : '';
 const byId = id => document.getElementById(id);
 
 function renderStep1() {
@@ -66,6 +70,7 @@ function renderStep3() {
     </div>
     <form id="quoter-form" action="https://formspree.io/f/xeeqrdlp" method="POST" class="space-y-3">
       <input type="hidden" name="proyecto_tipo" value="${project.label}">
+      ${requestSector ? `<input type="hidden" name="sector_de_consulta" value="${requestSector}">` : ''}
       <input type="hidden" name="proyecto_plazo" value="${timeline}">
       <input type="hidden" name="proyecto_funciones" value="${quoteState.features.map(f => FEATURES.find(([key]) => key === f)?.[1]).filter(Boolean).join(', ') || 'Por definir'}">
       <div class="grid md:grid-cols-2 gap-3">
