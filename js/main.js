@@ -94,6 +94,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // Contact form AJAX submission
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
+    // Respect pre-selected services from sector-specific landing pages.
+    const inquiryParams = new URLSearchParams(window.location.search);
+    const service = inquiryParams.get('servicio');
+    const serviceSelect = contactForm.querySelector('select[name="servicio"]');
+    if (serviceSelect && ['web', 'software', 'hardware', 'tecnico'].includes(service)) {
+      serviceSelect.value = service;
+    }
+    if (inquiryParams.get('sector') === 'construccion') {
+      const sectorField = document.createElement('input');
+      sectorField.type = 'hidden';
+      sectorField.name = 'sector_de_consulta';
+      sectorField.value = 'Construcción y arquitectura';
+      contactForm.appendChild(sectorField);
+    }
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = contactForm.querySelector('[type="submit"]');
@@ -112,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (response.ok) {
-          statusEl.textContent = '¡Mensaje enviado! Te contactamos en menos de 24hs.';
+          statusEl.textContent = '¡Mensaje enviado! Recibimos tu consulta y te contactaremos por WhatsApp.';
           statusEl.className = 'mt-4 text-sm font-semibold text-primary';
           contactForm.reset();
         } else {
