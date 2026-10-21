@@ -61,7 +61,7 @@ assert.match(businessWeb, /contacto\\.html\\?servicio=web/, 'Business web leads 
 assert.match(businessWeb, /rdconstrucciones\\.com\\.py/, 'Business landing must link to real work');
 assert.match(home, /href="desarrollo-web-empresas.html"/, 'Home must link to the new business landing');
 assert.match(read('portafolio.html'), /href="desarrollo-web-empresas.html"/, 'Portfolio must link to the new business landing');
-assert.match(read('sitemap.xml'), /https:\\/\\/novatec\\.com\\.py\\/desarrollo-web-empresas\\.html/, 'Sitemap must include business web landing');
+assert.ok(read('sitemap.xml').includes('https://novatec.com.py/desarrollo-web-empresas.html'), 'Sitemap must include business web landing');
 assert.match(read('software.html'), /href="web-para-constructoras.html"/, 'Software page must link to contractor service');
 assert.match(read('portafolio.html'), /href="web-para-constructoras.html"/, 'Portfolio must link to contractor service');
 assert.match(read('web-para-constructoras.html'), /Hablar por WhatsApp/, 'Construction landing must offer a direct contact option');
