@@ -57,8 +57,8 @@ for (const file of ['software.html','portafolio.html','contacto.html','hardware.
 }
 const businessWeb = read('desarrollo-web-empresas.html');
 assert.match(businessWeb, /<h1[^>]*>/, 'Business web landing needs a primary heading');
-assert.match(businessWeb, /contacto\\.html\\?servicio=web/, 'Business web leads must preselect the web service');
-assert.match(businessWeb, /rdconstrucciones\\.com\\.py/, 'Business landing must link to real work');
+assert.ok(businessWeb.includes('contacto.html?servicio=web'), 'Business web leads must preselect the web service');
+assert.ok(businessWeb.includes('rdconstrucciones.com.py'), 'Business landing must link to real work');
 assert.match(home, /href="desarrollo-web-empresas.html"/, 'Home must link to the new business landing');
 assert.match(read('portafolio.html'), /href="desarrollo-web-empresas.html"/, 'Portfolio must link to the new business landing');
 assert.ok(read('sitemap.xml').includes('https://novatec.com.py/desarrollo-web-empresas.html'), 'Sitemap must include business web landing');
