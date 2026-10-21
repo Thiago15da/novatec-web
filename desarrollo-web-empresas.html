@@ -87,28 +87,32 @@
     .lead{font-size:16px;line-height:1.85;color:var(--muted);max-width:590px;margin:0 0 30px}
     .actions{display:flex;gap:12px;flex-wrap:wrap}
     .micro{font-size:12px;line-height:1.75;color:#939c9f;margin:22px 0 0}
-    .scene{border:1px solid var(--border);border-radius:26px;padding:22px;background:radial-gradient(ellipse at 70% 10%,rgba(0,242,255,.12),transparent 56%),linear-gradient(155deg,#142026,#0b0e10 55%,#080808);box-shadow:0 35px 90px rgba(0,0,0,.35)}
-    .screen{background:#090c0e;border:1px solid rgba(255,255,255,.12);border-radius:16px;overflow:hidden;min-height:365px}
-    .screenbar{display:flex;align-items:center;gap:6px;padding:15px 18px;border-bottom:1px solid var(--border)}
-    .screenbar i{width:7px;height:7px;background:#40545c;border-radius:100%}
-    .screenbar span{margin-left:auto;font-size:10px;color:#84939a}
-    .screenbody{padding:25px 26px 26px}
-    .preview-label{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--cyan);margin-bottom:12px}
-    .project-head{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:18px}
-    .project-head strong{font-size:clamp(27px,3vw,43px);letter-spacing:-.06em;line-height:1.08;display:block}
-    .project-head p{font-size:11px;line-height:1.6;color:#a5afb1;max-width:176px;margin:0}
-    .work-gallery{display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:repeat(2,110px);gap:9px}
-    .work-gallery .work-shot{margin:0;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.12);border-radius:11px;background:#1e3034}
-    .work-gallery .work-shot:first-child{grid-row:1 / 3}
-    .work-shot img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
-    .work-shot:hover img{transform:scale(1.04)}
-    .work-gallery .work-shot:first-child figcaption{position:absolute;bottom:0;inset-inline:0;padding:21px 12px 10px;font-size:10px;font-weight:600;background:linear-gradient(transparent,rgba(0,0,0,.82));color:white}
-    .preview-foot{display:flex;gap:14px;justify-content:space-between;align-items:center;margin-top:17px}
-    .preview-foot span{font-size:11px;line-height:1.6;color:#a4b3b6}
-    .preview-foot a{font-size:12px;color:var(--cyan);font-weight:750;white-space:nowrap}
-    .preview-foot a:hover{text-decoration:underline}
-    .mock-caption{text-align:center;font-size:11px;color:#aab8bc;margin:14px 0 0}
-    .mock-caption a{color:var(--cyan);text-decoration:underline;text-underline-offset:3px}
+    .scene{border:1px solid var(--border);border-radius:26px;padding:16px;background:radial-gradient(ellipse at 70% 10%,rgba(0,242,255,.10),transparent 56%),linear-gradient(155deg,#152126,#0b0e10 55%,#080808);box-shadow:0 35px 90px rgba(0,0,0,.35);min-width:0}
+    .portfolio-slider{min-width:0}
+    .slider-window{background:#090c0e;border:1px solid rgba(255,255,255,.15);border-radius:17px;overflow:hidden}
+    .slider-chrome{display:flex;align-items:center;gap:6px;padding:14px 16px;border-bottom:1px solid var(--border)}
+    .slider-chrome i{width:7px;height:7px;background:#40545c;border-radius:50%}
+    .slider-chrome span{margin-left:auto;color:#a6b5b9;font-size:10px}
+    .slider-viewport{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;touch-action:pan-x pan-y}
+    .slider-viewport::-webkit-scrollbar{display:none}
+    .slider-slide{flex:0 0 100%;min-width:0;scroll-snap-align:start;padding:18px 18px 16px}
+    .slider-media{position:relative;aspect-ratio:1.8;border:1px solid rgba(255,255,255,.12);border-radius:11px;overflow:hidden;background:#172126}
+    .slider-media img{width:100%;height:100%;display:block;object-fit:cover;object-position:center top}
+    .slider-info{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:15px}
+    .slider-category{display:block;color:var(--cyan);text-transform:uppercase;font-weight:700;letter-spacing:.12em;font-size:10px;margin-bottom:6px}
+    .slider-info h3{font-size:clamp(17px,2.5vw,23px);letter-spacing:-.04em;line-height:1.2;margin:0}
+    .slider-info a{color:#fff;border:1px solid rgba(255,255,255,.25);padding:9px 12px;border-radius:20px;white-space:nowrap;font-size:11px;font-weight:700}
+    .slider-info a:hover{color:var(--cyan);border-color:var(--cyan)}
+    .slider-controls{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 3px 1px}
+    .slider-controls .slider-indicator{color:#b5c4c7;font-size:11px;font-variant-numeric:tabular-nums}
+    .slider-dots{display:flex;align-items:center;gap:9px}
+    .slider-dot{width:8px;height:8px;border-radius:50%;border:0;background:#586368;padding:0;cursor:pointer}
+    .slider-dot[aria-current="true"]{background:var(--cyan);width:21px;border-radius:10px}
+    .slider-arrows{display:flex;gap:9px}
+    .slider-arrow{width:36px;height:36px;border:1px solid rgba(255,255,255,.18);border-radius:50%;background:#111719;color:white;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+    .slider-arrow:hover{border-color:var(--cyan);color:var(--cyan)}
+    .slider-arrow:focus-visible,.slider-dot:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
+    .slider-note{font-size:11px;color:#a8b7b9;margin:5px 2px 0;text-align:center;line-height:1.6}
     .strip{border-block:1px solid var(--border);background:#0b0d0d}
     .strip-inner{display:flex;flex-wrap:wrap;gap:18px 36px;justify-content:center;padding:20px 0;color:#b6bfc1;font-size:12px}
     .strip-inner span::before{content:"✓";color:var(--cyan);margin-right:9px}
@@ -154,7 +158,7 @@
     .footlinks{display:flex;gap:20px;flex-wrap:wrap}
     .foot p,.foot a{font-size:12px;color:#a5afb3;margin:0}
     @media(max-width:940px){.hero{grid-template-columns:1fr;gap:34px;padding:66px 0}.scene{max-width:650px}.cards,.proofs{grid-template-columns:repeat(2,minmax(0,1fr))}.split{grid-template-columns:1fr;gap:30px}}
-    @media(max-width:620px){.wrap{width:calc(100% - 30px)}.nav{min-height:68px;gap:12px}.navlinks{gap:12px;justify-content:flex-end}.navlinks a{font-size:12px}.navlinks a:nth-child(2){display:none}.nav .btn{display:none}.hero{padding:56px 0 68px}h1{font-size:clamp(39px,10vw,54px)}.lead{font-size:14px}.section{padding:65px 0}.cards,.proofs,.features{grid-template-columns:1fr}.card{padding:24px}.scene{padding:13px;border-radius:18px}.screen{min-height:300px}.screenbody{padding:24px 18px}.project-head{align-items:flex-start;flex-direction:column}.project-head strong{font-size:34px}.project-head p{max-width:none}.work-gallery{grid-template-rows:repeat(2,90px);gap:6px}.preview-foot{align-items:flex-start;flex-direction:column;gap:6px}.closing{margin:65px auto;padding:58px 22px}.foot-inner{flex-direction:column}}
+    @media(max-width:620px){.wrap{width:calc(100% - 30px)}.nav{min-height:68px;gap:12px}.navlinks{gap:12px;justify-content:flex-end}.navlinks a{font-size:12px}.navlinks a:nth-child(2){display:none}.nav .btn{display:none}.hero{padding:56px 0 68px}h1{font-size:clamp(39px,10vw,54px)}.lead{font-size:14px}.section{padding:65px 0}.cards,.proofs,.features{grid-template-columns:1fr}.card{padding:24px}.scene{padding:10px;border-radius:18px}.slider-slide{padding:10px 10px 14px}.slider-info{align-items:flex-start;gap:10px}.slider-info a{font-size:10px;padding:9px 11px}.slider-media{aspect-ratio:1.65}.slider-controls{padding:12px 3px 2px}.closing{margin:65px auto;padding:58px 22px}.foot-inner{flex-direction:column}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 </head>
@@ -184,29 +188,43 @@
         <p class="micro">Trabajamos con empresas de Asunción, Gran Asunción y otras ciudades de Paraguay. Alcance, funcionalidades y presupuesto se definen antes de comenzar.</p>
       </div>
       <div class="scene">
-        <div class="screen">
-          <div class="screenbar" aria-hidden="true"><i></i><i></i><i></i><span>Proyecto del portafolio</span></div>
-          <div class="screenbody">
-            <span class="preview-label">Desarrollo web · Construcción</span>
-            <div class="project-head">
-              <strong>RD<br>Construcciones.</strong>
-              <p>Un ejemplo real de cómo presentar obras y servicios en internet.</p>
-            </div>
-            <div class="work-gallery" aria-label="Fotografías de obras publicadas en el sitio de RD Construcciones">
-              <figure class="work-shot">
-                <img src="https://rdconstrucciones.com.py/assets/foto-01.webp" alt="Fotografía de obra del portafolio de RD Construcciones" width="420" height="290" fetchpriority="high">
-                <figcaption>Obras y proyectos</figcaption>
-              </figure>
-              <figure class="work-shot"><img src="https://rdconstrucciones.com.py/assets/foto-02.webp" alt="Segunda fotografía de obra de RD Construcciones" width="200" height="110" loading="lazy"></figure>
-              <figure class="work-shot"><img src="https://rdconstrucciones.com.py/assets/foto-03.webp" alt="Tercera fotografía de obra de RD Construcciones" width="200" height="110" loading="lazy"></figure>
-            </div>
-            <div class="preview-foot">
-              <span>Sitio corporativo · Paraguay</span>
-              <a href="https://rdconstrucciones.com.py/" target="_blank" rel="noopener noreferrer">Explorar proyecto ↗</a>
+        <div class="portfolio-slider" id="portfolio-slider" aria-label="Carrusel de proyectos realizados por NovaTec" role="region" aria-roledescription="carrusel">
+          <div class="slider-window">
+            <div class="slider-chrome" aria-hidden="true"><i></i><i></i><i></i><span>NovaTec / Portafolio</span></div>
+            <div class="slider-viewport" id="portfolio-slider-viewport" tabindex="0" aria-label="Deslizá para ver cuatro proyectos">
+              <article class="slider-slide" role="group" aria-roledescription="diapositiva" aria-label="1 de 4: RD Construcciones">
+                <div class="slider-media"><img src="img/portfolio/rd-construcciones.png" width="1381" height="763" alt="Captura de la página web RD Construcciones diseñada por NovaTec" fetchpriority="high"></div>
+                <div class="slider-info"><div><span class="slider-category">Construcción y remodelaciones</span><h3>RD Construcciones</h3></div><a href="https://rdconstrucciones.com.py/" target="_blank" rel="noopener noreferrer">Ver sitio ↗</a></div>
+              </article>
+              <article class="slider-slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 4: Cáceres Álvarez Abogados">
+                <div class="slider-media"><img src="img/portfolio/caceres-alvarez.png" width="1422" height="771" alt="Captura de la página web Cáceres Álvarez Abogados diseñada por NovaTec" loading="lazy"></div>
+                <div class="slider-info"><div><span class="slider-category">Estudio jurídico</span><h3>Cáceres Álvarez</h3></div><a href="https://caceresalvarezabogados.com.py/" target="_blank" rel="noopener noreferrer">Ver sitio ↗</a></div>
+              </article>
+              <article class="slider-slide" role="group" aria-roledescription="diapositiva" aria-label="3 de 4: Power Gym">
+                <div class="slider-media"><img src="img/portfolio/power-gym.png" width="1433" height="764" alt="Captura de la página web Power Gym diseñada por NovaTec" loading="lazy"></div>
+                <div class="slider-info"><div><span class="slider-category">Fitness y bienestar</span><h3>Power Gym</h3></div><a href="https://www.powergym.com.py/" target="_blank" rel="noopener noreferrer">Ver sitio ↗</a></div>
+              </article>
+              <article class="slider-slide" role="group" aria-roledescription="diapositiva" aria-label="4 de 4: GMI Uris Consulting">
+                <div class="slider-media"><img src="img/portfolio/gmi-uris.png" width="1419" height="741" alt="Captura del sitio de GMI Uris Consulting, Gonzales Morgan y Asociados" loading="lazy"></div>
+                <div class="slider-info"><div><span class="slider-category">Consultoría jurídica</span><h3>GMI Uris Consulting</h3></div><a href="https://gmiurisconsulting.com/" target="_blank" rel="noopener noreferrer">Ver sitio ↗</a></div>
+              </article>
             </div>
           </div>
+          <div class="slider-controls">
+            <span class="slider-indicator" id="portfolio-slide-count" aria-live="polite">01 / 04</span>
+            <div class="slider-dots" aria-label="Elegir proyecto">
+              <button type="button" class="slider-dot" aria-label="Mostrar RD Construcciones" aria-current="true" data-slide="0"></button>
+              <button type="button" class="slider-dot" aria-label="Mostrar Cáceres Álvarez" aria-current="false" data-slide="1"></button>
+              <button type="button" class="slider-dot" aria-label="Mostrar Power Gym" aria-current="false" data-slide="2"></button>
+              <button type="button" class="slider-dot" aria-label="Mostrar GMI Uris" aria-current="false" data-slide="3"></button>
+            </div>
+            <div class="slider-arrows">
+              <button type="button" class="slider-arrow" id="portfolio-prev" aria-label="Proyecto anterior">←</button>
+              <button type="button" class="slider-arrow" id="portfolio-next" aria-label="Proyecto siguiente">→</button>
+            </div>
+          </div>
+          <p class="slider-note">Cuatro sitios reales de nuestro portafolio · Deslizá en celular o usá las flechas</p>
         </div>
-        <p class="mock-caption">Fotografías del sitio de <a href="https://rdconstrucciones.com.py/" target="_blank" rel="noopener noreferrer">RD Construcciones</a>. Presentación visual adaptada para NovaTec.</p>
       </div>
     </section>
     <div class="strip" aria-label="Enfoque del servicio">
@@ -315,6 +333,53 @@
       </nav>
     </div>
   </footer>
+
+  <script>
+    (() => {
+      const root = document.getElementById('portfolio-slider');
+      const viewport = document.getElementById('portfolio-slider-viewport');
+      if (!root || !viewport) return;
+      const dots = [...root.querySelectorAll('.slider-dot')];
+      const count = document.getElementById('portfolio-slide-count');
+      const slides = [...viewport.querySelectorAll('.slider-slide')];
+      let current = 0;
+      let paused = false;
+      let scrollingFrame = 0;
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const show = (index, smooth = true) => {
+        const next = (index + slides.length) % slides.length;
+        const behavior = smooth && !reduceMotion.matches ? 'smooth' : 'auto';
+        viewport.scrollTo({left:slides[next].offsetLeft - slides[0].offsetLeft,behavior});
+        update(next);
+      };
+      const update = index => {
+        current = index;
+        dots.forEach((dot, i) => dot.setAttribute('aria-current', String(i === index)));
+        count.textContent = String(index + 1).padStart(2,'0') + ' / ' + String(slides.length).padStart(2,'0');
+      };
+      document.getElementById('portfolio-prev').addEventListener('click', () => show(current - 1));
+      document.getElementById('portfolio-next').addEventListener('click', () => show(current + 1));
+      dots.forEach((dot,i) => dot.addEventListener('click', () => show(i)));
+      viewport.addEventListener('scroll', () => {
+        if (scrollingFrame) return;
+        scrollingFrame = requestAnimationFrame(() => {
+          scrollingFrame = 0;
+          const index = Math.round(viewport.scrollLeft / viewport.clientWidth);
+          update(Math.max(0,Math.min(index,slides.length - 1)));
+        });
+      }, {passive:true});
+      viewport.addEventListener('keydown', event => {
+        if (event.key === 'ArrowRight') {event.preventDefault();show(current + 1);}
+        if (event.key === 'ArrowLeft') {event.preventDefault();show(current - 1);}
+      });
+      root.addEventListener('mouseenter', () => {paused = true;});
+      root.addEventListener('mouseleave', () => {paused = false;});
+      root.addEventListener('focusin', () => {paused = true;});
+      root.addEventListener('focusout', event => {if (!root.contains(event.relatedTarget)) paused = false;});
+      document.addEventListener('visibilitychange', () => {if (document.hidden) paused = true; else if (!root.matches(':hover') && !root.contains(document.activeElement)) paused = false;});
+      window.setInterval(() => {if (!paused && !reduceMotion.matches && !document.hidden) show(current + 1);}, 6500);
+    })();
+  </script>
   <script src="js/main.js" defer></script>
 </body>
 </html>
