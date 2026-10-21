@@ -92,13 +92,23 @@
     .screenbar{display:flex;align-items:center;gap:6px;padding:15px 18px;border-bottom:1px solid var(--border)}
     .screenbar i{width:7px;height:7px;background:#40545c;border-radius:100%}
     .screenbar span{margin-left:auto;font-size:10px;color:#84939a}
-    .screenbody{padding:36px 30px 30px}
-    .preview-label{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--cyan);margin-bottom:19px}
-    .screenbody strong{font-size:clamp(31px,3vw,49px);letter-spacing:-.06em;line-height:1.08;display:block;max-width:330px}
-    .screenbody p{font-size:12px;line-height:1.7;color:#a5afb1;max-width:330px;margin:18px 0 24px}
-    .preview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
-    .preview-grid span{height:74px;border:1px solid #29424a;border-radius:10px;background:linear-gradient(145deg,#213941,#132129)}
-    .mock-caption{text-align:center;font-size:11px;color:#91a0a4;margin:14px 0 0}
+    .screenbody{padding:25px 26px 26px}
+    .preview-label{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--cyan);margin-bottom:12px}
+    .project-head{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:18px}
+    .project-head strong{font-size:clamp(27px,3vw,43px);letter-spacing:-.06em;line-height:1.08;display:block}
+    .project-head p{font-size:11px;line-height:1.6;color:#a5afb1;max-width:176px;margin:0}
+    .work-gallery{display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:repeat(2,110px);gap:9px}
+    .work-gallery .work-shot{margin:0;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.12);border-radius:11px;background:#1e3034}
+    .work-gallery .work-shot:first-child{grid-row:1 / 3}
+    .work-shot img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+    .work-shot:hover img{transform:scale(1.04)}
+    .work-gallery .work-shot:first-child figcaption{position:absolute;bottom:0;inset-inline:0;padding:21px 12px 10px;font-size:10px;font-weight:600;background:linear-gradient(transparent,rgba(0,0,0,.82));color:white}
+    .preview-foot{display:flex;gap:14px;justify-content:space-between;align-items:center;margin-top:17px}
+    .preview-foot span{font-size:11px;line-height:1.6;color:#a4b3b6}
+    .preview-foot a{font-size:12px;color:var(--cyan);font-weight:750;white-space:nowrap}
+    .preview-foot a:hover{text-decoration:underline}
+    .mock-caption{text-align:center;font-size:11px;color:#aab8bc;margin:14px 0 0}
+    .mock-caption a{color:var(--cyan);text-decoration:underline;text-underline-offset:3px}
     .strip{border-block:1px solid var(--border);background:#0b0d0d}
     .strip-inner{display:flex;flex-wrap:wrap;gap:18px 36px;justify-content:center;padding:20px 0;color:#b6bfc1;font-size:12px}
     .strip-inner span::before{content:"✓";color:var(--cyan);margin-right:9px}
@@ -144,7 +154,7 @@
     .footlinks{display:flex;gap:20px;flex-wrap:wrap}
     .foot p,.foot a{font-size:12px;color:#a5afb3;margin:0}
     @media(max-width:940px){.hero{grid-template-columns:1fr;gap:34px;padding:66px 0}.scene{max-width:650px}.cards,.proofs{grid-template-columns:repeat(2,minmax(0,1fr))}.split{grid-template-columns:1fr;gap:30px}}
-    @media(max-width:620px){.wrap{width:calc(100% - 30px)}.nav{min-height:68px;gap:12px}.navlinks{gap:12px;justify-content:flex-end}.navlinks a{font-size:12px}.navlinks a:nth-child(2){display:none}.nav .btn{display:none}.hero{padding:56px 0 68px}h1{font-size:clamp(39px,10vw,54px)}.lead{font-size:14px}.section{padding:65px 0}.cards,.proofs,.features{grid-template-columns:1fr}.card{padding:24px}.scene{padding:13px;border-radius:18px}.screen{min-height:300px}.screenbody{padding:27px 20px}.preview-grid span{height:55px}.closing{margin:65px auto;padding:58px 22px}.foot-inner{flex-direction:column}}
+    @media(max-width:620px){.wrap{width:calc(100% - 30px)}.nav{min-height:68px;gap:12px}.navlinks{gap:12px;justify-content:flex-end}.navlinks a{font-size:12px}.navlinks a:nth-child(2){display:none}.nav .btn{display:none}.hero{padding:56px 0 68px}h1{font-size:clamp(39px,10vw,54px)}.lead{font-size:14px}.section{padding:65px 0}.cards,.proofs,.features{grid-template-columns:1fr}.card{padding:24px}.scene{padding:13px;border-radius:18px}.screen{min-height:300px}.screenbody{padding:24px 18px}.project-head{align-items:flex-start;flex-direction:column}.project-head strong{font-size:34px}.project-head p{max-width:none}.work-gallery{grid-template-rows:repeat(2,90px);gap:6px}.preview-foot{align-items:flex-start;flex-direction:column;gap:6px}.closing{margin:65px auto;padding:58px 22px}.foot-inner{flex-direction:column}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 </head>
@@ -174,16 +184,29 @@
         <p class="micro">Trabajamos con empresas de Asunción, Gran Asunción y otras ciudades de Paraguay. Alcance, funcionalidades y presupuesto se definen antes de comenzar.</p>
       </div>
       <div class="scene">
-        <div class="screen" role="img" aria-label="Ilustración conceptual de un sitio corporativo; no representa la web de un cliente">
-          <div class="screenbar" aria-hidden="true"><i></i><i></i><i></i><span>Tu empresa · Sitio web</span></div>
-          <div class="screenbody" aria-hidden="true">
-            <span class="preview-label">Una presencia que te representa</span>
-            <strong>Tu trabajo.<br>Tu empresa.<br>Tu próxima oportunidad.</strong>
-            <p>Servicios claros, proyectos visibles y contacto directo en una sola experiencia.</p>
-            <div class="preview-grid"><span></span><span></span><span></span></div>
+        <div class="screen">
+          <div class="screenbar" aria-hidden="true"><i></i><i></i><i></i><span>Proyecto del portafolio</span></div>
+          <div class="screenbody">
+            <span class="preview-label">Desarrollo web · Construcción</span>
+            <div class="project-head">
+              <strong>RD<br>Construcciones.</strong>
+              <p>Un ejemplo real de cómo presentar obras y servicios en internet.</p>
+            </div>
+            <div class="work-gallery" aria-label="Fotografías de obras publicadas en el sitio de RD Construcciones">
+              <figure class="work-shot">
+                <img src="https://rdconstrucciones.com.py/assets/foto-01.webp" alt="Fotografía de obra del portafolio de RD Construcciones" width="420" height="290" fetchpriority="high">
+                <figcaption>Obras y proyectos</figcaption>
+              </figure>
+              <figure class="work-shot"><img src="https://rdconstrucciones.com.py/assets/foto-02.webp" alt="Segunda fotografía de obra de RD Construcciones" width="200" height="110" loading="lazy"></figure>
+              <figure class="work-shot"><img src="https://rdconstrucciones.com.py/assets/foto-03.webp" alt="Tercera fotografía de obra de RD Construcciones" width="200" height="110" loading="lazy"></figure>
+            </div>
+            <div class="preview-foot">
+              <span>Sitio corporativo · Paraguay</span>
+              <a href="https://rdconstrucciones.com.py/" target="_blank" rel="noopener noreferrer">Explorar proyecto ↗</a>
+            </div>
           </div>
         </div>
-        <p class="mock-caption">Representación visual, no una captura de un proyecto.</p>
+        <p class="mock-caption">Fotografías del sitio de <a href="https://rdconstrucciones.com.py/" target="_blank" rel="noopener noreferrer">RD Construcciones</a>. Presentación visual adaptada para NovaTec.</p>
       </div>
     </section>
     <div class="strip" aria-label="Enfoque del servicio">
