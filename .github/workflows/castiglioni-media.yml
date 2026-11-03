@@ -1,0 +1,42 @@
+name: Castiglioni — Integrar fotografias de la demo
+on:
+  push:
+    paths:
+      - ".github/workflows/castiglioni-media.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  copy-media:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Copiar fotografias locales verificadas desde prueba1
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          names=['architecture.jpg','interior.jpg']
+          target=Path('demos/castiglioni/assets/media')
+          target.mkdir(parents=True,exist_ok=True)
+          for name in names:
+              uri='https://raw.githubusercontent.com/Thiago15da/prueba1/main/assets/media/'+name
+              with urlopen(Request(uri,headers={'User-Agent':'Mozilla/5.0'}),timeout=25) as r:
+                  data=r.read(5*1024*1024)
+              if len(data)<10000 or data[:3]!=b'\xff\xd8\xff':
+                  raise ValueError('Invalid JPEG '+name)
+              (target/name).write_bytes(data)
+              print('OK',name,len(data),'bytes')
+          PY
+      - name: Guardar recursos de vista previa
+        run: |
+          git config user.name "NovaTec CI"
+          git config user.email "noreply@users.noreply.github.com"
+          git add demos/castiglioni/assets/media
+          if ! git diff --cached --quiet; then
+            git commit -m "assets: self-host Castiglioni demo imagery"
+            git push origin HEAD:main
+          fi
