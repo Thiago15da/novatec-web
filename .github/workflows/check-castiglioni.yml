@@ -1,0 +1,50 @@
+name: QA externo — Demo Castiglioni
+on:
+  push:
+    paths:
+      - ".github/workflows/check-castiglioni.yml"
+  workflow_dispatch:
+
+jobs:
+  check-live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Comprobar paginas e imagenes publicadas
+        run: |
+          python3 - <<'PY'
+          import urllib.request, time
+          root="https://novatec.com.py/demos/castiglioni/"
+          targets={
+             "":"Castiglioni",
+             "areas-de-practica.html":"Derecho Corporativo",
+             "equipo.html":"Carmelo Castiglioni",
+             "contacto.html":"info@castiglioni.com.py",
+             "assets/style.css":"--night:",
+             "assets/app.js":"wa.me/595981267406",
+             "assets/media/architecture.jpg":None,
+             "assets/media/interior.jpg":None,
+          }
+          for path,check in targets.items():
+            good=False
+            for attempt in range(5):
+              try:
+                url=root+path
+                req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0"})
+                with urllib.request.urlopen(req,timeout=25) as resp:
+                    data=resp.read(4*1024*1024)
+                    code=resp.status
+                if code!=200:raise ValueError("HTTP "+str(code))
+                if check and check.encode("utf-8") not in data:
+                  raise ValueError("Content marker missing: "+check)
+                if not check and len(data)<9000:
+                  raise ValueError("Image too short")
+                print("PASS",url,len(data),code)
+                good=True
+                break
+              except Exception as exc:
+                print("RETRY",url,str(exc))
+                time.sleep(5)
+            if not good:
+              raise SystemExit("Public demo not verified: "+root+path)
+          PY
