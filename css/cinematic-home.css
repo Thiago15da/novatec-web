@@ -491,3 +491,138 @@ body.cinema-motion .film-media-reveal.is-visible{clip-path:inset(0 0 0 0)}
  .film-portfolio .gmi-feature-screenshot .gmi-site-browser{height:31px;min-height:31px;font-size:8px}
  .film-portfolio .gmi-site-caption{padding:11px 13px;font-size:9px}
 }
+
+
+/* Mobile hero containment — prevent a carousel or animated title from widening the entire grid.
+   The earlier single-column rule used `1fr` (auto minimum) so the slideshow's
+   intrinsic content width could extend the grid beyond the viewport on iOS Safari. */
+@media (max-width:900px){
+  .hero-cinema .hero-grid{
+    grid-template-columns:minmax(0,1fr);
+    width:min(1190px,calc(100% - 40px));
+    min-width:0;
+    max-width:100%;
+  }
+  .hero-cinema .hero-grid > div,
+  .hero-cinema .hero-showcase,
+  .hero-cinema .showcase-shell,
+  .hero-cinema [data-carousel],
+  .hero-cinema .carousel-viewport,
+  .hero-cinema .carousel-track,
+  .hero-cinema .carousel-slide{
+    min-width:0;
+    max-width:100%;
+  }
+  .hero-cinema .hero-showcase{
+    width:100%;
+    margin-inline:auto;
+    justify-self:stretch;
+  }
+  .hero-cinema h1,
+  .hero-cinema .hero-text,
+  .hero-cinema .actions{
+    max-width:100%;
+    min-width:0;
+  }
+  .hero-cinema h1 .hero-line > span{
+    overflow-wrap:break-word;
+  }
+}
+@media (max-width:620px){
+  .hero-cinema .hero-grid{
+    width:calc(100% - 34px);
+    padding-top:48px;
+    padding-bottom:68px;
+  }
+  .hero-cinema h1{
+    font-size:clamp(34px,9.5vw,46px);
+    line-height:1.075;
+    letter-spacing:-.052em;
+    margin-bottom:23px;
+    overflow-wrap:anywhere;
+  }
+  .hero-cinema h1 .hero-line{
+    padding:2px 0 5px;
+  }
+  .hero-cinema .hero-eyebrow{
+    font-size:10px;
+    letter-spacing:.105em;
+    line-height:1.55;
+    margin-bottom:24px;
+  }
+  .hero-cinema .hero-text{
+    font-size:14px;
+    line-height:1.7;
+    overflow-wrap:break-word;
+  }
+  .hero-cinema .actions{
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    width:100%;
+    gap:11px;
+  }
+  .hero-cinema .actions .btn{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    text-align:center;
+    white-space:normal;
+    padding:14px 16px;
+  }
+  .hero-cinema .hero-overline{
+    margin-top:32px;
+    font-size:10px;
+    letter-spacing:.09em;
+  }
+  .hero-cinema .hero-showcase{
+    margin-top:6px;
+    margin-bottom:0;
+  }
+  .hero-cinema .showcase-shell{
+    width:100%;
+    box-shadow:0 18px 36px rgba(0,7,24,.22);
+  }
+  .hero-cinema .showcase-browser{
+    min-width:0;
+    gap:5px;
+    padding-inline:10px;
+  }
+  .hero-cinema .showcase-browser span{
+    min-width:0;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-size:9px;
+  }
+  .hero-cinema .showcase-meta{
+    min-width:0;
+    gap:10px;
+  }
+  .hero-cinema .showcase-meta > div{
+    min-width:0;
+    overflow-wrap:anywhere;
+  }
+  .hero-cinema .showcase-meta strong{
+    font-size:clamp(16px,4.5vw,18px);
+  }
+  .hero-cinema .showcase-meta > span{
+    flex-shrink:0;
+  }
+  .hero-cinema [data-carousel] .carousel-controls{
+    min-width:0;
+    gap:6px;
+    padding:10px;
+  }
+  .hero-cinema [data-carousel] .carousel-dots{
+    flex-shrink:1;
+    min-width:0;
+    gap:5px;
+  }
+  .hero-cinema [data-carousel] .carousel-arrows{
+    flex-shrink:0;
+    gap:5px;
+  }
+  .hero-cinema [data-carousel] .carousel-position{
+    flex-shrink:0;
+  }
+}
