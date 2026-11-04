@@ -192,3 +192,8 @@ input,select,textarea{cursor:text!important}
  .nv-tailwind #menu-btn{display:block!important}
  .nv-sector .navlinks,.nv-sector .links{display:none!important}
 }
+
+.nv-tailwind .sticky.top-12{top:68px!important;background:rgba(255,255,255,.97)!important}
+.nv-tailwind .p-item [style*="background:"] .text-white{color:#fff!important}
+.nv-tailwind .p-item [style*="background:"] [class*="text-[#"]{color:rgba(255,255,255,.72)!important}
+@media(max-width:767px){.nv-tailwind .sticky.top-12{top:64px!important}}
