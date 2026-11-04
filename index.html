@@ -14,7 +14,7 @@
 <link rel="preload" as="image" href="img/novatec-horizontal.svg">
 <link rel="preload" as="image" href="img/portfolio/rd-construcciones.png" fetchpriority="high">
 <link rel="stylesheet" href="css/home-corporate.css?v=20261104">
-<link rel="stylesheet" href="css/cinematic-home.css?v=20261104">
+<link rel="stylesheet" href="css/cinematic-home.css?v=20261104-fix2">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_PY">
 <meta property="og:site_name" content="NovaTec Sistemas">
@@ -75,20 +75,38 @@
         </div>
         <div class="hero-overline" aria-hidden="true">DESPLAZATE PARA EXPLORAR</div>
       </div>
-      <div class="hero-showcase" aria-label="Muestra de proyectos desarrollados por NovaTec">
-        <div class="showcase-counter">PROYECTO / 01</div>
-        <div class="showcase-shell">
-          <div class="showcase-browser" aria-hidden="true"><i></i><i></i><i></i><span>NOVATEC / PROYECTOS</span></div>
-          <div class="showcase-photo">
-            <img src="img/portfolio/rd-construcciones.png" alt="Vista del sitio web de RD Construcciones, proyecto presentado en el portafolio" width="1100" height="680" fetchpriority="high" decoding="async">
-            <div class="showcase-overlay"><small>Diseño y desarrollo web</small><strong>RD Construcciones</strong></div>
+      <div class="hero-showcase" aria-label="Proyectos destacados de NovaTec">
+        <div class="showcase-shell" data-carousel data-autoplay="6500" role="region" aria-roledescription="carrusel" aria-label="Proyectos destacados">
+          <div class="showcase-browser" aria-hidden="true"><i></i><i></i><i></i><span>NOVATEC / PORTAFOLIO</span></div>
+          <div class="carousel-viewport" tabindex="0" aria-label="Proyectos destacados. Usá las flechas del teclado o los botones para navegar">
+            <div class="carousel-track">
+              <article class="carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="1 de 3, RD Construcciones">
+                <div class="showcase-photo"><img src="img/portfolio/rd-construcciones.png" alt="Captura del sitio de RD Construcciones" width="1381" height="763" fetchpriority="high" decoding="async"></div>
+                <div class="showcase-meta"><div><small>DESARROLLO WEB / CONSTRUCCIÓN</small><strong>RD Construcciones</strong></div><span>01</span></div>
+              </article>
+              <article class="carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 3, Cáceres Álvarez">
+                <div class="showcase-photo"><img src="img/portfolio/caceres-alvarez.png" alt="Captura del sitio de Cáceres Álvarez Abogados" width="1422" height="771" loading="lazy" decoding="async"></div>
+                <div class="showcase-meta"><div><small>DESARROLLO WEB / LEGAL</small><strong>Cáceres Álvarez</strong></div><span>02</span></div>
+              </article>
+              <article class="carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="3 de 3, Power Gym">
+                <div class="showcase-photo"><img src="img/portfolio/power-gym.png" alt="Captura del sitio de Power Gym" width="1433" height="764" loading="lazy" decoding="async"></div>
+                <div class="showcase-meta"><div><small>DESARROLLO WEB / FITNESS</small><strong>Power Gym</strong></div><span>03</span></div>
+              </article>
+            </div>
+          </div>
+          <div class="carousel-controls">
+            <span class="carousel-position" aria-live="polite">01 / 03</span>
+            <div class="carousel-dots" aria-label="Elegir proyecto">
+              <button type="button" class="carousel-dot" data-slide="0" aria-label="Mostrar RD Construcciones" aria-current="true"></button>
+              <button type="button" class="carousel-dot" data-slide="1" aria-label="Mostrar Cáceres Álvarez"></button>
+              <button type="button" class="carousel-dot" data-slide="2" aria-label="Mostrar Power Gym"></button>
+            </div>
+            <div class="carousel-arrows">
+              <button type="button" class="carousel-arrow" data-prev aria-label="Proyecto anterior">←</button>
+              <button type="button" class="carousel-arrow" data-next aria-label="Proyecto siguiente">→</button>
+            </div>
           </div>
         </div>
-        <div class="showcase-offset" aria-hidden="true">
-          <div class="offset-photo"><img src="img/portfolio/caceres-alvarez.png" alt="" loading="lazy" decoding="async" width="550" height="300"></div>
-          <div class="offset-caption"><strong>CÁCERES ÁLVAREZ</strong><span>ESTUDIO JURÍDICO</span></div>
-        </div>
-        <div class="cinema-scanline" aria-hidden="true">01 / 03</div>
       </div>
     </div>
   </section>
@@ -160,11 +178,13 @@
         <div><p class="eyebrow">TRABAJO SELECCIONADO / CASOS</p><h2 id="proyectos-title">El trabajo habla por nosotros.</h2></div>
         <p>Una selección de proyectos con diferentes objetivos, audiencias y necesidades. Explorá cómo se traducen en una experiencia digital.</p>
       </div>
-      <div class="showcase-stack">
-        <article class="showcase-case" data-reveal>
-          <div class="case-media film-media-reveal" data-reveal>
+      <div class="showcase-stack" data-carousel data-autoplay="0" role="region" aria-roledescription="carrusel" aria-label="Casos de estudio">
+        <div class="carousel-viewport" tabindex="0" aria-label="Casos de estudio. Navegá horizontalmente con las flechas">
+          <div class="carousel-track">
+        <article class="showcase-case carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="1 de 3">
+          <div class="case-media">
             <div class="case-top-label">01 / CONSTRUCCIÓN</div>
-            <img src="img/portfolio/rd-construcciones.png" alt="Captura del sitio de RD Construcciones" width="1050" height="690" loading="lazy" decoding="async" data-media-depth>
+            <img src="img/portfolio/rd-construcciones.png" alt="Captura del sitio de RD Construcciones" width="1050" height="690" loading="lazy" decoding="async">
           </div>
           <div class="case-copy">
             <span class="case-index">CASO 01 — DISEÑO WEB</span>
@@ -173,10 +193,10 @@
             <a href="https://rdconstrucciones.com.py/" target="_blank" rel="noopener noreferrer" class="case-link">Conocer el proyecto <span aria-hidden="true">↗</span></a>
           </div>
         </article>
-        <article class="showcase-case" data-reveal>
-          <div class="case-media film-media-reveal" data-reveal>
+        <article class="showcase-case carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 3">
+          <div class="case-media">
             <div class="case-top-label">02 / SERVICIOS LEGALES</div>
-            <img src="img/portfolio/caceres-alvarez.png" alt="Captura del sitio de Cáceres Álvarez Abogados" width="1050" height="690" loading="lazy" decoding="async" data-media-depth>
+            <img src="img/portfolio/caceres-alvarez.png" alt="Captura del sitio de Cáceres Álvarez Abogados" width="1050" height="690" loading="lazy" decoding="async">
           </div>
           <div class="case-copy">
             <span class="case-index">CASO 02 — WEB CORPORATIVA</span>
@@ -185,10 +205,10 @@
             <a href="https://caceresalvarezabogados.com.py/" target="_blank" rel="noopener noreferrer" class="case-link">Conocer el proyecto <span aria-hidden="true">↗</span></a>
           </div>
         </article>
-        <article class="showcase-case" data-reveal>
-          <div class="case-media film-media-reveal" data-reveal>
+        <article class="showcase-case carousel-slide" role="group" aria-roledescription="diapositiva" aria-label="3 de 3">
+          <div class="case-media">
             <div class="case-top-label">03 / FITNESS</div>
-            <img src="img/portfolio/power-gym.png" alt="Captura del sitio web de Power Gym" width="1050" height="690" loading="lazy" decoding="async" data-media-depth>
+            <img src="img/portfolio/power-gym.png" alt="Captura del sitio web de Power Gym" width="1050" height="690" loading="lazy" decoding="async">
           </div>
           <div class="case-copy">
             <span class="case-index">CASO 03 — SITIO WEB</span>
@@ -197,8 +217,22 @@
             <a href="https://www.powergym.com.py/" target="_blank" rel="noopener noreferrer" class="case-link">Conocer el proyecto <span aria-hidden="true">↗</span></a>
           </div>
         </article>
+          </div>
+        </div>
+        <div class="carousel-controls case-carousel-controls">
+          <span class="carousel-position" aria-live="polite">01 / 03</span>
+          <div class="carousel-dots" aria-label="Elegir caso de estudio">
+            <button type="button" class="carousel-dot" data-slide="0" aria-label="Ver RD Construcciones" aria-current="true"></button>
+            <button type="button" class="carousel-dot" data-slide="1" aria-label="Ver Cáceres Álvarez"></button>
+            <button type="button" class="carousel-dot" data-slide="2" aria-label="Ver Power Gym"></button>
+          </div>
+          <div class="carousel-arrows">
+            <button type="button" class="carousel-arrow" data-prev aria-label="Caso anterior">←</button>
+            <button type="button" class="carousel-arrow" data-next aria-label="Caso siguiente">→</button>
+          </div>
+        </div>
       </div>
-      <div class="portfolio-end"><a href="portafolio.html" class="btn btn-light">Ver portafolio completo</a></div>
+<div class="portfolio-end"><a href="portafolio.html" class="btn btn-light">Ver portafolio completo</a></div>
     </div>
   </section>
   <section class="film-manifesto" aria-labelledby="manifesto-title">
@@ -260,6 +294,6 @@
 })();
 </script>
 <script src="js/main.js" defer></script>
-<script src="js/cinematic.js" defer></script>
+<script src="js/cinematic.js?v=20261104-fix2" defer></script>
 </body>
 </html>

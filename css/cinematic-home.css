@@ -204,3 +204,93 @@ body.cinema-motion .film-media-reveal.is-visible{clip-path:inset(0 0 0 0)}
  body.cinema-motion .film-media-reveal{clip-path:none!important;transition:none!important}
  .btn,.nav-link-cta{transition:none!important}
 }
+
+/* 2026-11-04 — Screenshot/layout fixes and genuine horizontal project carousels */
+/* Native horizontal slide track keeps each screenshot's entire viewport visible. */
+[data-carousel]{min-width:0;max-width:100%;overflow:hidden}
+[data-carousel] .carousel-viewport{width:100%;min-width:0;overflow:hidden;outline-offset:-4px}
+[data-carousel] .carousel-track{display:flex;flex-wrap:nowrap;align-items:stretch;width:100%;transition:transform .68s cubic-bezier(.2,.7,.16,1);will-change:transform}
+[data-carousel] .carousel-slide{flex:0 0 100%;min-width:0;max-width:100%}
+[data-carousel] .carousel-controls{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:15px 20px;background:#102c4c;color:#d8e6f6;border-top:1px solid #395778}
+[data-carousel] .carousel-position{font-size:11px;white-space:nowrap;color:#c7dafa;font-weight:700;letter-spacing:.12em;font-variant-numeric:tabular-nums}
+[data-carousel] .carousel-dots{display:flex;gap:8px;align-items:center;justify-content:center}
+[data-carousel] .carousel-dot{appearance:none;display:block;padding:0;width:22px;height:4px;background:#607b9b;border:0;cursor:pointer;border-radius:0;transition:background .2s,width .2s}
+[data-carousel] .carousel-dot[aria-current="true"]{background:#83bafc;width:36px}
+[data-carousel] .carousel-arrows{display:flex;gap:8px}
+[data-carousel] .carousel-arrow{width:39px;height:36px;display:inline-flex;align-items:center;justify-content:center;border:1px solid #6683a4;background:transparent;color:#eff6ff;font-size:21px;cursor:pointer;border-radius:2px;transition:background .2s}
+[data-carousel] .carousel-arrow:hover{background:#265184}
+[data-carousel] .carousel-arrow:focus-visible,[data-carousel] .carousel-dot:focus-visible{outline:3px solid #8bbdff;outline-offset:4px}
+/* Hero */
+.hero-cinema .hero-showcase{width:100%;max-width:600px;margin:0;align-self:center;justify-self:end;perspective:none}
+.hero-cinema .showcase-shell{overflow:hidden;box-shadow:19px 24px 50px rgba(0,7,24,.25);background:#102a48;transform:translateY(var(--hero-offset,0px));border:1px solid #54718f;transition:transform .3s ease}
+.hero-cinema .showcase-photo{width:100%;height:auto;aspect-ratio:1381/763;overflow:hidden;position:relative;background:#0c1e34}
+.hero-cinema .showcase-photo img{display:block;width:100%;height:100%;object-fit:contain!important;object-position:center top!important;filter:none!important;transform:none!important;max-width:none}
+.hero-cinema .showcase-photo:after,.hero-cinema .showcase-overlay{display:none!important}
+.hero-cinema .showcase-meta{min-height:92px;padding:19px 22px;display:flex;justify-content:space-between;align-items:center;gap:20px;background:#dce8f5;color:#0c2647;border-top:1px solid #b0c6db}
+.hero-cinema .showcase-meta small{display:block;color:#375d88;font-size:10px;letter-spacing:.08em;font-weight:700;margin-bottom:6px}
+.hero-cinema .showcase-meta strong{display:block;font-size:21px;line-height:1.18;font-weight:700;letter-spacing:-.03em}
+.hero-cinema .showcase-meta>span{font-size:30px;color:#819dba;font-weight:700}
+.hero-cinema .showcase-shell .carousel-controls{background:#0b2544}
+.hero-cinema .showcase-offset,.hero-cinema .showcase-counter,.hero-cinema .cinema-scanline{display:none!important}
+/* Sector proof: picture and caption in separate natural-flow boxes, never on top of visible screenshot text. */
+.sector-film .specialty{grid-template-columns:1fr 1fr;align-items:stretch;min-height:0}
+.sector-film .specialty-left{padding:64px 51px}
+.sector-film .specialty-right{padding:0!important;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;min-height:0;background:#103352}
+.sector-film .sector-shot{position:relative!important;inset:auto!important;width:100%;height:auto;min-height:0;display:block;flex:1 1 auto;overflow:hidden;background:#142b46}
+.sector-film .sector-shot img{display:block;width:100%;height:auto;max-height:none;object-fit:contain!important;object-position:center top!important;filter:none!important;transform:none!important}
+.sector-film .sector-shot:after{display:none!important}
+.sector-film .sector-overlay{position:relative!important;inset:auto!important;margin-top:auto;padding:24px 28px;background:#15385c;border-top:1px solid #4a7199;z-index:2}
+.sector-film .sector-overlay p{font-size:19px;line-height:1.24;color:white!important;margin:0 0 10px}
+.sector-film .sector-overlay span{display:block;letter-spacing:.08em;color:#adc7e5}
+/* Case carousel — full-width slides, fixed balanced layout; no text layered over a screenshot. */
+.film-portfolio .showcase-stack{display:block!important;min-width:0;margin-top:47px;background:transparent;border:0}
+.film-portfolio .showcase-stack>.carousel-viewport{width:100%;border:1px solid #48688b}
+.film-portfolio .showcase-case,.film-portfolio .showcase-case:nth-child(even){display:grid!important;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)!important;min-height:430px!important;height:auto!important;overflow:hidden;margin:0;border:0;box-shadow:none;transform:none!important}
+.film-portfolio .showcase-case:nth-child(even) .case-media{order:0!important}
+.film-portfolio .case-media{height:100%;min-height:0!important;aspect-ratio:auto!important;background:#08192d;display:flex;align-items:center;overflow:hidden}
+.film-portfolio .case-media img{display:block;width:100%;height:auto;max-height:100%;object-fit:contain!important;object-position:center center!important;filter:none!important;transform:none!important;will-change:auto!important}
+.film-portfolio .case-media:after{display:none!important}
+.film-portfolio .case-top-label{display:none!important}
+.film-portfolio .case-copy{padding:45px 42px!important;min-width:0;justify-content:center}
+.film-portfolio .case-copy h3{font-size:clamp(33px,3.5vw,51px);margin:45px 0 22px;overflow-wrap:break-word}
+.film-portfolio .case-copy p{margin-bottom:35px}
+.film-portfolio .case-copy .case-link{margin-top:auto}
+.film-portfolio .case-carousel-controls{padding:17px 20px;background:#14365b;border:1px solid #48688b;border-top:0}
+.film-portfolio .portfolio-end{margin-top:28px}
+/* Fix clipping / centering in intermediate viewport sizes. */
+@media(min-width:901px) and (max-width:1160px){
+ .hero-cinema .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,.94fr);gap:34px}
+ .hero-cinema h1{font-size:clamp(48px,5.4vw,66px)}
+ .sector-film .specialty-left{padding:46px 38px}
+ .sector-film .specialty-left h2{font-size:clamp(35px,4vw,51px)}
+}
+@media(max-width:900px){
+ .hero-cinema .hero-showcase{max-width:660px;width:100%;margin:0 auto;justify-self:center}
+ .sector-film .specialty{grid-template-columns:1fr!important}
+ .sector-film .specialty-right{min-height:0!important}
+ .film-portfolio .showcase-case,.film-portfolio .showcase-case:nth-child(even){display:flex!important;flex-direction:column;min-height:0!important}
+ .film-portfolio .case-media{height:auto;min-height:0;aspect-ratio:16/9!important}
+ .film-portfolio .case-media img{width:100%;height:100%;object-fit:contain!important}
+ .film-portfolio .case-copy{min-height:250px;padding:30px!important}
+ .film-portfolio .case-copy h3{margin:23px 0 13px}
+}
+@media(max-width:620px){
+ .hero-cinema .hero-grid{padding-top:56px;padding-bottom:69px}
+ .hero-cinema .hero-showcase{margin-top:13px}
+ .hero-cinema .showcase-photo{height:auto!important;aspect-ratio:1381/763}
+ .hero-cinema .showcase-meta{min-height:77px;padding:14px 16px}
+ .hero-cinema .showcase-meta strong{font-size:18px}
+ [data-carousel] .carousel-controls{padding:12px;gap:8px}
+ [data-carousel] .carousel-arrow{width:36px;height:34px}
+ [data-carousel] .carousel-dot{width:15px}
+ [data-carousel] .carousel-dot[aria-current="true"]{width:24px}
+ .sector-film .specialty-left{padding:34px 25px}
+ .sector-film .sector-overlay{padding:20px}
+ .film-portfolio .case-media{min-height:0!important;height:auto;aspect-ratio:16/9!important}
+ .film-portfolio .case-copy{min-height:270px;padding:26px!important}
+ .film-portfolio .case-copy h3{font-size:33px}
+}
+@media(prefers-reduced-motion:reduce){
+ [data-carousel] .carousel-track{transition:none!important;will-change:auto}
+ .hero-cinema .showcase-shell{transform:none!important;transition:none!important}
+}
