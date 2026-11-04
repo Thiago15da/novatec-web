@@ -12,7 +12,9 @@
 <link rel="canonical" href="https://novatec.com.py/">
 <link rel="icon" href="img/novatec-isotipo.svg" type="image/svg+xml">
 <link rel="preload" as="image" href="img/novatec-horizontal.svg">
+<link rel="preload" as="image" href="img/portfolio/rd-construcciones.png" fetchpriority="high">
 <link rel="stylesheet" href="css/home-corporate.css?v=20261104">
+<link rel="stylesheet" href="css/cinematic-home.css?v=20261104">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_PY">
 <meta property="og:site_name" content="NovaTec Sistemas">
@@ -32,7 +34,7 @@
 }
 </script>
 </head>
-<body>
+<body class="cinema-home">
 <a href="#contenido" class="skip">Saltar al contenido</a>
 <header class="nv-header">
   <div class="nv-header-inner">
@@ -56,26 +58,37 @@
   </nav>
 </header>
 <main id="contenido">
-  <section class="hero" aria-labelledby="hero-title">
+  <section class="hero hero-cinema" aria-labelledby="hero-title">
+    <div class="hero-cinema-lines" aria-hidden="true"></div>
     <div class="wrap hero-grid">
       <div>
-        <p class="eyebrow">NOVATEC SISTEMAS / SOLUCIONES DIGITALES EN PARAGUAY</p>
-        <h1 id="hero-title">Sistemas y páginas web para <strong>empresas que avanzan.</strong></h1>
-        <p class="hero-text">Diseñamos sitios que representan bien a tu empresa y desarrollamos software que ayuda a organizar procesos, centralizar información y trabajar mejor.</p>
+        <p class="eyebrow hero-eyebrow">NOVATEC SISTEMAS <span aria-hidden="true">/</span> PARAGUAY</p>
+        <h1 id="hero-title">
+          <span class="hero-line"><span>Desarrollo web</span></span>
+          <span class="hero-line"><span>y sistemas</span></span>
+          <span class="hero-line"><span class="hero-accent">para empresas.</span></span>
+        </h1>
+        <p class="hero-text">Convertimos ideas y procesos en experiencias digitales útiles. Sitios que representan a tu marca y sistemas construidos alrededor de tu manera de trabajar.</p>
         <div class="actions">
           <a href="contacto.html" class="btn btn-blue">Hablemos de tu proyecto</a>
-          <a href="portafolio.html" class="btn btn-outline">Explorar proyectos</a>
+          <a href="#proyectos" class="btn btn-outline">Conocé nuestro trabajo</a>
         </div>
+        <div class="hero-overline" aria-hidden="true">DESPLAZATE PARA EXPLORAR</div>
       </div>
-      <div class="hero-side" aria-label="Qué hacemos en NovaTec">
-        <div class="side-top"><span>NOVATEC / CAPACIDADES</span><span>PY · 2026</span></div>
-        <div class="side-body">
-          <span class="side-label">Un equipo, distintas soluciones</span>
-          <h2>Del sitio institucional al sistema que tu operación necesita.</h2>
-          <div class="side-row"><span>01</span><strong>Desarrollo web</strong><span>Presencia</span></div>
-          <div class="side-row"><span>02</span><strong>Sistemas a medida</strong><span>Gestión</span></div>
-          <div class="side-row"><span>03</span><strong>Integraciones</strong><span>Procesos</span></div>
+      <div class="hero-showcase" aria-label="Muestra de proyectos desarrollados por NovaTec">
+        <div class="showcase-counter">PROYECTO / 01</div>
+        <div class="showcase-shell">
+          <div class="showcase-browser" aria-hidden="true"><i></i><i></i><i></i><span>NOVATEC / PROYECTOS</span></div>
+          <div class="showcase-photo">
+            <img src="img/portfolio/rd-construcciones.png" alt="Vista del sitio web de RD Construcciones, proyecto presentado en el portafolio" width="1100" height="680" fetchpriority="high" decoding="async">
+            <div class="showcase-overlay"><small>Diseño y desarrollo web</small><strong>RD Construcciones</strong></div>
+          </div>
         </div>
+        <div class="showcase-offset" aria-hidden="true">
+          <div class="offset-photo"><img src="img/portfolio/caceres-alvarez.png" alt="" loading="lazy" decoding="async" width="550" height="300"></div>
+          <div class="offset-caption"><strong>CÁCERES ÁLVAREZ</strong><span>ESTUDIO JURÍDICO</span></div>
+        </div>
+        <div class="cinema-scanline" aria-hidden="true">01 / 03</div>
       </div>
     </div>
   </section>
@@ -86,26 +99,35 @@
       <div><strong>03</strong><span>Automatización de procesos</span></div>
     </div>
   </div>
-  <section class="section" id="servicios" aria-labelledby="servicios-title">
+  <section class="film-statement" aria-labelledby="statement-title">
+    <div class="wrap film-statement-inner">
+      <div data-reveal>
+        <span class="chapter-id">ENFOQUE / NOVATEC</span>
+        <h2 id="statement-title">No hacemos solo páginas. <em>Construimos presencia y herramientas para crecer.</em></h2>
+      </div>
+      <p data-reveal data-delay="1">Cada proyecto comienza por una necesidad concreta. Diseñamos experiencias claras y desarrollamos soluciones que funcionan en el día a día de las empresas.</p>
+    </div>
+  </section>
+<section class="section section-cinema" id="servicios" aria-labelledby="servicios-title">
     <div class="wrap">
-      <div class="section-top">
+      <div class="section-top" data-reveal>
         <div><p class="eyebrow">ÁREAS DE TRABAJO</p><h2 id="servicios-title">Tecnología con una función concreta.</h2></div>
         <p>Cada empresa tiene desafíos distintos. Por eso empezamos por entender qué necesitás resolver y construimos a partir de ahí.</p>
       </div>
       <div class="services">
-        <article class="service">
+        <article class="service" data-reveal data-delay="1">
           <span class="num">SERVICIO / 01</span>
           <h3>Desarrollo web</h3>
           <p>Páginas corporativas, portafolios, catálogos y tiendas online con estructura clara, diseño adaptable y bases de SEO técnico.</p>
           <a href="desarrollo-web-empresas.html">Explorar desarrollo web <span aria-hidden="true">↗</span></a>
         </article>
-        <article class="service">
+        <article class="service" data-reveal data-delay="2">
           <span class="num">SERVICIO / 02</span>
           <h3>Sistemas a medida</h3>
           <p>Aplicaciones empresariales, paneles de control, gestión de clientes y herramientas que acompañan la forma en que trabaja tu equipo.</p>
           <a href="software.html">Explorar sistemas <span aria-hidden="true">↗</span></a>
         </article>
-        <article class="service">
+        <article class="service" data-reveal data-delay="3">
           <span class="num">SERVICIO / 03</span>
           <h3>Automatización e integraciones</h3>
           <p>Conexiones entre herramientas, reportes y procesos repetitivos para reducir tareas manuales y ordenar mejor la información.</p>
@@ -114,54 +136,85 @@
       </div>
     </div>
   </section>
-  <section class="section section-alt" aria-labelledby="sectores-title">
+  <section class="section section-alt sector-film" aria-labelledby="sectores-title">
     <div class="wrap">
       <div class="specialty">
-        <div class="specialty-left">
-          <p class="eyebrow">SOLUCIONES POR SECTOR</p>
-          <h2 id="sectores-title">Desarrollo web para constructoras y estudios de arquitectura.</h2>
-          <p>Mostrá tus obras, explicá tus especialidades y facilitá que futuros clientes puedan conocer tu empresa y comunicarse.</p>
-          <a href="web-para-constructoras.html" class="btn btn-blue">Ver solución para constructoras</a>
+        <div class="specialty-left" data-reveal>
+          <p class="eyebrow">SOLUCIONES POR SECTOR / CONSTRUCCIÓN</p>
+          <h2 id="sectores-title">Tus obras tienen una historia. Tu página web debería contarla.</h2>
+          <p>Diseñamos sitios para constructoras, estudios de arquitectura e ingeniería que necesitan presentar sus proyectos, mostrar experiencia y abrir conversaciones comerciales.</p>
+          <a href="web-para-constructoras.html" class="btn btn-blue">Webs para constructoras</a>
         </div>
-        <div class="specialty-right" aria-label="Características">
-          <div><span>01</span>Portafolios de obras</div>
-          <div><span>02</span>Presentación de servicios</div>
-          <div><span>03</span>Contacto y consultas</div>
+        <div class="specialty-right" aria-label="Presentación de proyectos de construcción">
+          <div class="sector-shot film-media-reveal" data-reveal>
+            <img src="img/portfolio/rd-construcciones.png" alt="Muestra visual de una web del sector construcción" width="1024" height="670" loading="lazy" decoding="async" data-media-depth>
+          </div>
+          <div class="sector-overlay"><p>Una presentación a la altura de cada proyecto.</p><span>OBRAS · SERVICIOS · CONTACTO</span></div>
         </div>
       </div>
     </div>
   </section>
-  <section class="section" aria-labelledby="proyectos-title">
+  <section class="section film-portfolio section-cinema" id="proyectos" aria-labelledby="proyectos-title">
     <div class="wrap">
-      <div class="section-top">
-        <div><p class="eyebrow">TRABAJO SELECCIONADO</p><h2 id="proyectos-title">Proyectos para conocer nuestro enfoque.</h2></div>
-        <p>Distintos sectores, necesidades y formas de presentar información. Cada proyecto tiene un punto de partida particular.</p>
+      <div class="section-top" data-reveal>
+        <div><p class="eyebrow">TRABAJO SELECCIONADO / CASOS</p><h2 id="proyectos-title">El trabajo habla por nosotros.</h2></div>
+        <p>Una selección de proyectos con diferentes objetivos, audiencias y necesidades. Explorá cómo se traducen en una experiencia digital.</p>
       </div>
-      <div class="project-grid">
-        <article class="project">
-          <div class="project-visual proj-law"><small>SITIO CORPORATIVO · SECTOR LEGAL</small><strong>Cáceres Álvarez Abogados</strong></div>
-          <div class="project-copy"><p>Presentación de un estudio jurídico, áreas de práctica y vías de contacto.</p><a href="https://caceresalvarezabogados.com.py/" target="_blank" rel="noopener noreferrer">Visitar proyecto ↗</a></div>
+      <div class="showcase-stack">
+        <article class="showcase-case" data-reveal>
+          <div class="case-media film-media-reveal" data-reveal>
+            <div class="case-top-label">01 / CONSTRUCCIÓN</div>
+            <img src="img/portfolio/rd-construcciones.png" alt="Captura del sitio de RD Construcciones" width="1050" height="690" loading="lazy" decoding="async" data-media-depth>
+          </div>
+          <div class="case-copy">
+            <span class="case-index">CASO 01 — DISEÑO WEB</span>
+            <h3>RD Construcciones</h3>
+            <p>Una presentación corporativa para mostrar obras y facilitar el acceso a los servicios de una constructora.</p>
+            <a href="https://rdconstrucciones.com.py/" target="_blank" rel="noopener noreferrer" class="case-link">Conocer el proyecto <span aria-hidden="true">↗</span></a>
+          </div>
         </article>
-        <article class="project">
-          <div class="project-visual proj-gym"><small>SITIO WEB · DEPORTE</small><strong>Power Gym</strong></div>
-          <div class="project-copy"><p>Información de servicios y presencia digital para el sector fitness.</p><a href="https://www.powergym.com.py/" target="_blank" rel="noopener noreferrer">Visitar proyecto ↗</a></div>
+        <article class="showcase-case" data-reveal>
+          <div class="case-media film-media-reveal" data-reveal>
+            <div class="case-top-label">02 / SERVICIOS LEGALES</div>
+            <img src="img/portfolio/caceres-alvarez.png" alt="Captura del sitio de Cáceres Álvarez Abogados" width="1050" height="690" loading="lazy" decoding="async" data-media-depth>
+          </div>
+          <div class="case-copy">
+            <span class="case-index">CASO 02 — WEB CORPORATIVA</span>
+            <h3>Cáceres Álvarez</h3>
+            <p>Una estructura clara para explicar áreas de práctica, presentar el estudio y facilitar las consultas.</p>
+            <a href="https://caceresalvarezabogados.com.py/" target="_blank" rel="noopener noreferrer" class="case-link">Conocer el proyecto <span aria-hidden="true">↗</span></a>
+          </div>
         </article>
-        <article class="project">
-          <div class="project-visual proj-platform"><small>PLATAFORMA DIGITAL · SERVICIOS</small><strong>Vola</strong></div>
-          <div class="project-copy"><p>Una plataforma web orientada a presentar servicios y facilitar el acceso digital.</p><a href="https://vola.com.py/" target="_blank" rel="noopener noreferrer">Visitar proyecto ↗</a></div>
+        <article class="showcase-case" data-reveal>
+          <div class="case-media film-media-reveal" data-reveal>
+            <div class="case-top-label">03 / FITNESS</div>
+            <img src="img/portfolio/power-gym.png" alt="Captura del sitio web de Power Gym" width="1050" height="690" loading="lazy" decoding="async" data-media-depth>
+          </div>
+          <div class="case-copy">
+            <span class="case-index">CASO 03 — SITIO WEB</span>
+            <h3>Power Gym</h3>
+            <p>Presentación digital de servicios para que las personas conozcan el gimnasio y encuentren cómo comunicarse.</p>
+            <a href="https://www.powergym.com.py/" target="_blank" rel="noopener noreferrer" class="case-link">Conocer el proyecto <span aria-hidden="true">↗</span></a>
+          </div>
         </article>
       </div>
-      <div style="margin-top:29px"><a href="portafolio.html" class="btn btn-light">Ver todo el portafolio</a></div>
+      <div class="portfolio-end"><a href="portafolio.html" class="btn btn-light">Ver portafolio completo</a></div>
     </div>
   </section>
-  <section class="section section-alt" aria-labelledby="metodo-title">
+  <section class="film-manifesto" aria-labelledby="manifesto-title">
+    <div class="wrap manifesto-grid">
+      <span class="manifesto-index" data-reveal>LA FORMA DE TRABAJAR / 02</span>
+      <h2 id="manifesto-title" data-reveal data-delay="1">Cada decisión de diseño tiene que <em>resolver algo real.</em></h2>
+    </div>
+  </section>
+  <section class="section section-alt section-process section-cinema" aria-labelledby="metodo-title">
     <div class="wrap">
       <p class="eyebrow">CÓMO TRABAJAMOS</p>
-      <h2 class="section-title" id="metodo-title">Primero entendemos. Después construimos.</h2>
+      <h2 class="section-title" id="metodo-title" data-reveal>Primero entendemos. Después construimos.</h2>
       <div class="process">
-        <article><b>01 / DEFINIR</b><h3>Escuchamos el problema</h3><p>Conversamos sobre la empresa, el objetivo y qué información o proceso necesita mejorar.</p></article>
-        <article><b>02 / DISEÑAR</b><h3>Proponemos una solución</h3><p>Definimos alcance, estructura y prioridades para que el proyecto tenga un camino claro.</p></article>
-        <article><b>03 / IMPLEMENTAR</b><h3>Desarrollamos y revisamos</h3><p>Construimos, probamos en distintos dispositivos y coordinamos la entrega y puesta en marcha.</p></article>
+        <article data-reveal data-delay="1"><b>01 / DEFINIR</b><h3>Escuchamos el problema</h3><p>Conversamos sobre la empresa, el objetivo y qué información o proceso necesita mejorar.</p></article>
+        <article data-reveal data-delay="2"><b>02 / DISEÑAR</b><h3>Proponemos una solución</h3><p>Definimos alcance, estructura y prioridades para que el proyecto tenga un camino claro.</p></article>
+        <article data-reveal data-delay="3"><b>03 / IMPLEMENTAR</b><h3>Desarrollamos y revisamos</h3><p>Construimos, probamos en distintos dispositivos y coordinamos la entrega y puesta en marcha.</p></article>
       </div>
     </div>
   </section>
@@ -176,9 +229,9 @@
       </div>
     </div>
   </section>
-  <section class="bottom-cta">
+  <section class="bottom-cta scene-cta">
     <div class="wrap bottom-inner">
-      <div><h2>¿Tu empresa necesita una web o un sistema?</h2><p>Contanos qué querés lograr. Te ayudamos a definir la próxima etapa.</p></div>
+      <div><h2>Tu siguiente proyecto empieza con una conversación.</h2><p>Contanos qué querés lograr. Te ayudamos a definir la próxima etapa.</p></div>
       <a href="contacto.html" class="btn btn-blue">Solicitar propuesta</a>
     </div>
   </section>
@@ -206,5 +259,7 @@
  document.getElementById('year').textContent=new Date().getFullYear();
 })();
 </script>
+<script src="js/main.js" defer></script>
+<script src="js/cinematic.js" defer></script>
 </body>
 </html>

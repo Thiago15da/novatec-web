@@ -6,7 +6,7 @@ const pages = [
   'index.html', 'contacto.html', 'portafolio.html', 'software.html',
   'web-para-constructoras.html', 'desarrollo-web-empresas.html'
 ];
-const scriptFiles = ['js/main.js', 'js/cotizador.js', 'js/script.js'];
+const scriptFiles = ['js/main.js', 'js/cotizador.js', 'js/script.js', 'js/cinematic.js'];
 const read = (path) => readFileSync(path, 'utf8');
 
 for (const file of scriptFiles) {
@@ -47,8 +47,10 @@ for (const file of pages) {
   }
   if (file === 'index.html') {
     assert.match(html, /home-corporate\.css/, 'Home corporate stylesheet missing');
+    assert.match(html, /cinematic-home\.css/, 'Home cinematic stylesheet missing');
   } else {
     assert.match(html, /corporate-v2\.css/, file + ': corporate stylesheet missing');
+    assert.match(html, /cinematic-inner\.css/, file + ': cinematic stylesheet missing');
   }
   console.log('✓ SEO, HTML, schema, JS, links:', file);
 }
@@ -66,6 +68,12 @@ assert.match(home, /href="software\.html"/, 'Home software link missing');
 assert.match(home, /href="web-para-constructoras\.html"/, 'Home construction sector link missing');
 assert.ok(!/data-count="(?:50|100|5)"/.test(home), 'Unverified home statistics remain');
 assert.match(home, /sistemas a medida/i, 'Software specialization missing');
+assert.match(home, /class="hero hero-cinema"/, 'Cinematic hero missing');
+assert.match(home, /class="showcase-stack"/, 'Editorial projects showcase missing');
+assert.match(home, /img\/portfolio\/rd-construcciones\.png/, 'Real portfolio screenshot missing from home');
+for (const page of pages) assert.match(read(page), /js\/cinematic\.js/, page + ': cinematic controller missing');
+assert.match(read('js/cinematic.js'), /prefers-reduced-motion/, 'Reduced motion accessibility support missing');
+assert.match(read('js/cinematic.js'), /IntersectionObserver/, 'Scroll reveal fallback missing');
 assert.match(contact, /id="quoter-body"/, 'B2B lead form placeholder missing');
 assert.ok(!/value="(?:hardware|tecnico)"/.test(contact), 'Retired contact form categories remain');
 assert.match(quote, /'s-dot'/, 'Quotation flow needs the existing CSS steps');
