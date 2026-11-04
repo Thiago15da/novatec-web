@@ -90,3 +90,93 @@
     });
   }
 })();
+
+/* Horizontal carousels — one engine for hero and case studies.
+   Controls: arrows, dots, keyboard, touch swipe; hero rotates automatically until interacted with.
+   Degrades to the first visible project and normal links without motion. */
+(() => {
+  'use strict';
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  for (const carousel of document.querySelectorAll('[data-carousel]')) {
+    const viewport = carousel.querySelector('.carousel-viewport');
+    const track = carousel.querySelector('.carousel-track');
+    const slides = [...carousel.querySelectorAll('.carousel-slide')];
+    const dots = [...carousel.querySelectorAll('.carousel-dot')];
+    const position = carousel.querySelector('.carousel-position');
+    const prev = carousel.querySelector('[data-prev]');
+    const next = carousel.querySelector('[data-next]');
+    if (!viewport || !track || slides.length < 2 || !prev || !next) continue;
+
+    let index = 0;
+    let timer = null;
+    let interacted = false;
+    let hovered = false;
+    let visible = true;
+    let pointerStartX = null;
+    let pointerStartY = null;
+    const duration = Math.max(0, Number(carousel.dataset.autoplay) || 0);
+    const format = i => String(i + 1).padStart(2,'0');
+    const render = () => {
+      track.style.transform = 'translate3d(-' + (index * 100) + '%, 0, 0)';
+      if (position) position.textContent = format(index) + ' / ' + String(slides.length).padStart(2,'0');
+      slides.forEach((slide,i) => {
+        const active = i === index;
+        slide.setAttribute('aria-hidden', active ? 'false' : 'true');
+        // Prevent invisible slides' links from appearing in the tab order.
+        if ('inert' in slide) slide.inert = !active;
+        else slide.querySelectorAll('a,button').forEach(el => { el.tabIndex = active ? 0 : -1; });
+      });
+      dots.forEach((dot,i) => {
+        if(i===index)dot.setAttribute('aria-current','true');
+        else dot.removeAttribute('aria-current');
+      });
+    };
+    const go = (nextIndex, manual=false) => {
+      index = (nextIndex + slides.length) % slides.length;
+      if(manual){interacted = true; stop();}
+      render();
+    };
+    const stop = () => { if(timer!==null){window.clearInterval(timer);timer=null;} };
+    const play = () => {
+      stop();
+      if(duration < 2000 || motion.matches || interacted || hovered || !visible || document.hidden) return;
+      timer=window.setInterval(()=>{
+        if(!document.hidden && !motion.matches && !hovered && visible)go(index+1);
+      },duration);
+    };
+    prev.addEventListener('click',()=>go(index-1,true));
+    next.addEventListener('click',()=>go(index+1,true));
+    dots.forEach((dot,i)=>dot.addEventListener('click',()=>go(i,true)));
+    viewport.addEventListener('keydown',(e)=>{
+      if(e.key === 'ArrowRight'){e.preventDefault();go(index+1,true);}
+      if(e.key === 'ArrowLeft'){e.preventDefault();go(index-1,true);}
+    });
+    viewport.style.touchAction='pan-y';
+    viewport.addEventListener('pointerdown',(e)=>{
+      if(e.pointerType!=='touch'&&e.pointerType!=='pen')return;
+      pointerStartX=e.clientX;pointerStartY=e.clientY;
+    },{passive:true});
+    viewport.addEventListener('pointerup',(e)=>{
+      if(pointerStartX===null)return;
+      const dx=e.clientX-pointerStartX,dy=e.clientY-pointerStartY;
+      pointerStartX=null;pointerStartY=null;
+      if(Math.abs(dx)>45 && Math.abs(dx)>Math.abs(dy)*1.2)go(index+(dx<0?1:-1),true);
+    },{passive:true});
+    viewport.addEventListener('pointercancel',()=>{pointerStartX=null;pointerStartY=null;});
+    carousel.addEventListener('mouseenter',()=>{hovered=true;stop();});
+    carousel.addEventListener('mouseleave',()=>{hovered=false;play();});
+    carousel.addEventListener('focusin',()=>{hovered=true;stop();});
+    carousel.addEventListener('focusout',(e)=>{if(!carousel.contains(e.relatedTarget)){hovered=false;play();}});
+    document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();else play();});
+    if(motion.addEventListener)motion.addEventListener('change',play);
+    if('IntersectionObserver' in window){
+      const watch=new IntersectionObserver(entries=>{
+        visible=entries[0]?.isIntersecting ?? true;
+        if(!visible)stop();else play();
+      },{threshold:.25});
+      watch.observe(carousel);
+    }
+    render();
+    play();
+  }
+})();
