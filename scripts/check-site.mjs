@@ -101,6 +101,12 @@ assert.match(businessWeb, /GM Iuris<br>Consulting/, 'Correct name GM Iuris Consu
 for (const page of [home, projectsPage, businessWeb]) {
   assert.ok(!/GMI Uris(?:<br>| )Consulting/.test(page), 'Incorrect former business name remains');
 }
+// iOS-size layout guard: prevent a responsive slider's intrinsic width from stretching the hero grid.
+const heroStyles = read('css/cinematic-home.css');
+assert.ok(heroStyles.includes('grid-template-columns:minmax(0,1fr)'), 'Mobile hero grid must allow its child to shrink');
+assert.ok(heroStyles.includes('.hero-cinema .hero-grid > div'), 'Mobile hero children must be constrained to viewport');
+assert.ok(heroStyles.includes('.hero-cinema .actions .btn'), 'Mobile hero buttons must fit the available width');
+assert.ok(home.includes('css/cinematic-home.css?v=20261104-v6'), 'Updated hero CSS must bypass mobile browser cache');
 assert.equal((home.match(/data-carousel\b/g) || []).length, 1, 'Home must have one primary hero carousel');
 assert.equal((home.match(/class="carousel-slide"/g) || []).length, 3, 'Hero must retain three project slides');
 assert.equal((home.match(/data-prev/g) || []).length, 1, 'Hero must have previous control');
