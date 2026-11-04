@@ -69,7 +69,7 @@ assert.match(home, /href="web-para-constructoras\.html"/, 'Home construction sec
 assert.ok(!/data-count="(?:50|100|5)"/.test(home), 'Unverified home statistics remain');
 assert.match(home, /sistemas a medida/i, 'Software specialization missing');
 assert.match(home, /class="hero hero-cinema"/, 'Cinematic hero missing');
-assert.match(home, /class="showcase-stack"/, 'Editorial projects showcase missing');
+assert.match(home, /class="showcase-stack" data-carousel/, 'Editorial projects showcase missing');
 assert.match(home, /img\/portfolio\/rd-construcciones\.png/, 'Real portfolio screenshot missing from home');
 for (const page of pages) assert.match(read(page), /js\/cinematic\.js/, page + ': cinematic controller missing');
 assert.match(read('js/cinematic.js'), /prefers-reduced-motion/, 'Reduced motion accessibility support missing');
@@ -89,10 +89,25 @@ for (const f of ['software.html','portafolio.html','contacto.html','web-para-con
 }
 assert.ok(businessWeb.includes('contacto.html?servicio=web'), 'Business landing web lead tracking missing');
 assert.ok(businessWeb.includes('rdconstrucciones.com.py'), 'Business landing projects must link to actual work');
-for (const img of ['rd-construcciones.png','caceres-alvarez.png','power-gym.png','gmi-uris.png']) {
+for (const img of ['rd-construcciones.png','caceres-alvarez.png','power-gym.png']) {
   assert.ok(existsSync('img/portfolio/' + img), 'Missing project screenshot: ' + img);
   assert.ok(businessWeb.includes('img/portfolio/' + img), 'Carousel missing screenshot: ' + img);
 }
+// Both cinematic homepage carousels must be fully operable and show correct project captures.
+const projectsPage = read('portafolio.html');
+assert.equal((home.match(/data-carousel\b/g) || []).length, 2, 'Two real horizontal home sliders required');
+assert.equal((home.match(/class="carousel-slide"/g) || []).length, 3, 'Hero slider must include three matching projects');
+assert.equal((home.match(/class="showcase-case carousel-slide"/g) || []).length, 3, 'Project slider must include three matching cases');
+assert.equal((home.match(/data-prev/g) || []).length, 2, 'Both sliders need previous controls');
+assert.equal((home.match(/data-next/g) || []).length, 2, 'Both sliders need next controls');
+assert.match(read('js/cinematic.js'), /pointerup/, 'Swipe control missing');
+assert.match(read('js/cinematic.js'), /ArrowRight/, 'Keyboard slide control missing');
+assert.match(read('js/cinematic.js'), /data-autoplay/, 'Hero auto-slide missing');
+assert.equal((projectsPage.match(/class="project-thumbnail"/g) || []).length, 3, 'Portfolio must only show three correctly matched screenshots');
+assert.ok(!/gmi-uris.png|GMI Uris Consulting|>Vola<\/p>/.test(projectsPage), 'Portfolio still displays unverified mismatched project');
+assert.ok(!/gmi-uris.png|GMI Uris Consulting/.test(businessWeb), 'Business carousel has mismatched GMI screenshot');
+assert.match(projectsPage, /data-filter="construccion"/, 'Construction filter missing');
+assert.match(read('css/cinematic-inner.css'), /project-thumbnail/, 'Correct screenshot framing stylesheet missing');
 assert.match(businessWeb, /id="portfolio-slider-viewport"/, 'Accessible portfolio carousel missing');
 assert.match(businessWeb, /id="portfolio-next"/, 'Carousel next button missing');
 assert.match(businessWeb, /id="portfolio-prev"/, 'Carousel previous button missing');
