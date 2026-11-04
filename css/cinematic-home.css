@@ -409,3 +409,85 @@ body.cinema-motion .film-media-reveal.is-visible{clip-path:inset(0 0 0 0)}
 @media(prefers-reduced-motion:reduce){
  .film-portfolio .gmi-external{transition:none!important}
 }
+
+
+/* V5 — Actual GMI Iuris Consulting screenshot, not typographic mockup. */
+.film-portfolio .gmi-feature-screenshot{
+ display:grid!important;
+ grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)!important;
+ align-items:stretch!important;
+ min-height:0!important;
+ background:#122b4a;
+ border:1px solid #47648a;
+ overflow:hidden;
+}
+.film-portfolio .gmi-feature-screenshot .gmi-site-preview{
+ display:flex!important;
+ flex-direction:column!important;
+ justify-content:center!important;
+ align-items:stretch!important;
+ width:100%!important;
+ min-width:0!important;
+ min-height:0!important;
+ padding:0!important;
+ margin:0!important;
+ background:#0a1831!important;
+ border-right:1px solid #547396;
+}
+.film-portfolio .gmi-site-preview:before{display:none!important}
+.film-portfolio .gmi-site-browser{
+ display:flex;align-items:center;justify-content:space-between;
+ gap:13px;height:36px;min-height:36px;padding:0 14px;
+ background:#dfe8f1;color:#3d5270;font-size:10px;font-weight:700;letter-spacing:.07em;
+ border-bottom:1px solid #9fb3c9;
+}
+.film-portfolio .gmi-browser-dots{display:flex;align-items:center;gap:5px;flex-shrink:0}
+.film-portfolio .gmi-browser-dots i{display:block;width:6px;height:6px;background:#7b91aa;border-radius:50%}
+.film-portfolio .gmi-site-preview>img{
+ display:block!important;
+ width:100%!important;
+ height:auto!important;
+ max-width:100%!important;
+ aspect-ratio:1419/741!important;
+ object-fit:contain!important;
+ object-position:center!important;
+ filter:none!important;
+ transform:none!important;
+ border:0!important;
+}
+.film-portfolio .gmi-site-caption{
+ display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;
+ gap:8px 16px;padding:15px 17px;
+ background:#142e50;border-top:1px solid #45658c;color:#d9e8fa;
+ font-size:10px;font-weight:700;letter-spacing:.06em;line-height:1.4;
+}
+.film-portfolio .gmi-site-caption span:last-child{color:#93b6e4}
+.film-portfolio .gmi-feature-screenshot .gmi-feature-copy{
+ min-width:0;
+ padding:43px 38px 32px!important;
+ justify-content:center;
+ background:#123354!important;
+}
+.film-portfolio .gmi-feature-screenshot .gmi-feature-copy h3{
+ margin:28px 0 19px!important;
+ font-size:clamp(38px,3.9vw,57px)!important;
+ line-height:1.05!important;
+}
+.film-portfolio .gmi-feature-screenshot .gmi-feature-copy p{
+ margin:0 0 28px!important;
+ line-height:1.65!important;
+}
+.film-portfolio .gmi-feature-screenshot .gmi-feature-copy .gmi-caption{
+ display:block;margin-top:14px;
+ font-size:11px;line-height:1.5;color:#adc4df;
+}
+@media(max-width:980px){
+ .film-portfolio .gmi-feature-screenshot{grid-template-columns:1fr!important}
+ .film-portfolio .gmi-feature-screenshot .gmi-site-preview{border-right:none;border-bottom:1px solid #547396}
+ .film-portfolio .gmi-feature-screenshot .gmi-feature-copy{padding:35px 32px!important}
+}
+@media(max-width:620px){
+ .film-portfolio .gmi-feature-screenshot .gmi-feature-copy{padding:28px 24px!important}
+ .film-portfolio .gmi-feature-screenshot .gmi-site-browser{height:31px;min-height:31px;font-size:8px}
+ .film-portfolio .gmi-site-caption{padding:11px 13px;font-size:9px}
+}
