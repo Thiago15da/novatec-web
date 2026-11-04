@@ -1,0 +1,199 @@
+/* NovaTec Sistemas — identidad 2026, diseño claro, único para todas las páginas.
+   Se importa al final de <head> y mantiene el HTML, los enlaces y formularios existentes. */
+:root {
+  color-scheme:light!important;
+  --bg:#F7F9FD; --c1:#FFFFFF; --c2:#F0F5FC; --c3:#EDF3FB;
+  --surface:#FFFFFF; --surface2:#F1F6FD; --panel:#FFFFFF; --panel2:#F1F6FD;
+  --border:rgba(9,34,70,.13); --border-h:rgba(13,81,176,.33);
+  --text:#0B2140; --t2:#42536D; --t3:#64758E; --muted:#536781;
+  --accent:#125EEA; --cyan:#125EEA; --green:#16835D;
+  --nv-navy:#061B38; --nv-blue:#1263EF; --nv-muted:#536781;
+}
+html{color-scheme:light!important;background:#F7F9FD!important;color:#0B2140!important}
+body{background:#F7F9FD!important;color:#0B2140!important;cursor:auto!important; font-family:Inter,system-ui,-apple-system,sans-serif}
+a,button,input,select,textarea,summary{cursor:pointer!important}
+input,select,textarea{cursor:text!important}
+:focus-visible{outline:3px solid #266FF0!important;outline-offset:3px}
+::selection{background:#C8DFFF;color:#061B38}
+.brand-wordmark{display:block!important;width:198px!important;max-width:100%;height:auto!important;object-fit:contain!important;border-radius:0!important;flex-shrink:0}
+.nv-tailwind nav .brand-wordmark{width:178px!important}
+.nv-sector .logo .brand-wordmark{width:196px!important}
+.nv-home #cur-dot,.nv-home #cur-ring{display:none!important}
+
+/* Barra de navegación consistente en blanco */
+.nv-home #nav{height:76px!important;background:rgba(255,255,255,.94)!important;border-bottom:1px solid rgba(5,31,65,.1)!important;box-shadow:0 2px 18px rgba(6,27,56,.035)}
+.nv-home .nav-inner{padding-inline:30px}
+.nv-home .nav-logo{color:#061B38!important;gap:0}
+.nv-home .nav-links a{color:#496079!important;font-size:13px}
+.nv-home .nav-links a:hover{color:#125EEA!important}
+.nv-home .nav-links a.nav-cta,.nv-home #mob-menu .mob-cta{background:#0B2B58!important;color:white!important;border-color:#0B2B58!important;padding:12px 20px}
+.nv-home .menu-btn span{background:#0B2B58!important;height:2px!important}
+.nv-home #mob-menu{top:76px!important;background:rgba(255,255,255,.99)!important;box-shadow:0 15px 25px rgba(7,32,62,.07)}
+.nv-home #mob-menu a{color:#243F65!important;border-color:#E2E9F2!important}
+.nv-home #mob-menu .mob-cta{color:#fff!important}
+
+/* Inicio: bento más limpio, aire y tipografía corporativa */
+.nv-home .bento{padding-top:110px!important;gap:16px!important;grid-auto-rows:82px}
+.nv-home .b-card{border-radius:22px!important;box-shadow:0 10px 40px rgba(6,27,56,.035);border:1px solid #E2E9F2!important;background-color:#fff}
+.nv-home .b-brand{background:linear-gradient(132deg,#fff 10%,#F2F7FE 90%)!important;overflow:hidden}
+.nv-home .brand-inner{padding:40px 45px}
+.nv-home .brand-eyebrow{color:#2465B1!important}
+.nv-home .brand-title{color:#071E3B!important;letter-spacing:-.055em}
+.nv-home .brand-title .grad{background:linear-gradient(110deg,#0B2B58 0%,#166BF0 96%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.nv-home .brand-grid{background-image:linear-gradient(rgba(15,62,114,.038) 1px,transparent 1px),linear-gradient(90deg,rgba(15,62,114,.038) 1px,transparent 1px)!important}
+.nv-home .orb1{background:radial-gradient(circle,rgba(23,111,240,.12),transparent 68%)!important}
+.nv-home .orb2{background:radial-gradient(circle,rgba(71,151,231,.1),transparent 68%)!important}
+.nv-home .pill{border-color:#D8E3F2!important;background:#fff!important;color:#526681!important}
+.nv-home .btn-primary,.nv-home .nav-cta{background:#0B2B58!important;color:#fff!important;border:1px solid #0B2B58!important}
+.nv-home .btn-primary:hover,.nv-home .nav-cta:hover{background:#1350A2!important;opacity:1}
+.nv-home .btn-secondary{color:#153E70!important;border-color:#C8D7E9!important;background:#fff!important}
+.nv-home .btn-secondary:hover{border-color:#1263EF!important;color:#1263EF!important}
+.nv-home .b-stats{background:#F1F6FD!important}
+.nv-home .stat-num,.nv-home .stat-word{color:#0A2C59!important}
+.nv-home .b-tagline{background:#0B2B58!important}
+.nv-home .tagline-quote{color:#fff!important}
+.nv-home .tagline-quote em,.nv-home .tagline-attr{color:#BFD1E9!important}
+.nv-home .b-software,.nv-home .b-tech{background:#fff!important}
+.nv-home .b-stack,.nv-home .b-hardware{background:#EEF4FB!important}
+.nv-home .card-badge,.nv-home .chip,.nv-home .tech-notice,.nv-home .card-icon,.nv-home .stack-item{background:#F5F8FD!important;border-color:#DFE8F3!important}
+.nv-home .tech-notice strong,.nv-home .card-title,.nv-home .stack-item span,.nv-home .card-link,.nv-home .card-desc,.nv-home .card-list li,.nv-home .chip{color:#3F5472!important}
+.nv-home .card-title{color:#071E3B!important}
+.nv-home .card-link:hover{color:#1263EF!important}
+.nv-home .hw-overlay{background:linear-gradient(140deg,rgba(235,242,251,.5),rgba(222,232,245,.93))!important}
+.nv-home .hw-title{color:#193E70!important}
+.nv-home .hw-tag{color:#315C91!important;background:#fff!important;border-color:#DCE7F2!important}
+.nv-home .b-portfolio{background:#fff!important}
+.nv-home .port-project{background:#fff!important;border-color:#DFE7F2!important}
+.nv-home .port-meta-text p:first-child{color:#132E54!important}
+.nv-home .port-meta-text p:last-child{color:#66778B!important}
+.nv-home .port-thumb .port-name{color:#fff!important}
+.nv-home .btn-wa{color:#147143!important;background:#E8F8EE!important;border-color:#BCE6CD!important}
+.nv-home .btn-wa:hover{background:#D4F2E0!important}
+
+/* Sections further down the homepage */
+.nv-home section:not(.bento),.nv-home .industry-section{color:#0B2140}
+.nv-home h1,.nv-home h2,.nv-home h3{color:inherit}
+.nv-home .reveal.visible{opacity:1}
+.nv-home :is(.process-card,.why-card,.industry-card,.feature-card,.step-card){border-color:#DEE8F2!important}
+.nv-home :is(.section-subtitle,.section-desc,.section-kicker){color:#536781}
+.nv-home :is(.industry-card,.process-card,.why-card){background-color:#fff!important}
+.nv-home footer{background:#061B38!important;color:#F7F9FD!important}
+.nv-home footer a,.nv-home footer p,.nv-home footer span{color:#CFDBED!important}
+.nv-home footer .brand-wordmark{filter:brightness(0) invert(1)}
+
+/* Páginas hechas con Tailwind: neutralización de la antigua paleta dark */
+.nv-tailwind{background:#F7F9FD!important;color:#0A2345!important}
+.nv-tailwind nav.fixed{background:rgba(255,255,255,.96)!important;border-bottom:1px solid #DBE5F0!important;height:68px!important;box-shadow:0 2px 20px rgba(6,27,56,.035)}
+.nv-tailwind nav.fixed a{color:#48617D!important}
+.nv-tailwind nav.fixed a:hover{color:#1263EF!important}
+.nv-tailwind nav.fixed a[class*="bg-white"]{background:#0B2B58!important;color:#fff!important}
+.nv-tailwind #mobile-menu{top:68px!important;background:#fff!important;border-color:#DFE7F1!important}
+.nv-tailwind #mobile-menu a{color:#3C5779!important}
+.nv-tailwind nav.fixed button span{background:#0B2B58!important}
+.nv-tailwind [class*="bg-[#111"],.nv-tailwind [class*="bg-[#0a0a"],.nv-tailwind [class*="bg-[#070707"],.nv-tailwind [class*="bg-[#050505"]{background-color:#fff!important}
+.nv-tailwind [class*="bg-[#111111"]{background-color:#fff!important}
+.nv-tailwind [class*="border-white"]{border-color:#DCE6F1!important}
+.nv-tailwind [class*="text-[#666"],.nv-tailwind [class*="text-[#777"],.nv-tailwind [class*="text-[#888"],.nv-tailwind [class*="text-[#999"],.nv-tailwind [class*="text-[#aaa"],.nv-tailwind [class*="text-[#555"]{color:#5B6F87!important}
+.nv-tailwind [class*="text-[#444"],.nv-tailwind [class*="text-[#333"]{color:#718198!important}
+.nv-tailwind .text-white{color:#0B2343!important}
+.nv-tailwind h1,.nv-tailwind h2,.nv-tailwind h3{color:#071E3B!important}
+.nv-tailwind [class*="text-[#00f2ff"]{color:#1263EF!important}
+.nv-tailwind [class*="bg-[#00f2ff"]{background:#1263EF!important;color:#fff!important}
+.nv-tailwind a[class*="bg-white"],.nv-tailwind button[class*="bg-white"],.nv-tailwind button[type="submit"]{background:#0B2B58!important;color:white!important;border-color:#0B2B58!important}
+.nv-tailwind :is(input,textarea,select){background:#fff!important;color:#0B2343!important;border-color:#CAD8EA!important}
+.nv-tailwind :is(input,textarea)::placeholder{color:#8494A7!important}
+.nv-tailwind :is(label,legend){color:#1B3556!important}
+.nv-tailwind .brand-wordmark{width:178px!important}
+.nv-tailwind footer{background:#071E3B!important;color:white!important}
+.nv-tailwind footer :is(a,p,span,h2,h3){color:#DDE8F6!important}
+.nv-tailwind footer .brand-wordmark{filter:brightness(0) invert(1)}
+
+/* Páginas propias: constructoras y desarrollo web */
+.nv-sector .header{background:rgba(255,255,255,.96)!important;border-color:#DDE7F3!important}
+.nv-sector header.wrap.nav,.nv-sector .header .nav{border-bottom:1px solid #E0E8F2!important;min-height:88px!important}
+.nv-sector .logo{color:#071F3E!important}
+.nv-sector .logo span{color:#1263EF!important}
+.nv-sector .links,.nv-sector .navlinks{color:#456079!important}
+.nv-sector .links a:hover,.nv-sector .navlinks a:hover{color:#1263EF!important}
+.nv-sector .btn-primary,.nv-sector .btn.primary,.nv-sector .primary{background:#0B2B58!important;border-color:#0B2B58!important;color:#fff!important}
+.nv-sector .btn-ghost,.nv-sector .btn.secondary{border-color:#CBD9EA!important;color:#0B2B58!important;background:#fff!important}
+.nv-sector .eyebrow,.nv-sector .number{color:#1263EF!important}
+.nv-sector h1,.nv-sector h2,.nv-sector h3{color:#061E3B!important}
+.nv-sector h1 em,.nv-sector h1 span{color:#1263EF!important}
+.nv-sector .lead,.nv-sector .explain,.nv-sector .fine{color:#526781!important}
+.nv-sector .visual{background:linear-gradient(140deg,#ECF4FF,#DCEBFF)!important;border-color:#CFDFF0!important}
+.nv-sector .visual-inner{background:rgba(255,255,255,.94)!important;border-color:#DCE5EF!important;color:#0B2343!important}
+.nv-sector .visual-inner p{color:#526781!important}
+.nv-sector .window-dots i{background:#9EB9DB!important}
+.nv-sector .blocks span{background:linear-gradient(135deg,#CFE0F5,#E5EEFB)!important}
+.nv-sector .card,.nv-sector .proof{background:#fff!important;border-color:#DDE7F3!important;box-shadow:0 6px 25px rgba(6,27,56,.035)}
+.nv-sector .card p,.nv-sector .steps p,.nv-sector details p{color:#536781!important}
+.nv-sector .closing{background:linear-gradient(145deg,#EEF5FF,#fff)!important;border-color:#D7E4F4!important}
+.nv-sector section.band{border-color:#DFE8F2!important}
+.nv-sector .scene,.nv-sector .portfolio-slider,.nv-sector .slider-window{border-color:#D8E5F3!important}
+
+/* Mobile, accessibility and motion */
+@media(max-width:767px){
+ .brand-wordmark{width:153px!important}
+ .nv-home #nav{height:68px!important}
+ .nv-home #mob-menu{top:68px!important}
+ .nv-home .bento{padding:91px 15px 0!important;gap:12px!important}
+ .nv-home .brand-inner{padding:26px 24px!important}
+ .nv-home .brand-title{font-size:clamp(42px,11vw,68px)!important}
+ .nv-home .nav-inner{padding-inline:17px}
+ .nv-tailwind nav.fixed{height:64px!important}
+ .nv-tailwind #mobile-menu{top:64px!important}
+ .nv-tailwind nav .brand-wordmark{width:152px!important}
+ .nv-sector header.wrap.nav,.nv-sector .header .nav{min-height:72px!important}
+ .nv-sector .logo .brand-wordmark{width:146px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .reveal,.brand-title .line span,.orb{animation:none!important;transition:none!important}
+ .reveal{opacity:1!important;transform:none!important}
+}
+
+/* Componentes heredados del cotizador y portafolio: legibilidad en el tema claro */
+.nv-tailwind .headline-gradient{background:linear-gradient(120deg,#071E3B,#1A66D9)!important;background-clip:text!important;-webkit-background-clip:text!important;-webkit-text-fill-color:transparent!important}
+.nv-tailwind .field{background:#fff!important;color:#071E3B!important;border:1px solid #CCD9E9!important;border-radius:12px}
+.nv-tailwind .field:focus{border-color:#176BF0!important;box-shadow:0 0 0 3px rgba(23,107,240,.1)}
+.nv-tailwind select.field option{background:#fff!important;color:#071E3B!important}
+.nv-tailwind .opt-label{background:#fff!important;color:#0B2343!important;border-color:#CAD8E8!important}
+.nv-tailwind .opt input:checked~.opt-label{background:#EAF3FF!important;border-color:#1263EF!important;color:#0A3A81!important}
+.nv-tailwind .estimate-box{background:#F0F6FE!important;border-color:#D4E1F1!important}
+.nv-tailwind .s-dot{background:#EDF3FC!important;border-color:#CAD8EA!important;color:#466280!important}
+.nv-tailwind .s-dot.active{background:#1263EF!important;border-color:#1263EF!important;color:white!important}
+.nv-tailwind .s-dot.done{background:#D7F0E4!important;color:#116E4B!important;border-color:#B6DDC9!important}
+.nv-tailwind .s-line{background:#CAD8EA!important}
+.nv-tailwind .s-line.done{background:#1263EF!important}
+.nv-tailwind .mock-bar{background:#E7EFF9!important}
+.nv-tailwind .f-tab.active{background:#0B2B58!important;color:white!important;border-color:#0B2B58!important}
+.nv-tailwind [class*="bg-black/"]{background:rgba(255,255,255,.95)!important}
+.nv-tailwind [class*="bg-white/"]{background:rgba(240,246,255,.9)!important}
+.nv-tailwind a[class*="bg-white/"]{color:#0B2B58!important}
+.nv-tailwind [class*="text-black"]{color:#071E3B!important}
+.nv-tailwind [class*="border-[#"]{border-color:#D9E4F0!important}
+.nv-tailwind .bg-white{background:#fff!important}
+.nv-tailwind [class*="from-[#00f2ff"],.nv-tailwind [class*="to-[#00f2ff"]{--tw-gradient-from:#176BF0!important;--tw-gradient-to:#4DA1FF!important}
+.nv-sector .slider-info,.nv-sector .slider-chrome{background:#fff!important;color:#091F40!important}
+.nv-sector .slider-category,.nv-sector .slider-info p{color:#58718C!important}
+.nv-sector .slider-info h3{color:#071E3B!important}
+.nv-sector details{border-color:#D6E3F2!important}
+.nv-sector summary{color:#0B284D!important}
+.nv-sector .proof :is(strong,p,h2,h3){color:#0B2343}
+.nv-home .foot-logo img{width:195px!important;height:auto!important}
+.nv-tailwind .brand-wordmark{background:transparent!important}
+.nv-home .brand-title{font-size:clamp(48px,5.5vw,78px)!important}
+
+/* Tablet: evitar superposición de logo, menú y botón de contacto */
+@media(min-width:769px) and (max-width:1050px){
+ .nv-home .nav-links{display:none!important}
+ .nv-home .menu-btn{display:flex!important}
+ .nv-tailwind nav.fixed > div > div.hidden{display:none!important}
+ .nv-tailwind #menu-btn{display:block!important}
+ .nv-sector .navlinks,.nv-sector .links{display:none!important}
+}
+
+.nv-tailwind .sticky.top-12{top:68px!important;background:rgba(255,255,255,.97)!important}
+.nv-tailwind .p-item [style*="background:"] .text-white{color:#fff!important}
+.nv-tailwind .p-item [style*="background:"] [class*="text-[#"]{color:rgba(255,255,255,.72)!important}
+@media(max-width:767px){.nv-tailwind .sticky.top-12{top:64px!important}}
