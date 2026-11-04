@@ -1,0 +1,76 @@
+/* NovaTec Sistemas · Dirección corporativa v2
+   Complementa hojas existentes en las páginas interiores. */
+:root{color-scheme:light!important;--bg:#e7ecf2;--c1:#f0f3f7;--c2:#dfe6ee;--c3:#dce4ed;--surface:#eef2f7;--surface2:#dce5ee;--panel:#edf2f7;--panel2:#dbe5ef;--border:#c1cfde;--border-h:#839fba;--text:#0b213c;--t2:#3c526d;--t3:#50647d;--muted:#455a74;--accent:#155cca;--cyan:#155cca;--nv-navy:#0b2443;--nv-blue:#145fdb}
+html,body{font-family:Arial,Helvetica,sans-serif!important;background:#e7ecf2!important;color:#091f3d!important}
+body{line-height:1.53}
+h1,h2,h3,h4{font-family:Arial,Helvetica,sans-serif!important;letter-spacing:-.035em!important;font-weight:700!important;line-height:1.13}
+h1{font-size:clamp(40px,5vw,64px)!important}
+p{line-height:1.64}
+button,a{border-radius:3px}
+:focus-visible{outline:3px solid #155cca!important;outline-offset:3px}
+.nv-tailwind nav.fixed{background:#dee7f0!important;border-bottom:1px solid #b9cadc!important;box-shadow:none!important}
+.nv-tailwind #mobile-menu{background:#dee7f0!important;border-color:#b9cadc!important}
+.nv-tailwind .bg-white{background:#edf2f7!important}
+.nv-tailwind [class*="bg-[#111"],.nv-tailwind [class*="bg-[#0a0a"],.nv-tailwind [class*="bg-[#070707"],.nv-tailwind [class*="bg-[#050505"]{background:#f0f3f7!important}
+.nv-tailwind [class*="border-white"]{border-color:#bdcbd9!important}
+.nv-tailwind :is([class*="rounded-2xl"],[class*="rounded-xl"],[class*="rounded-lg"],[class*="rounded-full"]){border-radius:5px!important}
+.nv-tailwind [class*="text-[#666"],.nv-tailwind [class*="text-[#777"],.nv-tailwind [class*="text-[#888"],.nv-tailwind [class*="text-[#999"],.nv-tailwind [class*="text-[#aaa"],.nv-tailwind [class*="text-[#555"]{color:#4c6079!important}
+.nv-tailwind [class*="text-[#444"],.nv-tailwind [class*="text-[#333"]{color:#536880!important}
+.nv-tailwind .text-white{color:#0b2443!important}
+.nv-tailwind h1,.nv-tailwind h2,.nv-tailwind h3{color:#0b2443!important}
+.nv-tailwind .headline-gradient{background:none!important;-webkit-text-fill-color:initial!important;background-clip:initial!important;color:#0b2443!important}
+.nv-tailwind [class*="text-[#00f2ff"]{color:#135fce!important}
+.nv-tailwind [class*="bg-[#00f2ff"]{background:#145fdb!important;color:#fff!important}
+.nv-tailwind [class*="bg-white/"]{background:#e4ecf5!important}
+.nv-tailwind a[class*="bg-white"],.nv-tailwind button[class*="bg-white"],.nv-tailwind button[type="submit"]{background:#0b2443!important;color:#fff!important;border-color:#0b2443!important}
+.nv-tailwind a[class*="bg-white"] *,.nv-tailwind button[class*="bg-white"] *,.nv-tailwind button[type="submit"] *{color:#fff!important}
+.nv-tailwind .field{background:#f7f9fb!important;color:#0b2443!important;border-color:#aebed1!important;border-radius:3px!important}
+.nv-tailwind .field:focus{border-color:#145fdb!important}
+.nv-tailwind .opt-label{border-radius:4px!important;border-color:#bdcbd9!important;background:#eef3f7!important}
+.nv-tailwind .opt input:checked~.opt-label{border-color:#155cca!important;background:#d7e6fa!important}
+.nv-tailwind .estimate-box{background:#dde7f1!important;border-color:#becddd!important;border-radius:4px!important}
+.nv-tailwind .f-tab.active{background:#0b2443!important;color:#fff!important}
+.nv-tailwind .f-tab{border-radius:3px!important}
+.nv-tailwind .p-item{box-shadow:none!important}
+.nv-tailwind .p-item .mock-bar{background:#cbd8e6!important}
+.nv-tailwind .p-item [style*="background:"] .text-white{color:#fff!important}
+.nv-tailwind .p-item [style*="background:"] [class*="text-[#"]{color:#bdcede!important}
+.nv-tailwind section[class*="pt-32"]{padding-top:105px!important;padding-bottom:75px!important;border-color:#bdcbd9!important}
+.nv-tailwind section[class*="pt-32"] h1{max-width:940px;font-size:clamp(42px,5vw,64px)!important}
+.nv-tailwind section[class*="pt-32"] p{color:#425a76!important}
+.nv-tailwind footer{background:#091e38!important;color:#d2dfed!important}
+.nv-tailwind footer :is(h2,h3,p,a,span){color:#bdcfe0!important}
+.nv-tailwind footer :is(h2,h3){color:#fff!important}
+.nv-tailwind nav.fixed a[class*="bg-white"]{background:#0b2443!important;color:#fff!important}
+.nv-tailwind .sticky.top-12{top:68px!important;background:#e4ecf4!important}
+.nv-tailwind a:hover,.nv-tailwind summary:hover{color:#155cca}
+.nv-sector .header{background:#dfe8f1!important;border-color:#bacbdb!important}
+.nv-sector header.wrap.nav,.nv-sector .header .nav{background:#dfe8f1!important;border-color:#bacbdb!important}
+.nv-sector body{background:#e7ecf2!important}
+.nv-sector h1,.nv-sector h2,.nv-sector h3{color:#0b2443!important}
+.nv-sector h1 em,.nv-sector h1 span{color:#155cca!important}
+.nv-sector .eyebrow,.nv-sector .number{color:#145fdb!important}
+.nv-sector .lead,.nv-sector .explain,.nv-sector .fine{color:#425a76!important}
+.nv-sector .hero{padding-top:76px;padding-bottom:88px}
+.nv-sector .card,.nv-sector .proof{background:#eff3f8!important;box-shadow:none!important;border-color:#bfcddd!important;border-radius:5px!important}
+.nv-sector .visual{background:#d6e3f1!important;border-color:#b6cbe1!important;border-radius:5px!important;box-shadow:none!important}
+.nv-sector .visual-inner{background:#eff3f8!important;color:#0b2443!important;border-radius:4px!important}
+.nv-sector .closing{background:#d9e5f1!important;border-color:#bacbdf!important;border-radius:5px!important}
+.nv-sector section.band{border-color:#bdccda!important}
+.nv-sector .btn{border-radius:3px!important;font-weight:700!important}
+.nv-sector .primary,.nv-sector .btn-primary{background:#0b2443!important;color:#fff!important;border-color:#0b2443!important}
+.nv-sector .secondary,.nv-sector .btn-ghost{background:#e5edf5!important;color:#0b2443!important;border-color:#8cabc7!important}
+.nv-sector .scene,.nv-sector .portfolio-slider,.nv-sector .slider-window,.nv-sector .slider-slide{border-radius:5px!important}
+.nv-sector .slider-info,.nv-sector .slider-chrome{background:#e9eff5!important}
+.nv-sector .slider-info h3,.nv-sector .slider-info strong{color:#0b2443!important}
+.nv-sector .strip{background:#d5e0eb!important}
+.nv-sector footer{background:#091e38!important}
+.nv-sector footer :is(h2,h3,p,a,span){color:#cfdaea!important}
+.nv-sector footer img{filter:brightness(0) invert(1)}
+.nv-sector details{border-color:#bbc9d7!important}
+@media(max-width:767px){
+ .nv-tailwind section[class*="pt-32"]{padding-top:96px!important;padding-bottom:54px!important}
+ .nv-tailwind .sticky.top-12{top:64px!important}
+ .nv-sector .hero{padding-top:40px;padding-bottom:58px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;scroll-behavior:auto!important;transition-duration:.001ms!important}}
