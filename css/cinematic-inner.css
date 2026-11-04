@@ -120,3 +120,27 @@ body.cinema-motion .reveal-shot.is-visible{opacity:1;transform:translateZ(0)}
  .cinema-inner .project-thumbnail{aspect-ratio:16/9}
  .cinema-inner #grid{gap:12px!important}
 }
+
+
+/* GMI Uris Consulting: intentionally typographic, not a fake website screenshot. */
+.cinema-inner .gmi-portfolio-card{min-width:0;background:#edf2f7!important}
+.cinema-inner .gmi-thumb{
+ display:flex;flex-direction:column;justify-content:space-between;position:relative;
+ width:100%;aspect-ratio:16/9;min-height:0;padding:18px 24px 17px;
+ overflow:hidden;background:#dae5ef;color:#0a2949;
+ border-bottom:1px solid #acbed0;isolation:isolate;
+}
+.cinema-inner .gmi-thumb:before{
+ content:"";inset:0;position:absolute;z-index:-1;
+ background:repeating-linear-gradient(90deg,transparent 0,transparent calc(33.333% - 1px),rgba(21,61,102,.1) 33.333%);
+}
+.cinema-inner .gmi-thumb-eyebrow,.cinema-inner .gmi-thumb-caption{font-size:9px;letter-spacing:.1em;color:#3e638b;font-weight:700;line-height:1.35}
+.cinema-inner .gmi-thumb-brand{display:flex;align-items:center;justify-content:center;gap:17px;color:#0b294a}
+.cinema-inner .gmi-thumb-brand strong{font-size:clamp(46px,6vw,85px);letter-spacing:-.1em;line-height:.95}
+.cinema-inner .gmi-thumb-brand span{font-size:clamp(12px,1.4vw,20px);letter-spacing:.07em;line-height:1.15;font-weight:700;border-left:2px solid #2f64a0;padding-left:17px}
+.cinema-inner .gmi-portfolio-card .px-6.py-5{background:#edf2f7}
+@media(max-width:767px){
+ .cinema-inner .gmi-thumb{padding:14px 17px}
+ .cinema-inner .gmi-thumb-brand strong{font-size:clamp(52px,15vw,80px)}
+ .cinema-inner .gmi-thumb-brand span{font-size:clamp(12px,3.6vw,18px)}
+}
