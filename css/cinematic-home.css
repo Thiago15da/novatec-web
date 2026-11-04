@@ -294,3 +294,118 @@ body.cinema-motion .film-media-reveal.is-visible{clip-path:inset(0 0 0 0)}
  [data-carousel] .carousel-track{transition:none!important;will-change:auto}
  .hero-cinema .showcase-shell{transform:none!important;transition:none!important}
 }
+
+
+/* V4 — Eliminate construction whitespace and duplicate projects.
+   Standalone editorial GMI feature replaces redundant second carousel. */
+.sector-film .specialty-refined{
+ display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1.03fr)!important;
+ align-items:center!important;gap:0!important;min-height:0!important;
+ background:#0b213d!important;border:1px solid #476789!important;
+}
+.sector-film .specialty-refined .specialty-left{
+ padding:48px 45px!important;min-height:0!important;align-self:center!important;
+}
+.sector-film .specialty-refined .specialty-left h2{
+ font-size:clamp(32px,3.5vw,48px)!important;line-height:1.09!important;
+ letter-spacing:-.048em!important;max-width:500px!important;margin:0 0 19px!important;
+}
+.sector-film .specialty-refined .specialty-left p:not(.eyebrow){
+ font-size:14px!important;line-height:1.65!important;max-width:480px!important;
+ margin:0 0 25px!important;
+}
+.sector-film .specialty-refined .eyebrow{font-size:11px!important;margin-bottom:21px!important}
+.sector-film .sector-project{
+ margin:0!important;min-width:0!important;width:100%!important;height:auto!important;
+ display:block!important;align-self:center!important;position:relative!important;
+ background:#0b2848!important;overflow:hidden!important;
+ border-left:1px solid #476789!important;
+}
+.sector-film .sector-project-chrome{
+ display:flex;align-items:center;justify-content:space-between;gap:10px;
+ height:34px;padding:0 14px;background:#d8e3ee;color:#2d4d70;
+ border-bottom:1px solid #9db1c5;font-size:10px;letter-spacing:.09em;font-weight:700;
+}
+.sector-film .browser-pips{display:flex;align-items:center;gap:5px;flex-shrink:0}
+.sector-film .browser-pips i{display:block;width:6px;height:6px;background:#718daa;border-radius:50%}
+.sector-film .sector-project-image{display:block!important;overflow:hidden!important;background:#112943!important}
+.sector-film .sector-project-image img{
+ display:block!important;width:100%!important;max-width:100%!important;height:auto!important;
+ aspect-ratio:1381/763!important;object-fit:contain!important;object-position:center center!important;
+ filter:none!important;transform:none!important;
+}
+.sector-film .sector-project-caption{
+ min-height:67px;padding:17px 18px;display:flex;flex-direction:row;
+ align-items:center;justify-content:space-between;gap:15px;
+ background:#153959;color:#f2f8ff;border-top:1px solid #456e97;
+}
+.sector-film .sector-project-caption strong{font-size:13px;line-height:1.3;font-weight:700}
+.sector-film .sector-project-caption span{font-size:10px;color:#b4d3f5;letter-spacing:.08em;white-space:nowrap}
+.film-portfolio .gmi-feature{
+ display:grid;grid-template-columns:minmax(0,1.13fr) minmax(0,.87fr);
+ border:1px solid #547396;min-height:470px;overflow:hidden;background:#153454;
+}
+.film-portfolio .gmi-feature-visual{
+ position:relative;display:flex;flex-direction:column;justify-content:space-between;
+ min-height:470px;padding:31px 37px 28px;background:#d8e4ee;color:#0a2543;
+ isolation:isolate;overflow:hidden;
+}
+.film-portfolio .gmi-feature-visual:before{
+ content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;
+ background:repeating-linear-gradient(90deg,transparent 0,transparent calc(33.333% - 1px),rgba(23,61,101,.085) 33.333%);
+}
+.film-portfolio .gmi-visual-top,.film-portfolio .gmi-visual-bottom{
+ display:flex;justify-content:space-between;align-items:center;gap:22px;font-size:10px;
+ letter-spacing:.13em;font-weight:700;color:#3b628e;
+}
+.film-portfolio .gmi-wordmark{display:flex;align-items:center;justify-content:center;gap:23px}
+.film-portfolio .gmi-monogram{font-family:Arial,Helvetica,sans-serif;font-size:clamp(72px,9.3vw,145px);font-weight:700;letter-spacing:-.115em;line-height:.9;color:#0b2748}
+.film-portfolio .gmi-rule{display:block;width:2px;height:102px;background:#2d619f;flex-shrink:0}
+.film-portfolio .gmi-suffix{font-size:clamp(17px,2.15vw,29px);letter-spacing:.08em;line-height:1.18;font-weight:700;color:#173f6e}
+.film-portfolio .gmi-feature-copy{
+ display:flex;flex-direction:column;align-items:flex-start;
+ padding:57px 46px 38px;background:#123354;color:#f6faff;
+}
+.film-portfolio .gmi-overline{font-size:11px;color:#92bdf3;letter-spacing:.12em;font-weight:700}
+.film-portfolio .gmi-feature-copy h3{font-size:clamp(38px,4vw,60px);line-height:1.05;color:#fff;margin:55px 0 20px;letter-spacing:-.05em}
+.film-portfolio .gmi-feature-copy p{font-size:14px;color:#c0d0e3;line-height:1.75;margin:0 0 34px;max-width:400px}
+.film-portfolio .gmi-external{
+ display:flex;justify-content:space-between;gap:24px;width:100%;
+ padding:17px 0 16px;border-top:1px solid #6082a5;color:#fff;font-size:13px;font-weight:700;
+ text-decoration:none;transition:color .25s;
+}
+.film-portfolio .gmi-external:hover{color:#9ccbff}
+.film-portfolio .gmi-caption{font-size:10px;color:#9bb5d2;line-height:1.5;margin-top:auto}
+.film-portfolio .portfolio-bottomline{display:flex;justify-content:space-between;align-items:center;gap:24px;border-bottom:1px solid #365a81;padding:29px 0 13px}
+.film-portfolio .portfolio-bottomline span{font-size:10px;letter-spacing:.1em;color:#97afc8}
+.film-portfolio .portfolio-bottomline a{font-size:13px;color:#e3f0ff;font-weight:700}
+.film-portfolio .portfolio-bottomline a:hover{color:#92c2ff}
+@media(max-width:950px){
+ .sector-film .specialty-refined{grid-template-columns:1fr!important}
+ .sector-film .specialty-refined .specialty-left{padding:44px 37px!important}
+ .sector-film .sector-project{border-left:0!important;border-top:1px solid #476789!important;max-width:100%!important}
+ .film-portfolio .gmi-feature{grid-template-columns:1fr;min-height:0}
+ .film-portfolio .gmi-feature-visual{min-height:300px}
+ .film-portfolio .gmi-feature-copy{padding:38px}
+ .film-portfolio .gmi-feature-copy h3{margin:27px 0 17px}
+ .film-portfolio .gmi-caption{margin-top:12px}
+}
+@media(max-width:620px){
+ .sector-film .specialty-refined .specialty-left{padding:35px 24px!important}
+ .sector-film .specialty-refined .specialty-left h2{font-size:36px!important}
+ .sector-film .sector-project-caption{padding:14px 15px;min-height:66px}
+ .sector-film .sector-project-caption span{white-space:normal;text-align:right;max-width:110px;font-size:9px}
+ .sector-film .sector-project-chrome{font-size:8px;letter-spacing:.03em}
+ .film-portfolio .gmi-feature-visual{min-height:260px;padding:23px}
+ .film-portfolio .gmi-monogram{font-size:clamp(62px,18vw,94px)}
+ .film-portfolio .gmi-suffix{font-size:clamp(14px,4.8vw,22px)}
+ .film-portfolio .gmi-rule{height:65px}
+ .film-portfolio .gmi-wordmark{gap:13px}
+ .film-portfolio .gmi-feature-copy{padding:31px 24px}
+ .film-portfolio .gmi-feature-copy h3{font-size:38px}
+ .film-portfolio .portfolio-bottomline{display:block}
+ .film-portfolio .portfolio-bottomline a{display:block;margin-top:15px}
+}
+@media(prefers-reduced-motion:reduce){
+ .film-portfolio .gmi-external{transition:none!important}
+}
