@@ -1,0 +1,90 @@
+
+/* CINEMATIC INNER PAGES — reusable visual language, no framework dependency */
+html{scroll-padding-top:80px}
+body.cinema-inner{background:#dce5ee!important}
+body.cinema-inner .nv-tailwind{font-family:Arial,Helvetica,sans-serif}
+.cinema-inner nav.fixed{background:rgba(222,232,242,.95)!important;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.cinema-inner nav.fixed .brand-wordmark{width:182px!important}
+.cinema-inner .sticky.top-12{backdrop-filter:blur(12px)}
+/* Every internal route opens as a film chapter, with a typographic anchor. */
+.cinema-inner.nv-tailwind main>section:first-of-type{position:relative;isolation:isolate;overflow:hidden;background:#0c2647!important;border-color:#365775!important;padding-top:105px!important;padding-bottom:95px!important;min-height:430px;display:flex;align-items:center}
+.cinema-inner.nv-tailwind main>section:first-of-type:before{content:"";position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(90deg,transparent,transparent calc(25% - 1px),rgba(214,235,255,.045) 25%)}
+.cinema-inner.nv-tailwind main>section:first-of-type:after{content:"";position:absolute;right:-90px;top:-210px;width:510px;height:510px;border:1px solid rgba(172,207,245,.13);border-radius:50%;pointer-events:none}
+.cinema-inner.nv-tailwind main>section:first-of-type h1{color:#f5f9fe!important;-webkit-text-fill-color:#f5f9fe!important;letter-spacing:-.052em!important;font-size:clamp(43px,5.3vw,75px)!important;line-height:1.08!important;max-width:920px}
+.cinema-inner.nv-tailwind main>section:first-of-type :is(p,a,span){color:#c4d5e7!important}
+.cinema-inner.nv-tailwind main>section:first-of-type p[class*="uppercase"]{color:#89b4f0!important}
+.cinema-inner.nv-tailwind main>section:first-of-type nav{color:#bad0e8!important}
+.cinema-inner.nv-tailwind main>section:first-of-type nav a{color:#91baf3!important}
+.cinema-inner.nv-tailwind main>section:first-of-type p[class*="max-w-"]{max-width:650px!important;line-height:1.8}
+.cinema-inner.nv-tailwind main>section:not(:first-of-type){background:#dce5ee}
+.cinema-inner.nv-tailwind main>section:nth-of-type(even){background:#e9eef4!important}
+.cinema-inner.nv-tailwind main>section h2{letter-spacing:-.045em!important}
+.cinema-inner.nv-tailwind main>section :is(.rounded-2xl,.rounded-xl){border-radius:5px!important}
+.cinema-inner.nv-tailwind main .grid > [class*="bg-[#111"],.cinema-inner.nv-tailwind main .grid > [class*="bg-[#0a0a"]{background:#f2f5f8!important;border-color:#bdcddd!important}
+.cinema-inner.nv-tailwind main .grid > [class*="bg-[#111"]:hover{border-color:#7d9ab8!important}
+.cinema-inner .field{background:#fff!important}
+.cinema-inner footer{position:relative}
+/* Services read like an editorial selection, not a neon feature grid. */
+.cinema-inner.nv-tailwind main>section:nth-of-type(2) .grid>div[class*="rounded-2xl"]{border-top:3px solid #16487f!important;box-shadow:none}
+.cinema-inner.nv-tailwind main>section:nth-of-type(2) .grid>div[class*="rounded-2xl"] h3{font-size:19px!important}
+/* Portfolio: actual screenshots instead of mockup gradients. */
+.cinema-inner .p-item{overflow:hidden!important;background:#eff3f8!important;border:1px solid #becddb!important;transition:transform .55s cubic-bezier(.2,.75,.2,1),border-color .3s!important}
+.cinema-inner .p-item:hover{transform:translateY(-5px);border-color:#7295bb!important}
+.cinema-inner .p-item .h-52{position:relative;isolation:isolate;overflow:hidden;background:#0d2847!important}
+.cinema-inner .p-item .h-52 .case-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;z-index:-2;filter:saturate(.77);transform:scale(1.065);transition:transform .85s ease}
+.cinema-inner .p-item:hover .h-52 .case-card-img{transform:scale(1.13)}
+.cinema-inner .p-item .h-52:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(4,18,36,.92),rgba(4,18,36,.05) 95%)}
+.cinema-inner .p-item .h-52 p{position:relative;z-index:1;color:#fff!important;text-shadow:0 2px 15px rgba(0,0,0,.25)}
+.cinema-inner .p-item .h-52 p:first-of-type{color:#b7d8fc!important}
+.cinema-inner .p-item .mock-bar{background:#cddce9!important;border-bottom:1px solid #b2c5d7}
+/* Contact: high-contrast workbench, businesslike steps. */
+.cinema-inner #contact-form{background:transparent}
+.cinema-inner #contact-form button[type="submit"]{background:#11365e!important}
+.cinema-inner .opt-label{border-radius:3px!important}
+.cinema-inner .s-dot.active{background:#1e5fc6!important;color:white!important}
+.cinema-inner .estimate-box{border-radius:3px!important}
+/* Landing pages — full-bleed chapter with genuine project context. */
+.cinema-inner.nv-sector main>section.hero{width:100%;max-width:none;margin:0;position:relative;overflow:hidden;background:#0c2545!important;box-sizing:border-box;padding-left:max(26px,calc((100vw - 1160px)/2))!important;padding-right:max(26px,calc((100vw - 1160px)/2))!important;padding-top:105px!important;padding-bottom:120px!important;min-height:560px;isolation:isolate}
+.cinema-inner.nv-sector main>section.hero:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:repeating-linear-gradient(90deg,transparent,transparent calc(25% - 1px),rgba(200,224,246,.042) 25%)}
+.cinema-inner.nv-sector main>section.hero h1{color:#f7fbff!important;letter-spacing:-.052em!important;line-height:1.06!important;font-size:clamp(44px,5.4vw,75px)!important}
+.cinema-inner.nv-sector main>section.hero h1 em,.cinema-inner.nv-sector main>section.hero h1 span{color:#93c1ff!important}
+.cinema-inner.nv-sector main>section.hero .eyebrow{color:#95c1f7!important}
+.cinema-inner.nv-sector main>section.hero .lead,.cinema-inner.nv-sector main>section.hero .micro,.cinema-inner.nv-sector main>section.hero .fine{color:#c3d5e8!important}
+.cinema-inner.nv-sector main>section.hero .fine a{color:#9fc5f8!important}
+.cinema-inner.nv-sector main>section.hero .btn.primary,.cinema-inner.nv-sector main>section.hero .btn-primary{background:#2574df!important;border-color:#2574df!important;color:#fff!important}
+.cinema-inner.nv-sector main>section.hero .btn.secondary,.cinema-inner.nv-sector main>section.hero .btn-ghost{background:transparent!important;color:#f4f9ff!important;border:1px solid #7292b7!important}
+.cinema-inner.nv-sector main>section.hero .visual,.cinema-inner.nv-sector main>section.hero .scene{box-shadow:17px 22px 35px rgba(0,6,18,.18)}
+.cinema-inner.nv-sector main>section.hero .visual{background:#153a61!important;border:1px solid #6683a6!important}
+.cinema-inner.nv-sector main>section.hero .visual-inner{background:#e7eff8!important}
+.cinema-inner.nv-sector main>section.hero .visual-inner .eyebrow{color:#275f9c!important}
+.cinema-inner.nv-sector .band:nth-of-type(even),.cinema-inner.nv-sector .section:nth-of-type(even){background:#d4e0eb!important}
+.cinema-inner.nv-sector .band:nth-of-type(odd),.cinema-inner.nv-sector .section:nth-of-type(odd){background:#e9eef4!important}
+.cinema-inner.nv-sector .heading,.cinema-inner.nv-sector .section-title{letter-spacing:-.045em!important}
+.cinema-inner.nv-sector .card{border-top:3px solid #285487!important}
+.cinema-inner.nv-sector .closing{background:#123657!important;padding-top:55px;padding-bottom:55px}
+.cinema-inner.nv-sector .closing :is(h2,p,span){color:#f3f8ff!important}
+.cinema-inner.nv-sector .closing .eyebrow{color:#a9c9ed!important}
+.cinema-inner.nv-sector .closing .btn{background:#2879e0!important;color:white!important;border-color:#2879e0!important}
+.cinema-inner.nv-sector footer{background:#081d36!important}
+.cinema-inner .brand-wordmark{max-width:100%}
+/* Motion indicators: visible content by default for JS-off and reduced-motion. */
+.cinema-progress{position:fixed;left:0;top:0;width:100%;height:3px;background:#4b9bf5;z-index:500;transform:scaleX(0);transform-origin:left;pointer-events:none}
+body.cinema-motion .reveal-shot{opacity:0;transform:translate3d(0,31px,0);transition:opacity .85s cubic-bezier(.25,.75,.2,1),transform .95s cubic-bezier(.18,.8,.2,1)}
+body.cinema-motion .reveal-shot.is-visible{opacity:1;transform:translateZ(0)}
+@keyframes film-inner-entry{from{opacity:0;transform:translate3d(0,27px,0)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:no-preference){
+ .cinema-inner.nv-tailwind main>section:first-of-type h1,.cinema-inner.nv-sector main>section.hero h1{animation:film-inner-entry .95s cubic-bezier(.2,.7,.2,1) both}
+ .cinema-inner.nv-tailwind main>section:first-of-type p[class*="max-w-"],.cinema-inner.nv-sector main>section.hero .lead{animation:film-inner-entry 1s cubic-bezier(.2,.7,.2,1) both;animation-delay:.16s}
+}
+@media(max-width:760px){
+ .cinema-inner.nv-tailwind main>section:first-of-type{min-height:320px;padding-top:105px!important;padding-bottom:65px!important}
+ .cinema-inner.nv-tailwind main>section:first-of-type h1{font-size:clamp(39px,10vw,56px)!important}
+ .cinema-inner.nv-sector main>section.hero{padding:73px 24px 79px!important;min-height:0}
+ .cinema-inner.nv-sector main>section.hero h1{font-size:clamp(40px,10vw,61px)!important}
+ .cinema-inner.nv-sector main>section.hero .visual,.cinema-inner.nv-sector main>section.hero .scene{box-shadow:none}
+}
+@media(prefers-reduced-motion:reduce){
+ body.cinema-motion .reveal-shot{opacity:1!important;transform:none!important;transition:none!important}
+ .cinema-inner.nv-tailwind main>section:first-of-type h1,.cinema-inner.nv-sector main>section.hero h1,.cinema-inner.nv-tailwind main>section:first-of-type p[class*="max-w-"],.cinema-inner.nv-sector main>section.hero .lead{animation:none!important}
+ .cinema-inner .p-item .case-card-img{transform:none!important;transition:none!important}
+}
