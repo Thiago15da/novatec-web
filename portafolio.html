@@ -80,39 +80,27 @@
           {
             "@type": "ListItem",
             "position": 1,
+            "name": "RD Construcciones — Sitio Web Corporativo",
+            "url": "https://rdconstrucciones.com.py/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
             "name": "Cáceres Álvarez Abogados — Sitio Corporativo",
             "url": "https://caceresalvarezabogados.com.py/"
           },
           {
             "@type": "ListItem",
-            "position": 2,
+            "position": 3,
             "name": "Power Gym — Sitio Corporativo",
             "url": "https://www.powergym.com.py/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "GMI Uris Consulting — Sitio Corporativo",
-            "url": "https://gmiurisconsulting.com/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "name": "Vola — Plataforma Web",
-            "url": "https://vola.com.py/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 5,
-            "name": "RD Construcciones — Sitio Web Corporativo",
-            "url": "https://rdconstrucciones.com.py/"
           }
         ]
       }
     }
   ]
 }
-  </script>
+</script>
 
   <!-- Tailwind CSS CDN (synchronous — processes DOM classes at load time) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -132,7 +120,7 @@
   <link rel="preload" as="image" href="img/novatec-horizontal.svg">
   <link rel="stylesheet" href="css/brand-refresh.css?v=20261104">
   <link rel="stylesheet" href="css/corporate-v2.css?v=20261104">
-  <link rel="stylesheet" href="css/cinematic-inner.css?v=20261104">
+  <link rel="stylesheet" href="css/cinematic-inner.css?v=20261104-fix2">
 </head>
 <body class="bg-black text-white font-sans antialiased nv-tailwind cinema-inner">
 
@@ -176,11 +164,11 @@
         <span>/</span><span>Portafolio</span>
       </nav>
       <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-[#444] mb-6">Trabajo seleccionado</p>
-      <h1 class="font-black tracking-[-0.03em] leading-[0.95] headline-gradient mb-6 will-fade"
+      <h1 class="font-black tracking-[-0.03em] leading-[0.95] headline-gradient mb-6"
           style="font-size: clamp(44px, 6vw, 72px);">
         Proyectos digitales.<br>Trabajo que podés explorar.
       </h1>
-      <p class="text-[#666] text-[15px] max-w-[440px] leading-[1.65] will-fade">
+      <p class="text-[#666] text-[15px] max-w-[600px] leading-[1.65]">
         Conocé ejemplos de sitios y plataformas de nuestro portafolio. Visitá cada proyecto para explorar su presentación y funcionalidades.
       </p>
     </div>
@@ -196,9 +184,7 @@
         <button class="f-tab whitespace-nowrap text-[12px] font-medium px-4 py-1.5 rounded-full border border-white/[0.1] text-[#888]" data-filter="web">
           Web
         </button>
-        <button class="f-tab whitespace-nowrap text-[12px] font-medium px-4 py-1.5 rounded-full border border-white/[0.1] text-[#888]" data-filter="software">
-          Software
-        </button>
+        <button class="f-tab whitespace-nowrap text-[12px] font-medium px-4 py-1.5 rounded-full border border-white/[0.1] text-[#888]" data-filter="construccion">Constructoras</button>
       </div>
     </div>
   </div>
@@ -208,105 +194,10 @@
     <div class="max-w-[1200px] mx-auto px-6">
       <div id="grid" class="grid md:grid-cols-2 gap-3">
 
-        <!-- Cáceres Álvarez -->
-        <div class="p-item border border-white/[0.06] bg-[#111] rounded-2xl overflow-hidden hover:border-white/[0.12] transition-all duration-200 will-fade" data-cat="web">
-          <div class="mock-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
-          <div class="h-52 flex flex-col items-center justify-center" style="background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 55%, #0d2137 100%);"><img class="case-card-img" src="img/portfolio/caceres-alvarez.png" alt="" loading="lazy" decoding="async" width="850" height="475" aria-hidden="true">
-            <p class="text-[10px] text-[#555] uppercase tracking-[0.15em] mb-2">Estudio Jurídico</p>
-            <p class="text-[20px] font-semibold text-white text-center px-6">Cáceres Álvarez<br>Abogados</p>
-          </div>
-          <div class="px-6 py-5 flex items-start justify-between gap-4">
-            <div>
-              <div class="flex gap-2 mb-2">
-                <span class="text-[10px] text-[#444] border border-white/[0.06] px-2.5 py-0.5 rounded-full">Web</span>
-                <span class="text-[10px] text-[#444] border border-white/[0.06] px-2.5 py-0.5 rounded-full">Corporativo</span>
-              </div>
-              <p class="text-[14px] font-medium">Sitio corporativo</p>
-              <p class="text-[12px] text-[#444] mt-0.5">Sector legal · Paraguay</p>
-            </div>
-            <a href="https://caceresalvarezabogados.com.py/" target="_blank" rel="noopener"
-               class="text-[12px] text-[#555] hover:text-white transition-colors whitespace-nowrap flex items-center gap-1.5 mt-1">
-              Visitar <i class="fas fa-external-link-alt text-[10px]"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Power Gym -->
-        <div class="p-item border border-white/[0.06] bg-[#111] rounded-2xl overflow-hidden hover:border-white/[0.12] transition-all duration-200 will-fade" data-cat="web">
-          <div class="mock-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
-          <div class="h-52 flex flex-col items-center justify-center" style="background: radial-gradient(ellipse at center, #1a2e1a 0%, #0a150a 65%, #050505 100%);"><img class="case-card-img" src="img/portfolio/power-gym.png" alt="" loading="lazy" decoding="async" width="850" height="475" aria-hidden="true">
-            <p class="text-[10px] text-[#555] uppercase tracking-[0.15em] mb-2">Fitness & Wellness</p>
-            <p class="text-[20px] font-semibold text-white">Power Gym</p>
-          </div>
-          <div class="px-6 py-5 flex items-start justify-between gap-4">
-            <div>
-              <div class="flex gap-2 mb-2">
-                <span class="text-[10px] text-[#444] border border-white/[0.06] px-2.5 py-0.5 rounded-full">Web</span>
-                <span class="text-[10px] text-[#444] border border-white/[0.06] px-2.5 py-0.5 rounded-full">Corporativo</span>
-              </div>
-              <p class="text-[14px] font-medium">Sitio corporativo</p>
-              <p class="text-[12px] text-[#444] mt-0.5">Salud & deporte · Paraguay</p>
-            </div>
-            <a href="https://www.powergym.com.py/" target="_blank" rel="noopener"
-               class="text-[12px] text-[#555] hover:text-white transition-colors whitespace-nowrap flex items-center gap-1.5 mt-1">
-              Visitar <i class="fas fa-external-link-alt text-[10px]"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- GMI Uris Consulting -->
-        <div class="p-item border border-white/[0.06] bg-[#111] rounded-2xl overflow-hidden hover:border-white/[0.12] transition-all duration-200 will-fade" data-cat="web">
-          <div class="mock-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
-          <div class="h-52 flex flex-col items-center justify-center" style="background: linear-gradient(135deg, #0d0618 0%, #1e0d35 55%, #090412 100%);"><img class="case-card-img" src="img/portfolio/gmi-uris.png" alt="" loading="lazy" decoding="async" width="850" height="475" aria-hidden="true">
-            <p class="text-[10px] text-[#555] uppercase tracking-[0.15em] mb-2">Consultoría Jurídica</p>
-            <p class="text-[20px] font-semibold text-white text-center px-6">GMI Uris Consulting</p>
-          </div>
-          <div class="px-6 py-5 flex items-start justify-between gap-4">
-            <div>
-              <div class="flex gap-2 mb-2">
-                <span class="text-[10px] text-[#444] border border-white/[0.06] px-2.5 py-0.5 rounded-full">Web</span>
-                <span class="text-[10px] text-[#444] border border-white/[0.06] px-2.5 py-0.5 rounded-full">Corporativo</span>
-              </div>
-              <p class="text-[14px] font-medium">Sitio corporativo</p>
-              <p class="text-[12px] text-[#444] mt-0.5">Consultoría · Internacional</p>
-            </div>
-            <a href="https://gmiurisconsulting.com/" target="_blank" rel="noopener"
-               class="text-[12px] text-[#555] hover:text-white transition-colors whitespace-nowrap flex items-center gap-1.5 mt-1">
-              Visitar <i class="fas fa-external-link-alt text-[10px]"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Vola -->
-        <div class="p-item border border-white/[0.06] bg-[#111] rounded-2xl overflow-hidden hover:border-white/[0.12] transition-all duration-200 will-fade" data-cat="web">
-          <div class="mock-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
-          <div class="h-52 flex flex-col items-center justify-center" style="background: linear-gradient(135deg, #1a0c00 0%, #2e1600 55%, #130800 100%);">
-            <p class="text-[10px] text-[#555] uppercase tracking-[0.15em] mb-2">Plataforma Digital</p>
-            <p class="text-[20px] font-semibold text-white">Vola</p>
-          </div>
-          <div class="px-6 py-5 flex items-start justify-between gap-4">
-            <div>
-              <div class="flex gap-2 mb-2">
-                <span class="text-[10px] text-[#444] border border-white/[0.06] px-2.5 py-0.5 rounded-full">Web</span>
-                <span class="text-[10px] text-[#444] border border-white/[0.06] px-2.5 py-0.5 rounded-full">Plataforma</span>
-              </div>
-              <p class="text-[14px] font-medium">Plataforma web</p>
-              <p class="text-[12px] text-[#444] mt-0.5">Servicios · Paraguay</p>
-            </div>
-            <a href="https://vola.com.py/" target="_blank" rel="noopener"
-               class="text-[12px] text-[#555] hover:text-white transition-colors whitespace-nowrap flex items-center gap-1.5 mt-1">
-              Visitar <i class="fas fa-external-link-alt text-[10px]"></i>
-            </a>
-          </div>
-        </div>
-
         <!-- RD Construcciones -->
-        <div class="p-item border border-white/[0.06] bg-[#111] rounded-2xl overflow-hidden hover:border-white/[0.12] transition-all duration-200 will-fade" data-cat="web">
+        <div class="p-item border border-white/[0.06] bg-[#111] rounded-2xl overflow-hidden hover:border-white/[0.12] transition-all duration-200 will-fade" data-cat="web construccion">
           <div class="mock-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
-          <div class="h-52 flex flex-col items-center justify-center" style="background: linear-gradient(140deg, #14232a 0%, #31505b 52%, #101719 100%);"><img class="case-card-img" src="img/portfolio/rd-construcciones.png" alt="" loading="lazy" decoding="async" width="850" height="475" aria-hidden="true">
-            <p class="text-[10px] text-[#a7bcc0] uppercase tracking-[0.15em] mb-2">Construcción y remodelaciones</p>
-            <p class="text-[20px] font-semibold text-white">RD Construcciones</p>
-          </div>
+          <div class="project-thumbnail"><img src="img/portfolio/rd-construcciones.png" alt="Captura del sitio web de RD Construcciones" width="1381" height="763" loading="lazy" decoding="async"></div>
           <div class="px-6 py-5 flex items-start justify-between gap-4">
             <div>
               <div class="flex gap-2 mb-2">
@@ -324,7 +215,50 @@
           </div>
         </div>
 
-        <!-- CTA card -->
+        
+<!-- Cáceres Álvarez -->
+        <div class="p-item border border-white/[0.06] bg-[#111] rounded-2xl overflow-hidden hover:border-white/[0.12] transition-all duration-200 will-fade" data-cat="web">
+          <div class="mock-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+          <div class="project-thumbnail"><img src="img/portfolio/caceres-alvarez.png" alt="Captura del sitio web de Cáceres Álvarez Abogados" width="1422" height="771" loading="lazy" decoding="async"></div>
+          <div class="px-6 py-5 flex items-start justify-between gap-4">
+            <div>
+              <div class="flex gap-2 mb-2">
+                <span class="text-[10px] text-[#444] border border-white/[0.06] px-2.5 py-0.5 rounded-full">Web</span>
+                <span class="text-[10px] text-[#444] border border-white/[0.06] px-2.5 py-0.5 rounded-full">Corporativo</span>
+              </div>
+              <p class="text-[14px] font-medium">Sitio corporativo</p>
+              <p class="text-[12px] text-[#444] mt-0.5">Sector legal · Paraguay</p>
+            </div>
+            <a href="https://caceresalvarezabogados.com.py/" target="_blank" rel="noopener"
+               class="text-[12px] text-[#555] hover:text-white transition-colors whitespace-nowrap flex items-center gap-1.5 mt-1">
+              Visitar <i class="fas fa-external-link-alt text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        
+<!-- Power Gym -->
+        <div class="p-item border border-white/[0.06] bg-[#111] rounded-2xl overflow-hidden hover:border-white/[0.12] transition-all duration-200 will-fade" data-cat="web">
+          <div class="mock-bar"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+          <div class="project-thumbnail"><img src="img/portfolio/power-gym.png" alt="Captura del sitio web de Power Gym" width="1433" height="764" loading="lazy" decoding="async"></div>
+          <div class="px-6 py-5 flex items-start justify-between gap-4">
+            <div>
+              <div class="flex gap-2 mb-2">
+                <span class="text-[10px] text-[#444] border border-white/[0.06] px-2.5 py-0.5 rounded-full">Web</span>
+                <span class="text-[10px] text-[#444] border border-white/[0.06] px-2.5 py-0.5 rounded-full">Corporativo</span>
+              </div>
+              <p class="text-[14px] font-medium">Sitio corporativo</p>
+              <p class="text-[12px] text-[#444] mt-0.5">Salud & deporte · Paraguay</p>
+            </div>
+            <a href="https://www.powergym.com.py/" target="_blank" rel="noopener"
+               class="text-[12px] text-[#555] hover:text-white transition-colors whitespace-nowrap flex items-center gap-1.5 mt-1">
+              Visitar <i class="fas fa-external-link-alt text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        
+<!-- CTA card -->
         <div class="p-item border border-dashed border-white/[0.07] rounded-2xl flex flex-col items-center justify-center text-center py-16 px-8 will-fade" data-cat="all">
           <p class="text-[13px] text-[#444] mb-4">¿Tu proyecto podría estar aquí?</p>
           <a href="contacto.html" class="bg-white text-black text-[13px] font-semibold px-5 py-2 rounded-full hover:bg-white/90 transition-colors">
@@ -391,7 +325,7 @@
             <div class="space-y-2.5">
               <a href="desarrollo-web-empresas.html" class="block text-[#555] hover:text-white transition-colors">Desarrollo web</a>
               <a href="software.html" class="block text-[#555] hover:text-white transition-colors">Software</a>
-              <a class="block text-[#555] hover:text-white transition-colors" href="desarrollo-web-empresas.html">Desarrollo web</a>
+              <a class="block text-[#555] hover:text-white transition-colors" href="web-para-constructoras.html">Constructoras</a>
               <a href="portafolio.html" class="block text-white">Portafolio</a>
             </div>
           </div>
@@ -429,7 +363,7 @@
         tabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
         items.forEach(item => {
-          const show = f === 'all' || item.dataset.cat === f || item.dataset.cat === 'all';
+          const show = f === 'all' || (item.dataset.cat || '').split(/\s+/).includes(f) || item.dataset.cat === 'all';
           item.style.display = show ? '' : 'none';
           if (show) {
             item.style.opacity = '0';
@@ -444,6 +378,6 @@
       });
     });
   </script>
-  <script src="js/cinematic.js" defer></script>
+  <script src="js/cinematic.js?v=20261104-fix2" defer></script>
 </body>
 </html>
