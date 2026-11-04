@@ -7,7 +7,7 @@
   <!-- Primary SEO -->
   <title>Solicitá una Propuesta Web o Software | NovaTec Sistemas</title>
   <meta name="description" content="Contactá a NovaTec Sistemas en Paraguay. Contanos tu proyecto de página web o software y solicitá una propuesta personalizada.">
-  <meta name="keywords" content="contacto novatec paraguay, cotizar software asuncion, cotizacion pagina web paraguay, contactar servicio tecnico celulares asuncion, presupuesto desarrollo software paraguay, cotizar app movil paraguay">
+  <meta name="keywords" content="cotización página web paraguay, cotizar sistema a medida, propuesta desarrollo web asunción, novatec sistemas contacto">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="author" content="NovaTec Sistemas">
   <meta name="geo.region" content="PY-ASU">
@@ -18,7 +18,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="NovaTec Sistemas">
   <meta property="og:title" content="Cotizá tu Proyecto — Contacto NovaTec Sistemas Paraguay">
-  <meta property="og:description" content="Solicitá una propuesta de desarrollo web o software para tu empresa. Contactá a NovaTec Sistemas en Asunción, Paraguay.">
+  <meta property="og:description" content="Solicitá una propuesta para una página web empresarial, sistema a medida o automatización en Paraguay.">
   <meta property="og:url" content="https://novatec.com.py/contacto.html">
   <meta property="og:image" content="https://novatec.com.py/img/novatec-principal.svg">
   <meta property="og:locale" content="es_PY">
@@ -96,6 +96,7 @@
   <meta name="theme-color" content="#F7F9FD">
   <link rel="preload" as="image" href="img/novatec-horizontal.svg">
   <link rel="stylesheet" href="css/brand-refresh.css?v=20261104">
+  <link rel="stylesheet" href="css/corporate-v2.css?v=20261104">
 </head>
 <body class="bg-black text-white font-sans antialiased nv-tailwind">
 
@@ -107,7 +108,7 @@
       </a>
       <div class="hidden md:flex items-center gap-6">
         <a href="software.html" data-page="software.html" class="text-[13px] text-[#666] hover:text-white transition-colors">Software</a>
-        <a href="hardware.html" data-page="hardware.html" class="text-[13px] text-[#666] hover:text-white transition-colors">Hardware</a>
+        <a data-page="desarrollo-web-empresas.html" class="text-[13px] text-[#666] hover:text-white transition-colors" href="desarrollo-web-empresas.html">Desarrollo web</a>
         <a href="portafolio.html" data-page="portafolio.html" class="text-[13px] text-[#666] hover:text-white transition-colors">Portafolio</a>
         <a href="contacto.html" class="text-[13px] text-white">Contacto</a>
         <a href="contacto.html" class="text-[13px] font-medium bg-white text-black px-4 py-1.5 rounded-full hover:bg-white/90 transition-colors">Empezar proyecto</a>
@@ -122,7 +123,7 @@
   <div id="mobile-menu" class="hidden fixed top-12 inset-x-0 z-40 bg-black border-b border-white/[0.06] px-6 pb-5 pt-4">
     <div class="flex flex-col gap-1">
       <a href="software.html" class="text-[#888] hover:text-white py-2.5 text-[14px] border-b border-white/[0.05]">Software</a>
-      <a href="hardware.html" class="text-[#888] hover:text-white py-2.5 text-[14px] border-b border-white/[0.05]">Hardware</a>
+      <a class="text-[#888] hover:text-white py-2.5 text-[14px] border-b border-white/[0.05]" href="desarrollo-web-empresas.html">Desarrollo web</a>
       <a href="portafolio.html" class="text-[#888] hover:text-white py-2.5 text-[14px] border-b border-white/[0.05]">Portafolio</a>
       <a href="contacto.html" class="text-white py-2.5 text-[14px] border-b border-white/[0.05]">Contacto</a>
       <a href="contacto.html" class="mt-3 text-center text-[13px] font-medium bg-white text-black px-4 py-2.5 rounded-full">Empezar proyecto</a>
@@ -169,7 +170,7 @@
             <div class="border border-white/[0.05] bg-white/[0.02] rounded-xl px-4 py-3 mb-7">
               <p class="text-[11px] text-[#555] leading-[1.6]">
                 Este formulario está pensado para proyectos de <span class="text-white/60 font-medium">Desarrollo Web y Software</span>. No genera precios automáticos: cada propuesta se ajusta al alcance.
-                Para servicio técnico de dispositivos o consultas de hardware, usá los canales directos de la columna derecha.
+                Podés consultar por páginas web, sistemas a medida e integraciones desde este formulario.
               </p>
             </div>
 
@@ -221,8 +222,6 @@
                 <option value="">Tipo de consulta...</option>
                 <option value="web">Página web empresarial</option>
                 <option value="software">Desarrollo de Software</option>
-                <option value="tecnico">Servicio Técnico</option>
-                <option value="hardware">Hardware Corporativo</option>
                 <option value="consulta">Consulta general</option>
               </select>
               <textarea name="mensaje" required rows="3" placeholder="¿Qué necesitás resolver? *" class="field resize-none"></textarea>
@@ -233,25 +232,6 @@
               </button>
               <p id="form-status" role="status" aria-live="polite" class="text-[12px] text-center mt-2"></p>
             </form>
-          </div>
-
-          <!-- Servicio técnico — WhatsApp only -->
-          <div class="border border-white/[0.06] bg-[#0a0a0a] rounded-2xl p-6">
-            <div class="flex items-center gap-2 mb-3">
-              <div class="w-6 h-6 border border-white/[0.08] rounded-md flex items-center justify-center">
-                <i class="fas fa-wrench text-[#555] text-[10px]"></i>
-              </div>
-              <p class="text-[13px] font-semibold">Servicio Técnico</p>
-            </div>
-            <p class="text-[#555] text-[12px] leading-[1.6] mb-4">
-              Reparación y diagnóstico de equipos. Requiere evaluación previa en laboratorio — no disponible para cotización online.
-            </p>
-            <a href="https://wa.me/595992056945?text=Hola%2C%20quiero%20solicitar%20un%20turno%20t%C3%A9cnico%20para%20mi%20dispositivo"
-               target="_blank" rel="noopener"
-               class="flex items-center justify-center gap-2 w-full border border-white/[0.08] text-[#888] text-[12px] font-medium py-2.5 rounded-full hover:border-white/[0.2] hover:text-white transition-all">
-              <i class="fab fa-whatsapp text-[#25D366]"></i>
-              Solicitar turno técnico
-            </a>
           </div>
 
           <!-- Contact channels -->
@@ -341,7 +321,7 @@
             <p class="text-[#333] font-medium mb-4 text-[11px] uppercase tracking-widest">Servicios</p>
             <div class="space-y-2.5">
               <a href="software.html" class="block text-[#555] hover:text-white transition-colors">Software</a>
-              <a href="hardware.html" class="block text-[#555] hover:text-white transition-colors">Hardware</a>
+              <a class="block text-[#555] hover:text-white transition-colors" href="desarrollo-web-empresas.html">Desarrollo web</a>
               <a href="portafolio.html" class="block text-[#555] hover:text-white transition-colors">Portafolio</a>
             </div>
           </div>

@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const inquiryParams = new URLSearchParams(window.location.search);
     const service = inquiryParams.get('servicio');
     const serviceSelect = contactForm.querySelector('select[name="servicio"]');
-    if (serviceSelect && ['web', 'software', 'hardware', 'tecnico'].includes(service)) {
+    if (serviceSelect && ['web', 'software', 'consulta'].includes(service)) {
       serviceSelect.value = service;
     }
     if (inquiryParams.get('sector') === 'construccion') {
