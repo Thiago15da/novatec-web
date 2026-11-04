@@ -95,6 +95,12 @@ for (const img of ['rd-construcciones.png','caceres-alvarez.png','power-gym.png'
 }
 // Homepage: one working hero slider. The lower section must show a DISTINCT GMI reference.
 const projectsPage = read('portafolio.html');
+assert.match(home, /GM Iuris<br>Consulting/, 'Correct name GM Iuris Consulting missing from home');
+assert.match(projectsPage, /GM Iuris Consulting/, 'Correct name GM Iuris Consulting missing from portfolio');
+assert.match(businessWeb, /GM Iuris<br>Consulting/, 'Correct name GM Iuris Consulting missing from web landing');
+for (const page of [home, projectsPage, businessWeb]) {
+  assert.ok(!/GMI Uris(?:<br>| )Consulting/.test(page), 'Incorrect former business name remains');
+}
 assert.equal((home.match(/data-carousel\b/g) || []).length, 1, 'Home must have one primary hero carousel');
 assert.equal((home.match(/class="carousel-slide"/g) || []).length, 3, 'Hero must retain three project slides');
 assert.equal((home.match(/data-prev/g) || []).length, 1, 'Hero must have previous control');
