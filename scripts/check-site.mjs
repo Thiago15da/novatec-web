@@ -102,7 +102,7 @@ assert.equal((home.match(/data-prev/g) || []).length, 2, 'Both sliders need prev
 assert.equal((home.match(/data-next/g) || []).length, 2, 'Both sliders need next controls');
 assert.match(read('js/cinematic.js'), /pointerup/, 'Swipe control missing');
 assert.match(read('js/cinematic.js'), /ArrowRight/, 'Keyboard slide control missing');
-assert.match(read('js/cinematic.js'), /data-autoplay/, 'Hero auto-slide missing');
+assert.match(read('js/cinematic.js'), /dataset\.autoplay/, 'Hero auto-slide missing');
 assert.equal((projectsPage.match(/class="project-thumbnail"/g) || []).length, 3, 'Portfolio must only show three correctly matched screenshots');
 assert.ok(!/gmi-uris.png|GMI Uris Consulting|>Vola<\/p>/.test(projectsPage), 'Portfolio still displays unverified mismatched project');
 assert.ok(!/gmi-uris.png|GMI Uris Consulting/.test(businessWeb), 'Business carousel has mismatched GMI screenshot');
