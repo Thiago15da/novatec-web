@@ -106,7 +106,7 @@ const heroStyles = read('css/cinematic-home.css');
 assert.ok(heroStyles.includes('grid-template-columns:minmax(0,1fr)'), 'Mobile hero grid must allow its child to shrink');
 assert.ok(heroStyles.includes('.hero-cinema .hero-grid > div'), 'Mobile hero children must be constrained to viewport');
 assert.ok(heroStyles.includes('.hero-cinema .actions .btn'), 'Mobile hero buttons must fit the available width');
-assert.ok(home.includes('css/cinematic-home.css?v=20261104-v6'), 'Updated hero CSS must bypass mobile browser cache');
+assert.ok(home.includes('css/cinematic-home.css?v=20261114-a1'), 'Updated hero CSS must bypass mobile browser cache');
 // A1 Maquetas — project is included in the portfolio and the immersive homepage feature.
 const a1Images = [
   'a1-maquetas-edificios.jpg',
