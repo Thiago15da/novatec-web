@@ -144,3 +144,103 @@ body.cinema-motion .reveal-shot.is-visible{opacity:1;transform:translateZ(0)}
  .cinema-inner .gmi-thumb-brand strong{font-size:clamp(52px,15vw,80px)}
  .cinema-inner .gmi-thumb-brand span{font-size:clamp(12px,3.6vw,18px)}
 }
+
+
+/* A1 Maquetas — editorial featured portfolio card, with real workshop imagery. */
+.cinema-inner #grid .a1-featured{
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);
+  align-items:stretch;
+  overflow:hidden;
+  border:1px solid #62859b!important;
+  border-radius:18px!important;
+  background:#0a2735!important;
+  box-shadow:0 30px 60px rgba(6,28,48,.12)!important;
+  isolation:isolate;
+}
+.cinema-inner .a1-featured-visual{position:relative;min-height:430px;overflow:hidden;background:#123544;isolation:isolate}
+.cinema-inner .a1-featured-visual:after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(1,17,28,.12),transparent 36%,rgba(1,17,28,.63) 100%);
+}
+.cinema-inner .a1-featured-main{
+  display:block;width:100%;height:100%;min-height:430px;
+  object-fit:cover;object-position:center center;
+  transition:transform .8s cubic-bezier(.2,.72,.24,1);
+}
+@media(hover:hover){
+  .cinema-inner .a1-featured:hover .a1-featured-main{transform:scale(1.045)}
+}
+.cinema-inner .a1-featured-index{
+  position:absolute;z-index:2;top:23px;left:26px;
+  font-size:10px;font-weight:800;letter-spacing:.18em;color:#f0f8fa;
+  text-shadow:0 1px 7px rgba(0,0,0,.6)
+}
+.cinema-inner .a1-featured-mini{
+  position:absolute;z-index:2;right:24px;bottom:22px;width:29%;
+  aspect-ratio:1.48;overflow:hidden;border:3px solid rgba(240,248,252,.86);
+  background:#0c2835;box-shadow:0 14px 30px rgba(0,0,0,.29);
+}
+.cinema-inner .a1-featured-mini img{width:100%;height:100%;object-fit:cover;display:block}
+.cinema-inner .a1-featured-mini span{
+  position:absolute;left:0;bottom:0;right:0;padding:7px 9px 6px;
+  color:#fff;font-size:9px;font-weight:700;letter-spacing:.02em;
+  background:linear-gradient(transparent,rgba(0,0,0,.8));
+}
+.cinema-inner .a1-featured-copy{
+  min-width:0;display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(30px,4.3vw,66px);color:#f2f8fa;
+  background:radial-gradient(ellipse at 92% 5%,rgba(56,166,181,.17),transparent 62%),#0a2735;
+}
+.cinema-inner .a1-featured-label{
+  color:#82c7d3;letter-spacing:.15em;font-size:10px;font-weight:800;
+}
+.cinema-inner .a1-featured-copy h2{
+  margin:25px 0 18px;font-family:Arial,Helvetica,sans-serif;
+  font-size:clamp(44px,5vw,78px);letter-spacing:-.065em;line-height:.94;
+  font-weight:800;color:white;
+}
+.cinema-inner .a1-featured-copy h2 span{color:#85d0e2}
+.cinema-inner .a1-featured-lead{
+  font-size:clamp(17px,1.65vw,22px);line-height:1.35;letter-spacing:-.02em;
+  color:#eef8fc;max-width:510px;margin:0 0 17px;font-weight:600;
+}
+.cinema-inner .a1-featured-desc{
+  font-size:13px;line-height:1.8;max-width:500px;color:#b4ccd5;margin:0 0 22px;
+}
+.cinema-inner .a1-featured-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:27px}
+.cinema-inner .a1-featured-tags span{
+  font-size:10px;color:#c6e5e9;line-height:1.35;
+  padding:8px 10px;border:1px solid rgba(145,205,218,.24);
+  border-radius:100px;background:rgba(255,255,255,.035)
+}
+.cinema-inner .a1-featured-actions{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center}
+.cinema-inner .a1-featured-action{
+  display:inline-flex;align-items:center;justify-content:center;gap:18px;
+  color:#062a35!important;background:#c8edf0;padding:14px 19px;
+  border-radius:5px;font-size:12px;font-weight:800;
+  transition:background .22s,transform .22s;
+}
+.cinema-inner .a1-featured-action:hover{background:white;transform:translateY(-2px)}
+.cinema-inner .a1-featured-secondary{font-size:12px;color:#cce2e9!important;text-decoration:underline;text-underline-offset:4px}
+.cinema-inner .a1-featured a:focus-visible{outline:3px solid #cbf8fc;outline-offset:4px}
+@media(max-width:850px){
+  .cinema-inner #grid .a1-featured{grid-template-columns:minmax(0,1fr)}
+  .cinema-inner .a1-featured-visual{min-height:0;aspect-ratio:16/10}
+  .cinema-inner .a1-featured-main{height:100%;min-height:0}
+  .cinema-inner .a1-featured-copy{padding:32px 27px 36px}
+  .cinema-inner .a1-featured-copy h2{font-size:clamp(45px,9vw,65px);margin:18px 0}
+}
+@media(max-width:480px){
+  .cinema-inner .a1-featured-visual{aspect-ratio:4/3}
+  .cinema-inner .a1-featured-mini{right:12px;bottom:12px;width:32%;border-width:2px}
+  .cinema-inner .a1-featured-mini span{font-size:8px}
+  .cinema-inner .a1-featured-copy{padding:29px 23px 32px}
+  .cinema-inner .a1-featured-copy h2{font-size:50px}
+  .cinema-inner .a1-featured-actions{align-items:stretch;flex-direction:column}
+  .cinema-inner .a1-featured-action{width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+  .cinema-inner .a1-featured-main,.cinema-inner .a1-featured-action{transition:none!important;transform:none!important}
+}
