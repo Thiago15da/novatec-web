@@ -14,7 +14,7 @@
 <link rel="preload" as="image" href="img/novatec-horizontal.svg">
 <link rel="preload" as="image" href="img/portfolio/rd-construcciones.png" fetchpriority="high">
 <link rel="stylesheet" href="css/home-corporate.css?v=20261104">
-<link rel="stylesheet" href="css/cinematic-home.css?v=20261104-v6">
+<link rel="stylesheet" href="css/cinematic-home.css?v=20261114-a1">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_PY">
 <meta property="og:site_name" content="NovaTec Sistemas">
@@ -154,6 +154,49 @@
       </div>
     </div>
   </section>
+  <!-- A1 Maquetas: interactive editorial case study -->
+  <section class="a1-spotlight" id="a1-maquetas" aria-labelledby="a1-home-title">
+    <div class="wrap a1-spotlight-grid">
+      <div class="a1-spotlight-copy" data-reveal>
+        <div class="a1-spotlight-kicker"><span>PROYECTO DESTACADO</span><span>01 / ARQUITECTURA</span></div>
+        <p class="a1-spotlight-client">A1 MAQUETAS <span aria-hidden="true">/</span> ASUNCIÓN</p>
+        <h2 id="a1-home-title">Una web que invita a mirar <em>cada detalle.</em></h2>
+        <p class="a1-spotlight-lead">Desarrollamos una experiencia visual para presentar las maquetas arquitectónicas de A1: proyectos organizados por especialidad, fotografía protagonista y una vía clara para solicitar cotizaciones.</p>
+        <div class="a1-spotlight-points" aria-label="Características del proyecto">
+          <span>Portfolio por categorías</span>
+          <span>Galerías fotográficas</span>
+          <span>Solicitud de cotización</span>
+        </div>
+        <div class="a1-spotlight-actions">
+          <a class="a1-spotlight-primary" href="https://a1maquetas.com.py/" target="_blank" rel="noopener noreferrer">Explorar el sitio <span aria-hidden="true">↗</span></a>
+          <a class="a1-spotlight-outline" href="portafolio.html">Ver más proyectos <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="a1-gallery" data-a1-gallery data-reveal data-delay="1" role="region" aria-label="Explorá tres fotografías de trabajos de A1 Maquetas">
+        <div class="a1-gallery-chrome" aria-hidden="true">
+          <span class="a1-gallery-pips"><i></i><i></i><i></i></span>
+          <span>A1 MAQUETAS / PROYECTOS REALES</span>
+        </div>
+        <div class="a1-gallery-stage">
+          <img data-a1-image src="img/portfolio/a1-maquetas-edificios.jpg" alt="Maqueta iluminada de un conjunto de torres arquitectónicas de A1 Maquetas" width="2200" height="1465" loading="lazy" decoding="async">
+          <div class="a1-gallery-label"><small>FOTOGRAFÍAS DEL TALLER</small><strong data-a1-caption>Edificios a escala</strong></div>
+          <button class="a1-gallery-expand" type="button" data-a1-expand aria-label="Ampliar fotografía de maqueta arquitectónica">Ampliar <span aria-hidden="true">⤢</span></button>
+        </div>
+        <div class="a1-gallery-selector" role="group" aria-label="Seleccionar tipo de maqueta">
+          <button type="button" class="a1-gallery-choice" data-a1-choice data-a1-photo="img/portfolio/a1-maquetas-edificios.jpg" data-a1-alt="Maqueta iluminada de un conjunto de torres arquitectónicas de A1 Maquetas" data-a1-caption="Edificios a escala" aria-pressed="true"><span>01</span><strong>Edificios</strong></button>
+          <button type="button" class="a1-gallery-choice" data-a1-choice data-a1-photo="img/portfolio/a1-maquetas-residencial.jpg" data-a1-alt="Maqueta de edificios residenciales realizada por A1 Maquetas" data-a1-caption="Arquitectura residencial" aria-pressed="false"><span>02</span><strong>Residenciales</strong></button>
+          <button type="button" class="a1-gallery-choice" data-a1-choice data-a1-photo="img/portfolio/a1-maquetas-especiales.jpg" data-a1-alt="Maqueta de una instalación industrial a escala presentada por A1 Maquetas" data-a1-caption="Proyectos especiales" aria-pressed="false"><span>03</span><strong>Especiales</strong></button>
+        </div>
+        <p class="a1-gallery-footnote">Seleccioná una categoría para explorar sus imágenes. <span aria-hidden="true">—</span> Fotografías de A1 Maquetas.</p>
+      </div>
+    </div>
+    <dialog class="a1-gallery-dialog" data-a1-dialog aria-label="Fotografía ampliada del proyecto A1 Maquetas">
+      <div class="a1-gallery-dialog-top"><span>A1 MAQUETAS / DETALLE DEL PROYECTO</span><button type="button" data-a1-close aria-label="Cerrar fotografía ampliada">Cerrar ×</button></div>
+      <img data-a1-dialog-image src="img/portfolio/a1-maquetas-edificios.jpg" alt="Maqueta arquitectónica iluminada de A1 Maquetas" width="2200" height="1465">
+      <p data-a1-dialog-caption>Edificios a escala</p>
+    </dialog>
+  </section>
+
   <section class="section section-alt sector-film" aria-labelledby="sectores-title">
     <div class="wrap">
       <div class="specialty specialty-refined">
@@ -261,6 +304,7 @@
 })();
 </script>
 <script src="js/main.js" defer></script>
+<script src="js/a1-spotlight.js?v=20261114" defer></script>
 <script src="js/cinematic.js?v=20261104-fix2" defer></script>
 </body>
 </html>

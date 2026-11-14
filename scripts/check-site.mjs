@@ -6,7 +6,7 @@ const pages = [
   'index.html', 'contacto.html', 'portafolio.html', 'software.html',
   'web-para-constructoras.html', 'desarrollo-web-empresas.html'
 ];
-const scriptFiles = ['js/main.js', 'js/cotizador.js', 'js/script.js', 'js/cinematic.js'];
+const scriptFiles = ['js/main.js', 'js/cotizador.js', 'js/script.js', 'js/cinematic.js', 'js/a1-spotlight.js'];
 const read = (path) => readFileSync(path, 'utf8');
 
 for (const file of scriptFiles) {
@@ -106,7 +106,31 @@ const heroStyles = read('css/cinematic-home.css');
 assert.ok(heroStyles.includes('grid-template-columns:minmax(0,1fr)'), 'Mobile hero grid must allow its child to shrink');
 assert.ok(heroStyles.includes('.hero-cinema .hero-grid > div'), 'Mobile hero children must be constrained to viewport');
 assert.ok(heroStyles.includes('.hero-cinema .actions .btn'), 'Mobile hero buttons must fit the available width');
-assert.ok(home.includes('css/cinematic-home.css?v=20261104-v6'), 'Updated hero CSS must bypass mobile browser cache');
+assert.ok(home.includes('css/cinematic-home.css?v=20261114-a1'), 'Updated hero CSS must bypass mobile browser cache');
+// A1 Maquetas — project is included in the portfolio and the immersive homepage feature.
+const a1Images = [
+  'a1-maquetas-edificios.jpg',
+  'a1-maquetas-residencial.jpg',
+  'a1-maquetas-especiales.jpg'
+];
+for (const name of a1Images) {
+  assert.ok(existsSync('img/portfolio/' + name), 'Missing local A1 photograph: ' + name);
+  assert.ok(home.includes('img/portfolio/' + name), 'Home A1 gallery must reference real image: ' + name);
+}
+assert.match(home, /id="a1-maquetas"/, 'Homepage A1 case study is missing');
+assert.match(home, /data-a1-gallery/, 'Homepage A1 gallery is missing');
+assert.match(home, /data-a1-dialog/, 'A1 enlarged-photo view is missing');
+assert.match(home, /js\/a1-spotlight\.js/, 'Homepage must initialize the A1 gallery');
+assert.match(read('js/a1-spotlight.js'), /showModal/, 'A1 photo lightbox must be interactive');
+assert.match(read('js/a1-spotlight.js'), /ArrowRight/, 'A1 gallery requires keyboard navigation');
+assert.match(home, /https:\/\/a1maquetas\.com\.py\//, 'Official A1 project URL missing from home');
+assert.match(projectsPage, /https:\/\/a1maquetas\.com\.py\//, 'A1 project URL missing from portfolio');
+assert.match(projectsPage, /class="p-item a1-featured"/, 'A1 featured portfolio case missing');
+assert.match(projectsPage, /data-filter="arquitectura"/, 'Architecture portfolio filter missing');
+assert.match(read('css/cinematic-inner.css'), /a1-featured-copy/, 'A1 portfolio layout CSS missing');
+assert.match(read('css/cinematic-home.css'), /a1-spotlight-grid/, 'A1 responsive homepage styling missing');
+assert.match(businessWeb, /img\/portfolio\/a1-maquetas-edificios\.jpg/, 'A1 case missing from business web carousel');
+assert.equal((businessWeb.match(/class="slider-slide"/g) || []).length, 4, 'Business carousel should contain four distinct projects');
 assert.equal((home.match(/data-carousel\b/g) || []).length, 1, 'Home must have one primary hero carousel');
 assert.equal((home.match(/class="carousel-slide"/g) || []).length, 3, 'Hero must retain three project slides');
 assert.equal((home.match(/data-prev/g) || []).length, 1, 'Hero must have previous control');

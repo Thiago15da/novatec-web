@@ -98,6 +98,8 @@
     .slider-slide{flex:0 0 100%;min-width:0;scroll-snap-align:start;padding:18px 18px 16px}
     .slider-media{position:relative;aspect-ratio:1.8;border:1px solid rgba(255,255,255,.12);border-radius:11px;overflow:hidden;background:#172126}
     .slider-media img{width:100%;height:100%;display:block;object-fit:cover;object-position:center top}
+    .a1-slide-media{background:#0e2832}
+    .a1-slide-media img{object-fit:contain;object-position:center center}
     .slider-info{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:15px}
     .slider-category{display:block;color:var(--cyan);text-transform:uppercase;font-weight:700;letter-spacing:.12em;font-size:10px;margin-bottom:6px}
     .slider-info h3{font-size:clamp(17px,2.5vw,23px);letter-spacing:-.04em;line-height:1.2;margin:0}
@@ -196,28 +198,33 @@
         <div class="portfolio-slider" id="portfolio-slider" aria-label="Carrusel de proyectos realizados por NovaTec" role="region" aria-roledescription="carrusel">
           <div class="slider-window">
             <div class="slider-chrome" aria-hidden="true"><i></i><i></i><i></i><span>NovaTec / Portafolio</span></div>
-            <div class="slider-viewport" id="portfolio-slider-viewport" tabindex="0" aria-label="Deslizá para ver tres proyectos">
-              <article class="slider-slide" role="group" aria-roledescription="diapositiva" aria-label="1 de 3: RD Construcciones">
+            <div class="slider-viewport" id="portfolio-slider-viewport" tabindex="0" aria-label="Deslizá para ver cuatro proyectos">
+              <article class="slider-slide" role="group" aria-roledescription="diapositiva" aria-label="1 de 4: RD Construcciones">
                 <div class="slider-media"><img src="img/portfolio/rd-construcciones.png" width="1381" height="763" alt="Captura de la página web RD Construcciones diseñada por NovaTec" fetchpriority="high"></div>
                 <div class="slider-info"><div><span class="slider-category">Construcción y remodelaciones</span><h3>RD Construcciones</h3></div><a href="https://rdconstrucciones.com.py/" target="_blank" rel="noopener noreferrer">Ver sitio ↗</a></div>
               </article>
-              <article class="slider-slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 3: Cáceres Álvarez Abogados">
+              <article class="slider-slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 4: Cáceres Álvarez Abogados">
                 <div class="slider-media"><img src="img/portfolio/caceres-alvarez.png" width="1422" height="771" alt="Captura de la página web Cáceres Álvarez Abogados diseñada por NovaTec" loading="lazy"></div>
                 <div class="slider-info"><div><span class="slider-category">Estudio jurídico</span><h3>Cáceres Álvarez</h3></div><a href="https://caceresalvarezabogados.com.py/" target="_blank" rel="noopener noreferrer">Ver sitio ↗</a></div>
               </article>
-              <article class="slider-slide" role="group" aria-roledescription="diapositiva" aria-label="3 de 3: Power Gym">
+              <article class="slider-slide" role="group" aria-roledescription="diapositiva" aria-label="3 de 4: Power Gym">
                 <div class="slider-media"><img src="img/portfolio/power-gym.png" width="1433" height="764" alt="Captura de la página web Power Gym diseñada por NovaTec" loading="lazy"></div>
                 <div class="slider-info"><div><span class="slider-category">Fitness y bienestar</span><h3>Power Gym</h3></div><a href="https://www.powergym.com.py/" target="_blank" rel="noopener noreferrer">Ver sitio ↗</a></div>
+              </article>
+              <article class="slider-slide" role="group" aria-roledescription="diapositiva" aria-label="4 de 4: A1 Maquetas">
+                <div class="slider-media a1-slide-media"><img src="img/portfolio/a1-maquetas-edificios.jpg" width="2200" height="1465" alt="Fotografía de maqueta arquitectónica de A1 Maquetas, proyecto web de NovaTec" loading="lazy" decoding="async"></div>
+                <div class="slider-info"><div><span class="slider-category">Arquitectura · Portfolio visual</span><h3>A1 Maquetas</h3></div><a href="https://a1maquetas.com.py/" target="_blank" rel="noopener noreferrer">Ver sitio ↗</a></div>
               </article>
               
             </div>
           </div>
           <div class="slider-controls">
-            <span class="slider-indicator" id="portfolio-slide-count" aria-live="polite">01 / 03</span>
+            <span class="slider-indicator" id="portfolio-slide-count" aria-live="polite">01 / 04</span>
             <div class="slider-dots" aria-label="Elegir proyecto">
               <button type="button" class="slider-dot" aria-label="Mostrar RD Construcciones" aria-current="true" data-slide="0"></button>
               <button type="button" class="slider-dot" aria-label="Mostrar Cáceres Álvarez" aria-current="false" data-slide="1"></button>
               <button type="button" class="slider-dot" aria-label="Mostrar Power Gym" aria-current="false" data-slide="2"></button>
+              <button type="button" class="slider-dot" aria-label="Mostrar A1 Maquetas" aria-current="false" data-slide="3"></button>
               
             </div>
             <div class="slider-arrows">
@@ -225,7 +232,7 @@
               <button type="button" class="slider-arrow" id="portfolio-next" aria-label="Proyecto siguiente">→</button>
             </div>
           </div>
-          <p class="slider-note">Tres ejemplos de nuestro portafolio · Deslizá en celular o usá las flechas</p>
+          <p class="slider-note">Cuatro ejemplos de nuestro portafolio · Deslizá en celular o usá las flechas</p>
         </div>
       </div>
     </section>
