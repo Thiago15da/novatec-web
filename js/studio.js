@@ -13,10 +13,11 @@ setMenu(false);
 navToggle.hidden = false;
 navToggle.addEventListener('click', () => setMenu(mobileNav.hidden));
 mobileNav.addEventListener('click', (event) => {
-  if (event.target.closest('a')) {
-    setMenu(false);
-    navToggle.focus();
-  }
+  const link = event.target.closest('a');
+  if (!link) return;
+  setMenu(false);
+  const target = link.hash && document.getElementById(link.hash.slice(1));
+  if (target) target.focus({ preventScroll: true });
 });
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && !mobileNav.hidden) {
