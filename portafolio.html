@@ -207,28 +207,16 @@
     <div class="max-w-[1200px] mx-auto px-6">
       <div id="grid" class="grid md:grid-cols-2 gap-3">
 
-        <!-- A1 Maquetas · proyecto destacado -->
-        <article class="p-item a1-featured" data-cat="web arquitectura" aria-labelledby="a1-portfolio-title">
-          <div class="a1-featured-visual">
-            <img class="a1-featured-main" src="img/portfolio/a1-maquetas-edificios.jpg" alt="Maqueta arquitectónica de torres iluminadas que aparece en el portfolio de A1 Maquetas" width="2200" height="1465" loading="eager" decoding="async">
-            <div class="a1-featured-index" aria-hidden="true">A1 / MAQUETAS</div>
-            <div class="a1-featured-mini">
-              <img src="img/portfolio/a1-maquetas-residencial.jpg" alt="" width="1600" height="1026" loading="lazy" decoding="async">
-              <span>Vista del proyecto</span>
-            </div>
+        <article id="a1-maquetas" class="p-item border border-white/[0.06] bg-[#111] rounded-2xl overflow-hidden" data-cat="web arquitectura" aria-labelledby="a1-portfolio-title">
+          <div class="mock-bar" aria-hidden="true"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span></div>
+          <div class="project-thumbnail">
+            <img src="img/portfolio/a1-maquetas-edificios.jpg" alt="Maqueta de torres iluminadas incluida en el catálogo de A1 Maquetas" width="2200" height="1465" loading="lazy" decoding="async">
           </div>
-          <div class="a1-featured-copy">
-            <span class="a1-featured-label">PROYECTO DESTACADO <span aria-hidden="true">—</span> ARQUITECTURA</span>
-            <h2 id="a1-portfolio-title">A1<br>Maquetas<span aria-hidden="true">.</span></h2>
-            <p class="a1-featured-lead">Un portfolio digital donde las maquetas arquitectónicas toman protagonismo.</p>
-            <p class="a1-featured-desc">Sitio web multipágina para presentar trabajos por especialidad, explorar galerías fotográficas y facilitar solicitudes de cotización. Una experiencia diseñada alrededor de los proyectos reales del taller.</p>
-            <div class="a1-featured-tags" aria-label="Características del sitio">
-              <span>Portfolio visual</span><span>Proyectos por categoría</span><span>Contacto y cotización</span>
-            </div>
-            <div class="a1-featured-actions">
-              <a class="a1-featured-action" href="https://a1maquetas.com.py/" target="_blank" rel="noopener noreferrer" aria-label="Visitar el sitio oficial de A1 Maquetas">Explorar sitio <span aria-hidden="true">↗</span></a>
-              <a class="a1-featured-secondary" href="contacto.html?servicio=web">Quiero una web para mi empresa →</a>
-            </div>
+          <div class="px-6 py-5">
+            <p class="text-[12px] text-[#aaa] mb-2">Desarrollo web · Arquitectura</p>
+            <h2 id="a1-portfolio-title" class="text-[16px] font-medium">A1 Maquetas</h2>
+            <p class="text-[13px] text-[#aaa] mt-2 leading-[1.65]">Organizamos proyectos por especialidad, estructuramos las galerías y conectamos el recorrido con una solicitud de cotización.</p>
+            <a href="https://a1maquetas.com.py/" target="_blank" rel="noopener noreferrer" class="inline-block py-3 text-[13px] text-[#ddd] underline">Ver implementación <span aria-hidden="true">↗</span></a>
           </div>
         </article>
 
