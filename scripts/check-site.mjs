@@ -6,7 +6,7 @@ const pages = [
   'index.html', 'contacto.html', 'portafolio.html', 'software.html',
   'web-para-constructoras.html', 'desarrollo-web-empresas.html'
 ];
-const scriptFiles = ['js/main.js', 'js/cotizador.js', 'js/script.js', 'js/cinematic.js', 'js/a1-spotlight.js'];
+const scriptFiles = ['js/main.js', 'js/cotizador.js', 'js/script.js', 'js/cinematic.js', 'js/a1-spotlight.js', 'js/studio.js'];
 const read = (path) => readFileSync(path, 'utf8');
 
 for (const file of scriptFiles) {
@@ -46,8 +46,9 @@ for (const file of pages) {
     if (localFile) assert.ok(existsSync(localFile), file + ': missing local file ' + localFile);
   }
   if (file === 'index.html') {
-    assert.match(html, /home-corporate\.css/, 'Home corporate stylesheet missing');
-    assert.match(html, /cinematic-home\.css/, 'Home cinematic stylesheet missing');
+    assert.match(html, /css\/studio\.css/, 'Home studio stylesheet missing');
+    assert.match(html, /js\/studio\.js/, 'Home studio controller missing');
+    assert.match(html, /js\/main\.js/, 'Home lead attribution script missing');
   } else {
     assert.match(html, /corporate-v2\.css/, file + ': corporate stylesheet missing');
     assert.match(html, /cinematic-inner\.css/, file + ': cinematic stylesheet missing');
@@ -68,10 +69,7 @@ assert.match(home, /href="software\.html"/, 'Home software link missing');
 assert.match(home, /href="web-para-constructoras\.html"/, 'Home construction sector link missing');
 assert.ok(!/data-count="(?:50|100|5)"/.test(home), 'Unverified home statistics remain');
 assert.match(home, /sistemas a medida/i, 'Software specialization missing');
-assert.match(home, /class="hero hero-cinema"/, 'Cinematic hero missing');
-assert.match(home, /class="gmi-feature gmi-feature-screenshot"/, 'GMI screenshot feature missing');
-assert.match(home, /img\/portfolio\/rd-construcciones\.png/, 'Real portfolio screenshot missing from home');
-for (const page of pages) assert.match(read(page), /js\/cinematic\.js/, page + ': cinematic controller missing');
+for (const page of pages.slice(1)) assert.match(read(page), /js\/cinematic\.js/, page + ': cinematic controller missing');
 assert.match(read('js/cinematic.js'), /prefers-reduced-motion/, 'Reduced motion accessibility support missing');
 assert.match(read('js/cinematic.js'), /IntersectionObserver/, 'Scroll reveal fallback missing');
 assert.match(contact, /id="quoter-body"/, 'B2B lead form placeholder missing');
@@ -93,66 +91,40 @@ for (const img of ['rd-construcciones.png','caceres-alvarez.png','power-gym.png'
   assert.ok(existsSync('img/portfolio/' + img), 'Missing project screenshot: ' + img);
   assert.ok(businessWeb.includes('img/portfolio/' + img), 'Carousel missing screenshot: ' + img);
 }
-// Homepage: one working hero slider. The lower section must show a DISTINCT GMI reference.
+// Preserve the project name across its existing entry points.
 const projectsPage = read('portafolio.html');
-assert.match(home, /GM Iuris<br>Consulting/, 'Correct name GM Iuris Consulting missing from home');
+assert.match(home, /GM Iuris Consulting/, 'Correct name GM Iuris Consulting missing from home');
 assert.match(projectsPage, /GM Iuris Consulting/, 'Correct name GM Iuris Consulting missing from portfolio');
 assert.match(businessWeb, /GM Iuris<br>Consulting/, 'Correct name GM Iuris Consulting missing from web landing');
 for (const page of [home, projectsPage, businessWeb]) {
   assert.ok(!/GMI Uris(?:<br>| )Consulting/.test(page), 'Incorrect former business name remains');
 }
-// iOS-size layout guard: prevent a responsive slider's intrinsic width from stretching the hero grid.
-const heroStyles = read('css/cinematic-home.css');
-assert.ok(heroStyles.includes('grid-template-columns:minmax(0,1fr)'), 'Mobile hero grid must allow its child to shrink');
-assert.ok(heroStyles.includes('.hero-cinema .hero-grid > div'), 'Mobile hero children must be constrained to viewport');
-assert.ok(heroStyles.includes('.hero-cinema .actions .btn'), 'Mobile hero buttons must fit the available width');
-assert.ok(home.includes('css/cinematic-home.css?v=20261114-a1'), 'Updated hero CSS must bypass mobile browser cache');
-// A1 Maquetas — project is included in the portfolio and the immersive homepage feature.
-const a1Images = [
-  'a1-maquetas-edificios.jpg',
-  'a1-maquetas-residencial.jpg',
-  'a1-maquetas-especiales.jpg'
-];
-for (const name of a1Images) {
-  assert.ok(existsSync('img/portfolio/' + name), 'Missing local A1 photograph: ' + name);
-  assert.ok(home.includes('img/portfolio/' + name), 'Home A1 gallery must reference real image: ' + name);
-}
-assert.match(home, /id="a1-maquetas"/, 'Homepage A1 case study is missing');
-assert.match(home, /data-a1-gallery/, 'Homepage A1 gallery is missing');
-assert.match(home, /data-a1-dialog/, 'A1 enlarged-photo view is missing');
-assert.match(home, /js\/a1-spotlight\.js/, 'Homepage must initialize the A1 gallery');
-assert.match(read('js/a1-spotlight.js'), /showModal/, 'A1 photo lightbox must be interactive');
-assert.match(read('js/a1-spotlight.js'), /ArrowRight/, 'A1 gallery requires keyboard navigation');
+// The homepage presents an interactive demo and native, deep-linkable project cases.
+const studioStyles = read('css/studio.css');
+const studioController = read('js/studio.js');
+assert.match(home, /class="studio-hero"/, 'Studio hero missing');
+assert.match(home, /type="button" class="bench-run"/, 'Demo control missing');
+assert.match(home, /class="bench-status" role="status"/, 'Demo status must be announced');
+assert.equal((home.match(/<details class="case"/g) || []).length, 5, 'Five project cases expected');
+assert.match(home, /<details class="case" id="a1-maquetas"/, 'Deep-linkable A1 case missing');
 assert.match(home, /https:\/\/a1maquetas\.com\.py\//, 'Official A1 project URL missing from home');
+assert.match(home, /gmiurisconsulting\.com/, 'GM Iuris link missing from home');
+assert.match(studioController, /prefers-reduced-motion/, 'Demo must respect reduced motion');
+assert.match(studioStyles, /prefers-reduced-motion:\s*reduce/, 'Home animations must respect reduced motion');
+assert.match(studioStyles, /grid-template-columns:\s*minmax\(0,\s*1fr\);/, 'Mobile hero grid must allow children to shrink');
+assert.ok(!/data-carousel|data-a1-gallery/.test(home), 'Retired homepage carousels must stay removed');
+
 assert.match(projectsPage, /https:\/\/a1maquetas\.com\.py\//, 'A1 project URL missing from portfolio');
-assert.match(projectsPage, /class="p-item a1-featured"/, 'A1 featured portfolio case missing');
+assert.match(projectsPage, /<article id="a1-maquetas" class="p-item\b/, 'A1 portfolio card missing');
 assert.match(projectsPage, /data-filter="arquitectura"/, 'Architecture portfolio filter missing');
-assert.match(read('css/cinematic-inner.css'), /a1-featured-copy/, 'A1 portfolio layout CSS missing');
-assert.match(read('css/cinematic-home.css'), /a1-spotlight-grid/, 'A1 responsive homepage styling missing');
 assert.match(businessWeb, /img\/portfolio\/a1-maquetas-edificios\.jpg/, 'A1 case missing from business web carousel');
 assert.equal((businessWeb.match(/class="slider-slide"/g) || []).length, 4, 'Business carousel should contain four distinct projects');
-assert.equal((home.match(/data-carousel\b/g) || []).length, 1, 'Home must have one primary hero carousel');
-assert.equal((home.match(/class="carousel-slide"/g) || []).length, 3, 'Hero must retain three project slides');
-assert.equal((home.match(/data-prev/g) || []).length, 1, 'Hero must have previous control');
-assert.equal((home.match(/data-next/g) || []).length, 1, 'Hero must have next control');
-assert.match(read('js/cinematic.js'), /pointerup/, 'Touch carousel navigation missing');
-assert.match(read('js/cinematic.js'), /ArrowRight/, 'Keyboard carousel navigation missing');
-assert.match(read('js/cinematic.js'), /dataset\.autoplay/, 'Hero autoplay missing');
-assert.match(home, /gmiurisconsulting\.com/, 'GMI Uris must be linked from homepage');
-assert.match(home, /img\/portfolio\/gmi-uris\.png/, 'Actual GMI site capture must be used on home');
-assert.match(home, /González Morgan & Asociados/, 'GMI screenshot association must include actual website name');
-assert.ok(!/class="showcase-stack"/.test(home), 'Repeated second carousel must be removed');
-assert.match(home, /class="specialty specialty-refined"/, 'Construction feature refinement missing');
-assert.match(home, /class="sector-project-image"/, 'Construction image must sit in a natural aspect-ratio frame');
-assert.ok(!/class="sector-shot"/.test(home), 'Legacy construction empty-space treatment must be removed');
-assert.match(read('css/cinematic-home.css'), /sector-film \.sector-project-image img/, 'Responsive construction screenshot framing missing');
-assert.equal((projectsPage.match(/class="project-thumbnail/g) || []).length, 4, 'Four project screenshots expected, including GMI');
+assert.equal((projectsPage.match(/class="project-thumbnail/g) || []).length, 5, 'Five project screenshots expected');
 assert.match(projectsPage, /class="project-thumbnail gmi-real-thumbnail"/, 'GMI image card missing in portfolio');
 assert.match(projectsPage, /gmiurisconsulting\.com/, 'GMI live site link missing in portfolio');
 assert.ok(!/>Vola<\/p>/.test(projectsPage), 'Missing project screenshot still referenced');
 assert.match(projectsPage, /img\/portfolio\/gmi-uris\.png/, 'Correct GMI website screenshot missing');
 assert.ok(existsSync('img/portfolio/gmi-uris.png'), 'GMI screenshot file is missing');
-assert.match(read('css/cinematic-home.css'), /gmi-site-preview>img/, 'Full screenshot frame CSS missing');
 assert.ok(!/gmi-uris\.png/.test(businessWeb), 'Business carousel has mismatched GMI screenshot');
 assert.match(projectsPage, /data-filter="construccion"/, 'Construction filter missing');
 assert.match(read('css/cinematic-inner.css'), /project-thumbnail/, 'Correct screenshot framing stylesheet missing');
