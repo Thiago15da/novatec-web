@@ -195,11 +195,12 @@ footer { padding-top: 2.5rem; }
   .case-skill { grid-row: 2; }
   .case-icon { grid-column: 2; grid-row: 1 / span 2; }
   .studio-hero { padding-top: 3.15rem; }
+  .wide-break { display: initial; }
+  .actions > a { width: 100%; }
   h1 { font-size: clamp(2.65rem, 10vw, 4.7rem); }
 }
 @media (max-width: 23rem) {
   .bench-header, .bench-footer { flex-wrap: wrap; }
-  .actions > a { width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
