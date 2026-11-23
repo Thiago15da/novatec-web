@@ -190,14 +190,14 @@
   <div class="sticky top-12 z-30 border-b border-white/[0.05] bg-black/95 backdrop-blur-sm">
     <div class="max-w-[1200px] mx-auto px-6 py-3">
       <div class="flex gap-2 overflow-x-auto">
-        <button class="f-tab whitespace-nowrap text-[12px] font-medium px-4 py-1.5 rounded-full border border-white/[0.1] text-[#888] active" data-filter="all">
+        <button class="f-tab whitespace-nowrap text-[12px] font-medium px-4 py-1.5 rounded-full border border-white/[0.1] text-[#888] active" data-filter="all" aria-pressed="true">
           Todos
         </button>
-        <button class="f-tab whitespace-nowrap text-[12px] font-medium px-4 py-1.5 rounded-full border border-white/[0.1] text-[#888]" data-filter="web">
+        <button class="f-tab whitespace-nowrap text-[12px] font-medium px-4 py-1.5 rounded-full border border-white/[0.1] text-[#888]" data-filter="web" aria-pressed="false">
           Web
         </button>
-        <button class="f-tab whitespace-nowrap text-[12px] font-medium px-4 py-1.5 rounded-full border border-white/[0.1] text-[#888]" data-filter="construccion">Constructoras</button>
-        <button class="f-tab whitespace-nowrap text-[12px] font-medium px-4 py-1.5 rounded-full border border-white/[0.1] text-[#888]" data-filter="arquitectura">Arquitectura</button>
+        <button class="f-tab whitespace-nowrap text-[12px] font-medium px-4 py-1.5 rounded-full border border-white/[0.1] text-[#888]" data-filter="construccion" aria-pressed="false">Constructoras</button>
+        <button class="f-tab whitespace-nowrap text-[12px] font-medium px-4 py-1.5 rounded-full border border-white/[0.1] text-[#888]" data-filter="arquitectura" aria-pressed="false">Arquitectura</button>
       </div>
     </div>
   </div>
@@ -404,15 +404,18 @@
   <script>
     const tabs = document.querySelectorAll('.f-tab');
     const items = document.querySelectorAll('.p-item');
+    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
         const f = tab.dataset.filter;
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
+        tabs.forEach(t => {
+          t.classList.toggle('active', t === tab);
+          t.setAttribute('aria-pressed', String(t === tab));
+        });
         items.forEach(item => {
           const show = f === 'all' || (item.dataset.cat || '').split(/\s+/).includes(f) || item.dataset.cat === 'all';
           item.style.display = show ? '' : 'none';
-          if (show) {
+          if (show && !reduceMotion.matches) {
             item.style.opacity = '0';
             item.style.transform = 'translateY(10px)';
             requestAnimationFrame(() => {
