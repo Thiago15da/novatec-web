@@ -62,7 +62,7 @@ img { display: block; max-width: 100%; height: auto; }
   margin-bottom: 1.2rem;
 }
 .signal { display: inline-block; width: .5rem; height: .5rem; margin-right: .5rem; border-radius: 50%; background: var(--accent); box-shadow: 0 0 1rem var(--accent); }
-h1 { font-size: clamp(3.1rem, 6.15vw, 6.5rem); letter-spacing: -.085em; line-height: .99; }
+h1 { font-size: clamp(3.1rem, 6.15vw, 6.5rem); letter-spacing: -.065em; line-height: .99; }
 h1 em { display: block; color: var(--accent); font-style: normal; }
 .hero-text { max-width: 35rem; margin-block: 1.5rem 2rem; color: var(--muted); font-size: clamp(1rem, 1.45vw, 1.2rem); }
 .actions { display: flex; flex-wrap: wrap; gap: .7rem; }
@@ -92,6 +92,27 @@ h1 em { display: block; color: var(--accent); font-style: normal; }
 .bench-layer:nth-child(2) { --offset: .5rem; }
 .bench-layer:nth-child(3) { --offset: -1.5rem; }
 .bench-layer.is-active { background-color: #a1dc67; box-shadow: 0 0 2.5rem #bafa6bb2; transform: translateY(calc(var(--offset) - .6rem)) rotateX(57deg) rotateZ(-42deg); }
+.bench-stack::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 1px;
+  height: 4.25rem;
+  left: 50%;
+  top: 1.5rem;
+  background: linear-gradient(transparent, var(--accent), transparent);
+  opacity: 0;
+  pointer-events: none;
+}
+.workbench:has(.bench-run[aria-disabled="true"]) .bench-stack::after {
+  opacity: 1;
+  animation: signal-travel .48s ease-in-out 3;
+}
+@keyframes signal-travel {
+  from { transform: translateY(-1.1rem); opacity: 0; }
+  50% { opacity: 1; }
+  to { transform: translateY(2rem); opacity: 0; }
+}
 .bench-core { position: absolute; inset: 28%; transform: translateY(-2rem) rotateX(57deg) rotateZ(-42deg); border: 1px solid var(--accent); background: #d0ff7055; box-shadow: 0 0 1.75rem #d0ff7070; }
 .bench-caption { position: absolute; bottom: .85rem; left: 1rem; letter-spacing: .08em; }
 .bench-steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-block: 1px solid var(--line); }
