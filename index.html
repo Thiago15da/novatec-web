@@ -7,7 +7,7 @@
 <meta name="description" content="Diseñamos páginas web, sistemas empresariales y automatizaciones a medida en Paraguay. Conocé proyectos de NovaTec Sistemas y solicitá tu propuesta.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="NovaTec Sistemas">
-<meta name="theme-color" content="#081121">
+<meta name="theme-color" content="#ffffff">
 <meta name="google-site-verification" content="OSgHoHdo01-KzYPgR-IHtyJBJacFvOIVgksFE3Ezykw">
 <link rel="canonical" href="https://novatec.com.py/">
 <link rel="icon" href="img/novatec-isotipo.svg" type="image/svg+xml">
@@ -30,7 +30,8 @@
  ]
 }
 </script>
-<link rel="stylesheet" href="css/studio.css?v=2">
+<link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/studio.css?v=20261124-light">
 </head>
 <body data-native-scroll>
 <a href="#contenido" class="skip">Saltar al contenido</a>
@@ -42,9 +43,9 @@
       <a href="desarrollo-web-empresas.html">Desarrollo web</a>
       <a href="software.html">Sistemas</a>
       <a href="portafolio.html">Proyectos</a>
-      <a href="contacto.html" class="nav-link-cta">Solicitar propuesta</a>
+      <a href="contacto.html" class="nav-link-cta">Hablemos de tu proyecto</a>
     </nav>
-    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Abrir menú" aria-controls="nav-mobile" aria-expanded="false" hidden>☰</button>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Abrir menú" aria-controls="nav-mobile" aria-expanded="false" hidden><span aria-hidden="true"></span></button>
   </div>
   <nav class="nav-mobile" id="nav-mobile" aria-label="Navegación móvil">
     <a href="#servicios">Servicios</a>
@@ -59,120 +60,138 @@
   <section class="studio-hero" aria-labelledby="hero-title">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="signal" aria-hidden="true"></span> NovaTec Sistemas / Paraguay</p>
-        <h1 id="hero-title">Desarrollo web<br class="wide-break"> y sistemas <em>para empresas.</em></h1>
-        <p class="hero-text">Creamos sitios que generan consultas y software que ordena la operación. Diseñamos y programamos en Paraguay, alrededor de cómo trabaja tu empresa.</p>
+        <p class="eyebrow">NovaTec Sistemas · Paraguay</p>
+        <h1 id="hero-title">Desarrollo web<br>y sistemas.<br><em>Con otra visión.</em></h1>
+        <p class="hero-text">Diseño que representa a tu empresa. Software que conecta a tu equipo. Convertimos lo que necesitás en una experiencia digital a medida.</p>
         <div class="actions">
-          <a href="contacto.html" class="btn btn-blue">Hablemos de tu proyecto <span aria-hidden="true">↗</span></a>
-          <a href="#proyectos" class="btn btn-outline">Conocé nuestro trabajo <span aria-hidden="true">↓</span></a>
+          <a href="contacto.html" class="btn btn-blue">Hablemos de tu proyecto</a>
+          <a href="#proyectos" class="btn btn-outline">Explorar proyectos</a>
         </div>
+        <p class="hero-disciplines">Estrategia <span aria-hidden="true">/</span> Diseño <span aria-hidden="true">/</span> Desarrollo</p>
       </div>
-      <section class="workbench" aria-labelledby="demo-title">
-        <header class="bench-header">
-          <h2 id="demo-title">¿Qué pasa cuando alguien te escribe?</h2>
-          <span>Ejemplo interactivo</span>
-        </header>
-        <div class="bench-scene" aria-hidden="true">
-          <div class="bench-floor"></div>
-          <div class="bench-stack">
-            <i class="bench-layer"></i><i class="bench-layer"></i><i class="bench-layer"></i>
-            <i class="bench-core"></i>
+      <div class="hero-visual">
+        <div class="light-sculpture" aria-hidden="true"><i class="energy-loop"></i><i class="energy-trace"></i></div>
+        <section class="workbench" aria-labelledby="demo-title" data-stage="web">
+          <header class="bench-header">
+            <img src="img/novatec-isotipo.svg" alt="" width="28" height="28">
+            <div><h2 id="demo-title">De tu web a tu equipo.</h2><p>Probá una consulta de ejemplo</p></div>
+          </header>
+          <ol class="bench-steps" aria-label="Recorrido de la consulta">
+            <li aria-current="step"><span class="step-mark" aria-hidden="true"></span>Tu web</li>
+            <li><span class="step-mark" aria-hidden="true"></span>Tu sistema</li>
+            <li><span class="step-mark" aria-hidden="true"></span>Tu equipo</li>
+          </ol>
+          <div class="bench-views">
+            <section class="demo-view demo-web" data-demo-view="web" aria-labelledby="demo-web-title">
+              <div class="demo-section-label"><span class="demo-site-mark" aria-hidden="true"></span> Web de tu empresa</div>
+              <h3 id="demo-web-title">Una conversación<br>puede cambiarlo todo.</h3>
+              <div class="demo-inquiry">
+                <label for="demo-name">Nombre de ejemplo</label>
+                <input id="demo-name" value="Ana" maxlength="32" autocomplete="off" spellcheck="false">
+                <p class="demo-message">“Quiero una web para mi empresa.”</p>
+              </div>
+            </section>
+            <section class="demo-view demo-system" data-demo-view="system" aria-labelledby="demo-system-title" hidden>
+              <div class="demo-section-label">Sistema de tu empresa</div>
+              <div class="demo-title-row"><h3 id="demo-system-title">Consultas</h3><span class="demo-count">1 nueva</span></div>
+              <div class="demo-record">
+                <span class="demo-avatar" aria-hidden="true">A</span>
+                <div><strong data-demo-person>Ana</strong><p>Propuesta web</p></div>
+                <span class="demo-pill">Recibida</span>
+              </div>
+              <div class="demo-record-meta"><span>Responsable</span><strong>Por asignar</strong></div>
+              <div class="demo-record-meta"><span>Próximo paso</span><strong>Contacto comercial</strong></div>
+            </section>
+            <section class="demo-view demo-team" data-demo-view="team" aria-labelledby="demo-team-title" hidden>
+              <span class="demo-check" aria-hidden="true"></span>
+              <h3 id="demo-team-title">Todo listo<br>para responder.</h3>
+              <p>La consulta de <strong data-demo-person>Ana</strong> ya está asignada al equipo de ventas.</p>
+              <div class="demo-assigned"><span class="team-avatars" aria-hidden="true"><i>V</i><i>N</i></span><span>Equipo de ventas<br><strong>Seguimiento pendiente</strong></span></div>
+            </section>
           </div>
-          <span class="bench-caption">WEB → SISTEMA → EQUIPO</span>
-        </div>
-        <ol class="bench-steps">
-          <li><span>01</span> Recibir consulta</li>
-          <li><span>02</span> Crear oportunidad</li>
-          <li><span>03</span> Avisar al equipo</li>
-        </ol>
-        <div class="bench-footer">
-          <p class="bench-status" role="status" aria-atomic="true">Seguí una consulta ficticia desde la web hasta el equipo de ventas.</p>
-          <button type="button" class="bench-run" hidden><span class="bench-label">Iniciar ejemplo</span> <span aria-hidden="true">→</span></button>
-        </div>
-      </section>
+          <div class="bench-footer">
+            <p class="bench-status" role="status" aria-atomic="true">Podés cambiar el nombre y enviar la consulta de prueba.</p>
+            <button type="button" class="bench-run" hidden><span class="bench-label">Enviar consulta de prueba</span></button>
+          </div>
+        </section>
+        <p class="demo-note">Ejemplo interactivo con datos ficticios</p>
+      </div>
     </div>
+    <div class="wrap hero-bottom"><p>Tu presencia digital. Tu operación. Un mismo propósito.</p><a href="#servicios">Descubrí lo que podemos construir</a></div>
   </section>
-  <section class="section" id="servicios" tabindex="-1" aria-labelledby="servicios-title">
+
+  <section class="section capabilities" id="servicios" tabindex="-1" aria-labelledby="servicios-title">
     <div class="wrap">
       <div class="section-top">
-        <div><p class="eyebrow">ÁREAS DE TRABAJO</p><h2 id="servicios-title">Tecnología con una función concreta.</h2></div>
-        <p>Cada empresa tiene desafíos distintos. Por eso empezamos por entender qué necesitás resolver y construimos a partir de ahí.</p>
+        <div><p class="eyebrow">Lo que construimos</p><h2 id="servicios-title">Buenas ideas.<br>Mejores herramientas.</h2></div>
+        <p>Cada empresa tiene desafíos distintos. Empezamos por entender qué necesitás resolver y construimos a partir de ahí.</p>
       </div>
       <div class="services">
-        <article class="service">
-          
-          <h3>Desarrollo web</h3>
-          <p>Páginas corporativas, portafolios, catálogos y tiendas online con estructura clara, diseño adaptable y bases de SEO técnico.</p>
-          <a href="desarrollo-web-empresas.html">Explorar desarrollo web <span aria-hidden="true">↗</span></a>
+        <article class="service service-web">
+          <div class="service-art web-art" aria-hidden="true"><div class="mini-browser"><span></span><div><i></i><b></b><b></b><em></em></div><aside><i></i><i></i><i></i></aside></div></div>
+          <div class="service-copy"><h3>Desarrollo web</h3><p>Páginas corporativas, portafolios, catálogos y tiendas online con estructura clara, diseño adaptable y bases de SEO técnico.</p><a href="desarrollo-web-empresas.html">Explorar desarrollo web</a></div>
         </article>
-        <article class="service">
-          
-          <h3>Sistemas a medida</h3>
-          <p>Aplicaciones empresariales, paneles de control, gestión de clientes y herramientas que acompañan la forma en que trabaja tu equipo.</p>
-          <a href="software.html">Explorar sistemas <span aria-hidden="true">↗</span></a>
+        <article class="service service-software">
+          <div class="service-art system-art" aria-hidden="true"><div class="mini-system"><i></i><div><b></b><b></b><b></b><span><em></em><em></em><em></em><em></em><em></em></span></div></div></div>
+          <div class="service-copy"><h3>Sistemas a medida</h3><p>Aplicaciones empresariales, paneles de control, gestión de clientes y herramientas que acompañan la forma en que trabaja tu equipo.</p><a href="software.html">Explorar sistemas</a></div>
         </article>
-        <article class="service">
-          
-          <h3>Automatización e integraciones</h3>
-          <p>Conexiones entre herramientas, reportes y procesos repetitivos para reducir tareas manuales y ordenar mejor la información.</p>
-          <a href="contacto.html?servicio=software">Consultar una solución <span aria-hidden="true">↗</span></a>
+        <article class="service service-flow">
+          <div class="service-art flow-art" aria-hidden="true"><div><i></i><span></span><i></i><span></span><i></i></div></div>
+          <div class="service-copy"><h3>Automatización</h3><p>Conexiones entre herramientas, reportes y procesos repetitivos para reducir tareas manuales y ordenar mejor la información.</p><a href="contacto.html?servicio=software">Consultar una integración</a></div>
         </article>
       </div>
     </div>
   </section>
+
   <section class="section evidence" id="proyectos" aria-labelledby="proyectos-title">
-    <div class="wrap">
-      <div class="section-top">
-        <div><p class="eyebrow">Proyectos seleccionados</p><h2 id="proyectos-title">Distintos desafíos.<br>Decisiones a medida.</h2></div>
-        <p>Explorá las decisiones de diseño y desarrollo detrás de cada proyecto.</p>
-      </div>
+    <div class="wrap evidence-layout">
+      <div class="evidence-intro"><p class="eyebrow">Trabajo seleccionado</p><h2 id="proyectos-title">El detalle<br>hace la<br><em>diferencia.</em></h2><p>Distintos sectores, necesidades concretas. Explorá las decisiones detrás de cada proyecto.</p><a class="text-link" href="portafolio.html">Ver el portafolio completo</a></div>
       <div class="case-list">
-        <details class="case" id="a1-maquetas">
-          <summary><span class="case-name">A1 Maquetas</span><span class="case-skill">Navegación de catálogos</span><span class="case-icon" aria-hidden="true"></span></summary>
-          <div class="case-body"><p>Organizamos proyectos por especialidad, estructuramos las galerías y conectamos el recorrido con una solicitud de cotización.</p><a href="https://a1maquetas.com.py/" target="_blank" rel="noopener noreferrer">Ver implementación <span aria-hidden="true">↗</span></a></div>
-        </details>
-        <details class="case" id="rd-construcciones">
+        <details class="case" id="rd-construcciones" name="selected-work" open>
           <summary><span class="case-name">RD Construcciones</span><span class="case-skill">Arquitectura de información</span><span class="case-icon" aria-hidden="true"></span></summary>
-          <div class="case-body"><p>Separamos obras y servicios para que una empresa pueda mostrar su experiencia y orientar a potenciales clientes hacia el contacto.</p></div>
+          <div class="case-body"><p>Separamos obras y servicios para mostrar la experiencia de la empresa y orientar a potenciales clientes hacia el contacto.</p><figure class="case-capture"><img src="img/portfolio/rd-construcciones-preview.webp" width="800" height="442" alt="Interfaz desarrollada para RD Construcciones, con acceso a obras y servicios" loading="lazy" decoding="async"></figure><a href="https://rdconstrucciones.com.py/" target="_blank" rel="noopener noreferrer">Ver implementación</a></div>
         </details>
-        <details class="case" id="caceres-alvarez">
+        <details class="case" id="a1-maquetas" name="selected-work">
+          <summary><span class="case-name">A1 Maquetas</span><span class="case-skill">Navegación de catálogos</span><span class="case-icon" aria-hidden="true"></span></summary>
+          <div class="case-body"><p>Organizamos proyectos por especialidad, estructuramos las galerías y conectamos el recorrido con una solicitud de cotización.</p><ul class="case-capabilities"><li>Proyectos por categoría</li><li>Galerías fotográficas</li><li>Contacto y cotización</li></ul><a href="https://a1maquetas.com.py/" target="_blank" rel="noopener noreferrer">Ver implementación</a></div>
+        </details>
+        <details class="case" id="caceres-alvarez" name="selected-work">
           <summary><span class="case-name">Cáceres Álvarez</span><span class="case-skill">Estructura institucional</span><span class="case-icon" aria-hidden="true"></span></summary>
-          <div class="case-body"><p>Dimos a las áreas de práctica y a la información del estudio una estructura de navegación propia.</p></div>
+          <div class="case-body"><p>Dimos a las áreas de práctica y a la información del estudio una estructura de navegación propia.</p><figure class="case-capture"><img src="img/portfolio/caceres-alvarez-preview.webp" width="800" height="434" alt="Interfaz del sitio desarrollado para Cáceres Álvarez Abogados" loading="lazy" decoding="async"></figure><a href="https://caceresalvarezabogados.com.py/" target="_blank" rel="noopener noreferrer">Ver implementación</a></div>
         </details>
-        <details class="case" id="power-gym">
-          <summary><span class="case-name">Power Gym</span><span class="case-skill">Diseño de interfaces</span><span class="case-icon" aria-hidden="true"></span></summary>
-          <div class="case-body"><p>Adaptamos la jerarquía visual y la navegación a un sitio del sector fitness.</p></div>
-        </details>
-        <details class="case" id="gm-iuris">
+        <details class="case" id="gm-iuris" name="selected-work">
           <summary><span class="case-name">GM Iuris Consulting</span><span class="case-skill">Identidad digital</span><span class="case-icon" aria-hidden="true"></span></summary>
-          <div class="case-body"><p>Trasladamos la identidad del estudio a una interfaz institucional para presentar sus servicios y trayectoria.</p><a href="https://gmiurisconsulting.com/" target="_blank" rel="noopener noreferrer">Ver implementación <span aria-hidden="true">↗</span></a></div>
+          <div class="case-body"><p>Trasladamos la identidad de González Morgan &amp; Asociados a una interfaz institucional para presentar sus servicios y trayectoria.</p><figure class="case-capture"><img src="img/portfolio/gmi-uris-preview.webp" width="800" height="418" alt="Interfaz institucional de GM Iuris Consulting" loading="lazy" decoding="async"></figure><a href="https://gmiurisconsulting.com/" target="_blank" rel="noopener noreferrer">Ver implementación</a></div>
+        </details>
+        <details class="case" id="power-gym" name="selected-work">
+          <summary><span class="case-name">Power Gym</span><span class="case-skill">Diseño de interfaces</span><span class="case-icon" aria-hidden="true"></span></summary>
+          <div class="case-body"><p>Adaptamos la jerarquía visual y la navegación a un sitio del sector fitness.</p><figure class="case-capture"><img src="img/portfolio/power-gym-preview.webp" width="800" height="427" alt="Interfaz del sitio desarrollado para Power Gym" loading="lazy" decoding="async"></figure></div>
         </details>
       </div>
-      <a class="text-link" href="portafolio.html">Explorar el portafolio <span aria-hidden="true">↗</span></a>
     </div>
   </section>
-  <section class="section industry" aria-labelledby="sectores-title">
-    <div class="wrap section-top">
-      <div><p class="eyebrow">Construcción y arquitectura</p><h2 id="sectores-title">De la obra al primer contacto.</h2></div>
-      <div><p>Un sitio profesional para presentar obras, servicios y experiencia. Pensado para constructoras y estudios de arquitectura.</p>
-      <a class="text-link" href="web-para-constructoras.html">Webs para constructoras <span aria-hidden="true">↗</span></a></div>
+
+  <section class="industry" aria-labelledby="sectores-title">
+    <div class="wrap industry-panel">
+      <div class="industry-art" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
+      <div class="industry-copy"><p class="eyebrow">Construcción y arquitectura</p><h2 id="sectores-title">Tu próxima obra<br>también es digital.</h2><p>Un sitio profesional para presentar obras, servicios y experiencia. Pensado para constructoras y estudios de arquitectura que necesitan generar confianza desde el primer contacto.</p><a class="text-link" href="web-para-constructoras.html">Webs para constructoras</a></div>
     </div>
   </section>
+
   <section class="section section-process" aria-labelledby="metodo-title">
     <div class="wrap">
-      <p class="eyebrow">CÓMO TRABAJAMOS</p>
-      <h2 class="section-title" id="metodo-title">Primero entendemos. Después construimos.</h2>
+      <div class="section-top"><div><p class="eyebrow">Cómo trabajamos</p><h2 id="metodo-title">De la conversación<br>a la puesta en marcha.</h2></div><p>Cada decisión de diseño y desarrollo parte de una necesidad concreta de tu empresa.</p></div>
       <div class="process">
-        <article><b>01 / DEFINIR</b><h3>Escuchamos el problema</h3><p>Conversamos sobre la empresa, el objetivo y qué información o proceso necesita mejorar.</p></article>
-        <article><b>02 / DISEÑAR</b><h3>Proponemos una solución</h3><p>Definimos alcance, estructura y prioridades para que el proyecto tenga un camino claro.</p></article>
-        <article><b>03 / IMPLEMENTAR</b><h3>Desarrollamos y revisamos</h3><p>Construimos, probamos en distintos dispositivos y coordinamos la entrega y puesta en marcha.</p></article>
+        <article><span class="process-mark" aria-hidden="true"></span><b>Entender</b><h3>Escuchamos el problema</h3><p>Conversamos sobre la empresa, el objetivo y qué información o proceso necesita mejorar.</p></article>
+        <article><span class="process-mark" aria-hidden="true"></span><b>Diseñar</b><h3>Proponemos una solución</h3><p>Definimos alcance, estructura y prioridades para que el proyecto tenga un camino claro.</p></article>
+        <article><span class="process-mark" aria-hidden="true"></span><b>Construir</b><h3>Desarrollamos y revisamos</h3><p>Construimos, probamos en distintos dispositivos y coordinamos la entrega y puesta en marcha.</p></article>
       </div>
     </div>
   </section>
-  <section class="section" aria-labelledby="preguntas-title">
-    <div class="wrap">
-      <p class="eyebrow">PREGUNTAS FRECUENTES</p>
-      <h2 class="section-title" id="preguntas-title">Lo que conviene saber antes de empezar.</h2>
+
+  <section class="section questions" aria-labelledby="preguntas-title">
+    <div class="wrap questions-layout">
+      <div><p class="eyebrow">Antes de empezar</p><h2 id="preguntas-title">Conversemos<br>con claridad.</h2></div>
       <div class="faq-list">
         <details><summary>¿Trabajan con empresas que todavía no tienen página web?</summary><p>Sí. Podemos definir la estructura inicial, organizar el contenido y desarrollar una web institucional o comercial adaptada a tu negocio.</p></details>
         <details><summary>¿Desarrollan sistemas según las necesidades de cada empresa?</summary><p>Sí. Evaluamos las tareas, los usuarios y los datos necesarios antes de preparar una propuesta de software a medida.</p></details>
@@ -180,29 +199,23 @@
       </div>
     </div>
   </section>
-  <section class="bottom-cta">
-    <div class="wrap bottom-inner">
-      <div><h2>Tu siguiente proyecto empieza con una conversación.</h2><p>Contanos qué querés lograr. Te ayudamos a definir la próxima etapa.</p></div>
-      <a href="contacto.html" class="btn btn-blue">Solicitar propuesta</a>
-    </div>
+  <section class="bottom-cta" aria-labelledby="contacto-title">
+    <div class="wrap bottom-inner"><p class="eyebrow">Construyamos lo que viene</p><h2 id="contacto-title">Tu siguiente proyecto empieza<br>con una conversación.</h2><p>Contanos qué querés lograr. Te ayudamos a definir la próxima etapa.</p><a href="contacto.html" class="btn btn-blue">Solicitar propuesta</a></div>
   </section>
 </main>
 <footer>
   <div class="wrap">
     <div class="footer-top">
-      <div class="footer-brand">
-        <a href="/" aria-label="NovaTec Sistemas, inicio"><img src="img/novatec-horizontal.svg" alt="NovaTec Sistemas" width="210" height="46"></a>
-        <p>Desarrollo web, sistemas empresariales y soluciones digitales a medida para empresas en Paraguay.</p>
-      </div>
+      <div class="footer-brand"><a href="/" aria-label="NovaTec Sistemas, inicio"><img src="img/novatec-horizontal.svg" alt="NovaTec Sistemas" width="210" height="46"></a><p>Desarrollo web, sistemas empresariales y soluciones digitales a medida para empresas en Paraguay.</p></div>
       <div class="footer-links">
         <div><strong>Servicios</strong><a href="desarrollo-web-empresas.html">Desarrollo web</a><a href="software.html">Sistemas a medida</a><a href="web-para-constructoras.html">Constructoras</a></div>
         <div><strong>NovaTec</strong><a href="portafolio.html">Portafolio</a><a href="contacto.html">Contacto</a><a href="https://www.instagram.com/novatecpy/" target="_blank" rel="noopener noreferrer">Instagram</a></div>
       </div>
     </div>
-    <div class="footer-bottom"><span>© <span id="year">2026</span> NovaTec Sistemas · Paraguay</span><span>Soluciones digitales para empresas</span></div>
+    <div class="footer-bottom"><span>© <span id="year">2026</span> NovaTec Sistemas · Paraguay</span><span>Diseñado para hacer avanzar a tu empresa.</span></div>
   </div>
 </footer>
 <script src="js/main.js" defer></script>
-<script src="js/studio.js?v=2" defer></script>
+<script src="js/studio.js?v=20261124-light" defer></script>
 </body>
 </html>
