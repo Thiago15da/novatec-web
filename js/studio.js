@@ -29,39 +29,38 @@ matchMedia('(max-width: 55rem)').addEventListener('change', () => setMenu(false)
 document.querySelector('#year').textContent = new Date().getFullYear();
 
 const runButton = document.querySelector('.bench-run');
+const runLabel = runButton.querySelector('.bench-label');
 const status = document.querySelector('.bench-status');
 const steps = [...document.querySelectorAll('.bench-steps li')];
 const layers = [...document.querySelectorAll('.bench-layer')].reverse();
-const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-const results = [
-  'Consulta de ejemplo recibida desde la web.',
-  'Oportunidad de ejemplo registrada en el sistema.',
-  'Simulación completa. El equipo recibió el aviso de ejemplo.'
+const stages = [
+  {
+    message: 'Ana solicita una cotización desde la web.',
+    nextLabel: 'Registrar consulta'
+  },
+  {
+    message: 'El sistema guarda la consulta de Ana como oportunidad, lista para hacer seguimiento.',
+    nextLabel: 'Avisar al equipo'
+  },
+  {
+    message: 'Ventas recibe el aviso con los datos de Ana y puede responderle.',
+    nextLabel: 'Repetir ejemplo'
+  }
 ];
 
+let currentStage = -1;
 runButton.hidden = false;
-runButton.addEventListener('click', async () => {
-  if (runButton.getAttribute('aria-disabled') === 'true') return;
-  runButton.setAttribute('aria-disabled', 'true');
-  status.textContent = 'Procesando consulta de ejemplo…';
+runButton.addEventListener('click', () => {
+  currentStage = (currentStage + 1) % stages.length;
   steps.forEach((step, index) => {
-    step.classList.remove('is-done');
-    step.removeAttribute('aria-current');
-    layers[index].classList.remove('is-active');
+    const current = index === currentStage;
+    step.classList.toggle('is-done', index <= currentStage);
+    layers[index].classList.toggle('is-active', current);
+    if (current) step.setAttribute('aria-current', 'step');
+    else step.removeAttribute('aria-current');
   });
-
-  for (const [index, message] of results.entries()) {
-    if (!reducedMotion.matches) {
-      await new Promise((resolve) => setTimeout(resolve, 480));
-    }
-    steps[index - 1]?.removeAttribute('aria-current');
-    layers[index - 1]?.classList.remove('is-active');
-    steps[index].classList.add('is-done');
-    steps[index].setAttribute('aria-current', 'step');
-    layers[index].classList.add('is-active');
-    status.textContent = message;
-  }
-  runButton.removeAttribute('aria-disabled');
+  status.textContent = stages[currentStage].message;
+  runLabel.textContent = stages[currentStage].nextLabel;
 });
 
 function openLinkedCase() {
