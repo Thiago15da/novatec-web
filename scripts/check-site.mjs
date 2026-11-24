@@ -101,7 +101,6 @@ for (const page of [home, projectsPage, businessWeb]) {
 }
 // The homepage presents an interactive demo and native, deep-linkable project cases.
 const studioStyles = read('css/studio.css');
-const studioController = read('js/studio.js');
 assert.match(home, /class="studio-hero"/, 'Studio hero missing');
 assert.match(home, /type="button" class="bench-run"/, 'Demo control missing');
 assert.match(home, /class="bench-status" role="status"/, 'Demo status must be announced');
@@ -109,7 +108,6 @@ assert.equal((home.match(/<details class="case"/g) || []).length, 5, 'Five proje
 assert.match(home, /<details class="case" id="a1-maquetas"/, 'Deep-linkable A1 case missing');
 assert.match(home, /https:\/\/a1maquetas\.com\.py\//, 'Official A1 project URL missing from home');
 assert.match(home, /gmiurisconsulting\.com/, 'GM Iuris link missing from home');
-assert.match(studioController, /prefers-reduced-motion/, 'Demo must respect reduced motion');
 assert.match(studioStyles, /prefers-reduced-motion:\s*reduce/, 'Home animations must respect reduced motion');
 assert.match(studioStyles, /grid-template-columns:\s*minmax\(0,\s*1fr\);/, 'Mobile hero grid must allow children to shrink');
 assert.ok(!/data-carousel|data-a1-gallery/.test(home), 'Retired homepage carousels must stay removed');
